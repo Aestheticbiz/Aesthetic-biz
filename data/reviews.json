@@ -1,0 +1,185 @@
+{
+  "general": [
+    {
+      "id": "seed-gen-01",
+      "name": "Priya M.",
+      "location": "Upper East Side",
+      "date": "12.06.2026",
+      "rating": 5,
+      "headline": "Calm, clinical, never pushy",
+      "text": "Dr. Hale explained options without rushing me into injectables. Elise walked me through aftercare and the home routine. Midtown energy, but the suite feels private.",
+      "scope": "general",
+      "productLabel": "Clinic experience"
+    },
+    {
+      "id": "seed-gen-02",
+      "name": "Rachel K.",
+      "location": "Midtown East",
+      "date": "03.05.2026",
+      "rating": 5,
+      "headline": "Booking and follow-up finally match the brand",
+      "text": "I booked online, got clear reminders, and left with products that matched my plan. Feels like a real practice system — not a plugin bolted onto a pretty site.",
+      "scope": "general",
+      "productLabel": "Clinic experience"
+    }
+  ],
+  "treatments": {
+    "lip-filler": [
+      {
+        "id": "seed-lip-01",
+        "name": "Samantha L.",
+        "location": "Chelsea",
+        "date": "18.06.2026",
+        "rating": 5,
+        "headline": "Soft, natural — exactly what I asked for",
+        "text": "I wanted hydration more than size. Swelling settled by day three and the shape still looks like me. Dr. Hale’s proportion talk beforehand made all the difference.",
+        "answers": [
+          {
+            "question": "What brought you to AestheticBiz?",
+            "answer": "I wanted subtle lip filler after seeing overdone results elsewhere."
+          },
+          {
+            "question": "How was your experience with Dr. Hale and the team?",
+            "answer": "Consult was thorough. Elise kept me comfortable and sent clear aftercare the same day."
+          },
+          {
+            "question": "How do you feel about your results so far?",
+            "answer": "Natural border definition — friends notice I look rested, not ‘done’."
+          },
+          {
+            "question": "Would you recommend AestheticBiz? Why?",
+            "answer": "Yes — especially if you want conservative, anatomy-led injectables."
+          }
+        ],
+        "scope": "treatment",
+        "treatmentSlug": "lip-filler",
+        "productLabel": "Lip Filler"
+      },
+      {
+        "id": "seed-lip-02",
+        "name": "Megan T.",
+        "location": "Verified patient",
+        "date": "02.04.2026",
+        "rating": 5,
+        "headline": "0.5 ml was the right call",
+        "text": "Started conservative. Will top up later if needed. No pressure to go bigger on day one.",
+        "scope": "treatment",
+        "treatmentSlug": "lip-filler",
+        "productLabel": "Lip Filler"
+      }
+    ],
+    "acne-treatment": [
+      {
+        "id": "seed-acne-01",
+        "name": "Jordan A.",
+        "location": "Brooklyn",
+        "date": "22.05.2026",
+        "rating": 5,
+        "headline": "Finally a medical plan, not another shelf cycle",
+        "text": "Peels plus Clarify Gel and Barrier Cream at home. Weeks 3–4 I saw fewer new breakouts. Honest about the purge window.",
+        "scope": "treatment",
+        "treatmentSlug": "acne-treatment",
+        "productLabel": "Acne Treatment"
+      }
+    ],
+    "pigmentation-treatment": [
+      {
+        "id": "seed-pig-01",
+        "name": "Aisha R.",
+        "location": "Harlem",
+        "date": "09.06.2026",
+        "rating": 5,
+        "headline": "Tone looks more even — SPF is non-negotiable",
+        "text": "Pigment peel series plus the corrector Dr. Hale recommended. Melasma isn’t ‘gone forever’ and they were honest about that — which I appreciated.",
+        "scope": "treatment",
+        "treatmentSlug": "pigmentation-treatment",
+        "productLabel": "Pigmentation Treatment"
+      }
+    ],
+    "jaw-chin-contouring": [
+      {
+        "id": "seed-jaw-01",
+        "name": "Daniel C.",
+        "location": "Verified patient",
+        "date": "14.03.2026",
+        "rating": 5,
+        "headline": "Profile finally matches how I feel",
+        "text": "Chin filler for projection. Subtle in photos, obvious to me. Review at two weeks was reassuring.",
+        "scope": "treatment",
+        "treatmentSlug": "jaw-chin-contouring",
+        "productLabel": "Jaw & Chin Contouring"
+      }
+    ],
+    "excessive-sweating": [
+      {
+        "id": "seed-sweat-01",
+        "name": "Chris P.",
+        "location": "Financial District",
+        "date": "28.02.2026",
+        "rating": 5,
+        "headline": "Underarms dry within two weeks",
+        "text": "Mapped, treated, back to work same day. Changed how I dress for summer meetings.",
+        "scope": "treatment",
+        "treatmentSlug": "excessive-sweating",
+        "productLabel": "Excessive Sweating Treatment"
+      }
+    ]
+  },
+  "products": {
+    "demo-product-08": [
+      {
+        "id": "seed-prod-08",
+        "name": "Nina V.",
+        "location": "Verified patient",
+        "date": "01.06.2026",
+        "rating": 5,
+        "headline": "Pigment Corrector is part of my nightly stack",
+        "text": "Paired with Daily Defence + SPF after my peel series. Marks look quieter at eight weeks.",
+        "scope": "product",
+        "productSlug": "demo-product-08",
+        "productLabel": "Demo Clinical Pigment Corrector"
+      }
+    ],
+    "demo-product-03": [
+      {
+        "id": "seed-prod-03",
+        "name": "Olivia S.",
+        "location": "Verified patient",
+        "date": "20.05.2026",
+        "rating": 5,
+        "headline": "Hydra Essence after lip filler",
+        "text": "Skin felt tight the evening after — this dropper fixed the comfort issue without irritating the area.",
+        "scope": "product",
+        "productSlug": "demo-product-03",
+        "productLabel": "Demo Clinical Hydra Essence"
+      }
+    ]
+  },
+  "videos": [
+    {
+      "id": "seed-vid-01",
+      "name": "Alexandra B.",
+      "location": "Midtown",
+      "date": "10.06.2026",
+      "rating": 5,
+      "headline": "My lip filler follow-up (demo video)",
+      "videoUrl": "/videos/sample-patient-review.webm",
+      "isVideo": true,
+      "scope": "treatment",
+      "treatmentSlug": "lip-filler",
+      "productLabel": "Lip Filler · Video review"
+    },
+    {
+      "id": "seed-vid-02",
+      "name": "Taylor M.",
+      "location": "Verified patient",
+      "date": "05.05.2026",
+      "rating": 5,
+      "headline": "Why I chose AestheticBiz (demo video)",
+      "videoUrl": "/videos/sample-patient-review.webm",
+      "isVideo": true,
+      "scope": "general",
+      "productLabel": "Clinic experience · Video review"
+    }
+  ]
+}

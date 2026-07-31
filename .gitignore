@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# review engine demo uploads / pending submissions
+/public/uploads/
+/data/pending-reviews.json
+/data/discovery-bookings.json

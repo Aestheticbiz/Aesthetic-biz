@@ -1,95 +1,335 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { DefaultPreviewBar } from "@/components/preview-bar";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { DemoForm } from "@/components/demo-form";
+import PublicReviewCard from "@/components/reviews/PublicReviewCard";
+import DoctorTrust from "@/components/staff/DoctorTrust";
+import { getFeaturedReviews } from "@/lib/reviews/queries";
+import { PRODUCTS, SITE, TREATMENTS } from "@/lib/site";
 
-export default function Home() {
+export default async function HomePage() {
+  const featuredReviews = await getFeaturedReviews(3);
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <DefaultPreviewBar />
+      <SiteHeader />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      <section className="hero">
+        <div
+          className="hero-bg"
+          style={{ backgroundImage: "url('/images/lip-filler-treatment-demo-image.jpg')" }}
+        />
+        <div className="hero-overlay" />
+        <div className="shell">
+          <div className="hero-location">Midtown Manhattan · Medical Spa</div>
+          <h1>
+            Reveal calm <em>clinical confidence.</em>
+          </h1>
+          <p className="hero-tagline">Madison Avenue</p>
+          <p className="hero-lead">
+            Acne, pigment, lip filler, contouring, hyperhidrosis, drips, and clinical retail —
+            booked on a branded AestheticBiz platform, not a third-party plugin.
+          </p>
+          <div className="hero-actions">
+            <a className="btn btn-gold" href="#treatments">
+              Explore Treatments →
+            </a>
+            <Link className="btn btn-outline" href="/book">
+              Book Appointment
+            </Link>
+          </div>
+          <div className="hero-stats">
+            <div className="hero-stat">
+              <strong>5.0★</strong>
+              <span>Google · 49 reviews</span>
+            </div>
+            <div className="hero-stat">
+              <strong>485</strong>
+              <span>Madison Avenue</span>
+            </div>
+            <div className="hero-stat">
+              <strong>Custom</strong>
+              <span>On-brand booking</span>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      <div className="trust-strip">
+        <div className="shell">
+          <div className="trust-item">
+            <strong>Dr. Hale</strong>
+            <span>Medical Director</span>
+          </div>
+          <div className="trust-item">
+            <strong>Elise Hart, RN</strong>
+            <span>Lead Aesthetic Nurse</span>
+          </div>
+          <div className="trust-item">
+            <strong>Tue–Sat</strong>
+            <span>10am – 6pm</span>
+          </div>
+          <div className="trust-item">
+            <strong>{SITE.phone}</strong>
+            <span>Call the studio</span>
+          </div>
+        </div>
+      </div>
+
+      <section className="section" id="treatments">
+        <div className="shell">
+          <div className="section-header">
+            <span className="eyebrow">Our Treatments</span>
+            <h2 className="section-title">Medical spa excellence</h2>
+            <p className="section-lead">
+              Signature pathways with real imagery, clear pricing, and AestheticBiz Points on
+              every visit — the depth patients expect from a top Midtown practice.
+            </p>
+          </div>
+          <div className="treatment-grid">
+            {TREATMENTS.map((t) => (
+              <article key={t.slug} className="treatment-card">
+                <div className="treatment-card-img">
+                  {t.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={t.image} alt={t.alt} loading="lazy" />
+                  ) : (
+                    <div className="img-placeholder" style={{ height: "100%", aspectRatio: "auto" }}>
+                      <span>{t.name}</span>
+                    </div>
+                  )}
+                </div>
+                <div className="treatment-card-body">
+                  <span className="treatment-category">{t.category}</span>
+                  <h3>{t.name}</h3>
+                  <p className="treatment-price">
+                    {t.price.includes("$") ? (
+                      <>
+                        From <em>{t.price.replace("From ", "")}</em>
+                      </>
+                    ) : (
+                      t.price
+                    )}
+                  </p>
+                  <span className="points-chip">Earn AestheticBiz Points</span>
+                  <div className="treatment-actions">
+                    <Link className="btn btn-navy btn-sm" href="/book">
+                      Book
+                    </Link>
+                    <Link
+                      className="btn btn-outline-dark btn-sm"
+                      href={`/treatments/${t.slug}`}
+                    >
+                      Details
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p style={{ marginTop: 28, textAlign: "center" }}>
+            <Link className="btn btn-outline-dark" href="/treatments">
+              View all treatments →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="section section-alt" id="shop">
+        <div className="shell">
+          <div className="section-header">
+            <span className="eyebrow">Extend your results</span>
+            <h2 className="section-title">Featured products</h2>
+            <p className="section-lead">
+              Retail belongs on the homepage — not behind a broken Store link. Demo products
+              patients can add to any visit.
+            </p>
+          </div>
+          <div className="product-grid">
+            {PRODUCTS.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/shop/products/${p.slug}`}
+                className="product-card"
+                style={{ display: "block", color: "inherit" }}
+              >
+                <div className="product-card-img">
+                  {p.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={p.image} alt={p.name} loading="lazy" />
+                  ) : (
+                    <div className="img-placeholder" style={{ height: "100%", aspectRatio: "auto" }}>
+                      <span>{p.name}</span>
+                    </div>
+                  )}
+                </div>
+                <div className="product-card-body">
+                  <span className="product-brand">{p.brand}</span>
+                  <h3>{p.name}</h3>
+                  <p className="product-price">
+                    {p.price} · <span className="points-chip">Earn points</span>
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <p style={{ marginTop: 28, textAlign: "center", display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link className="btn btn-navy" href="/shop">
+              Open shop →
+            </Link>
+            <Link className="btn btn-outline-dark" href="/gift-cards">
+              View gift cards →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
+          <div className="section-header center">
+            <span className="eyebrow">Member benefits</span>
+            <h2 className="section-title">Come back. Spend with confidence.</h2>
+          </div>
+          <div className="benefits-grid">
+            <article className="benefit-card">
+              <div className="benefit-icon">★</div>
+              <h3>AestheticBiz Points</h3>
+              <p>
+                Earn on every treatment and product. Redeem on your next visit. This is how
+                Midtown practices grow <strong>basket size</strong> — patients return and add
+                retail because loyalty feels rewarding, not pushy.
+              </p>
+              <Link className="btn btn-navy btn-sm" href="/rewards">
+                How points work →
+              </Link>
+            </article>
+            <article className="benefit-card">
+              <div className="benefit-icon">◇</div>
+              <h3>Gift Cards</h3>
+              <p>
+                A branded voucher experience — denominations, personal message, email delivery —
+                ready for holidays and referrals. Commerce that actually works.
+              </p>
+              <Link className="btn btn-navy btn-sm" href="/gift-cards">
+                Send a gift card →
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <DoctorTrust />
+
+      <section className="section section-dark">
+        <div className="shell" style={{ textAlign: "center" }}>
+          <span className="eyebrow">Skin clarity</span>
+          <h2 className="section-title">What does your skin really need?</h2>
+          <p className="section-lead" style={{ marginInline: "auto" }}>
+            A short assessment experience (preview) — guiding first-time Midtown patients toward
+            the right facial or peel before they book.
+          </p>
+          <Link className="btn btn-gold" href="/book">
+            Start with a consultation →
+          </Link>
+        </div>
+      </section>
+
+      <section className="section" id="reviews">
+        <div className="shell">
+          <div className="section-header center">
+            <span className="eyebrow">Patient reviews</span>
+            <h2 className="section-title">Real confidence. Real reviews.</h2>
+            <p className="reviews-aggregate">
+              <strong>Written + video</strong> <span>· Midtown patients · AestheticBiz board</span>
+            </p>
+          </div>
+          <div className="rev-grid">
+            {featuredReviews.map((review) => (
+              <PublicReviewCard key={review.id} review={review} showStructured={false} />
+            ))}
+          </div>
+          <p style={{ marginTop: 28, textAlign: "center", display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link className="btn btn-navy" href="/reviews">
+              View all patient reviews →
+            </Link>
+            <Link className="btn btn-outline-dark" href="/submit-review">
+              Leave a review
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="section section-alt" id="book-cta">
+        <div className="shell" style={{ display: "grid", gap: 40, alignItems: "start" }}>
+          <div>
+            <span className="eyebrow">Appointments</span>
+            <h2 className="section-title">Book inside AestheticBiz — not Square.</h2>
+            <p className="section-lead">
+              Custom appointment pages keep the patient in your brand, open the door to packages,
+              points, and retail upsells, and look like a US$10k practice.
+            </p>
+            <Link className="btn btn-navy" href="/book">
+              Open booking demo →
+            </Link>
+          </div>
+          <DemoForm
+            title="Request a consultation"
+            subtitle="Preview form · does not submit live"
+            submitLabel="Request consultation →"
+            alertMessage="Preview only — live platform emails the studio and creates a CRM lead."
+          >
+            <div className="form-row">
+              <label>Full name</label>
+              <input required placeholder="Your name" />
+            </div>
+            <div className="form-row">
+              <label>Phone</label>
+              <input required type="tel" placeholder="(347) …" />
+            </div>
+            <div className="form-row">
+              <label>Interest</label>
+              <select defaultValue="Lip Filler">
+                <option>Acne Treatment</option>
+                <option>Pigmentation Treatment</option>
+                <option>Lip Filler</option>
+                <option>Jaw & Chin Contouring</option>
+                <option>Excessive Sweating</option>
+                <option>Vitamin Drips</option>
+                <option>Weight Loss Programme</option>
+                <option>Varicose Veins</option>
+                <option>Not sure — consult</option>
+              </select>
+            </div>
+          </DemoForm>
+        </div>
+      </section>
+      <style>{`@media(min-width:900px){#book-cta .shell{grid-template-columns:1.1fr 0.9fr}}`}</style>
+
+      <section className="section" id="visit">
+        <div className="shell" style={{ display: "grid", gap: 28 }}>
+          <div>
+            <span className="eyebrow">Visit us</span>
+            <h2 className="section-title">{SITE.address}</h2>
+            <p className="section-lead">
+              {SITE.suite} · {SITE.hours} · {SITE.phone}
+            </p>
+          </div>
+          <iframe
+            title="AestheticBiz on Google Maps"
+            src={SITE.mapsEmbed}
+            style={{
+              width: "100%",
+              height: 360,
+              border: "1px solid var(--border)",
+              background: "#ddd",
+            }}
+            loading="lazy"
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </section>
+
+      <SiteFooter source="aestheticbiz-home" />
+    </>
   );
 }
