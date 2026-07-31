@@ -15,6 +15,17 @@ import {
 
 type Tab = "write" | "video";
 
+type ReviewFormState = {
+  name: string;
+  email: string;
+  city: string;
+  product: string;
+  rating: number;
+  headline: string;
+  answers: ReturnType<typeof emptyAnswers>;
+  permission: boolean;
+};
+
 export default function ReviewFormClient({
   initialSubject = "",
 }: {
@@ -25,7 +36,7 @@ export default function ReviewFormClient({
     options.find((o) => o.label === initialSubject)?.label || options[0]?.label || "";
 
   const [tab, setTab] = useState<Tab>("write");
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<ReviewFormState>({
     name: "",
     email: "",
     city: "",
@@ -409,7 +420,7 @@ function SubjectFields({
   ) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
   options: ReturnType<typeof getReviewSubjectOptions>;
   errors: Record<string, string>;
-  setForm: React.Dispatch<React.SetStateAction<any>>;
+  setForm: React.Dispatch<React.SetStateAction<ReviewFormState>>;
   setErrors: React.Dispatch<React.SetStateAction<Record<string, string>>>;
 }) {
   return (
@@ -419,7 +430,7 @@ function SubjectFields({
         <select
           value={form.product}
           onChange={(e) => {
-            setForm((p: any) => ({ ...p, product: e.target.value }));
+            setForm((p) => ({ ...p, product: e.target.value }));
             setErrors((p) => ({ ...p, product: "" }));
           }}
         >
