@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogoLockup } from "@/components/brand-logo-lockup";
 import { discoveryUrl, SITE } from "@/lib/site";
 
 type SiteFooterProps = {
@@ -30,8 +31,7 @@ export function SiteFooter({
       <div className="shell">
         <div className="footer-grid">
           <div className="footer-brand">
-            <div className="logo-main">{SITE.name}</div>
-            <div className="logo-sub">{SITE.tagline}</div>
+            <BrandLogoLockup />
             <p>
               Midtown Manhattan medical spa demo — facials, laser, peels, retail,
               gifts &amp; rewards on one Patient Revenue Platform.

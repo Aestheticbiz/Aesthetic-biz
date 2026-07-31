@@ -2809,3 +2809,219 @@ input, select, textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* Brand customizer (demo playground) */
+.logo-image {
+  display: block;
+  max-height: 44px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-launcher {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;
+  padding: 12px 18px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.brand-launcher:hover {
+  transform: translateY(-1px);
+  background: var(--navy-mid);
+}
+
+.brand-panel-root {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+}
+
+.brand-panel-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(15, 38, 71, 0.45);
+  cursor: pointer;
+}
+
+.brand-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(400px, 100vw);
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  animation: brand-panel-in 0.28s ease;
+}
+
+@keyframes brand-panel-in {
+  from { transform: translateX(16px); opacity: 0.6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.brand-panel-head {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 22px 22px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-panel-kicker {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-dark);
+  margin-bottom: 6px;
+}
+
+.brand-panel-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.brand-panel-sub {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.brand-panel-close {
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.brand-panel-body {
+  flex: 1;
+  overflow: auto;
+  padding: 18px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.brand-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.brand-field > span,
+.brand-field > legend {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.brand-field input[type="text"] {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  background: var(--canvas);
+}
+
+.brand-color-row {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.brand-color-row input[type="color"] {
+  width: 52px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+}
+
+.brand-font-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.brand-font-grid button {
+  border: 1px solid var(--border);
+  padding: 12px 10px;
+  text-align: left;
+  background: var(--canvas);
+  font-size: 15px;
+}
+
+.brand-font-grid button.active {
+  border-color: var(--navy);
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--navy);
+}
+
+.brand-logo-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brand-logo-preview {
+  max-height: 56px;
+  max-width: 100%;
+  object-fit: contain;
+  background: var(--canvas);
+  padding: 10px;
+  border: 1px solid var(--border);
+}
+
+.brand-logo-empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 14px;
+  border: 1px dashed var(--border);
+  background: var(--canvas);
+}
+
+.brand-logo-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.brand-panel-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 22px;
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .brand-launcher {
+    right: 12px;
+    bottom: 12px;
+  }
+}

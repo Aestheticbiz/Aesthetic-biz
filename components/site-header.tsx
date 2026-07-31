@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "@/lib/cart-context";
+import { useBrand } from "@/lib/brand-context";
 import { SITE } from "@/lib/site";
 
 const PATIENT_LINKS = [
@@ -25,6 +26,8 @@ export function SiteHeader({ variant = "patient" }: SiteHeaderProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const { cartCount } = useCart();
+  const { theme } = useBrand();
+  const brandName = theme.clinicName.trim() || SITE.name;
 
   const links =
     variant === "platform"
@@ -42,7 +45,12 @@ export function SiteHeader({ variant = "patient" }: SiteHeaderProps) {
     <header className="site-header">
       <div className="shell">
         <Link className="logo" href="/" onClick={() => setOpen(false)}>
-          <span className="logo-main">{SITE.name}</span>
+          {theme.logoDataUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={theme.logoDataUrl} alt={brandName} className="logo-image" />
+          ) : (
+            <span className="logo-main">{brandName}</span>
+          )}
           <span className="logo-sub">
             {variant === "platform" ? "Platform features" : SITE.tagline}
           </span>
