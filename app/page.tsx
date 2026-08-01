@@ -4,9 +4,17 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { DemoForm } from "@/components/demo-form";
 import PublicReviewCard from "@/components/reviews/PublicReviewCard";
+import ProductCard from "@/components/shop/ProductCard";
 import DoctorTrust from "@/components/staff/DoctorTrust";
+import { ScrollRail } from "@/components/ui/scroll-rail";
+import { ProductMedia } from "@/components/ui/image-placeholder";
 import { getFeaturedReviews } from "@/lib/reviews/queries";
-import { PRODUCTS, SITE, TREATMENTS } from "@/lib/site";
+import {
+  PRODUCTS,
+  TREATMENTS,
+  productPrimaryImage,
+} from "@/lib/catalog";
+import { SITE } from "@/lib/site";
 
 export default async function HomePage() {
   const featuredReviews = await getFeaturedReviews(3);
@@ -87,47 +95,29 @@ export default async function HomePage() {
               every visit — the depth patients expect from a top Midtown practice.
             </p>
           </div>
-          <div className="treatment-grid">
+          <ScrollRail label="Treatments">
             {TREATMENTS.map((t) => (
-              <article key={t.slug} className="treatment-card">
-                <div className="treatment-card-img">
-                  {t.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={t.image} alt={t.alt} loading="lazy" />
-                  ) : (
-                    <div className="img-placeholder" style={{ height: "100%", aspectRatio: "auto" }}>
-                      <span>{t.name}</span>
-                    </div>
-                  )}
+              <Link
+                key={t.slug}
+                href={`/treatments/${t.slug}`}
+                className="star-product-card star-treatment-card"
+              >
+                <div className="img-wrap">
+                  <ProductMedia src={t.image} alt={t.alt} aspect="4 / 3" />
+                  <div className="hover-bar">Read More</div>
                 </div>
-                <div className="treatment-card-body">
-                  <span className="treatment-category">{t.category}</span>
+                <div className="body">
+                  <p className="brand">{t.category}</p>
                   <h3>{t.name}</h3>
-                  <p className="treatment-price">
-                    {t.price.includes("$") ? (
-                      <>
-                        From <em>{t.price.replace("From ", "")}</em>
-                      </>
-                    ) : (
-                      t.price
-                    )}
-                  </p>
-                  <span className="points-chip">Earn AestheticBiz Points</span>
-                  <div className="treatment-actions">
-                    <Link className="btn btn-navy btn-sm" href="/book">
-                      Book
-                    </Link>
-                    <Link
-                      className="btn btn-outline-dark btn-sm"
-                      href={`/treatments/${t.slug}`}
-                    >
-                      Details
-                    </Link>
-                  </div>
+                  <p className="price">{t.priceFrom}</p>
                 </div>
-              </article>
+                <div className="star-points-bar">
+                  <span aria-hidden="true">★</span>
+                  <span>Earn AestheticBiz Points</span>
+                </div>
+              </Link>
             ))}
-          </div>
+          </ScrollRail>
           <p style={{ marginTop: 28, textAlign: "center" }}>
             <Link className="btn btn-outline-dark" href="/treatments">
               View all treatments →
@@ -146,34 +136,18 @@ export default async function HomePage() {
               patients can add to any visit.
             </p>
           </div>
-          <div className="product-grid">
+          <ScrollRail label="Featured products">
             {PRODUCTS.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/shop/products/${p.slug}`}
-                className="product-card"
-                style={{ display: "block", color: "inherit" }}
-              >
-                <div className="product-card-img">
-                  {p.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={p.image} alt={p.name} loading="lazy" />
-                  ) : (
-                    <div className="img-placeholder" style={{ height: "100%", aspectRatio: "auto" }}>
-                      <span>{p.name}</span>
-                    </div>
-                  )}
-                </div>
-                <div className="product-card-body">
-                  <span className="product-brand">{p.brand}</span>
-                  <h3>{p.name}</h3>
-                  <p className="product-price">
-                    {p.price} · <span className="points-chip">Earn points</span>
-                  </p>
-                </div>
-              </Link>
+              <ProductCard
+                key={p.id}
+                name={p.name}
+                slug={p.slug}
+                brand={p.brand}
+                price={p.price}
+                imageUrl={productPrimaryImage(p)}
+              />
             ))}
-          </div>
+          </ScrollRail>
           <p style={{ marginTop: 28, textAlign: "center", display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link className="btn btn-navy" href="/shop">
               Open shop →

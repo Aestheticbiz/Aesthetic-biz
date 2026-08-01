@@ -467,6 +467,91 @@
   aspect-ratio: 4 / 3;
 }
 
+/* Star Lights–style loyalty strip on treatment cards */
+.star-points-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 12px 14px;
+  background: #f0f1f4;
+  border-top: 1px solid #e2e2e6;
+  color: var(--navy, #0f2647);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.star-points-bar span:first-child {
+  color: var(--gold, #c8a882);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.star-treatment-card {
+  min-height: 100%;
+}
+
+/* Homepage horizontal rail (treatments / products) */
+.scroll-rail {
+  position: relative;
+}
+
+.scroll-rail-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.scroll-rail-controls button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e2e2e6;
+  background: #fff;
+  color: var(--navy, #0f2647);
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.scroll-rail-controls button:hover {
+  border-color: var(--accent, #939eba);
+  background: #f7f7f8;
+}
+
+.scroll-rail-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-rail-track > * {
+  flex: 0 0 min(280px, 78vw);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 900px) {
+  .scroll-rail-track > * {
+    flex-basis: calc((100% - 60px) / 4);
+  }
+}
+
+.scroll-rail-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-rail-track::-webkit-scrollbar-thumb {
+  background: #c5c9d4;
+  border-radius: 3px;
+}
+
 .star-hub-header {
   display: flex;
   flex-direction: column;

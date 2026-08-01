@@ -77,14 +77,16 @@ export function deriveBrandPalette(hex: string) {
   };
 
   const mid = mix(clamp(r + 40, 0, 255), clamp(g + 40, 0, 255), clamp(b + 50, 0, 255), 0.35);
-  const accent = mix(147, 158, 186, 0.55);
-  const gold = mix(200, 168, 130, 0.45);
+  // Accent can lean toward brand; gold stays warm metal — never mixed into navy
+  // (mixing gold with primary made CTAs/type look trapped under blue).
+  const accent = mix(147, 158, 186, 0.35);
 
   return {
     navy: `#${full}`,
     navyMid: mid,
     accent,
-    gold,
+    gold: "#C8A882",
+    goldDark: "#A8896A",
   };
 }
 
@@ -102,6 +104,7 @@ export function applyBrandTheme(theme: BrandTheme) {
   root.style.setProperty("--navy-mid", palette.navyMid);
   root.style.setProperty("--accent", palette.accent);
   root.style.setProperty("--gold", palette.gold);
+  root.style.setProperty("--gold-dark", palette.goldDark);
   root.style.setProperty("--font-display", font.display);
   root.style.setProperty("--font-body", font.body);
 

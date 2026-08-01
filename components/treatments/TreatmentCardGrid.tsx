@@ -48,6 +48,10 @@ export default function TreatmentCardGrid({
               <h3>{t.name}</h3>
               <p className="price">{t.priceFrom}</p>
             </div>
+            <div className="star-points-bar">
+              <span aria-hidden="true">★</span>
+              <span>Earn AestheticBiz Points</span>
+            </div>
           </Link>
         ))}
       </div>
