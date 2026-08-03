@@ -59,6 +59,10 @@ export default function ReviewsSectionContent({
           <h2 className="section-title">{sectionConfig.label}</h2>
           <p className="section-lead">{sectionConfig.description}</p>
         </header>
+        <p className="rev-demo-banner" role="note">
+          <strong>Demo videos only.</strong> These YouTube embeds show how video reviews appear on
+          the board. They are placeholders — not AestheticBiz patients.
+        </p>
         {catalog.videos.length === 0 ? (
           <p className="rev-empty">No video reviews yet.</p>
         ) : (

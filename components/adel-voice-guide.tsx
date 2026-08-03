@@ -164,7 +164,7 @@ COMMERCE (sell more than chair time)
 - Payments & deposits — Package.
 
 RETAIN (fans, not one-visits)
-- Reviews board & video reviews — Live (/reviews).
+- Reviews board & video reviews — Live (/reviews). Homepage samples plus clinic, treatment, skincare and labelled demo YouTube videos. FAQ on that page explains why reviews and each platform component matter for the bottom line toward 2030.
 - Automated review requests — Package.
 - Reactivation campaigns — Next phase.
 - Admin operations console (bookings, inbox, surveys, voice log, payments, traffic) — Package.

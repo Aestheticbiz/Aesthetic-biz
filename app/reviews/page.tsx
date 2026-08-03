@@ -6,6 +6,7 @@ import ReviewsCategoryNav from "@/components/reviews/ReviewsCategoryNav";
 import ReviewsSectionContent, {
   type SubjectSpotlight,
 } from "@/components/reviews/ReviewsSectionContent";
+import { ReviewsBusinessFaq } from "@/components/reviews/reviews-business-faq";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PRODUCTS, TREATMENTS, productPrimaryImage } from "@/lib/catalog";
@@ -77,16 +78,17 @@ export default async function ReviewsPage({ searchParams }: Props) {
         <section className="section rev-hero-band">
           <div className="shell">
             <span className="eyebrow">Patient reviews</span>
-            <h1 className="section-title">What patients say</h1>
+            <h1 className="section-title">Real confidence. Real reviews.</h1>
             <p className="section-lead">
-              Verified-style clinic, treatment, skincare, and video reviews — the social proof
-              engine every AestheticBiz demo should show prospects.
+              Written + video · Midtown patients · AestheticBiz board — the social proof engine
+              every practice needs when Maps traffic arrives on their site.
             </p>
             <p className="rev-avg" style={{ marginTop: 12 }}>
               {catalog.averageRating.toFixed(1)}★ average · {catalog.totalReviewCount} reviews
+              <span className="rev-sample-hint"> · Includes labelled demo samples</span>
             </p>
             <div style={{ marginTop: 24, display: "flex", flexWrap: "wrap", gap: 12 }}>
-              <Link className="btn btn-gold" href="/submit-review">
+              <Link className="btn btn-gold" href="#leave-review">
                 Leave a patient review →
               </Link>
               <Link className="btn btn-outline-dark" href="/book">
@@ -111,6 +113,30 @@ export default async function ReviewsPage({ searchParams }: Props) {
                 spotlight={spotlight}
                 subjectMeta={subjectMeta}
               />
+            </div>
+          </div>
+        </section>
+
+        <ReviewsBusinessFaq />
+
+        <section className="section" id="leave-review">
+          <div className="shell rev-submit-panel">
+            <div>
+              <span className="eyebrow">Submit a review</span>
+              <h2 className="section-title">Leave a patient review</h2>
+              <p className="section-lead">
+                Written reviews or a short video. On a live clinic build, submissions create a CRM
+                lead and can trigger review-request workflows. This demo shows the patient-facing
+                path prospects expect.
+              </p>
+            </div>
+            <div className="rev-submit-actions">
+              <Link className="btn btn-navy" href="/submit-review">
+                Write a review →
+              </Link>
+              <Link className="btn btn-outline-dark" href="/submit-review?tab=video">
+                Record a video review
+              </Link>
             </div>
           </div>
         </section>

@@ -2573,6 +2573,125 @@ input, select, textarea {
   margin-bottom: 28px;
 }
 
+.rev-sample-hint {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.rev-demo-banner {
+  margin: 0 0 24px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--gold);
+  background: rgba(200, 168, 130, 0.12);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.rev-demo-banner strong {
+  color: var(--navy);
+}
+
+.rev-video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 12px 0 8px;
+  background: #0a1628;
+  overflow: hidden;
+}
+
+.rev-video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.rev-demo-note {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--accent);
+  line-height: 1.45;
+}
+
+.rev-faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.rev-faq-item {
+  padding: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+.rev-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--navy);
+}
+
+.rev-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.rev-faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.rev-faq-item[open] summary::after {
+  content: "–";
+}
+
+.rev-faq-item p {
+  margin: 0;
+  padding: 0 20px 18px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.rev-faq-more {
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.rev-faq-more a {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.rev-submit-panel {
+  display: grid;
+  gap: 28px;
+  padding: 36px 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 800px) {
+  .rev-submit-panel {
+    grid-template-columns: 1.4fr auto;
+    align-items: center;
+  }
+}
+
+.rev-submit-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .rev-empty {
   padding: 36px 20px;
   text-align: center;

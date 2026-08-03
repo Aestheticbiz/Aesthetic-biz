@@ -1,5 +1,6 @@
 import StructuredReviewBody from "@/components/reviews/StructuredReviewBody";
 import { DEFAULT_REVIEW_AVATAR } from "@/lib/reviews/constants";
+import { youtubeEmbedUrl } from "@/lib/reviews/youtube";
 import type { DisplayReview, ReviewAnswer } from "@/lib/reviews/types";
 
 export type TestimonialCardProps = {
@@ -63,22 +64,42 @@ export default function ReviewTestimonialCard({
   const bodyText = quote ?? text;
   const hasStructured = showStructured && answers && answers.length > 0;
   const avatarSrc = avatarUrl || DEFAULT_REVIEW_AVATAR;
+  const ytEmbed = videoUrl ? youtubeEmbedUrl(videoUrl) : null;
+  const isDemoVideo =
+    Boolean(isVideo) &&
+    (/demo/i.test(headline || "") || /demo/i.test(tagLine || "") || /sample/i.test(tagLine || ""));
 
   return (
     <article className={`rev-card ${className}`.trim()}>
       <div className="rev-card-top">
         <StarRow rating={rating} />
-        {isVideo ? <span className="rev-video-badge">Video</span> : null}
+        {isVideo ? (
+          <span className="rev-video-badge">{isDemoVideo ? "Demo video" : "Video"}</span>
+        ) : null}
       </div>
 
       {headline ? <h3 className="rev-headline">{headline}</h3> : null}
 
-      {isVideo && videoUrl ? (
+      {isVideo && ytEmbed ? (
+        <div className="rev-video-embed">
+          <iframe
+            src={ytEmbed}
+            title={headline || `Video review by ${name}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      ) : isVideo && videoUrl ? (
         <video src={videoUrl} controls playsInline className="rev-video" />
       ) : hasStructured ? (
         <StructuredReviewBody answers={answers!} compact />
       ) : bodyText ? (
         <blockquote className="rev-quote">&ldquo;{bodyText}&rdquo;</blockquote>
+      ) : null}
+
+      {isDemoVideo ? (
+        <p className="rev-demo-note">Demo placeholder — not a real AestheticBiz patient review.</p>
       ) : null}
 
       <footer className="rev-footer">

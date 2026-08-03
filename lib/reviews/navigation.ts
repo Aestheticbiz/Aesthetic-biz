@@ -31,7 +31,8 @@ export const REVIEW_SECTIONS: ReviewSection[] = [
   {
     id: "videos",
     label: "Video reviews",
-    description: "Short video patient stories — written reviews live in the other tabs.",
+    description:
+      "Short video stories. YouTube embeds below are labelled DEMO samples — not real AestheticBiz patients.",
   },
 ];
 

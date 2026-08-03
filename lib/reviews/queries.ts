@@ -3,32 +3,8 @@ import path from "path";
 import { PRODUCTS, TREATMENTS } from "@/lib/catalog";
 import { DEFAULT_REVIEW_AVATAR } from "./constants";
 import { buildReviewCatalog, type ReviewCatalog } from "./navigation";
+import { REVIEW_SEED, type SeedReview } from "./seed-data";
 import type { DisplayReview, ReviewAnswer, ReviewBlock, ReviewScope } from "./types";
-
-type SeedFile = {
-  general?: SeedReview[];
-  treatments?: Record<string, SeedReview[]>;
-  products?: Record<string, SeedReview[]>;
-  videos?: SeedReview[];
-};
-
-type SeedReview = {
-  id: string;
-  name: string;
-  location: string;
-  date: string;
-  rating: number;
-  headline?: string;
-  text?: string;
-  answers?: ReviewAnswer[];
-  videoUrl?: string;
-  isVideo?: boolean;
-  scope: ReviewScope;
-  treatmentSlug?: string | null;
-  productSlug?: string | null;
-  productLabel?: string;
-  avatarUrl?: string;
-};
 
 type PendingReview = SeedReview & {
   email?: string;
@@ -38,7 +14,6 @@ type PendingReview = SeedReview & {
 };
 
 const dataDir = () => path.join(process.cwd(), "data");
-const seedPath = () => path.join(dataDir(), "reviews.json");
 const pendingPath = () => path.join(dataDir(), "pending-reviews.json");
 
 function normalize(r: SeedReview, source: DisplayReview["source"]): DisplayReview {
@@ -72,23 +47,30 @@ async function readJson<T>(file: string, fallback: T): Promise<T> {
 }
 
 export async function loadAllApprovedReviews(): Promise<DisplayReview[]> {
-  const seed = await readJson<SeedFile>(seedPath(), {});
+  // Bundled seed ships with the Next build (Vercel-safe). Pending submissions still come from disk.
   const pending = await readJson<PendingReview[]>(pendingPath(), []);
   const out: DisplayReview[] = [];
+  const seen = new Set<string>();
 
-  for (const r of seed.general ?? []) out.push(normalize(r, "seed"));
-  for (const list of Object.values(seed.treatments ?? {})) {
-    for (const r of list) out.push(normalize(r, "seed"));
+  const pushUnique = (r: SeedReview, source: DisplayReview["source"]) => {
+    if (seen.has(r.id)) return;
+    seen.add(r.id);
+    out.push(normalize(r, source));
+  };
+
+  for (const r of REVIEW_SEED.general) pushUnique(r, "seed");
+  for (const list of Object.values(REVIEW_SEED.treatments)) {
+    for (const r of list) pushUnique(r, "seed");
   }
-  for (const list of Object.values(seed.products ?? {})) {
-    for (const r of list) out.push(normalize(r, "seed"));
+  for (const list of Object.values(REVIEW_SEED.products)) {
+    for (const r of list) pushUnique(r, "seed");
   }
-  for (const r of seed.videos ?? []) out.push(normalize(r, "seed"));
+  for (const r of REVIEW_SEED.videos) pushUnique(r, "seed");
 
   // Demo: show pending submissions immediately so the form feels live
   for (const r of pending) {
     if (r.approved === false) continue;
-    out.push(normalize(r, "pending"));
+    pushUnique(r, "pending");
   }
 
   return out;
