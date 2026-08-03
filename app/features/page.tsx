@@ -117,8 +117,7 @@ export default function FeaturesPage() {
             <span className="eyebrow">Tool stack reality</span>
             <h2 className="section-title">What clinics usually stitch together</h2>
             <p className="section-lead">
-              Not a $1,500/mo agency SaaS comparison. The quiet cost is disconnected tools plus empty
-              chairs and unsold retail.
+              The quiet cost is disconnected tools plus empty chairs and unsold retail.
             </p>
           </div>
           <div className="biz-replaces-table">

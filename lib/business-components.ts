@@ -242,5 +242,5 @@ export const REPLACES_ROWS = [
 export const PACKAGE_INVESTMENT = {
   total: "US$10,000",
   split: "50% deposit · 50% pre-launch",
-  note: "One Patient Revenue Platform for a single clinic — not a $97/mo agency SaaS. Scope confirmed on Discovery Call.",
+  note: "One Patient Revenue Platform for a single clinic. Scope confirmed on Discovery Call.",
 } as const;
