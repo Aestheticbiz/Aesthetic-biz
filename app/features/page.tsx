@@ -1,155 +1,183 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { discoveryUrl } from "@/lib/site";
+import {
+  BUSINESS_STAGES,
+  PACKAGE_INVESTMENT,
+  REPLACES_ROWS,
+  STATUS_LABEL,
+  type ComponentStatus,
+} from "@/lib/business-components";
 import { PreviewBar } from "@/components/preview-bar";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Platform Features",
+  title: "Business Platform Components",
   description:
-    "What the US$10,000 Patient Revenue Platform includes — booking, gifts, loyalty, retail, and a site worthy of Madison Avenue.",
+    "The Patient Revenue Platform as a business system — capture, convert, commerce and retain. What is live in the AestheticBiz demo, what ships in the package, and what comes next.",
 };
+
+function StatusPill({ status }: { status: ComponentStatus }) {
+  return <span className={`biz-status biz-status-${status}`}>{STATUS_LABEL[status]}</span>;
+}
 
 export default function FeaturesPage() {
   return (
     <>
       <PreviewBar>
-        <strong>For management</strong> · Platform feature breakdown ·{" "}
-        <Link href="/audit">Full audit</Link> · <Link href="/">Site mockup</Link>
+        <strong>For management</strong> · Business components ·{" "}
+        <Link href="/audit">Audit</Link> · <Link href="/biz">Owner landing</Link> ·{" "}
+        <Link href="/">Patient demo</Link>
       </PreviewBar>
       <SiteHeader variant="platform" />
 
       <section className="page-hero">
         <div className="shell">
           <span className="eyebrow">Patient Revenue Platform</span>
-          <h1>Not a refresh — a Midtown revenue system</h1>
+          <h1>A business operating system for one clinic — not another brochure site</h1>
           <p>
-            Treatments with imagery, featured retail, custom booking, gift cards, loyalty points,
-            and a site worthy of Madison Avenue prices — one Patient Revenue Platform.
+            GoHighLevel sells an all-in-one stack to agencies. We sell a tighter system to aesthetic
+            practices: website, booking, retail, loyalty, reviews, CRM follow-up and operations —
+            built around how a Midtown (or Main Street) clinic actually makes money.
           </p>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-alt">
         <div className="shell">
-          <div className="compare-grid">
-            <div className="compare-col before">
-              <h3>What most medspas have today</h3>
-              <ul>
-                <li>Brochure site / Squarespace template</li>
-                <li>Slow mobile PageSpeed · heavy home pages</li>
-                <li>Thin titles · weak Google snippets</li>
-                <li>Store &amp; Gift Cards links that 404</li>
-                <li>Booking exits to Square / third-party</li>
-                <li>No on-site loyalty / points story</li>
-                <li>Products not featured as homepage revenue</li>
-                <li>Maps reputation stronger than website experience</li>
-              </ul>
-            </div>
-            <div className="compare-col after">
-              <h3>What this US$10k platform delivers</h3>
-              <ul>
-                <li>Star-class Patient Revenue Platform</li>
-                <li>Speed-first build · target 90+ mobile</li>
-                <li>One clear title · full meta · question-led pages</li>
-                <li>Working gift cards + featured shop on home</li>
-                <li>Custom on-brand booking (demoed here)</li>
-                <li>AestheticBiz Points for return visits &amp; basket size</li>
-                <li>Treatment imagery + retail upsell path</li>
-                <li>Website as brand ambassador for Maps traffic</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="feature-cards">
-            <article className="feature-card">
-              <div className="feature-card-icon">📅</div>
-              <h3>Custom booking</h3>
-              <p>
-                On-brand appointment wizard — treatment → date → time → details. Patients never
-                leave for Square.
-              </p>
-              <Link href="/book">Open booking demo →</Link>
-            </article>
-            <article className="feature-card">
-              <div className="feature-card-icon">🎁</div>
-              <h3>Gift cards</h3>
-              <p>
-                Denominations, message, email delivery preview — holiday and referral ready.
-              </p>
-              <Link href="/gift-cards">Open gift cards →</Link>
-            </article>
-            <article className="feature-card">
-              <div className="feature-card-icon">★</div>
-              <h3>AestheticBiz Points</h3>
-              <p>
-                Earn on treatments &amp; products; redeem on return. Designed to raise repeat
-                visits and basket size.
-              </p>
-              <Link href="/rewards">Open rewards →</Link>
-            </article>
-            <article className="feature-card">
-              <div className="feature-card-icon">🛒</div>
-              <h3>Featured retail</h3>
-              <p>
-                Homepage product grid using real clinical price points — not buried commerce.
-              </p>
-              <Link href="/#shop">See homepage shop →</Link>
-            </article>
-            <article className="feature-card">
-              <div className="feature-card-icon">✦</div>
-              <h3>Treatment imagery</h3>
-              <p>
-                Visual treatment cards with from-prices and points chips — the opposite of
-                accordion-only services.
-              </p>
-              <Link href="/#treatments">See treatments →</Link>
-            </article>
-            <article className="feature-card">
-              <div className="feature-card-icon">◎</div>
-              <h3>Voice concierge</h3>
-              <p>
-                After-hours interest capture — demoed on request / launch scope (Clara pattern).
-              </p>
-              <Link href="/audit">Why the upgrade →</Link>
-            </article>
-          </div>
-
-          <div className="section-header" style={{ marginTop: 24 }}>
-            <span className="eyebrow">Investment</span>
-            <h2 className="section-title">US$10,000 Patient Revenue Platform</h2>
+          <div className="section-header">
+            <span className="eyebrow">How to read this page</span>
+            <h2 className="section-title">Live · Package · Next phase</h2>
             <p className="section-lead">
-              50% deposit to start · 50% pre-launch. Built to rank, book, sell retail, and present
-              your practice as a premium aesthetic destination.
+              Adel and this page tell the same story. We do not pretend phone Voice AI is live when
+              carrier verification blocked it. You get honesty with the investment.
             </p>
+          </div>
+          <div className="biz-legend">
+            <div>
+              <StatusPill status="live" />
+              <p>Working in this AestheticBiz demo — click through and try it.</p>
+            </div>
+            <div>
+              <StatusPill status="package" />
+              <p>Included when CRM Solutions builds your Patient Revenue Platform.</p>
+            </div>
+            <div>
+              <StatusPill status="later" />
+              <p>Roadmap / phase two — named so you know what is coming, not vapor.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer className="site-footer">
+      {BUSINESS_STAGES.map((stage) => (
+        <section
+          key={stage.id}
+          className="section"
+          id={stage.id}
+          data-section={stage.label}
+        >
+          <div className="shell">
+            <div className="section-header">
+              <span className="eyebrow">{stage.label}</span>
+              <h2 className="section-title">{stage.title}</h2>
+              <p className="section-lead">{stage.lead}</p>
+            </div>
+            <ul className="biz-component-list">
+              {stage.components.map((item) => (
+                <li key={item.name}>
+                  <div className="biz-component-top">
+                    <h3>{item.name}</h3>
+                    <StatusPill status={item.status} />
+                  </div>
+                  <p>{item.outcome}</p>
+                  <div className="biz-component-meta">
+                    {item.replaces && (
+                      <span>
+                        Replaces / reduces: <em>{item.replaces}</em>
+                      </span>
+                    )}
+                    {item.demoHref && (
+                      <Link href={item.demoHref}>
+                        {item.status === "live" ? "Open demo →" : "See related →"}
+                      </Link>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ))}
+
+      <section className="section section-alt" id="replaces">
         <div className="shell">
-          <div
-            className="footer-bottom"
-            style={{
-              border: 0,
-              paddingTop: 0,
-              flexDirection: "column",
-              gap: 16,
-              alignItems: "flex-start",
-            }}
-          >
-            <span>Prepared by CRM Solutions · Ignatius Ackermann</span>
-            <a
-              className="btn btn-gold"
-              href={discoveryUrl("aestheticbiz-features")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a Discovery Call →
-            </a>
+          <div className="section-header">
+            <span className="eyebrow">Tool stack reality</span>
+            <h2 className="section-title">What clinics usually stitch together</h2>
+            <p className="section-lead">
+              Not a $1,500/mo agency SaaS comparison. The quiet cost is disconnected tools plus empty
+              chairs and unsold retail.
+            </p>
+          </div>
+          <div className="biz-replaces-table">
+            <div className="biz-replaces-head">
+              <span>Platform capability</span>
+              <span>Typical patchwork</span>
+              <span>Rough cost of the patchwork</span>
+              <span>Patient Revenue Platform</span>
+            </div>
+            {REPLACES_ROWS.map((row) => (
+              <div key={row.feature} className="biz-replaces-row">
+                <strong>{row.feature}</strong>
+                <span>{row.other}</span>
+                <span>{row.otherCost}</span>
+                <span className="biz-replaces-yes">Included in build</span>
+              </div>
+            ))}
+            <div className="biz-replaces-foot">
+              <div>
+                <span>Investment</span>
+                <strong>{PACKAGE_INVESTMENT.total}</strong>
+                <p>{PACKAGE_INVESTMENT.split}</p>
+              </div>
+              <p>{PACKAGE_INVESTMENT.note}</p>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      <section className="section" id="adel">
+        <div className="shell adel-features-panel">
+          <div>
+            <span className="eyebrow">Adel</span>
+            <h2 className="section-title">Your guide to the business components</h2>
+            <p className="section-lead">
+              Adel specialises in this page — how each component affects the diary, the till and
+              retention. She does not advise on treatments. She will not claim phone answering is
+              live until it is.
+            </p>
+            <p className="section-lead" style={{ marginTop: 0 }}>
+              Use the Adel launcher (bottom right) and ask: “Walk me through Capture” or “What is
+              still next phase?”
+            </p>
+          </div>
+          <div className="adel-features-aside">
+            <p>
+              <strong>On-site voice</strong> — live when <code>GEMINI_API_KEY</code> is set.
+            </p>
+            <p>
+              <strong>Phone Voice AI</strong> — next phase (verification not completed).
+            </p>
+            <Link className="btn btn-navy" href={discoveryUrl("aestheticbiz-features")}>
+              Book a Discovery Call →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter source="aestheticbiz-features" />
     </>
   );
 }

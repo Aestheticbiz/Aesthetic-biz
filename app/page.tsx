@@ -3,6 +3,8 @@ import { DefaultPreviewBar } from "@/components/preview-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { DemoForm } from "@/components/demo-form";
+import { PerksSection } from "@/components/home/perks-section";
+import { SkinSurveyCta } from "@/components/home/skin-survey-cta";
 import PublicReviewCard from "@/components/reviews/PublicReviewCard";
 import ProductCard from "@/components/shop/ProductCard";
 import DoctorTrust from "@/components/staff/DoctorTrust";
@@ -159,55 +161,11 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell">
-          <div className="section-header center">
-            <span className="eyebrow">Member benefits</span>
-            <h2 className="section-title">Come back. Spend with confidence.</h2>
-          </div>
-          <div className="benefits-grid">
-            <article className="benefit-card">
-              <div className="benefit-icon">★</div>
-              <h3>AestheticBiz Points</h3>
-              <p>
-                Earn on every treatment and product. Redeem on your next visit. This is how
-                Midtown practices grow <strong>basket size</strong> — patients return and add
-                retail because loyalty feels rewarding, not pushy.
-              </p>
-              <Link className="btn btn-navy btn-sm" href="/rewards">
-                How points work →
-              </Link>
-            </article>
-            <article className="benefit-card">
-              <div className="benefit-icon">◇</div>
-              <h3>Gift Cards</h3>
-              <p>
-                A branded voucher experience — denominations, personal message, email delivery —
-                ready for holidays and referrals. Commerce that actually works.
-              </p>
-              <Link className="btn btn-navy btn-sm" href="/gift-cards">
-                Send a gift card →
-              </Link>
-            </article>
-          </div>
-        </div>
-      </section>
+      <PerksSection />
 
       <DoctorTrust />
 
-      <section className="section section-dark">
-        <div className="shell" style={{ textAlign: "center" }}>
-          <span className="eyebrow">Skin clarity</span>
-          <h2 className="section-title">What does your skin really need?</h2>
-          <p className="section-lead" style={{ marginInline: "auto" }}>
-            A short assessment experience (preview) — guiding first-time Midtown patients toward
-            the right facial or peel before they book.
-          </p>
-          <Link className="btn btn-gold" href="/book">
-            Start with a consultation →
-          </Link>
-        </div>
-      </section>
+      <SkinSurveyCta />
 
       <section className="section" id="reviews">
         <div className="shell">

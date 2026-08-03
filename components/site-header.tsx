@@ -33,6 +33,7 @@ export function SiteHeader({ variant = "patient" }: SiteHeaderProps) {
     variant === "platform"
       ? [
           { href: "/", label: "Mockup" },
+          { href: "/biz", label: "For owners" },
           { href: "/audit", label: "Audit" },
           { href: "/treatments", label: "Treatments" },
           { href: "/shop", label: "Shop" },

@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 
-/** Floating entry point → dedicated customizer page (room to grow options). */
+/** Floating entry → brand customizer page for curious clinic owners. */
 export function BrandCustomizer() {
   return (
     <Link href="/customizer" className="brand-launcher">
-      Make it yours
+      Customizer
     </Link>
   );
 }

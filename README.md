@@ -16,6 +16,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | Route | Purpose |
 |-------|---------|
 | `/` | Full medspa homepage |
+| `/biz` | Owner campaign landing (outreach / train story → platform) |
 | `/book` | Custom booking wizard |
 | `/gift-cards` | Gift card commerce demo |
 | `/rewards` | AestheticBiz Points |

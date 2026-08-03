@@ -1,12 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { SITE } from "@/lib/site";
 
-const DENOMS = [50, 100, 150, 250, 500];
+const DENOMS = [100, 250, 500, 1000];
 
 export function GiftCardForm() {
-  const [amount, setAmount] = useState(50);
+  const searchParams = useSearchParams();
+  const [amount, setAmount] = useState(250);
+
+  useEffect(() => {
+    const raw = searchParams.get("amount");
+    if (!raw) return;
+    const parsed = Number(raw);
+    if (DENOMS.includes(parsed)) setAmount(parsed);
+  }, [searchParams]);
   const [to, setTo] = useState("");
   const [from, setFrom] = useState("");
   const [msg, setMsg] = useState("");

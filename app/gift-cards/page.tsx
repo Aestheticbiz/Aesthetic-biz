@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { GiftCardForm } from "@/components/gift-card-form";
 import { PreviewBar } from "@/components/preview-bar";
 import { SiteFooter } from "@/components/site-footer";
@@ -31,7 +32,9 @@ export default function GiftCardsPage() {
       </section>
 
       <section className="section">
-        <GiftCardForm />
+        <Suspense fallback={<div className="shell">Loading gift options…</div>}>
+          <GiftCardForm />
+        </Suspense>
       </section>
 
       <SiteFooter

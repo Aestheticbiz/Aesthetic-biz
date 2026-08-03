@@ -1,0 +1,1057 @@
+/* /biz — owner campaign landing (scoped; does not alter homepage) */
+
+.biz-page {
+  --biz-ink: #0a1628;
+  --biz-rail: #c8a882;
+  --biz-mist: rgba(247, 247, 248, 0.72);
+  --biz-fog: rgba(247, 247, 248, 0.48);
+  background: var(--biz-ink);
+  color: #f2efe8;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.biz-page a:focus-visible,
+.biz-page button:focus-visible {
+  outline: 2px solid var(--biz-rail);
+  outline-offset: 3px;
+}
+
+.biz-top {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: 22px 0;
+}
+
+.biz-top .biz-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #f2efe8;
+}
+
+.biz-top .biz-mark strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.biz-top .biz-mark span {
+  color: var(--biz-rail);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.biz-top-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.biz-top-links a {
+  color: var(--biz-mist);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.biz-top-links a.biz-top-cta {
+  padding: 10px 16px;
+  background: var(--biz-rail);
+  color: var(--biz-ink);
+  font-weight: 600;
+}
+
+.biz-top-links a.biz-top-cta:hover {
+  background: #d4b896;
+}
+
+/* Hero — one full-bleed composition */
+.biz-hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  padding: clamp(120px, 18vh, 160px) 0 clamp(56px, 8vh, 88px);
+  isolation: isolate;
+}
+
+.biz-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.biz-hero-media img {
+  object-fit: cover;
+  object-position: 55% 45%;
+  transform: scale(1.04);
+  animation: biz-ken 18s ease-out both;
+}
+
+.biz-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(7, 16, 29, 0.92) 0%,
+      rgba(7, 16, 29, 0.78) 38%,
+      rgba(10, 22, 40, 0.45) 68%,
+      rgba(10, 22, 40, 0.55) 100%
+    ),
+    linear-gradient(180deg, rgba(7, 16, 29, 0.35) 0%, rgba(7, 16, 29, 0.15) 40%, rgba(7, 16, 29, 0.88) 100%);
+}
+
+.biz-hero-shade::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 34%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 168, 130, 0.55), transparent);
+  animation: biz-rail 7s ease-in-out infinite;
+}
+
+@keyframes biz-ken {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes biz-rail {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(-3%);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateX(3%);
+  }
+}
+
+.biz-hero-inner {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.biz-eyebrow {
+  margin: 0 0 18px;
+  color: var(--biz-rail);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.biz-hero .biz-eyebrow {
+  animation: biz-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.biz-eyebrow-dark {
+  margin-bottom: 22px;
+}
+
+.biz-hero h1 {
+  margin: 0 0 20px;
+  display: grid;
+  gap: 0.18em;
+  max-width: min(34ch, 100%);
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #f7f4ec;
+  animation: biz-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+.biz-h1-line {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .biz-h1-line {
+    white-space: nowrap;
+  }
+}
+
+.biz-hero-lede {
+  margin: 0 0 30px;
+  max-width: 44ch;
+  color: var(--biz-mist);
+  font-size: clamp(1.05rem, 2.2vw, 1.22rem);
+  line-height: 1.6;
+  animation: biz-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+
+.biz-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  animation: biz-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+@keyframes biz-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+.biz-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.biz-btn-primary {
+  background: var(--biz-rail);
+  color: var(--biz-ink);
+}
+
+.biz-btn-primary:hover {
+  background: #d8b896;
+}
+
+.biz-btn-ghost {
+  border: 1px solid rgba(242, 239, 232, 0.35);
+  color: #f2efe8;
+}
+
+.biz-btn-ghost:hover {
+  border-color: var(--biz-rail);
+  color: var(--biz-rail);
+}
+
+.biz-btn-dark {
+  background: var(--navy);
+  color: #f2efe8;
+}
+
+.biz-btn-dark:hover {
+  background: var(--navy-mid);
+}
+
+.biz-btn-outline {
+  border: 1px solid var(--navy);
+  color: var(--navy);
+}
+
+.biz-btn-outline:hover {
+  background: var(--navy);
+  color: #f2efe8;
+}
+
+/* Story */
+.biz-section {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(72px, 12vw, 120px) 0;
+}
+
+.biz-story {
+  display: grid;
+  gap: 28px;
+  max-width: 62ch;
+}
+
+.biz-story h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #f7f4ec;
+}
+
+.biz-story p {
+  color: var(--biz-mist);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.biz-story p strong {
+  color: #f7f4ec;
+  font-weight: 600;
+}
+
+.biz-cut {
+  margin-top: 8px;
+  padding: 28px 0 0;
+  border-top: 1px solid rgba(200, 168, 130, 0.35);
+  color: #f0e6d4;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* Overheard patient questions — read slowly, one per line */
+.biz-quotes {
+  display: grid;
+  gap: 0;
+  margin: 4px 0;
+  padding-left: clamp(18px, 3vw, 28px);
+  border-left: 1px solid rgba(200, 168, 130, 0.4);
+}
+
+.biz-quotes li {
+  padding: 14px 0;
+  color: #efe9dc;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.biz-quotes li::before {
+  content: "“";
+}
+
+.biz-quotes li::after {
+  content: "”";
+}
+
+/* The loss nobody reports — narrative beat, tighter measure, slower rhythm */
+.biz-scene {
+  background: linear-gradient(180deg, #0a1628 0%, #08121f 55%, #0a1628 100%);
+  border-block: 1px solid rgba(200, 168, 130, 0.18);
+}
+
+.biz-scene-inner {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(72px, 12vw, 120px) 0;
+  display: grid;
+  gap: 26px;
+  max-width: 56ch;
+}
+
+.biz-scene-inner h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #f7f4ec;
+}
+
+.biz-scene-inner p {
+  margin: 0;
+  color: var(--biz-mist);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.biz-scene-quiet {
+  color: #efe9dc !important;
+  padding-left: clamp(18px, 3vw, 28px);
+  border-left: 1px solid rgba(200, 168, 130, 0.4);
+}
+
+/* Thesis line — the sentence the page is built around */
+.biz-pull {
+  margin: 10px 0 0 !important;
+  padding-top: 32px;
+  border-top: 1px solid rgba(200, 168, 130, 0.35);
+  color: #f0e6d4 !important;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4vw, 2.6rem) !important;
+  font-weight: 600;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em;
+}
+
+.biz-pull-tight {
+  color: var(--biz-rail) !important;
+}
+
+.biz-pull-light {
+  color: var(--navy) !important;
+  border-top-color: rgba(15, 38, 71, 0.18);
+}
+
+.biz-pain-close {
+  margin: 36px 0 0;
+  max-width: 56ch;
+  color: #efe9dc;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+/* Light half — solution / future / proof / CTA */
+.biz-light {
+  background: var(--canvas);
+  color: var(--text);
+}
+
+.biz-light .biz-eyebrow {
+  color: var(--gold-dark);
+}
+
+/* Prosperity — the practice on the other side */
+.biz-vision {
+  background:
+    radial-gradient(ellipse 70% 50% at 90% 0%, rgba(200, 168, 130, 0.18), transparent 55%),
+    linear-gradient(180deg, #fbfaf7 0%, var(--canvas) 100%);
+  border-top: 1px solid rgba(15, 38, 71, 0.08);
+}
+
+.biz-vision-inner {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(80px, 12vw, 128px) 0 clamp(48px, 8vw, 72px);
+  display: grid;
+  gap: 22px;
+  max-width: 58ch;
+}
+
+.biz-vision-inner h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.biz-vision-inner p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.biz-vision-inner .biz-eyebrow {
+  margin: 0;
+}
+
+/* Proof — screenshot stage, CRM Solutions register */
+.biz-work {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(72px, 11vw, 110px) 0;
+}
+
+.biz-work-head {
+  display: grid;
+  gap: 16px;
+  max-width: 54ch;
+  margin-bottom: clamp(36px, 6vw, 56px);
+}
+
+.biz-work-head .biz-eyebrow {
+  margin: 0;
+}
+
+.biz-work-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.05rem, 4.2vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.biz-work-head h2 em {
+  font-style: italic;
+  color: var(--gold-dark);
+  font-weight: 500;
+}
+
+.biz-work-head p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.biz-work-stage {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.biz-work-feature {
+  position: relative;
+  min-height: clamp(380px, 48vw, 560px);
+  overflow: hidden;
+  background: var(--navy);
+  color: #f7f4ec;
+}
+
+.biz-work-feature img {
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.92;
+  transition: transform 0.7s ease, opacity 0.4s ease;
+}
+
+.biz-work-feature:hover img {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+.biz-work-feature-copy {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  padding: clamp(22px, 3vw, 32px);
+  display: grid;
+  gap: 8px;
+  background: linear-gradient(180deg, transparent, rgba(7, 16, 29, 0.92) 42%);
+}
+
+.biz-work-feature-copy span,
+.biz-work-side-copy span {
+  color: var(--biz-rail);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.biz-work-feature-copy strong,
+.biz-work-side-copy strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.biz-work-feature-copy p,
+.biz-work-side-copy p {
+  margin: 0;
+  max-width: 42ch;
+  color: rgba(247, 244, 236, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.biz-work-feature-copy em,
+.biz-work-side-copy em {
+  margin-top: 4px;
+  color: #f7f4ec;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.biz-work-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.biz-work-side {
+  display: grid;
+  grid-template-rows: 160px 1fr;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.biz-work-side:hover {
+  border-color: rgba(200, 168, 130, 0.65);
+  box-shadow: var(--shadow-md);
+}
+
+.biz-work-side-media {
+  position: relative;
+  background: var(--navy);
+}
+
+.biz-work-side-media img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.biz-work-side-copy {
+  display: grid;
+  gap: 8px;
+  padding: 20px 22px 22px;
+}
+
+.biz-work-side-copy span {
+  color: var(--gold-dark);
+}
+
+.biz-work-side-copy strong {
+  color: var(--navy);
+}
+
+.biz-work-side-copy p {
+  color: var(--text-muted);
+}
+
+.biz-work-side-copy em {
+  color: var(--navy);
+}
+
+/* Pain vernacular */
+.biz-pain {
+  background: linear-gradient(180deg, #0f2647 0%, #0a1628 100%);
+  border-block: 1px solid rgba(200, 168, 130, 0.18);
+}
+
+.biz-pain-visual {
+  position: relative;
+  width: min(1120px, calc(100% - 40px));
+  margin: clamp(48px, 8vw, 72px) auto 0;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+
+.biz-pain-visual img {
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+.biz-pain-visual figcaption {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  z-index: 1;
+  color: #f2efe8;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.biz-pain-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(7, 16, 29, 0.65) 100%);
+}
+
+.biz-pain-inner {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(56px, 9vw, 96px) 0 clamp(72px, 11vw, 110px);
+}
+
+/* Filled chairs — patients onboard */
+.biz-filled {
+  padding: 0 0 clamp(56px, 9vw, 88px);
+  background: transparent;
+  border: 0;
+}
+
+.biz-filled-grid {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 0.85fr;
+  gap: 10px;
+}
+
+.biz-filled-grid figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.biz-filled-grid figure:first-child {
+  aspect-ratio: auto;
+  min-height: 100%;
+}
+
+.biz-filled-grid img {
+  object-fit: cover;
+}
+
+.biz-filled-grid figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  z-index: 1;
+  color: #f7f4ec;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.biz-filled-grid figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(7, 16, 29, 0.55) 100%);
+  pointer-events: none;
+}
+
+.biz-pain-inner > h2 {
+  max-width: 16ch;
+  margin: 0 0 36px;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #f7f4ec;
+}
+
+.biz-pain-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(242, 239, 232, 0.12);
+}
+
+.biz-pain-list li {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(242, 239, 232, 0.12);
+  color: var(--biz-mist);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.biz-pain-list b {
+  color: var(--biz-rail);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+
+/* Adel */
+.biz-adel {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(56px, 9vw, 96px) 0;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(28px, 6vw, 72px);
+  align-items: end;
+  border-top: 1px solid rgba(15, 38, 71, 0.1);
+}
+
+.biz-adel-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 8vw, 5.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--gold-dark);
+}
+
+.biz-adel-copy h2 {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--navy);
+}
+
+.biz-adel-copy p {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Demo strip */
+.biz-proof {
+  background: #fff;
+  color: var(--text);
+  border-block: 1px solid rgba(15, 38, 71, 0.08);
+}
+
+.biz-proof-inner {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: clamp(72px, 11vw, 110px) 0;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+
+.biz-proof h2 {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.biz-proof p {
+  margin: 0 0 24px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+.biz-proof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.biz-proof-panel {
+  padding: 28px 26px;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.biz-proof-panel span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold-dark);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.biz-proof-panel strong {
+  display: block;
+  margin-bottom: 18px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+.biz-proof-panel ul {
+  display: grid;
+  gap: 12px;
+}
+
+.biz-proof-panel li {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+
+.biz-proof-panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+}
+
+/* Standout CTA — CRM Solutions register */
+.biz-cta {
+  width: min(1120px, calc(100% - 40px));
+  margin: clamp(48px, 8vw, 80px) auto 0;
+  padding: 0 0 clamp(48px, 8vw, 72px);
+}
+
+.biz-cta-panel {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;
+  gap: clamp(28px, 5vw, 56px);
+  padding: clamp(36px, 5vw, 56px);
+  background:
+    radial-gradient(ellipse 55% 70% at 100% 0%, rgba(200, 168, 130, 0.22), transparent 55%),
+    linear-gradient(145deg, #0a1628 0%, #0f2647 55%, #123057 100%);
+  color: #f7f4ec;
+  box-shadow: 0 28px 70px rgba(7, 16, 29, 0.22);
+}
+
+.biz-cta-kicker {
+  margin: 0 0 16px;
+  color: var(--biz-rail);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.biz-cta-copy h2 {
+  margin: 0 0 16px;
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.biz-cta-copy > p {
+  margin: 0 0 28px;
+  max-width: 42ch;
+  color: rgba(247, 244, 236, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.biz-cta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.biz-cta-badges li {
+  padding: 9px 12px;
+  border: 1px solid rgba(247, 244, 236, 0.28);
+  color: rgba(247, 244, 236, 0.9);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.biz-cta-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: clamp(26px, 3vw, 34px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(247, 244, 236, 0.22);
+}
+
+.biz-cta-card span {
+  color: rgba(200, 168, 130, 0.95);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.biz-cta-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.55rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.biz-cta-card p {
+  margin: 0;
+  color: rgba(247, 244, 236, 0.78);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.biz-cta-card a {
+  margin-top: 10px;
+  justify-self: start;
+  color: #f7f4ec;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(200, 168, 130, 0.7);
+  padding-bottom: 2px;
+}
+
+.biz-cta-card a:hover {
+  color: var(--biz-rail);
+}
+
+.biz-cta-card a span {
+  letter-spacing: 0;
+  text-transform: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+.biz-foot {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: 0 0 40px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.biz-foot a {
+  color: var(--navy);
+  border-bottom: 1px solid rgba(15, 38, 71, 0.25);
+}
+
+@media (max-width: 900px) {
+  .biz-work-stage,
+  .biz-cta-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-work-feature {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 820px) {
+  .biz-top-links a:not(.biz-top-cta) {
+    display: none;
+  }
+
+  .biz-hero h1 {
+    max-width: none;
+    font-size: clamp(1.7rem, 7.2vw, 2.35rem);
+  }
+
+  .biz-pain-visual {
+    aspect-ratio: 16 / 10;
+  }
+
+  .biz-filled-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-filled-grid figure:first-child {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .biz-pain-list li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .biz-adel,
+  .biz-proof-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-adel-name {
+    font-size: clamp(3rem, 18vw, 4.5rem);
+  }
+}
