@@ -37,9 +37,9 @@ export default function FeaturesPage() {
           <span className="eyebrow">Patient Revenue Platform</span>
           <h1>A business operating system for one clinic — not another brochure site</h1>
           <p>
-            GoHighLevel sells an all-in-one stack to agencies. We sell a tighter system to aesthetic
-            practices: website, booking, retail, loyalty, reviews, CRM follow-up and operations —
-            built around how a Midtown (or Main Street) clinic actually makes money.
+            We designed a dedicated system for aesthetic practices: website, booking, retail,
+            loyalty, reviews, CRM follow-up and operations — built around how a Midtown (or Main
+            Street) clinic actually makes money.
           </p>
         </div>
       </section>

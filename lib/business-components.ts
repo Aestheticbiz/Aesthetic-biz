@@ -1,5 +1,5 @@
 /**
- * Patient Revenue Platform — business components (GHL-inspired, aesthetic-clinic scope).
+ * Patient Revenue Platform — business components for aesthetic clinics.
  * Status is honest for Adel + sales: demo live vs package vs later.
  */
 
@@ -27,7 +27,7 @@ export const STATUS_LABEL: Record<ComponentStatus, string> = {
   later: "Next phase",
 };
 
-/** Capture → Convert → Retain — smaller than GHL, built for one clinic. */
+/** Capture → Convert → Commerce → Retain — scoped for one clinic. */
 export const BUSINESS_STAGES: BusinessStage[] = [
   {
     id: "capture",
@@ -205,7 +205,7 @@ export const BUSINESS_STAGES: BusinessStage[] = [
   },
 ];
 
-/** Compact “replaces stack” for the comparison strip — aesthetic clinic reality, not agency SaaS. */
+/** Compact “replaces stack” for the comparison strip — aesthetic clinic reality. */
 export const REPLACES_ROWS = [
   {
     feature: "Branded site + booking",
