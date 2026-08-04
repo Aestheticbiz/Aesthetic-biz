@@ -47,3 +47,7 @@ next-env.d.ts
 
 # lead lists / contact data — never commit
 /data/leads/
+
+# impeccable local cache (config.json is shared and tracked)
+.impeccable/hook.cache.json
+.impeccable/config.local.json

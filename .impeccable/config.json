@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "marketing/email-90-day-phplist.html"
+        ],
+        "createdAt": "2026-08-04T16:16:15.624Z",
+        "reason": "HTML email cannot load webfonts; Arial/Helvetica and Georgia are the only stacks that render predictably across Outlook, Gmail mobile and corporate clients. User confirmed."
+      }
+    ]
+  }
+}
