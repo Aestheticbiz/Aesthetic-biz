@@ -671,6 +671,23 @@
   line-height: 1.75;
 }
 
+.ff-offer-run {
+  margin: 26px 0 0 !important;
+  max-width: 46ch;
+}
+
+.ff-offer-run a {
+  color: var(--navy);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.55;
+  border-bottom: 2px solid var(--gold);
+}
+
+.ff-offer-run a:hover {
+  color: var(--gold-dark);
+}
+
 .ff-offer-position {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.4vw, 1.55rem) !important;

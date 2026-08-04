@@ -350,6 +350,13 @@ export default function FullFeePatientsPage() {
                 fortnight of email, not five thousand dollars.
               </p>
             </div>
+
+            <p className="ff-offer-run">
+              <Link href="/financial">
+                Put your own rent, salaries and fees in and see what one extra patient a week is
+                worth →
+              </Link>
+            </p>
           </div>
 
           <aside className="ff-offer-panel">
@@ -412,7 +419,7 @@ export default function FullFeePatientsPage() {
           CRM Solutions
         </a>
         . Treatments, products and patients shown here are illustrative.{" "}
-        <Link href="/biz">Read the longer version →</Link>
+        <Link href="/">Walk the live demo practice at aestheticbiz.site →</Link>
       </p>
     </main>
   );

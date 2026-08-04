@@ -1,0 +1,735 @@
+/* /financial — the one-patient profit calculator (scoped) */
+
+.fin-page {
+  --fin-ink: #0a1628;
+  --fin-rail: #c8a882;
+  --fin-line: #e2e2e6;
+  --fin-muted: #5c5f68;
+  background: #f7f7f8;
+  color: #1c1f26;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Don't rely on globals winning the cascade here — this route loads its CSS
+   after globals in dev, so links come back underlined without this. */
+.fin-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fin-page a:focus-visible,
+.fin-page button:focus-visible,
+.fin-page input:focus-visible,
+.fin-page select:focus-visible {
+  outline: 2px solid var(--fin-rail);
+  outline-offset: 2px;
+}
+
+/* ── Header ───────────────────────────────────────────────────────── */
+.fin-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(1240px, calc(100% - 40px));
+  margin-inline: auto;
+  padding: 20px 0;
+}
+
+.fin-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--fin-ink);
+}
+
+.fin-mark strong {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.fin-mark span {
+  color: #a8896a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fin-top-cta {
+  padding: 11px 18px;
+  background: var(--fin-ink);
+  color: #f7f4ec;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fin-top-cta:hover {
+  background: #1b3d6e;
+}
+
+/* ── Intro ────────────────────────────────────────────────────────── */
+.fin-intro {
+  width: min(1240px, calc(100% - 40px));
+  margin: clamp(24px, 5vw, 48px) auto clamp(28px, 4vw, 40px);
+  max-width: 62ch;
+}
+
+.fin-eyebrow {
+  margin: 0 0 14px;
+  color: #a8896a;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.fin-eyebrow-gold {
+  color: var(--fin-rail);
+}
+
+.fin-intro h1 {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--fin-ink);
+}
+
+.fin-lede {
+  margin: 0 0 24px;
+  color: var(--fin-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.fin-lede strong {
+  color: var(--fin-ink);
+  font-weight: 600;
+}
+
+.fin-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 14px;
+}
+
+.fin-currency {
+  display: grid;
+  gap: 6px;
+}
+
+.fin-currency span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fin-muted);
+}
+
+.fin-currency select {
+  min-height: 42px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid var(--fin-line);
+  color: var(--fin-ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.fin-reset {
+  min-height: 42px;
+  padding: 0 16px;
+  background: transparent;
+  border: 1px solid var(--fin-line);
+  color: var(--fin-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fin-reset:hover {
+  border-color: var(--fin-ink);
+  color: var(--fin-ink);
+}
+
+/* ── Layout ───────────────────────────────────────────────────────── */
+.fin-grid {
+  width: min(1240px, calc(100% - 40px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: clamp(20px, 3vw, 32px);
+  align-items: start;
+}
+
+.fin-inputs,
+.fin-results {
+  display: grid;
+  gap: clamp(16px, 2vw, 22px);
+}
+
+.fin-results {
+  position: sticky;
+  top: 20px;
+}
+
+/* ── Input cards ──────────────────────────────────────────────────── */
+.fin-card {
+  background: #fff;
+  border: 1px solid var(--fin-line);
+  padding: clamp(20px, 2.4vw, 26px);
+}
+
+.fin-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--fin-line);
+}
+
+.fin-card-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--fin-ink);
+}
+
+.fin-card-head span {
+  color: var(--fin-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fin-rows {
+  display: grid;
+  gap: 8px;
+}
+
+.fin-row {
+  display: grid;
+  grid-template-columns: 1fr 150px 28px;
+  gap: 8px;
+  align-items: center;
+}
+
+.fin-treat-head {
+  display: grid;
+  grid-template-columns: 1fr 130px 100px 28px;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.fin-treat-head span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9497a0;
+}
+
+.fin-treat-row {
+  display: grid;
+  grid-template-columns: 1fr 130px 100px 28px;
+  gap: 8px;
+  align-items: center;
+}
+
+.fin-label-input,
+.fin-static-label {
+  min-height: 42px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  background: #fbfbfc;
+  border: 1px solid var(--fin-line);
+  color: var(--fin-ink);
+  font-size: 0.98rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+.fin-static-label {
+  background: transparent;
+  border-color: transparent;
+  padding-left: 0;
+  color: var(--fin-muted);
+}
+
+.fin-label-input:hover {
+  background: #fff;
+  border-color: #cfd0d6;
+}
+
+.fin-amount {
+  display: flex;
+  align-items: center;
+  background: #fbfbfc;
+  border: 1px solid var(--fin-line);
+  min-height: 42px;
+}
+
+.fin-amount:focus-within {
+  background: #fff;
+  border-color: var(--fin-rail);
+}
+
+.fin-symbol {
+  padding-inline: 10px;
+  color: #9497a0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fin-amount input {
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding-right: 10px;
+  background: transparent;
+  border: 0;
+  color: var(--fin-ink);
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.fin-amount-plain input,
+.fin-amount-pct input {
+  padding-left: 10px;
+}
+
+.fin-amount-pct {
+  justify-content: flex-end;
+}
+
+.fin-amount-pct .fin-symbol {
+  padding-left: 2px;
+}
+
+/* Strip spinners — they fight with the alignment and add nothing here */
+.fin-amount input::-webkit-outer-spin-button,
+.fin-amount input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.fin-amount input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.fin-remove,
+.fin-spacer {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fin-remove {
+  background: transparent;
+  border: 0;
+  color: #b9bcc4;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.fin-remove:hover {
+  color: #b3352f;
+}
+
+.fin-add {
+  margin-top: 14px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: #a8896a;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fin-add:hover {
+  text-decoration: underline;
+}
+
+.fin-note {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--fin-line);
+  color: var(--fin-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ── Result panels ────────────────────────────────────────────────── */
+.fin-panel {
+  padding: clamp(22px, 2.6vw, 30px);
+  background: var(--fin-ink);
+  color: #f2efe8;
+}
+
+.fin-panel h2 {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #f7f4ec;
+}
+
+.fin-figures {
+  display: grid;
+  gap: 0;
+}
+
+.fin-figures > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(242, 239, 232, 0.14);
+}
+
+.fin-figures dt {
+  color: rgba(247, 247, 248, 0.7);
+  font-size: 0.95rem;
+}
+
+.fin-figures dd {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fin-figure-total dt {
+  color: #f7f4ec !important;
+  font-weight: 600;
+}
+
+.fin-figure-total dd {
+  font-family: var(--font-display);
+  font-size: 1.5rem !important;
+  color: var(--fin-rail);
+}
+
+.fin-panel-note {
+  margin: 16px 0 0;
+  color: rgba(247, 247, 248, 0.55);
+  font-size: 0.88rem;
+}
+
+/* ── The magic panel ──────────────────────────────────────────────── */
+.fin-panel-magic {
+  background: linear-gradient(180deg, #10294c 0%, #0a1628 100%);
+  border-top: 3px solid var(--fin-rail);
+}
+
+.fin-panel-magic h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+}
+
+.fin-sliders {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 20px;
+  padding: 18px 0;
+  border-block: 1px solid rgba(242, 239, 232, 0.14);
+}
+
+.fin-sliders label {
+  display: grid;
+  gap: 8px;
+}
+
+.fin-sliders span {
+  color: rgba(247, 247, 248, 0.75);
+  font-size: 0.92rem;
+}
+
+.fin-sliders b {
+  color: var(--fin-rail);
+  font-size: 1.02rem;
+}
+
+.fin-sliders input[type="range"] {
+  width: 100%;
+  accent-color: var(--fin-rail);
+}
+
+.fin-magic-why {
+  margin: 0 0 20px;
+  color: rgba(247, 247, 248, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.fin-compare {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 22px;
+}
+
+.fin-compare th,
+.fin-compare td {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(242, 239, 232, 0.14);
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.fin-compare thead th {
+  color: var(--fin-rail);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.fin-compare tbody th {
+  text-align: left;
+  color: rgba(247, 247, 248, 0.7);
+  font-weight: 400;
+}
+
+.fin-compare td {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fin-compare-total th,
+.fin-compare-total td {
+  padding-top: 14px;
+  font-size: 1.08rem !important;
+  color: #f7f4ec !important;
+  font-weight: 600 !important;
+}
+
+.fin-compare-total td:last-child {
+  color: var(--fin-rail) !important;
+}
+
+.fin-headline-figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(242, 239, 232, 0.16);
+  border: 1px solid rgba(242, 239, 232, 0.16);
+}
+
+.fin-headline-figures > div {
+  padding: 18px 16px;
+  background: #0a1628;
+}
+
+.fin-headline-figures span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(247, 247, 248, 0.6);
+  font-size: 0.8rem;
+}
+
+.fin-headline-figures strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #f7f4ec;
+}
+
+.fin-headline-year strong {
+  color: var(--fin-rail);
+}
+
+.fin-leverage {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(200, 168, 130, 0.35);
+  color: rgba(247, 247, 248, 0.8);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  line-height: 1.4;
+}
+
+.fin-leverage b {
+  color: var(--fin-rail);
+  font-weight: 600;
+}
+
+.fin-payback {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(242, 239, 232, 0.14);
+}
+
+.fin-payback label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.fin-payback label > span {
+  color: rgba(247, 247, 248, 0.7);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.fin-payback .fin-amount {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(242, 239, 232, 0.2);
+  max-width: 170px;
+}
+
+.fin-payback .fin-amount input {
+  color: #f7f4ec;
+}
+
+.fin-payback .fin-symbol {
+  color: rgba(247, 247, 248, 0.5);
+}
+
+.fin-payback p {
+  margin: 0;
+  color: rgba(247, 247, 248, 0.75);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.fin-payback b {
+  color: var(--fin-rail);
+}
+
+/* ── CTA ──────────────────────────────────────────────────────────── */
+.fin-cta {
+  padding: clamp(22px, 2.6vw, 30px);
+  background: #fff;
+  border: 1px solid var(--fin-line);
+}
+
+.fin-cta h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--fin-ink);
+}
+
+.fin-cta p {
+  margin: 0 0 18px;
+  color: var(--fin-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.fin-btn {
+  display: flex;
+  width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  background: var(--fin-rail);
+  color: var(--fin-ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.fin-btn:hover {
+  background: #dcbe9c;
+}
+
+.fin-cta-note {
+  margin: 14px 0 0 !important;
+  font-size: 0.9rem !important;
+  text-align: center;
+}
+
+.fin-cta-note a {
+  color: #a8896a;
+  font-weight: 600;
+}
+
+.fin-foot {
+  width: min(1240px, calc(100% - 40px));
+  margin: clamp(28px, 4vw, 44px) auto 0;
+  max-width: 70ch;
+  color: #83878f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .fin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fin-results {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .fin-row {
+    grid-template-columns: 1fr 120px 24px;
+  }
+
+  .fin-treat-head {
+    display: none;
+  }
+
+  .fin-treat-row {
+    grid-template-columns: 1fr 1fr 24px;
+    grid-template-areas:
+      "name name remove"
+      "fee count .";
+    gap: 6px;
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--fin-line);
+  }
+
+  .fin-treat-row .fin-label-input {
+    grid-area: name;
+  }
+
+  .fin-treat-row .fin-amount:not(.fin-amount-plain) {
+    grid-area: fee;
+  }
+
+  .fin-treat-row .fin-amount-plain {
+    grid-area: count;
+  }
+
+  .fin-treat-row .fin-remove {
+    grid-area: remove;
+  }
+
+  .fin-headline-figures {
+    grid-template-columns: 1fr;
+  }
+
+  .fin-payback label {
+    flex-wrap: wrap;
+  }
+}

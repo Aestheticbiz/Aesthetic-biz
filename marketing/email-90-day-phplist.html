@@ -3,7 +3,10 @@
   Paste the block below into phpList's "HTML content" (source/code view, not the WYSIWYG).
   Placeholders used: [FIRSTNAME] [UNSUBSCRIBEURL] [PREFERENCESURL]
   Plain-text alternative lives in marketing/email-90-day-phplist.txt — paste that into "Text content".
-  Replace TRACKED_LINK with your UTM'd URL before sending.
+
+  NOTE: phpList refuses to save a campaign unless every href is a full absolute URL
+  (https://…). Do not swap the CTA back to a placeholder like TRACKED_LINK — edit the
+  utm_* values on the real URL instead. Same rule applies to any image you add later.
 -->
 <div style="margin:0;padding:0;background-color:#eceae6;">
 
@@ -71,7 +74,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px;">
                 <tr>
                   <td align="center" bgcolor="#c8a882" style="background-color:#c8a882;">
-                    <a href="TRACKED_LINK" style="display:inline-block;padding:17px 38px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#0a1628;text-decoration:none;letter-spacing:0.3px;">
+                    <a href="https://www.aestheticbiz.site/full-fee-patients?utm_source=email&amp;utm_medium=phplist&amp;utm_campaign=full-fee&amp;utm_content=e1" style="display:inline-block;padding:17px 38px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:bold;color:#0a1628;text-decoration:none;letter-spacing:0.3px;">
                       See the 90-day plan &rarr;
                     </a>
                   </td>
