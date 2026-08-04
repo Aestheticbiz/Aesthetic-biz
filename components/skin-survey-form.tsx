@@ -146,7 +146,7 @@ export function SkinSurveyForm() {
           Question {step + 1} of {QUESTIONS.length}
         </span>
         <div>
-          <i style={{ width: `${((step + 1) / QUESTIONS.length) * 100}%` }} />
+          <i style={{ transform: `scaleX(${(step + 1) / QUESTIONS.length})` }} />
         </div>
       </div>
       <h2>{current.prompt}</h2>

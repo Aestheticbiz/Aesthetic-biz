@@ -67,7 +67,7 @@ export function ReviewsBusinessFaq() {
           Full component map:{" "}
           <Link href="/features">Business components</Link>
           {" · "}
-          <Link href="/biz">Owner landing</Link>
+          <Link href="/full-fee-patients">The 90-day platform</Link>
         </p>
       </div>
     </section>

@@ -27,8 +27,9 @@ export default function FeaturesPage() {
     <>
       <PreviewBar>
         <strong>For management</strong> · Business components ·{" "}
-        <Link href="/audit">Audit</Link> · <Link href="/biz">Owner landing</Link> ·{" "}
-        <Link href="/">Patient demo</Link>
+        <Link href="/audit">Audit</Link> ·{" "}
+        <Link href="/full-fee-patients">The 90-day platform</Link> ·{" "}
+        <Link href="/financial">Profit calculator</Link> · <Link href="/">Patient demo</Link>
       </PreviewBar>
       <SiteHeader variant="platform" />
 

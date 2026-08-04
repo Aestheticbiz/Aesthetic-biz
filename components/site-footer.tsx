@@ -51,13 +51,14 @@ export function SiteFooter({
             <Link href="/rewards">AestheticBiz Points</Link>
           </div>
           <div className="footer-col">
-            <h4>For management</h4>
-            <Link href="/audit">Website audit</Link>
+            <h4>For practice owners</h4>
+            <Link href="/full-fee-patients">The 90-day platform</Link>
+            <Link href="/financial">Profit calculator</Link>
+            <Link href="/audit">Online business audit</Link>
             <Link href="/features">Business components</Link>
-            <Link href="/biz">Owner landing</Link>
             <Link href="/customizer">Customizer</Link>
             <Link href="/skin-survey">Skin Survey</Link>
-            <Link href="/book-discovery">Discovery Call</Link>
+            <Link href="/book-discovery">Book a Discovery Call</Link>
             <a href="https://crmsolutions.app" target="_blank" rel="noopener noreferrer">
               CRM Solutions
             </a>

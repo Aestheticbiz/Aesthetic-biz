@@ -17,11 +17,11 @@ export function PreviewBar({ children }: PreviewBarProps) {
 export function DefaultPreviewBar() {
   return (
     <PreviewBar>
-      <strong>AestheticBiz demo</strong> · Patient Revenue Platform preview by{" "}
-      <a href="https://crmsolutions.app" target="_blank" rel="noopener noreferrer">
-        CRM Solutions
-      </a>{" "}
-      · <Link href="/audit">Read the audit</Link> · <Link href="/features">Features</Link>
+      <strong>You are inside the demo practice</strong> — everything here is live and clickable.{" "}
+      <span className="preview-bar-owner">
+        For practice owners: <Link href="/full-fee-patients">the 90-day platform</Link> ·{" "}
+        <Link href="/financial">what one patient a week is worth</Link>
+      </span>
     </PreviewBar>
   );
 }
