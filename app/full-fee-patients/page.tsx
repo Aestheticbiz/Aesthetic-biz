@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ProfitCalculatorCta } from "@/components/profit-calculator-cta";
 import { discoveryUrl } from "@/lib/site";
 import "./full-fee.css";
 
@@ -350,13 +351,6 @@ export default function FullFeePatientsPage() {
                 fortnight of email, not five thousand dollars.
               </p>
             </div>
-
-            <p className="ff-offer-run">
-              <Link href="/financial">
-                Put your own rent, salaries and fees in and see what one extra patient a week is
-                worth →
-              </Link>
-            </p>
           </div>
 
           <aside className="ff-offer-panel">
@@ -379,6 +373,8 @@ export default function FullFeePatientsPage() {
           </aside>
         </div>
       </section>
+
+      <ProfitCalculatorCta />
 
       {/* ── Objections ────────────────────────────────────────────────── */}
       <section className="ff-faq">

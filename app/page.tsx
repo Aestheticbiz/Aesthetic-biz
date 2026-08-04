@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { DemoForm } from "@/components/demo-form";
 import { PerksSection } from "@/components/home/perks-section";
+import { ProfitCalculatorCta } from "@/components/profit-calculator-cta";
 import { SkinSurveyCta } from "@/components/home/skin-survey-cta";
 import PublicReviewCard from "@/components/reviews/PublicReviewCard";
 import ProductCard from "@/components/shop/ProductCard";
@@ -237,6 +238,8 @@ export default async function HomePage() {
         </div>
       </section>
       <style>{`@media(min-width:900px){#book-cta .shell{grid-template-columns:1.1fr 0.9fr}}`}</style>
+
+      <ProfitCalculatorCta />
 
       <section className="section" id="visit">
         <div className="shell" style={{ display: "grid", gap: 28 }}>
