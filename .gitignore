@@ -44,3 +44,6 @@ next-env.d.ts
 /public/uploads/
 /data/pending-reviews.json
 /data/discovery-bookings.json
+
+# lead lists / contact data — never commit
+/data/leads/
