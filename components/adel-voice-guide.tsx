@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { isConversionRoute } from "@/lib/conversion-routes";
 import {
   EndSensitivity,
   GoogleGenAI,
@@ -26,7 +27,7 @@ const ROUTES = {
   contact: "/contact",
   features: "/features",
   audit: "/audit",
-  biz: "/biz",
+  biz: "/full-fee-patients",
   customizer: "/customizer",
   skinSurvey: "/skin-survey",
   discovery: "/book-discovery",
@@ -171,7 +172,8 @@ RETAIN (fans, not one-visits)
 
 DEMO TOYS (not the product core)
 - Brand Customizer (/customizer): try logo/colours in-browser.
-- Campaign landing (/biz): outreach story for owners.
+- Campaign landing (/full-fee-patients): the 90-day offer for practice owners.
+- Profit calculator (/financial): what one extra patient a week is worth.
 
 WHAT YOU DO NOT DO
 - No medical treatment advice. Redirect: "Treatment decisions stay with the clinic — I cover the system that books, sells and retains."
@@ -521,6 +523,10 @@ export function AdelVoiceGuide() {
     setMuted(next);
     if (next) sessionRef.current?.sendRealtimeInput({ audioStreamEnd: true });
   };
+
+  // Paid-traffic conversion pages: the floating launcher lands on the primary
+  // CTA on phones, and these pages never introduce Adel. Keep them clean.
+  if (isConversionRoute(pathname)) return null;
 
   if (status === "active") {
     return (
