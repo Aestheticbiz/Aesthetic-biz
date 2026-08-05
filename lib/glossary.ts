@@ -329,7 +329,62 @@ export const GLOSSARY: GlossaryEntry[] = [
       width: 2632,
       height: 1756,
     },
-    related: ["gift-vouchers", "loyalty-points", "profit-calculator"],
+    related: ["upsell-funnel", "gift-vouchers", "loyalty-points", "profit-calculator"],
+  },
+
+  {
+    slug: "upsell-funnel",
+    term: "Upsell Funnel",
+    oneLine:
+      "A one or two step offer shown the moment a patient adds to cart — the single fastest way to raise average order value.",
+    status: "In the platform package",
+    category: "Commerce",
+    whatItIs:
+      "After a patient adds a product to their basket — and before they reach checkout — they are shown a small number of clinically sensible companions at a bundle discount. They can add one, change the quantity, or skip the step entirely. Each product carries its own funnel, configured per product, so the offer is a routine that makes sense rather than a random cross-sell.",
+    whyItMatters: [
+      "The moment is what makes it work. The patient has already decided to buy — intent is proven, the card is out, and the hesitation that stops a cold shopper is gone.",
+      "A single accepted offer can multiply the order. Adding one serum to a cleanser purchase can take the basket to three times its original value, on a customer you had already won and paid nothing more to reach.",
+      "It sells the routine rather than the product, which is what a clinic should be doing anyway. Cleanser then retinol is a clinical progression, not a bolt-on.",
+      "The margin is close to pure. There is no additional acquisition cost, no extra chair time, and no staff conversation — the uplift lands straight on the bottom line.",
+      "It is the retail equivalent of the front desk saying 'and are you using anything at night?' — except it happens every single time, without anyone remembering.",
+    ],
+    howItWorks: [
+      {
+        step: "Configure per product",
+        detail:
+          "Each product gets its own funnel of one or two steps, with the companion products chosen deliberately. A suggestion tool can pre-fill a sensible routine, which you then adjust.",
+      },
+      {
+        step: "Set the incentive",
+        detail:
+          "A bundle discount gives a reason to say yes now rather than later. The original price stays visible beside it, so the saving is legible.",
+      },
+      {
+        step: "Preview before it goes live",
+        detail:
+          "The offer is previewed exactly as the patient will see it, on desktop and on mobile, before it is switched on. Off means hidden from shoppers.",
+      },
+      {
+        step: "Offer, then get out of the way",
+        detail:
+          "The patient adds, adjusts quantity, or skips. There is a plain 'no thanks' on every step — pressure would cost you the original order, which is the one thing worth protecting.",
+      },
+    ],
+    questions: [
+      {
+        q: "Will this annoy patients?",
+        a: "Only if it is done badly. One or two steps, clinically relevant products, a visible discount and an obvious way to skip — that reads as a recommendation. Five steps of unrelated stock reads as a supermarket till, and costs you the trust you are actually selling.",
+      },
+      {
+        q: "Is this live anywhere?",
+        a: "Yes. It runs on Star Aesthetic Centre today, which is a doctor-led practice with real patients and real stock. It is part of the platform package rather than something on this demo site.",
+      },
+      {
+        q: "Who decides what gets offered?",
+        a: "You do, product by product. That matters in aesthetics more than in ordinary retail — recommending the wrong actives together is a clinical problem, not just a commercial one.",
+      },
+    ],
+    related: ["online-retail", "loyalty-points", "profit-calculator", "crm"],
   },
 
   {
