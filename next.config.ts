@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        // The old owner landing page. Superseded by /full-fee-patients — nobody
+        // should reach it, including anyone holding an old link.
+        source: "/biz",
+        destination: "/full-fee-patients",
+        // 301 explicitly: `permanent: true` emits 308, which Google treats the
+        // same but which reads less predictably in older analytics and tooling.
+        statusCode: 301,
+      },
+      {
         source: "/treatments/demo-skin-treatment-01",
         destination: "/treatments/acne-treatment",
         permanent: true,
