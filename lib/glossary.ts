@@ -25,6 +25,13 @@ export type GlossaryEntry = {
   questions: { q: string; a: string }[];
   /** Where to see it on the demo, if it is live. */
   demo?: { href: string; label: string };
+  /**
+   * Screenshot of the real thing, captured from the running site by
+   * scripts/capture-glossary-images.mjs. Never hand-drawn or mocked up —
+   * re-run the script when the UI changes. Dimensions are the file's own,
+   * captured at 2x for sharpness.
+   */
+  image?: { src: string; alt: string; caption: string; width: number; height: number };
   related: string[];
 };
 
@@ -121,6 +128,13 @@ export const GLOSSARY: GlossaryEntry[] = [
       },
     ],
     demo: { href: "/book", label: "Try the booking flow" },
+    image: {
+      src: "/images/glossary/online-booking.png",
+      alt: "The booking wizard, showing treatment selection on the practice's own branded page",
+      caption: "Booking finishes on your own site. The patient never meets another company's logo.",
+      width: 1872,
+      height: 1484,
+    },
     related: ["funnel", "crm", "missed-call-text-back"],
   },
 
@@ -171,6 +185,14 @@ export const GLOSSARY: GlossaryEntry[] = [
       },
     ],
     demo: { href: "/skin-survey", label: "Take the Skin Assessment" },
+    image: {
+      src: "/images/glossary/lead-generation.png",
+      alt: "The Skin Assessment asking one question at a time with a progress bar",
+      caption:
+        "One question at a time with visible progress — which is what keeps people finishing it.",
+      width: 1872,
+      height: 1000,
+    },
     related: ["funnel", "crm", "marketing-automation"],
   },
 
@@ -266,6 +288,14 @@ export const GLOSSARY: GlossaryEntry[] = [
       },
     ],
     demo: { href: "/shop", label: "Browse the demo shop" },
+    image: {
+      src: "/images/glossary/online-retail.png",
+      alt: "The shop showing clinical skincare products with pricing",
+      caption:
+        "The same clinical-grade stock you sell at the front desk, available at eleven at night.",
+      width: 2632,
+      height: 1756,
+    },
     related: ["gift-vouchers", "loyalty-points", "profit-calculator"],
   },
 
@@ -311,6 +341,14 @@ export const GLOSSARY: GlossaryEntry[] = [
       },
     ],
     demo: { href: "/gift-cards", label: "Buy a demo voucher" },
+    image: {
+      src: "/images/glossary/gift-vouchers.png",
+      alt: "Gift voucher purchase form with US$100, 250, 500 and 1,000 options beside a live preview of the voucher",
+      caption:
+        "Fixed denominations and a live preview — the buyer sees the gift before they pay for it.",
+      width: 2472,
+      height: 1560,
+    },
     related: ["online-retail", "marketing-automation", "loyalty-points"],
   },
 
@@ -351,6 +389,13 @@ export const GLOSSARY: GlossaryEntry[] = [
       },
     ],
     demo: { href: "/rewards", label: "See the rewards programme" },
+    image: {
+      src: "/images/glossary/loyalty-points.png",
+      alt: "Points table showing example treatments and the points each one earns",
+      caption: "Points are earned automatically at checkout — nothing to stamp, nothing to remember.",
+      width: 2472,
+      height: 682,
+    },
     related: ["online-retail", "crm", "marketing-automation"],
   },
 
@@ -396,6 +441,13 @@ export const GLOSSARY: GlossaryEntry[] = [
       },
     ],
     demo: { href: "/submit-review", label: "Try submitting a review" },
+    image: {
+      src: "/images/glossary/video-reviews.png",
+      alt: "Review submission form with tabs for writing a review or recording one on video",
+      caption: "Write it or record it. The ones who record are worth disproportionately more.",
+      width: 1512,
+      height: 2864,
+    },
     related: ["marketing-automation", "crm", "funnel"],
   },
 
@@ -576,6 +628,14 @@ export const GLOSSARY: GlossaryEntry[] = [
       },
     ],
     demo: { href: "/financial", label: "Open the calculator" },
+    image: {
+      src: "/images/glossary/profit-calculator.png",
+      alt: "Calculator panel comparing today's profit against profit after one extra patient a week, with fixed costs unchanged in both columns",
+      caption:
+        "Fixed costs are identical in both columns. That is the entire argument, in one screen.",
+      width: 1182,
+      height: 1888,
+    },
     related: ["funnel", "online-retail", "online-booking"],
   },
 ];

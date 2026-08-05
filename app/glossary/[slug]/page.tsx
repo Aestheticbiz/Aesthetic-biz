@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
@@ -88,6 +89,19 @@ export default async function GlossaryEntryPage({
               ))}
             </ol>
           </section>
+
+          {entry.image && (
+            <figure className="gl-shot">
+              <Image
+                src={entry.image.src}
+                alt={entry.image.alt}
+                width={entry.image.width}
+                height={entry.image.height}
+                sizes="(max-width: 860px) 100vw, 780px"
+              />
+              <figcaption>{entry.image.caption}</figcaption>
+            </figure>
+          )}
 
           {entry.demo && (
             <section className="gl-demo">

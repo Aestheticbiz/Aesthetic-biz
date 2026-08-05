@@ -343,6 +343,32 @@
   line-height: 1.68;
 }
 
+/* Screenshot of the real thing */
+.gl-shot {
+  margin: clamp(28px, 4vw, 40px) 0;
+}
+
+.gl-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Tall captures (a long form, the calculator panel) would otherwise dominate
+     the page — cap them and show the top, which is the part that reads. */
+  max-height: 620px;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid var(--gl-line);
+  background: #fff;
+}
+
+.gl-shot figcaption {
+  margin-top: 10px;
+  color: #83878f;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  font-style: italic;
+}
+
 /* Demo strip */
 .gl-demo {
   display: flex;
