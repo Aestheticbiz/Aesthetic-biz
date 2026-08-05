@@ -8,6 +8,7 @@ import {
   STATUS_LABEL,
   type ComponentStatus,
 } from "@/lib/business-components";
+import { GlossaryTerm } from "@/components/glossary-term";
 import { PreviewBar } from "@/components/preview-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -38,9 +39,17 @@ export default function FeaturesPage() {
           <span className="eyebrow">Patient Revenue Platform</span>
           <h1>A business operating system for one clinic — not another brochure site</h1>
           <p>
-            We designed a dedicated system for aesthetic practices: website, booking, retail,
-            loyalty, reviews, CRM follow-up and operations — built around how a Midtown (or Main
-            Street) clinic actually makes money.
+            We designed a dedicated system for aesthetic practices:{" "}
+            <GlossaryTerm slug="online-booking">booking</GlossaryTerm>,{" "}
+            <GlossaryTerm slug="online-retail">retail</GlossaryTerm>,{" "}
+            <GlossaryTerm slug="loyalty-points">loyalty</GlossaryTerm>,{" "}
+            <GlossaryTerm slug="video-reviews">reviews</GlossaryTerm>,{" "}
+            <GlossaryTerm slug="crm">CRM</GlossaryTerm> follow-up and operations — built around how
+            a Midtown (or Main Street) clinic actually makes money.
+          </p>
+          <p className="page-hero-glossary">
+            Hover any underlined term for a one-line summary, or read the full{" "}
+            <Link href="/glossary">platform glossary</Link>.
           </p>
         </div>
       </section>

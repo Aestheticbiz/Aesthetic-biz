@@ -54,6 +54,7 @@ export function SiteFooter({
             <h4>For practice owners</h4>
             <Link href="/full-fee-patients">The 90-day platform</Link>
             <Link href="/financial">Profit calculator</Link>
+            <Link href="/glossary">Platform glossary</Link>
             <Link href="/audit">Online business audit</Link>
             <Link href="/features">Business components</Link>
             <Link href="/customizer">Customizer</Link>

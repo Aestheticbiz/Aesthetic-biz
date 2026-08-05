@@ -1,0 +1,150 @@
+/* Inline glossary term + hover popup. CSS-only, no JS. */
+
+.gterm {
+  position: relative;
+  display: inline-block;
+}
+
+.gterm-anchor {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--gold-dark, #a8896a);
+  cursor: help;
+}
+
+.gterm-anchor:hover {
+  border-bottom-style: solid;
+  color: var(--gold-dark, #a8896a);
+}
+
+.gterm-pop {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  z-index: 60;
+  display: block;
+  width: max-content;
+  max-width: min(320px, 78vw);
+  padding: 14px 16px;
+  background: #0a1628;
+  border: 1px solid rgba(200, 168, 130, 0.5);
+  box-shadow: 0 18px 40px rgba(7, 16, 29, 0.35);
+  color: #f2efe8;
+  /* Hidden by default, and never intercepting the pointer while hidden. */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+  pointer-events: none;
+  text-align: left;
+  white-space: normal;
+}
+
+/* Alignment is chosen at hover time so the popup never clips off-screen. */
+.gterm-pop-center {
+  left: 50%;
+  transform: translate(-50%, 4px);
+}
+
+.gterm-pop-start {
+  left: 0;
+  transform: translate(0, 4px);
+}
+
+.gterm-pop-end {
+  right: 0;
+  transform: translate(0, 4px);
+}
+
+.gterm:hover .gterm-pop-center,
+.gterm:focus-within .gterm-pop-center {
+  transform: translate(-50%, 0);
+}
+
+.gterm:hover .gterm-pop-start,
+.gterm:focus-within .gterm-pop-start,
+.gterm:hover .gterm-pop-end,
+.gterm:focus-within .gterm-pop-end {
+  transform: translate(0, 0);
+}
+
+.gterm:hover .gterm-pop,
+.gterm:focus-within .gterm-pop {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Little pointer down to the term, tracking whichever edge we anchored to. */
+.gterm-pop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  border: 6px solid transparent;
+  border-top-color: rgba(200, 168, 130, 0.5);
+}
+
+.gterm-pop-center::after {
+  left: 50%;
+  margin-left: -6px;
+}
+
+.gterm-pop-start::after {
+  left: 14px;
+}
+
+.gterm-pop-end::after {
+  right: 14px;
+}
+
+.gterm-pop-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.gterm-pop-head strong {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #f7f4ec;
+}
+
+.gterm-status {
+  flex: none;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(247, 247, 248, 0.6);
+}
+
+.gterm-pop-body {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(247, 247, 248, 0.8);
+}
+
+.gterm-pop-more {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c8a882;
+}
+
+/* Near the viewport edges a centred popup would clip; nudge it inward. */
+@media (max-width: 620px) {
+  .gterm-pop {
+    max-width: 74vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gterm-pop {
+    transition: none;
+  }
+}
