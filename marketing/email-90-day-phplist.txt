@@ -1,5 +1,3 @@
-Hi [FIRSTNAME],
-
 Somebody looked you up at nine last night and could not finish the booking.
 
 They did not complain. They did not phone. They opened the next result and
