@@ -204,7 +204,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     status: "In the platform package",
     category: "Convert",
     whatItIs:
-      "Customer Relationship Management — in practice, a single record for each person who has ever contacted your practice, holding what they asked about, what they booked, what they bought, and what should happen next. It replaces the arrangement most practices actually run on: a spreadsheet, a shared inbox, a WhatsApp thread and somebody's memory.",
+      "Customer Relationship Management — in practice, a single record for each person who has ever contacted your practice, holding what they asked about, what they booked, what they bought, and what should happen next. It replaces the arrangement most practices actually run on: a spreadsheet, a shared inbox, a WhatsApp thread and somebody's memory. The structure below follows the established open-source CRM model — the same object types a mature system uses — rather than an invented one, so nothing about your data is proprietary to us and you are never locked in.",
     whyItMatters: [
       "Enquiries do not get lost because people are careless. They get lost because they arrive in four places at once and no single place shows what is outstanding.",
       "The revenue in an aesthetic practice is overwhelmingly repeat revenue. A patient who had filler nine months ago is due — but only a system that knows the date will tell you, and only if the date was recorded somewhere other than a diary.",
@@ -213,19 +213,44 @@ export const GLOSSARY: GlossaryEntry[] = [
     ],
     howItWorks: [
       {
-        step: "Everything lands in one pipeline",
+        step: "Leads",
         detail:
-          "Bookings, Skin Assessment submissions, contact forms and enquiries arrive as records rather than as notifications, so nothing is 'handled' by being read.",
+          "Anyone who has raised a hand but is not yet a patient — a Skin Assessment submission, a contact form, an unanswered call. A lead is either qualified and converted, or closed with a reason. Nothing sits in limbo.",
       },
       {
-        step: "Each record carries its history",
+        step: "Contacts and Organisations",
         detail:
-          "What they asked, when they came, what they were treated with, what they bought, what they said in a review.",
+          "The patient themselves, and where relevant the organisation behind them — a corporate account buying vouchers, or a referring practice. A converted lead becomes a contact and keeps its history.",
       },
       {
-        step: "The system says what is next",
+        step: "Opportunities",
         detail:
-          "Due for a repeat, enquiry unanswered for two days, assessment completed but never contacted.",
+          "A treatment plan under consideration, with an expected value and a stage. This is what turns 'she's thinking about it' into a number you can forecast and a date somebody has to act on.",
+      },
+      {
+        step: "Products, Services and Price Books",
+        detail:
+          "Your treatment menu and retail stock as structured records, with price books for member, package and standard pricing — so a quote is assembled from real prices rather than typed from memory.",
+      },
+      {
+        step: "Quotes and Invoices",
+        detail:
+          "The priced proposal a patient takes away, and the bill that follows it. Both attached to the contact, so what was offered and what was paid are never separate stories.",
+      },
+      {
+        step: "Activities and Documents",
+        detail:
+          "Appointments, call-backs and tasks on a shared calendar; consent forms, before-and-after images and treatment records filed against the person they belong to.",
+      },
+      {
+        step: "Cases",
+        detail:
+          "Anything raised after treatment — a concern, a question, a complaint. Tracked to resolution rather than resolved in a WhatsApp thread nobody else can see.",
+      },
+      {
+        step: "Workflows",
+        detail:
+          "The rules that fire without anyone remembering: assessment submitted, notify and acknowledge; treatment due, remind; enquiry untouched for two days, escalate.",
       },
     ],
     questions: [
@@ -240,6 +265,14 @@ export const GLOSSARY: GlossaryEntry[] = [
       {
         q: "Is the CRM included?",
         a: "Yes — the enquiry pipeline is part of the platform package rather than an extra subscription. What is on the demo site is the front end; the operations console is built with your clinic.",
+      },
+      {
+        q: "Am I locked into your system?",
+        a: "No, and the structure above is the reason. It follows the standard CRM object model — leads, contacts, opportunities, products, quotes, cases — rather than something invented for you. Your data exports in a shape any mature CRM will accept, so leaving is a migration rather than a rebuild.",
+      },
+      {
+        q: "Do I need every one of those modules?",
+        a: "Almost certainly not on day one. Most practices start with leads, contacts and activities, and grow into opportunities and price books once the volume justifies it. The point of the model is that the room is already there when you need it.",
       },
     ],
     related: ["funnel", "marketing-automation", "lead-generation", "online-booking"],
