@@ -595,11 +595,12 @@ export const GLOSSARY: GlossaryEntry[] = [
     status: "Live in demo",
     category: "Convert",
     whatItIs:
-      "A voice interface built into the website. On this demo it is aimed at clinic owners: Adel explains what each component does and why it matters commercially, and can navigate the site while she talks. She does not give clinical advice and does not answer your practice telephone.",
+      "A conversational guide built into the website. On this demo it is aimed at clinic owners: Adel explains what each component does and why it matters commercially, and can navigate the site while she talks. The patient-facing version of the same idea is live on Star Aesthetic Centre, where a consultant called Niki helps patients find treatments and products. Neither gives clinical advice, and neither answers your practice telephone — that is a separate capability and it is not yet available.",
     whyItMatters: [
       "Owners evaluating a platform have specific questions and no appetite for reading twelve pages to find the answer to one of them.",
       "Speaking is faster than clicking. Somebody can ask 'how do gift vouchers work' and be on the page in a sentence.",
       "It demonstrates the capability rather than describing it, which is the whole argument of a demo site.",
+      "On the patient side it answers the questions that would otherwise go unasked — what a treatment involves, what suits their skin, what to use at home — at the hour when nobody is at the front desk.",
     ],
     howItWorks: [
       {
@@ -619,7 +620,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     questions: [
       {
         q: "Could a version of this help my patients rather than owners?",
-        a: "A patient-facing concierge — helping somebody find the right treatment and reach booking — is launch scope for a practice build rather than something running on this demo.",
+        a: "It already does, on a real practice. Star Aesthetic Centre runs a patient-facing consultant called Niki that helps people find the right treatment and the right products. Adel here is the owner-facing version. A patient-facing consultant is part of the platform package for your build rather than something running on this demo site.",
       },
       {
         q: "Can it answer my clinic's phone?",
