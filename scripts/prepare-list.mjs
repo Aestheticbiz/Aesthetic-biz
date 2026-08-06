@@ -4,10 +4,12 @@
  * that were in the first test batch through silently.
  *
  *   node scripts/prepare-list.mjs data/leads/raw-export.csv
- *   node scripts/prepare-list.mjs data/leads/raw-export.csv --keep-role-accounts
+ *   node scripts/prepare-list.mjs data/leads/*.csv --out data/leads/send.csv
+ *   node scripts/prepare-list.mjs data/leads/*.csv --keep-role-accounts
  *
- * Writes <input>.phplist.csv beside the input and prints a quality report.
- * Nothing in data/leads is committed — it is gitignored.
+ * Multiple inputs are merged and deduplicated across all of them. Writes a
+ * phpList-ready CSV and prints a quality report. Nothing in data/leads is
+ * committed — it is gitignored.
  */
 
 import { readFile, writeFile } from "node:fs/promises";
@@ -75,16 +77,83 @@ function isRoleAccount(email) {
 }
 
 async function main() {
-  const input = process.argv[2];
-  const keepRole = process.argv.includes("--keep-role-accounts");
+  const argv = process.argv.slice(2);
+  const keepRole = argv.includes("--keep-role-accounts");
+  const outIdx = argv.indexOf("--out");
+  const explicitOut = outIdx !== -1 ? argv[outIdx + 1] : null;
 
-  if (!input) {
-    console.error("Usage: node scripts/prepare-list.mjs <input.csv> [--keep-role-accounts]");
+  const inputs = argv.filter(
+    (a, i) => !a.startsWith("--") && i !== (outIdx === -1 ? -1 : outIdx + 1),
+  );
+
+  if (inputs.length === 0) {
+    console.error(
+      "Usage: node scripts/prepare-list.mjs <input.csv...> [--out file.csv] [--keep-role-accounts]",
+    );
     process.exit(1);
   }
 
+  // Shared across every input file so the same clinic cannot slip in twice.
+  const seenEmail = new Set();
+  const seenDomain = new Map();
+  const rows = [];
+  const stats = {
+    total: 0,
+    invalidEmail: 0,
+    duplicateEmail: 0,
+    extraPerClinic: 0,
+    roleAccounts: 0,
+    businessNameAsFirstName: 0,
+    missingFirstName: 0,
+    kept: 0,
+  };
+
+  for (const input of inputs) {
+    await ingest(input, { keepRole, seenEmail, seenDomain, rows, stats });
+  }
+
+  const outHeaders = ["email", "FIRSTNAME", "business", "city", "state", "title", "website", "phone"];
+  const out = [
+    outHeaders.join(","),
+    ...rows.map((r) => outHeaders.map((h) => csvEscape(r[h])).join(",")),
+  ].join("\n");
+
+  const outPath =
+    explicitOut ??
+    (inputs.length === 1
+      ? inputs[0].replace(/\.csv$/i, "") + ".phplist.csv"
+      : path.join(path.dirname(inputs[0]), "merged.phplist.csv"));
+
+  await writeFile(outPath, out + "\n", "utf8");
+
+  const pct = (n) => (stats.total ? `${Math.round((n / stats.total) * 100)}%` : "0%");
+
+  console.log(`\n  ${inputs.length} file(s) → ${path.basename(outPath)}\n`);
+  console.log(`  rows in                     ${stats.total}`);
+  console.log(`  invalid email               ${stats.invalidEmail}`);
+  console.log(`  duplicate email             ${stats.duplicateEmail}`);
+  console.log(`  extra contacts per clinic   ${stats.extraPerClinic}`);
+  console.log(
+    `  role accounts               ${stats.roleAccounts} (${pct(stats.roleAccounts)})${keepRole ? " — kept" : " — dropped"}`,
+  );
+  console.log(`  business name in FIRSTNAME  ${stats.businessNameAsFirstName} (blanked)`);
+  console.log(`  no usable first name        ${stats.missingFirstName}`);
+  console.log(`\n  KEPT                        ${stats.kept}\n`);
+
+  if (stats.kept < 750) {
+    console.log(`  ⚠  ${stats.kept} contacts. The booking maths needs roughly 750–1,000`);
+    console.log(`     for 5–10 discovery calls. Treat anything smaller as a test.\n`);
+  }
+  if (stats.roleAccounts / Math.max(stats.total, 1) > 0.5) {
+    console.log(`  ⚠  Over half this list is reception inboxes. Those reach a`);
+    console.log(`     receptionist, not the owner who can authorise US$10,000.\n`);
+  }
+}
+
+async function ingest(input, { keepRole, seenEmail, seenDomain, rows, stats }) {
   const raw = await readFile(input, "utf8");
   const lines = raw.split(/\r?\n/).filter((l) => l.trim().length > 0);
+  if (lines.length < 2) return;
   const headers = splitCsvLine(lines[0]);
 
   const cols = {
@@ -101,23 +170,9 @@ async function main() {
   };
 
   if (cols.email === -1) {
-    console.error(`No email column found. Headers were: ${headers.join(", ")}`);
-    process.exit(1);
+    console.error(`  ! ${path.basename(input)}: no email column (headers: ${headers.join(", ")})`);
+    return;
   }
-
-  const seenEmail = new Set();
-  const seenDomain = new Map();
-  const rows = [];
-  const stats = {
-    total: 0,
-    invalidEmail: 0,
-    duplicateEmail: 0,
-    extraPerClinic: 0,
-    roleAccounts: 0,
-    businessNameAsFirstName: 0,
-    missingFirstName: 0,
-    kept: 0,
-  };
 
   for (const line of lines.slice(1)) {
     const cells = splitCsvLine(line);
@@ -168,36 +223,6 @@ async function main() {
       website: cols.website !== -1 ? cells[cols.website] ?? "" : "",
       phone: cols.phone !== -1 ? cells[cols.phone] ?? "" : "",
     });
-  }
-
-  const outHeaders = ["email", "FIRSTNAME", "business", "city", "state", "title", "website", "phone"];
-  const out = [
-    outHeaders.join(","),
-    ...rows.map((r) => outHeaders.map((h) => csvEscape(r[h])).join(",")),
-  ].join("\n");
-
-  const outPath = input.replace(/\.csv$/i, "") + ".phplist.csv";
-  await writeFile(outPath, out + "\n", "utf8");
-
-  const pct = (n) => (stats.total ? `${Math.round((n / stats.total) * 100)}%` : "0%");
-
-  console.log(`\n  ${path.basename(input)} → ${path.basename(outPath)}\n`);
-  console.log(`  rows in                     ${stats.total}`);
-  console.log(`  invalid email               ${stats.invalidEmail}`);
-  console.log(`  duplicate email             ${stats.duplicateEmail}`);
-  console.log(`  extra contacts per clinic   ${stats.extraPerClinic}`);
-  console.log(`  role accounts               ${stats.roleAccounts} (${pct(stats.roleAccounts)})${keepRole ? " — kept" : " — dropped"}`);
-  console.log(`  business name in FIRSTNAME  ${stats.businessNameAsFirstName} (blanked)`);
-  console.log(`  no usable first name        ${stats.missingFirstName}`);
-  console.log(`\n  KEPT                        ${stats.kept}\n`);
-
-  if (stats.kept < 750) {
-    console.log(`  ⚠  ${stats.kept} contacts. The booking maths needs roughly 750–1,000`);
-    console.log(`     for 5–10 discovery calls. Treat anything smaller as a test.\n`);
-  }
-  if (stats.roleAccounts / Math.max(stats.total, 1) > 0.5) {
-    console.log(`  ⚠  Over half this list is reception inboxes. Those reach a`);
-    console.log(`     receptionist, not the owner who can authorise US$10,000.\n`);
   }
 }
 
