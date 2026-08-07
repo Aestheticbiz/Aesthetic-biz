@@ -27,29 +27,32 @@ create index if not exists reviews_approved_idx on public.reviews (approved, cre
 create index if not exists reviews_treatment_idx on public.reviews (treatment_slug);
 create index if not exists reviews_product_idx on public.reviews (product_slug);
 
+-- Discovery Call bookings (business / CRM sales). Shape must match
+-- app/api/discovery-bookings/route.ts and supabase/discovery-bookings.sql.
 create table if not exists public.discovery_bookings (
-  id uuid primary key default gen_random_uuid(),
-  created_at timestamptz not null default now(),
-  name text not null,
-  email text not null,
-  phone text,
-  practice_name text,
-  timezone text,
-  slot_start timestamptz not null,
-  slot_date text not null,
-  slot_time text not null,
-  source text,
-  notes text,
-  status text not null default 'confirmed'
-    check (status in ('confirmed', 'cancelled', 'completed'))
+  id          text primary key,
+  start_utc   timestamptz not null,
+  end_utc     timestamptz not null,
+  slot_date   text not null,
+  slot_time   text not null,
+  timezone    text not null,
+  first_name  text not null,
+  last_name   text not null,
+  email       text not null,
+  phone       text,
+  company     text not null,
+  role        text,
+  website     text,
+  message     text not null,
+  source      text,
+  created_at  timestamptz not null default now()
 );
 
-create index if not exists discovery_bookings_slot_idx
-  on public.discovery_bookings (slot_date, slot_time, status);
+create unique index if not exists discovery_bookings_start_utc_key
+  on public.discovery_bookings (start_utc);
 
-create unique index if not exists discovery_bookings_active_slot_uidx
-  on public.discovery_bookings (slot_date, slot_time)
-  where status = 'confirmed';
+create index if not exists discovery_bookings_created_at_idx
+  on public.discovery_bookings (created_at desc);
 
 alter table public.reviews enable row level security;
 alter table public.discovery_bookings enable row level security;
@@ -63,10 +66,7 @@ drop policy if exists "reviews_public_read_approved" on public.reviews;
 create policy "reviews_public_read_approved" on public.reviews
   for select to anon, authenticated using (approved = true);
 
--- Discovery: public insert + read booked slots (no PII on select for anon — use service role in API)
-drop policy if exists "discovery_public_insert" on public.discovery_bookings;
-create policy "discovery_public_insert" on public.discovery_bookings
-  for insert to anon, authenticated with check (status = 'confirmed');
+-- Discovery: API uses service role (bypasses RLS). No anon policies for PII.
 
 -- Storage for review videos (optional)
 insert into storage.buckets (id, name, public)

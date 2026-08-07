@@ -306,7 +306,8 @@ export function DiscoveryBookingWizard() {
             <div aria-hidden className="website-trap">
               <label>
                 Leave blank
-                <input name="websiteTrap" tabIndex={-1} autoComplete="off" />
+                {/* Obscure name — "websiteTrap" gets autofilled next to Website and fake-fails bookings */}
+                <input name="crm_internal_note" tabIndex={-1} autoComplete="off" />
               </label>
             </div>
             {submitError ? (
