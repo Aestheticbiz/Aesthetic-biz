@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Website Conversion Audit — Boca Med Spa</title>
+<style>
+:root{
+    --navy:#0f2647; --navy-mid:#1b3d6e; --gold:#c8a882; --gold-dk:#a8896a;
+    --ink:#1c1f26; --muted:#5c5f68; --line:#e2e2e6; --canvas:#f7f7f8;
+    --ok:#2f7a59; --warn:#8a6c4c; --bad:#a2453f;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+  .wrap{width:min(880px,calc(100% - 40px));margin-inline:auto}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--navy);margin:0}
+  p{margin:0 0 16px}
+  a{color:var(--gold-dk)}
+
+  /* Header */
+  .top{background:var(--navy);color:#f2efe8;padding:44px 0 40px}
+  .top .wrap>p{color:rgba(255,255,255,.75)}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+  .top h1{color:#f7f4ec;font-size:clamp(30px,5vw,44px);margin-bottom:14px}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
+  .meta div span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .meta div strong{font-weight:600;font-size:15px;color:#f7f4ec}
+
+  /* Generous, even rhythm, with a faint tint alternating so each section reads
+     as its own block rather than one continuous scroll. */
+  section{padding:clamp(56px,7vw,88px) 0;border-bottom:1px solid var(--line);background:var(--canvas)}
+  section:nth-of-type(even){background:#fff}
+  section h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:18px}
+  .lead{font-size:17px;color:var(--muted)}
+
+  /* Score */
+  .scorewrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);padding:26px;margin-bottom:22px}
+  .bigscore{font-family:var(--serif);font-size:60px;line-height:1;color:var(--navy)}
+  .bigscore small{font-size:20px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--navy);color:#f2efe8;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .pill{display:inline-block;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+  .p-ok{background:rgba(47,122,89,.12);color:var(--ok)}
+  .p-warn{background:rgba(200,168,130,.18);color:var(--warn)}
+  .p-bad{background:rgba(162,69,63,.1);color:var(--bad)}
+  .p-none{background:rgba(92,95,104,.09);color:var(--muted)}
+  .tblwrap{overflow-x:auto}
+
+  .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  /* One fixed width for every card label — ragged widths read as careless. */
+  .label{display:block;width:100%;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;background:var(--navy);color:var(--gold);margin-bottom:14px}
+  @media(min-width:760px){.label{width:24%;min-width:210px}}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:6px 16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
+  .row dt{font-weight:700;color:var(--navy)}
+  .row dd{margin:0;color:var(--muted)}
+
+  figure{margin:0 0 20px}
+  figure img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+  figcaption{margin-top:8px;font-size:13px;color:var(--muted);font-style:italic}
+  .shots{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:760px){.shots{grid-template-columns:1.6fr 1fr;align-items:start}}
+
+  ul.clean{margin:0 0 16px;padding-left:20px}
+  ul.clean li{margin-bottom:9px}
+
+  /* Calculator */
+  .calc{background:var(--navy);color:#f2efe8;padding:28px 26px}
+  .calc h2{color:#f7f4ec}
+  .calc .lead{color:rgba(255,255,255,.75)}
+  .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+  .field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .field input{width:100%;padding:11px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:16px;font-family:inherit}
+  .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .field small{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.5)}
+  .scen{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:8px}
+  @media(min-width:700px){.scen{grid-template-columns:repeat(3,1fr)}}
+  .scen>div{background:var(--navy);padding:18px}
+  .scen h4{margin:0 0 4px;font-family:var(--serif);font-size:18px;color:var(--gold)}
+  .scen .rate{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px}
+  .scen .out{font-family:var(--serif);font-size:27px;color:#f7f4ec;line-height:1.2}
+  .scen .cap{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+  .workings{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.7)}
+  .workings code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--gold)}
+  .disclaim{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.06);font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6}
+
+  /* CTA */
+  .cta{background:#fff;border:1px solid var(--gold);padding:0;overflow:hidden}
+  .cta-grid{display:grid;grid-template-columns:1fr}
+  @media(min-width:820px){.cta-grid{grid-template-columns:1.05fr .95fr}}
+  .cta-copy{padding:32px 30px}
+  .cta-copy h2{margin-bottom:12px}
+  .cta-img{background:var(--canvas) center/cover no-repeat;min-height:250px}
+  .btn{display:block;width:100%;padding:18px 30px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;font-size:16px;text-align:center}
+  .btn:hover{background:#dcbe9c}
+
+  /* A lone button has nothing behind it. A face, a name and a second, lower-
+     commitment action give the reader something to say yes to. */
+  .signoff{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .signoff img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;background:#fff;border:1px solid var(--line)}
+  .signoff .who{flex:1;min-width:150px}
+  .signoff .who strong{display:block;font-size:15px;color:var(--navy)}
+  .signoff .who span{font-size:13px;color:var(--muted)}
+  .btn-call{display:inline-block;padding:11px 22px;background:var(--navy);color:#f7f4ec;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .btn-call:hover{background:var(--navy-mid)}
+
+  .work figure a{display:block;text-decoration:none}
+  .work figure a img{transition:border-color .2s ease}
+  .work figure a:hover img{border-color:var(--gold)}
+  .visit{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--gold-dk);text-decoration:none}
+  .visit:hover{text-decoration:underline}
+  .why{margin:18px 0;padding-left:0;list-style:none}
+  .why li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15px}
+  .why li:before{content:"→";position:absolute;left:0;color:var(--gold-dk);font-weight:700}
+
+  .work{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px}
+  @media(min-width:760px){.work{grid-template-columns:1fr 1fr}}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.62);padding:30px 0;font-size:13px}
+  footer a{color:var(--gold)}
+  .fine{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+  .btn-pdf{display:inline-block;padding:11px 20px;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;text-decoration:none}
+  .btn-pdf:hover{background:var(--gold);color:var(--navy)}
+
+  /* Print / PDF: keep evidence and findings whole across page breaks, and drop
+     the things that only make sense on screen. */
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    section{padding:22px 0;background:#fff !important;break-inside:auto}
+    .btn-pdf,.btn,.btn-call{display:none !important}
+    .card,figure,.scen>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    .calc,.top,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cta-img{min-height:190px}
+    a{text-decoration:none}
+  }
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Private website conversion audit</p>
+    <h1>Boca Med Spa</h1>
+    <p>An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before an enquiry is made.</p>
+    <div class="meta">
+      <div><span>Website</span><strong>bocamedspa.com</strong></div>
+      <div><span>Location</span><strong>Boca Raton, FL</strong></div>
+      <div><span>Review date</span><strong>12 August 2026</strong></div>
+      <div><span>Devices tested</span><strong>Desktop 1366 · Mobile 390</strong></div>
+    </div>
+    <p style="margin:22px 0 0"><a class="btn-pdf" href="boca-med-spa-audit.pdf" download>Download this report as a PDF ↓</a></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Executive summary</h2>
+    <p>Boca Med Spa is clearer than most about what it actually is. The copy says <em>“We specialize in Medical Aesthetics”</em>, the navigation names real categories — Skin, Body, Injectables, Laser Hair Removal, Infrared Skin Tightening — and the location is stated in the first sentence. A visitor who arrives knowing what they want can find it.</p>
+    <p>The difficulty is that the page gives them nowhere to go. The largest heading on the homepage is the word <strong>“Home”</strong>. There is no button, no booking link and no phone number anywhere on the first screen, on either desktop or mobile. The main message — “Total Skin and Body Transformation” — is baked into a picture rather than written as text, so it is soft at full width and invisible to search engines.</p>
+    <p><strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>At a glance</h2>
+    <div class="scorewrap">
+      <div class="bigscore">29<small>/100</small></div>
+      <div style="flex:1;min-width:230px"><p style="margin:0"><strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. A score in this band points to structural gaps rather than cosmetic ones — and says nothing about the standard of treatment delivered in the room.</p></div>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Category</th><th>Score</th><th>Status</th><th>One-line finding</th></tr></thead>
+        <tbody>
+          <tr><td>First impression &amp; positioning</td><td>6/20</td><td><span class="pill p-bad">Structural</span></td><td>The largest heading on the page is the word “Home”.</td></tr>
+          <tr><td>Trust &amp; authority placement</td><td>4/20</td><td><span class="pill p-bad">Structural</span></td><td>No practitioner named, no credentials, no reviews on the homepage.</td></tr>
+          <tr><td>Booking journey &amp; conversion</td><td>5/20</td><td><span class="pill p-bad">Structural</span></td><td>No call to action on the first screen; enquiry is by phone only.</td></tr>
+          <tr><td>Patient decision psychology</td><td>5/15</td><td><span class="pill p-bad">Structural</span></td><td>Nothing on the first screen tells a visitor what to do next.</td></tr>
+          <tr><td>Mobile experience</td><td>3/10</td><td><span class="pill p-bad">Structural</span></td><td>The hero message is an image that does not scale, and there is no tap-to-call.</td></tr>
+          <tr><td>Local / public signals</td><td>3/5</td><td><span class="pill p-ok">Solid</span></td><td>Address and phone are present and consistent; location stated early.</td></tr>
+          <tr><td>Treatment content quality</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
+          <tr><td>Technical / performance</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What the practice is already doing well</h2>
+    <p class="lead">These are real advantages, and several of the recommendations below are about making them findable rather than building anything new.</p>
+    <ul class="clean">
+      <li><strong>The positioning is medical, not spa.</strong> <em>(Observed)</em> “We specialize in Medical Aesthetics” is stated plainly. A great many medspa sites blur this to sound more relaxing, and lose the patient who is making a clinical decision. This one does not.</li>
+      <li><strong>The navigation names real categories.</strong> <em>(Observed)</em> Skin · Body · Waxing · Injectables · Laser Hair Removal · Infrared Skin Tightening · Matrix IR Wrinkle Reduction. A visitor with a specific concern can see where to go, which is more than many far newer sites manage.</li>
+      <li><strong>The location appears in the first sentence.</strong> <em>(Observed)</em> “located in Boca Raton, FL” is exactly what someone searching locally needs to see immediately, and it is there.</li>
+      <li><strong>Contact details are consistent.</strong> <em>(Observed)</em> The address at 600 S. Dixie Hwy and the number 561-447-2240 match across the site, which is more often wrong than right and matters for local search.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The evidence</h2>
+    <div class="shots">
+      <figure>
+        <img src="images/audited-desktop.jpg" alt="Boca Med Spa homepage on a 1366-pixel desktop screen" />
+        <figcaption>Desktop, 1366×768. The page heading reads “Home”. There is no button, no booking link and no phone number on the first screen — the most prominent control is the search box.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/audited-mobile.jpg" alt="Boca Med Spa homepage on a 390-pixel mobile screen" />
+        <figcaption>Mobile, 390×844. Same heading, and the banner image is reduced to a strip. Nothing on this screen can be tapped to make contact.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 id="findings">Priority opportunities</h2>
+
+    <div class="card">
+      <span class="label">1 · Positioning</span>
+      <h3>The largest heading on the homepage is the word “Home”.</h3>
+      <p><strong>Evidence:</strong> On both desktop and mobile, the page's main heading renders as “Home”, with the description beneath it. The practice name, the specialism and the location all appear in smaller supporting text.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> That heading is the first thing a screen reader announces and one of the strongest signals a search engine reads for the page. Spent on the word “Home”, it says nothing about medical aesthetics in Boca Raton — the two things a searching patient and Google both need.</p>
+      <p><strong>Recommended:</strong> Replace it with what the practice actually is and where — the sort of line a patient could repeat to a friend. This is usually a single field in the page settings rather than a redesign.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>Same day</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">2 · Conversion</span>
+      <h3>There is nothing to click on the first screen.</h3>
+      <p><strong>Evidence:</strong> At 1366×768 the first screen shows the logo, navigation, social icons, a search box, the “Home” heading and the top of a banner image. No booking button, no enquiry link and no phone number appear. On mobile the same is true.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> A visitor who has decided in the first few seconds — which is when most decide — has nowhere to act. The most prominent interactive element on the page is the search box, which asks the patient to do the work of finding what they came for.</p>
+      <p><strong>Recommended:</strong> One primary button on the first screen: “Book a Consultation”, with the phone number beside it as a tap-to-call link on mobile. This is the single highest-value change on this list.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">3 · Trust</span>
+      <h3>No practitioner is named, and no reviews appear on the homepage.</h3>
+      <p><strong>Evidence:</strong> The homepage states “Our staff is extensively trained in Skin Care…”. No practitioner is named, no qualification, licence or supervising physician is given, and no patient review or rating appears anywhere on the page.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> For injectables and laser work the decisive question is who performs the treatment and what they are qualified to do. “Extensively trained” is a claim with no name behind it. A patient who cannot answer that question on the site usually answers it by choosing a practice where they can.</p>
+      <p><strong>Recommended:</strong> Name the treating practitioner with their qualification and a real photograph, and place two or three patient reviews on the homepage near the point where someone would decide to enquire.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1–2 weeks</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">4 · Message</span>
+      <h3>The main message is a picture of words, not words.</h3>
+      <p><strong>Evidence:</strong> “Total Skin and Body Transformation / NON-SURGICAL TREATMENTS / For Men &amp; Woman” is part of the banner image rather than text on the page. At desktop width the lettering is visibly soft, and the line “For Men &amp; Woman” contains a typing error that is fixed in the image file rather than in the page.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> Text inside an image cannot be read by search engines, cannot be enlarged by a patient who needs larger type, and goes soft whenever the image is stretched. It also means a small wording change requires a graphic designer instead of thirty seconds in the page editor.</p>
+      <p><strong>Recommended:</strong> Set that message as real text over the photograph. The typo corrects itself in the process, and the line becomes searchable and sharp at every screen size.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">5 · Booking</span>
+      <h3>Every enquiry has to become a phone call.</h3>
+      <p><strong>Evidence:</strong> No online booking or enquiry form was found from the homepage. The route to an appointment is the telephone number 561-447-2240.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> A large share of aesthetic research happens in the evening, when nobody is answering. Phone-only means the practice competes only during office hours, against clinics that accept a booking at eleven at night without anyone present.</p>
+      <p><strong>Recommended:</strong> Add a booking path that completes on your own site. Even a short enquiry form with name, treatment of interest and preferred time captures the patient who will not phone a stranger.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Medium</dd><dt>Timeframe</dt><dd>2–4 weeks</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">6 · Mobile</span>
+      <h3>On a phone, the banner becomes a strip and the message is unreadable.</h3>
+      <p><strong>Evidence:</strong> At 390×844 the banner image is scaled down to a narrow band, and the wording baked into it becomes small and indistinct. Below it the body copy is centred and set entirely in bold, which is harder to read at length than ordinary weight.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> Most aesthetic browsing is on a phone. The message the practice chose as its headline is the one thing a mobile visitor cannot comfortably read.</p>
+      <p><strong>Recommended:</strong> Real text instead of image text solves this automatically, and the paragraph beneath reads better in regular weight, left-aligned.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Patient decision psychology</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Principle</th><th>In plain English</th><th>What the site shows</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Familiarity<br>Jacob's Law</strong></td><td>People expect a site to behave like the others they use.</td><td>Clinic sites conventionally lead with a booking button. This one leads with a search box, which places the effort on the patient.</td></tr>
+          <tr><td><strong>Reachability<br>Fitts's Law</strong></td><td>Important actions should be big and easy to thumb.</td><td>There is no action on the first mobile screen to reach — the nearest is a hamburger menu.</td></tr>
+          <tr><td><strong>Proximity of proof</strong></td><td>Reassurance has to sit where the doubt is.</td><td>No review, rating or patient wording appears anywhere on the homepage.</td></tr>
+          <tr><td><strong>Authority</strong></td><td>Real expertise, visible near decisions.</td><td>“Our staff is extensively trained” — no name, no qualification, no photograph.</td></tr>
+          <tr><td><strong>Decision clarity</strong></td><td>One obvious next step.</td><td>There is no next step offered on the first screen at all.</td></tr>
+          <tr><td><strong>Helpful defaults</strong></td><td>Sensible pre-selections that serve the patient.</td><td>Navigation is organised by concern rather than by machine name, which genuinely helps someone who does not know the treatment's brand.</td></tr>
+          <tr><td><strong>Believability<br>Pratfall Effect</strong></td><td>Balanced, realistic communication is trusted more than perfection.</td><td>“Total Skin and Body Transformation” is a large promise. Notes on suitability, downtime or who a treatment is not for would make the rest more credible.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="border:0;padding-bottom:0">
+  <div class="wrap">
+    <div class="calc">
+      <h2>Illustrative growth scenario</h2>
+      <p class="lead">This is a model, not a measurement. Every figure below starts as an illustrative placeholder — replace them with your own numbers and the scenarios update immediately. Nothing here is drawn from your analytics, and no result is predicted or guaranteed.</p>
+      <div class="fields">
+        <div class="field"><label for="visitors">Monthly website visitors</label><input id="visitors" type="number" min="0" value="2000" /><small>Illustrative — from your analytics</small></div>
+        <div class="field"><label for="curRate">Current visitor → enquiry %</label><input id="curRate" type="number" min="0" max="100" step="0.1" value="1.5" /><small>Illustrative</small></div>
+        <div class="field"><label for="bookRate">Enquiry → booking %</label><input id="bookRate" type="number" min="0" max="100" step="1" value="40" /><small>Illustrative</small></div>
+        <div class="field"><label for="attend">Attendance %</label><input id="attend" type="number" min="0" max="100" step="1" value="80" /><small>Illustrative</small></div>
+        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="500" /><small>Illustrative</small></div>
+      </div>
+      <div class="scen">
+        <div><h4>Conservative</h4><p class="rate">Proposed enquiry rate <strong id="r1">2.0%</strong></p><p class="out" id="o1">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p1"></p></div>
+        <div><h4>Target</h4><p class="rate">Proposed enquiry rate <strong id="r2">2.5%</strong></p><p class="out" id="o2">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p2"></p></div>
+        <div><h4>Strong</h4><p class="rate">Proposed enquiry rate <strong id="r3">3.0%</strong></p><p class="out" id="o3">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p3"></p></div>
+      </div>
+      <div class="workings">
+        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
+        <p style="margin:0 0 6px"><code>current enquiries = visitors × current rate</code> → <span id="w1">—</span></p>
+        <p style="margin:0 0 6px"><code>improved enquiries = visitors × proposed rate</code></p>
+        <p style="margin:0 0 6px"><code>additional attended = (improved − current) × booking % × attendance %</code></p>
+        <p style="margin:0"><code>additional revenue = additional attended × average first-visit value</code></p>
+      </div>
+      <p class="disclaim">Only the proposed enquiry rate changes between the three scenarios; every other input stays as you entered it. This is an illustrative scenario built on stated assumptions — not a forecast, a projection or a guarantee. Actual results depend on factors no website review can measure.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>90-day improvement roadmap</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Window</th><th>Focus</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Days 1–14</strong></td><td>Quick wins</td><td>Replace the “Home” heading with the practice, specialism and location. Add one primary booking button and a tap-to-call number to the first screen. Set the banner message as real text and correct “For Men &amp; Woman”.</td></tr>
+          <tr><td><strong>Days 15–45</strong></td><td>Trust &amp; conversion</td><td>Name the treating practitioner with qualification and photograph. Add patient reviews to the homepage near the enquiry point. Add an enquiry form so contact does not depend on a phone call.</td></tr>
+          <tr><td><strong>Days 46–90</strong></td><td>Authority &amp; measurement</td><td>Practitioner and treatment authority content. Consistent listings across directories. Post-treatment review requests. Begin measuring enquiry-to-booking, so the figures in the calculator above become yours rather than illustrative.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Limitations &amp; methodology</h2>
+    <p class="fine">This review is based on the public homepage of bocamedspa.com viewed on 12 August 2026 at 1366×768 and 390×844, page source retrieved the same day, and publicly visible business information. Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available).</p>
+    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Findings labelled <em>Observed</em> are directly visible; findings labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Figures in the growth scenario are illustrative placeholders supplied by this report, not measurements of your practice.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta" id="talk">
+      <div class="cta-grid">
+        <div class="cta-copy">
+          <h2>A short conversation, if it is useful</h2>
+          <p>Most of what is above can be done by your existing web team, and this report is yours to use whether or not we ever speak.</p>
+          <p>Where the gaps are structural rather than cosmetic — booking that lives on someone else's platform, trust signals with nowhere to sit, no loop that brings a patient back after treatment — those are the problems we build for.</p>
+          <ul class="why">
+            <li>The changes above compound: each month they are not made is a month of the same visitors deciding elsewhere.</li>
+            <li>Aesthetic demand is seasonal. Work started now is live before the year-end run.</li>
+            <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
+          </ul>
+          <p style="margin-bottom:0"><a class="btn" href="https://www.aestheticbiz.site/book-discovery?source=audit-boca-med-spa">Book a 20-minute conversation →</a></p>
+          <div class="signoff">
+            <img src="images/ignatius-ackermann.webp" alt="Ignatius Ackermann, CRM Solutions" />
+            <div class="who">
+              <strong>Ignatius Ackermann</strong>
+              <span>CRM Solutions · building commercial platforms since 2001<br />Reply on WhatsApp — usually within a few hours</span>
+            </div>
+            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20audit%20for%20Boca%20Med%20Spa." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
+          </div>
+        </div>
+        <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What this looks like built</h2>
+    <p class="lead">Two working examples — not mockups. Both are live and clickable.</p>
+    <div class="work">
+      <figure>
+        <a href="https://www.aestheticbiz.site/" target="_blank" rel="noopener"><img src="images/aestheticbiz-demo.jpg" alt="AestheticBiz demonstration practice homepage" /></a>
+        <figcaption><strong>aestheticbiz.site</strong> — a complete demonstration practice: booking, retail, gift vouchers, rewards and reviews. Book a test appointment on it yourself.
+          <a class="visit" href="https://www.aestheticbiz.site/" target="_blank" rel="noopener">Open the demo practice →</a></figcaption>
+      </figure>
+      <figure>
+        <a href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener"><img src="images/star-aesthetic-portfolio.jpg" alt="Star Aesthetic Centre homepage" /></a>
+        <figcaption><strong>staraesthetic.co.za</strong> — a doctor-led practice with twenty years of reputation, rebuilt and running: booking, skincare commerce, rewards and vouchers.
+          <a class="visit" href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener">Open staraesthetic.co.za →</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 6px">Prepared for Boca Med Spa · 12 August 2026 · This report is confidential to the recipient.</p>
+    <p style="margin:0">Powered by CRM Solutions — <a href="https://www.crmsolutions.app">www.crmsolutions.app</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var ids = ['visitors', 'curRate', 'bookRate', 'attend', 'value'];
+  var scenarios = [
+    { rate: 2.0, out: 'o1', label: 'r1', pat: 'p1' },
+    { rate: 2.5, out: 'o2', label: 'r2', pat: 'p2' },
+    { rate: 3.0, out: 'o3', label: 'r3', pat: 'p3' }
+  ];
+
+  function num(id) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isFinite(v) && v >= 0 ? v : 0;
+  }
+
+  function money(n) {
+    return 'US$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function recalc() {
+    var visitors = num('visitors');
+    var cur = num('curRate') / 100;
+    var book = num('bookRate') / 100;
+    var attend = num('attend') / 100;
+    var value = num('value');
+
+    var currentEnq = visitors * cur;
+    document.getElementById('w1').textContent =
+      visitors.toLocaleString('en-US') + ' × ' + (cur * 100).toFixed(1) + '% = ' +
+      currentEnq.toFixed(1) + ' enquiries / month';
+
+    scenarios.forEach(function (s) {
+      // Only the proposed rate varies; a proposal below current shows nothing
+      // rather than a negative, which would be meaningless here.
+      var proposed = Math.max(s.rate / 100, cur);
+      var improvedEnq = visitors * proposed;
+      var addEnq = Math.max(improvedEnq - currentEnq, 0);
+      var addAttended = addEnq * book * attend;
+      var revenue = addAttended * value;
+
+      document.getElementById(s.label).textContent = (proposed * 100).toFixed(1) + '%';
+      document.getElementById(s.out).textContent = money(revenue);
+      document.getElementById(s.pat).textContent =
+        addAttended.toFixed(1) + ' additional attended patients · ' +
+        money(revenue * 12) + ' over twelve months';
+    });
+  }
+
+  ids.forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener('input', recalc);
+    el.addEventListener('change', recalc);
+  });
+
+  recalc();
+})();
+
+</script>
+
+</body>
+</html>

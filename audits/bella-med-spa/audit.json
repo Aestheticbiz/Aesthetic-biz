@@ -1,0 +1,110 @@
+{
+  "clinic": "Bella Med Spa & Aesthetics",
+  "domain": "bellamedspadfw.com",
+  "location": "Dallas & McKinney, TX",
+  "date": "12 August 2026",
+  "avgValue": 550,
+  "score": 58,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "This is a well-made site. The design is calm and current, the hero carries a real booking button rather than a browse link, and the supporting line — <em>“advanced cosmetic treatments delivered with medical precision in a welcoming, boutique environment”</em> — does the difficult job of holding clinical and comfortable in the same sentence. Eight verified patient reviews are published. Most practices we look at do not have these things.",
+    "The clearest opportunity is that the largest words on the page are the practice's own name. “Bella Med Spa &amp; Aesthetics” tells a first-time visitor nothing they did not already know from clicking, and the sentence doing the actual work sits below it in smaller type. Two locations are listed — Dallas and McKinney — but a visitor on the first screen cannot tell which one they are looking at.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. A score in this band means the site works and loses attention at a few identifiable moments — this is a tidying job, not a rebuild.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "12/20", "status": "Gap", "finding": "The headline is the practice name; the line that sells sits beneath it." },
+    { "category": "Trust &amp; authority placement", "score": "11/20", "status": "Gap", "finding": "Eight reviews exist, but no practitioner is named with credentials." },
+    { "category": "Booking journey &amp; conversion", "score": "14/20", "status": "Solid", "finding": "A real booking button above the fold — it hands off to a third-party platform." },
+    { "category": "Patient decision psychology", "score": "9/15", "status": "Gap", "finding": "One clear action, but nothing reassuring sits beside it." },
+    { "category": "Mobile experience", "score": "7/10", "status": "Solid", "finding": "Clean and readable; no tap-to-call number on the first screen." },
+    { "category": "Local / public signals", "score": "2/5", "status": "Structural", "finding": "Two locations, and no phone number found on the homepage." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "These are genuine advantages. Several of the recommendations below are about getting more out of work that is already done.",
+  "strengths": [
+    { "title": "The hero asks for a booking, not a browse.", "confidence": "Observed", "body": "“Book Appointment” sits on the first screen on both desktop and mobile. A great many practices put “Explore Our Treatments” there instead and wonder why the diary is quiet." },
+    { "title": "The positioning line is unusually good.", "confidence": "Observed", "body": "“Advanced cosmetic treatments delivered with medical precision in a welcoming, boutique environment” holds clinical credibility and comfort together. That balance is difficult and most sites pick one and lose the other patient." },
+    { "title": "Eight verified patient reviews are published.", "confidence": "Observed", "body": "Named, with verification badges. That is real social proof and considerably more than most practices of this size have collected." },
+    { "title": "The mobile experience is clean and readable.", "confidence": "Observed", "body": "Generous type, a large tap target on the button, and no clutter competing with the message. Nothing needs rebuilding here." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. The booking button is present and prominent. No phone number appears, and neither location is identified on the first screen.",
+  "captionMobile": "Mobile, 390×844. The practice name occupies the headline position; the sentence that sells sits beneath it in smaller type.",
+
+  "findings": [
+    {
+      "area": "Positioning",
+      "heading": "The biggest words on the page are the ones the visitor already knew.",
+      "evidence": "The hero headline reads “Bella Med Spa &amp; Aesthetics”. Beneath it, in noticeably smaller type, sits the line that actually explains the offer: “Experience advanced cosmetic treatments delivered with medical precision in a welcoming, boutique environment.”",
+      "why": "Anyone reading that headline arrived by clicking the practice's name, so it tells them nothing new. Meanwhile the sentence doing real persuasive work has been demoted. The two are simply the wrong way round.",
+      "recommended": "Promote the positioning line to the headline and let the logo carry the name — it already does. The practice loses nothing and the first screen starts answering “why you” instead of “who you are”.",
+      "confidence": "Observed (text) · Interpretive (impact)",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Trust",
+      "heading": "“Medical precision” is promised, but no clinician is named.",
+      "evidence": "The homepage promises treatments “delivered with medical precision”. No practitioner, qualification, licence or supervising physician is named on the page. The only personal name that appears is a patient's, in a testimonial.",
+      "why": "The phrase invites exactly the question it does not answer: precise according to whom. For injectables that question decides the booking, and a patient who cannot answer it here will answer it at a practice that names its clinician.",
+      "recommended": "Name the treating practitioner with their qualification and a real photograph, near the booking button. Given the copy already claims medical precision, this is the piece of evidence the claim is missing.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Proof placement",
+      "heading": "Eight verified reviews, none of them near the button.",
+      "evidence": "The homepage carries a “Client Testimonials” section with eight named, verified reviews. None appear beside the booking button or on the first screen.",
+      "why": "Proof works where doubt happens. A patient hesitating over the booking button has to scroll past the decision to find the reassurance, and most will not.",
+      "recommended": "Lift one short quote and the review count directly beneath the booking button. The content already exists; it only needs moving.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Local",
+      "heading": "Two locations, and the first screen does not say which.",
+      "evidence": "The site lists premises at 412 S Llewellyn Ave, Dallas and 3701 Eldorado Pkwy, McKinney. Neither is identified on the first screen, and no phone number was found on the homepage.",
+      "why": "The two towns are roughly thirty miles apart. A visitor cannot tell whether the practice is near them without hunting, and proximity is one of the first filters an aesthetic patient applies. The absent phone number also removes the option for anyone who would rather ask than book.",
+      "recommended": "Put both locations in the header, and a tap-to-call number beside the booking button on mobile. Where budget allows, separate pages for each location also help each one rank in its own town.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "2–4 weeks"
+    },
+    {
+      "area": "Booking",
+      "heading": "The booking button hands the patient to another company.",
+      "evidence": "“Book Appointment” routes to a third-party scheduling platform (joinblvd.com) rather than completing on the practice's own domain.",
+      "why": "The handoff happens at the exact moment of commitment. The patient meets an unfamiliar brand, and some fraction reconsider. It also means the enquiry data — what people tried to book, when, and where they abandoned — belongs to the platform rather than the practice.",
+      "recommended": "Where the platform allows it, embed the booking flow so it completes on your own pages. If it cannot be embedded, carry the practice's branding through the handoff so the patient never feels transferred.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "2–4 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "Conventions are followed well — logo left, menu right, booking button in the hero. Nothing here surprises a visitor." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "The mobile booking button is a generous target in the natural thumb position. This is done correctly." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "Eight verified reviews exist, but all of them sit well below the booking decision." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "“Medical precision” is claimed; no clinician is named anywhere near it." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Strong. One button, one action, no competing calls to action on the first screen." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "No location is pre-selected or indicated, so a two-site practice reads as one of indeterminate address." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“Boutique” is a fair and modest claim rather than an inflated one, which reads as more credible than the superlatives common in this market." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Swap the headline and the positioning line. Add a tap-to-call number beside the booking button. Lift one review and the review count under the button." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name the treating practitioner with qualification and photograph. Put both locations in the header. Add treatment-specific reassurance on the highest-value pages." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Separate location pages so Dallas and McKinney each rank in their own town. Bring booking onto your own domain where the platform allows. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). No phone number was found on the homepage during this review — if one is present elsewhere on the site, that finding should be read accordingly."
+}

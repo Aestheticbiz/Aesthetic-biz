@@ -1,0 +1,133 @@
+:root{
+    --navy:#0f2647; --navy-mid:#1b3d6e; --gold:#c8a882; --gold-dk:#a8896a;
+    --ink:#1c1f26; --muted:#5c5f68; --line:#e2e2e6; --canvas:#f7f7f8;
+    --ok:#2f7a59; --warn:#8a6c4c; --bad:#a2453f;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+  .wrap{width:min(880px,calc(100% - 40px));margin-inline:auto}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--navy);margin:0}
+  p{margin:0 0 16px}
+  a{color:var(--gold-dk)}
+
+  /* Header */
+  .top{background:var(--navy);color:#f2efe8;padding:44px 0 40px}
+  .top .wrap>p{color:rgba(255,255,255,.75)}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+  .top h1{color:#f7f4ec;font-size:clamp(30px,5vw,44px);margin-bottom:14px}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
+  .meta div span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .meta div strong{font-weight:600;font-size:15px;color:#f7f4ec}
+
+  /* Generous, even rhythm, with a faint tint alternating so each section reads
+     as its own block rather than one continuous scroll. */
+  section{padding:clamp(56px,7vw,88px) 0;border-bottom:1px solid var(--line);background:var(--canvas)}
+  section:nth-of-type(even){background:#fff}
+  section h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:18px}
+  .lead{font-size:17px;color:var(--muted)}
+
+  /* Score */
+  .scorewrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);padding:26px;margin-bottom:22px}
+  .bigscore{font-family:var(--serif);font-size:60px;line-height:1;color:var(--navy)}
+  .bigscore small{font-size:20px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--navy);color:#f2efe8;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .pill{display:inline-block;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+  .p-ok{background:rgba(47,122,89,.12);color:var(--ok)}
+  .p-warn{background:rgba(200,168,130,.18);color:var(--warn)}
+  .p-bad{background:rgba(162,69,63,.1);color:var(--bad)}
+  .p-none{background:rgba(92,95,104,.09);color:var(--muted)}
+  .tblwrap{overflow-x:auto}
+
+  .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  /* One fixed width for every card label — ragged widths read as careless. */
+  .label{display:block;width:100%;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;background:var(--navy);color:var(--gold);margin-bottom:14px}
+  @media(min-width:760px){.label{width:24%;min-width:210px}}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:6px 16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
+  .row dt{font-weight:700;color:var(--navy)}
+  .row dd{margin:0;color:var(--muted)}
+
+  figure{margin:0 0 20px}
+  figure img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+  figcaption{margin-top:8px;font-size:13px;color:var(--muted);font-style:italic}
+  .shots{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:760px){.shots{grid-template-columns:1.6fr 1fr;align-items:start}}
+
+  ul.clean{margin:0 0 16px;padding-left:20px}
+  ul.clean li{margin-bottom:9px}
+
+  /* Calculator */
+  .calc{background:var(--navy);color:#f2efe8;padding:28px 26px}
+  .calc h2{color:#f7f4ec}
+  .calc .lead{color:rgba(255,255,255,.75)}
+  .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+  .field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .field input{width:100%;padding:11px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:16px;font-family:inherit}
+  .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .field small{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.5)}
+  .scen{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:8px}
+  @media(min-width:700px){.scen{grid-template-columns:repeat(3,1fr)}}
+  .scen>div{background:var(--navy);padding:18px}
+  .scen h4{margin:0 0 4px;font-family:var(--serif);font-size:18px;color:var(--gold)}
+  .scen .rate{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px}
+  .scen .out{font-family:var(--serif);font-size:27px;color:#f7f4ec;line-height:1.2}
+  .scen .cap{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+  .workings{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.7)}
+  .workings code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--gold)}
+  .disclaim{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.06);font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6}
+
+  /* CTA */
+  .cta{background:#fff;border:1px solid var(--gold);padding:0;overflow:hidden}
+  .cta-grid{display:grid;grid-template-columns:1fr}
+  @media(min-width:820px){.cta-grid{grid-template-columns:1.05fr .95fr}}
+  .cta-copy{padding:32px 30px}
+  .cta-copy h2{margin-bottom:12px}
+  .cta-img{background:var(--canvas) center/cover no-repeat;min-height:250px}
+  .btn{display:block;width:100%;padding:18px 30px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;font-size:16px;text-align:center}
+  .btn:hover{background:#dcbe9c}
+
+  /* A lone button has nothing behind it. A face, a name and a second, lower-
+     commitment action give the reader something to say yes to. */
+  .signoff{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .signoff img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;background:#fff;border:1px solid var(--line)}
+  .signoff .who{flex:1;min-width:150px}
+  .signoff .who strong{display:block;font-size:15px;color:var(--navy)}
+  .signoff .who span{font-size:13px;color:var(--muted)}
+  .btn-call{display:inline-block;padding:11px 22px;background:var(--navy);color:#f7f4ec;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .btn-call:hover{background:var(--navy-mid)}
+
+  .work figure a{display:block;text-decoration:none}
+  .work figure a img{transition:border-color .2s ease}
+  .work figure a:hover img{border-color:var(--gold)}
+  .visit{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--gold-dk);text-decoration:none}
+  .visit:hover{text-decoration:underline}
+  .why{margin:18px 0;padding-left:0;list-style:none}
+  .why li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15px}
+  .why li:before{content:"→";position:absolute;left:0;color:var(--gold-dk);font-weight:700}
+
+  .work{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px}
+  @media(min-width:760px){.work{grid-template-columns:1fr 1fr}}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.62);padding:30px 0;font-size:13px}
+  footer a{color:var(--gold)}
+  .fine{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+  .btn-pdf{display:inline-block;padding:11px 20px;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;text-decoration:none}
+  .btn-pdf:hover{background:var(--gold);color:var(--navy)}
+
+  /* Print / PDF: keep evidence and findings whole across page breaks, and drop
+     the things that only make sense on screen. */
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    section{padding:22px 0;background:#fff !important;break-inside:auto}
+    .btn-pdf,.btn,.btn-call{display:none !important}
+    .card,figure,.scen>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    .calc,.top,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cta-img{min-height:190px}
+    a{text-decoration:none}
+  }
