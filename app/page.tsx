@@ -37,19 +37,21 @@ export default async function HomePage() {
           <h1>
             Reveal calm <em>clinical confidence.</em>
           </h1>
-          <p className="hero-tagline">Madison Avenue</p>
           <p className="hero-lead">
             Acne, pigment, lip filler, contouring, hyperhidrosis, drips, and clinical retail —
             booked on a branded AestheticBiz platform, not a third-party plugin.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-gold" href="#treatments">
-              Explore Treatments →
-            </a>
-            <Link className="btn btn-outline" href="/book">
-              Book Appointment
+            <Link className="btn btn-gold" href="/book">
+              Book a Free 15-Minute Consultation →
             </Link>
           </div>
+          <p className="hero-trust">
+            Board-certified injectors · Every treatment planned in consultation first
+          </p>
+          <Link className="hero-alt-link" href="/shop">
+            Shop skincare →
+          </Link>
           <div className="hero-stats">
             <div className="hero-stat">
               <strong>5.0★</strong>

@@ -414,7 +414,7 @@ input, select, textarea {
 
 .hero {
   position: relative;
-  min-height: min(88vh, 780px);
+  min-height: min(72vh, 640px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -450,16 +450,26 @@ input, select, textarea {
   position: relative;
   z-index: 2;
   isolation: isolate;
-  padding: 80px 0 64px;
+  padding: 56px 0 44px;
 }
 
 .hero .btn-gold {
   position: relative;
   z-index: 3;
+  padding: 20px 36px;
   background: #c8a882;
   border-color: #c8a882;
   color: #0f2647;
+  font-size: 16px;
+  font-weight: 700;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.hero .btn-gold:hover {
+  background: #d9be9c;
+  border-color: #d9be9c;
+  transform: translateY(-2px);
 }
 
 .hero-location {
@@ -475,12 +485,12 @@ input, select, textarea {
 }
 
 .hero h1 {
-  max-width: 14ch;
-  margin-bottom: 10px;
+  max-width: 15ch;
+  margin-bottom: 16px;
   font-family: var(--font-display);
-  font-size: clamp(44px, 7vw, 76px);
+  font-size: clamp(38px, 5.4vw, 60px);
   font-weight: 600;
-  line-height: 1.04;
+  line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
@@ -489,19 +499,9 @@ input, select, textarea {
   color: #e2c49a;
 }
 
-.hero-tagline {
-  margin-bottom: 18px;
-  font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 32px);
-  font-weight: 500;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.88);
-  letter-spacing: 0.04em;
-}
-
 .hero-lead {
   max-width: 44ch;
-  margin: 0 0 28px;
+  margin: 0 0 24px;
   color: rgba(255, 255, 255, 0.82);
   font-size: 17px;
   font-weight: 300;
@@ -512,7 +512,33 @@ input, select, textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 12px;
+}
+
+/* Credential line sits directly under the CTA, where it answers the doubt
+   the button just created. */
+.hero-trust {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* White, not gold, on purpose: the shop is a genuine second audience but it
+   must not compete with the booking CTA. Gold stays exclusive to the button. */
+.hero-alt-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 600;
+  text-underline-offset: 4px;
+  transition: color var(--transition);
+}
+
+.hero-alt-link:hover {
+  color: var(--white);
+  text-decoration: underline;
 }
 
 .hero-stats {
@@ -520,7 +546,7 @@ input, select, textarea {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   max-width: 680px;
-  padding-top: 28px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
