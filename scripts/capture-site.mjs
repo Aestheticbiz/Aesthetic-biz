@@ -1,12 +1,16 @@
 /**
  * Screenshot any URL at a given viewport, for audit evidence.
  *
- *   node scripts/capture-site.mjs <url> <out.png> [width] [height]
+ *   node scripts/capture-site.mjs <url> <out> [width] [height] [scale]
  *   node scripts/capture-site.mjs https://example.com shot.png 1366 768
- *   node scripts/capture-site.mjs https://example.com m.png 390 844
+ *   node scripts/capture-site.mjs https://example.com shot.jpg 1366 768 1.5
  *
  * Drives Chrome over the DevTools Protocol — no dependencies (Node 22+ has a
- * global WebSocket). Captures at 2x for a sharp image in the report.
+ * global WebSocket).
+ *
+ * Use a .jpg output for anything going into an emailed report. A full-page PNG
+ * screenshot runs 2–3 MB; the same image as JPEG is roughly a tenth of that,
+ * and report pages are opened on phones.
  */
 
 import { spawn } from "node:child_process";
@@ -26,9 +30,11 @@ const url = process.argv[2];
 const out = process.argv[3];
 const width = Number(process.argv[4] ?? 1366);
 const height = Number(process.argv[5] ?? 768);
+const scale = Number(process.argv[6] ?? 2);
+const isJpeg = /\.jpe?g$/i.test(out ?? "");
 
 if (!url || !out) {
-  console.error("Usage: node scripts/capture-site.mjs <url> <out.png> [width] [height]");
+  console.error("Usage: node scripts/capture-site.mjs <url> <out> [width] [height] [scale]");
   process.exit(1);
 }
 
@@ -123,7 +129,7 @@ async function main() {
     await client.send("Emulation.setDeviceMetricsOverride", {
       width,
       height,
-      deviceScaleFactor: 2,
+      deviceScaleFactor: scale,
       mobile: width < 700,
     });
 
@@ -133,9 +139,15 @@ async function main() {
     // Fonts, hero images and any client-side rendering.
     await sleep(3000);
 
-    const { data } = await client.send("Page.captureScreenshot", { format: "png" });
-    await writeFile(out, Buffer.from(data, "base64"));
-    console.log(`  ✓ ${url} @ ${width}×${height} → ${out}`);
+    const { data } = await client.send(
+      "Page.captureScreenshot",
+      isJpeg ? { format: "jpeg", quality: 82 } : { format: "png" },
+    );
+    const buf = Buffer.from(data, "base64");
+    await writeFile(out, buf);
+    console.log(
+      `  ✓ ${url} @ ${width}×${height}@${scale}x → ${out} (${Math.round(buf.length / 1024)} KB)`,
+    );
   } finally {
     chrome.kill();
   }
