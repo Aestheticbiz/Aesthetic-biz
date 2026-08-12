@@ -29,7 +29,10 @@
   .meta div span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
   .meta div strong{font-weight:600;font-size:15px;color:#f7f4ec}
 
-  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  /* Generous, even rhythm, with a faint tint alternating so each section reads
+     as its own block rather than one continuous scroll. */
+  section{padding:clamp(56px,7vw,88px) 0;border-bottom:1px solid var(--line);background:var(--canvas)}
+  section:nth-of-type(even){background:#fff}
   section h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:18px}
   .lead{font-size:17px;color:var(--muted)}
 
@@ -49,7 +52,9 @@
 
   .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
   .card h3{font-size:20px;margin-bottom:8px}
-  .label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;background:var(--navy);color:var(--gold);margin-bottom:10px}
+  /* One fixed width for every card label — ragged widths read as careless. */
+  .label{display:block;width:100%;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;background:var(--navy);color:var(--gold);margin-bottom:14px}
+  @media(min-width:760px){.label{width:24%;min-width:210px}}
   .row{display:grid;grid-template-columns:120px 1fr;gap:6px 16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
   .row dt{font-weight:700;color:var(--navy)}
   .row dd{margin:0;color:var(--muted)}
@@ -90,8 +95,24 @@
   .cta-copy{padding:32px 30px}
   .cta-copy h2{margin-bottom:12px}
   .cta-img{background:var(--canvas) center/cover no-repeat;min-height:250px}
-  .btn{display:inline-block;padding:16px 30px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;font-size:15px}
+  .btn{display:block;width:100%;padding:18px 30px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;font-size:16px;text-align:center}
   .btn:hover{background:#dcbe9c}
+
+  /* A lone button has nothing behind it. A face, a name and a second, lower-
+     commitment action give the reader something to say yes to. */
+  .signoff{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .signoff img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;background:#fff;border:1px solid var(--line)}
+  .signoff .who{flex:1;min-width:150px}
+  .signoff .who strong{display:block;font-size:15px;color:var(--navy)}
+  .signoff .who span{font-size:13px;color:var(--muted)}
+  .btn-call{display:inline-block;padding:11px 22px;background:var(--navy);color:#f7f4ec;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .btn-call:hover{background:var(--navy-mid)}
+
+  .work figure a{display:block;text-decoration:none}
+  .work figure a img{transition:border-color .2s ease}
+  .work figure a:hover img{border-color:var(--gold)}
+  .visit{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--gold-dk);text-decoration:none}
+  .visit:hover{text-decoration:underline}
   .why{margin:18px 0;padding-left:0;list-style:none}
   .why li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15px}
   .why li:before{content:"→";position:absolute;left:0;color:var(--gold-dk);font-weight:700}
@@ -102,6 +123,22 @@
   footer{background:var(--navy);color:rgba(255,255,255,.62);padding:30px 0;font-size:13px}
   footer a{color:var(--gold)}
   .fine{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+  .btn-pdf{display:inline-block;padding:11px 20px;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;text-decoration:none}
+  .btn-pdf:hover{background:var(--gold);color:var(--navy)}
+
+  /* Print / PDF: keep evidence and findings whole across page breaks, and drop
+     the things that only make sense on screen. */
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    section{padding:22px 0;background:#fff !important;break-inside:auto}
+    .btn-pdf,.btn,.btn-call{display:none !important}
+    .card,figure,.scen>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    .calc,.top,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cta-img{min-height:190px}
+    a{text-decoration:none}
+  }
 </style>
 </head>
 <body>
@@ -117,6 +154,7 @@
       <div><span>Review date</span><strong>12 August 2026</strong></div>
       <div><span>Devices tested</span><strong>Desktop 1366 · Mobile 390</strong></div>
     </div>
+    <p style="margin:22px 0 0"><a class="btn-pdf" href="bel-ange-medical-spa-audit.pdf" download>Download this report as a PDF ↓</a></p>
   </div>
 </header>
 
@@ -187,7 +225,7 @@
 
 <section>
   <div class="wrap">
-    <h2>Five priority opportunities</h2>
+    <h2 id="findings">Priority opportunities</h2>
 
     <div class="card">
       <span class="label">1 · Positioning</span>
@@ -235,7 +273,7 @@
     </div>
 
     <div class="card">
-      <span class="label">Worth confirming</span>
+      <span class="label">6 · Local signals</span>
       <h3>The displayed phone number differs from the one in the page source.</h3>
       <p><strong>Evidence:</strong> The number rendered in the site header is 332-249-3864. That number does not appear anywhere in the page source, while 855-594-4300 appears 18 times. This is the signature of a number being inserted by a script after the page loads.</p>
       <p><strong>Interpretation:</strong> This is usually deliberate — dynamic number insertion for call tracking — and is not an error in itself. It is worth confirming that every displayed number routes correctly, and that the number search engines and directories record matches the Google Business Profile, since mismatches between listings can affect local visibility.</p>
@@ -377,6 +415,15 @@
             <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
           </ul>
           <p style="margin-bottom:0"><a class="btn" href="https://www.aestheticbiz.site/book-discovery?source=audit-belange">Book a 20-minute conversation →</a></p>
+
+          <div class="signoff">
+            <img src="images/ignatius-ackermann.webp" alt="Ignatius Ackermann, CRM Solutions" />
+            <div class="who">
+              <strong>Ignatius Ackermann</strong>
+              <span>CRM Solutions · building commercial platforms since 2001</span>
+            </div>
+            <a class="btn-call" href="tel:+27761809799">Call now</a>
+          </div>
         </div>
         <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
       </div>
@@ -390,12 +437,22 @@
     <p class="lead">Two working examples — not mockups. Both are live and clickable.</p>
     <div class="work">
       <figure>
-        <img src="images/aestheticbiz-demo.jpg" alt="AestheticBiz demonstration practice homepage" />
-        <figcaption><strong>aestheticbiz.site</strong> — a complete demonstration practice: booking, retail, gift vouchers, rewards and reviews. Book a test appointment on it yourself.</figcaption>
+        <a href="https://www.aestheticbiz.site/" target="_blank" rel="noopener">
+          <img src="images/aestheticbiz-demo.jpg" alt="AestheticBiz demonstration practice homepage" />
+        </a>
+        <figcaption>
+          <strong>aestheticbiz.site</strong> — a complete demonstration practice: booking, retail, gift vouchers, rewards and reviews. Book a test appointment on it yourself.
+          <a class="visit" href="https://www.aestheticbiz.site/" target="_blank" rel="noopener">Open the demo practice →</a>
+        </figcaption>
       </figure>
       <figure>
-        <img src="images/star-aesthetic-portfolio.jpg" alt="Star Aesthetic Centre homepage" />
-        <figcaption><strong>staraesthetic.co.za</strong> — a doctor-led practice with twenty years of reputation, rebuilt and running: booking, skincare commerce, rewards and vouchers.</figcaption>
+        <a href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener">
+          <img src="images/star-aesthetic-portfolio.jpg" alt="Star Aesthetic Centre homepage" />
+        </a>
+        <figcaption>
+          <strong>staraesthetic.co.za</strong> — a doctor-led practice with twenty years of reputation, rebuilt and running: booking, skincare commerce, rewards and vouchers.
+          <a class="visit" href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener">Open staraesthetic.co.za →</a>
+        </figcaption>
       </figure>
     </div>
   </div>

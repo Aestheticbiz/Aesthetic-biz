@@ -244,11 +244,35 @@ Write a single self-contained file to `audits/<clinic-slug>/index.html`:
 
 - Inline CSS and JS. No CDNs — it must work on basic shared hosting.
 - Images in `audits/<clinic-slug>/images/`, referenced relatively.
+  Screenshots as `.jpg` (a full-page PNG is 2–3 MB; the JPEG is a tenth of
+  that, and these are opened on phones from a cold email). Photographs already
+  in WebP stay WebP.
 - Responsive; readable on a phone.
-- Include the interactive loss/growth calculator (vanilla JS, no dependencies).
-- Include screenshots of the audited site as evidence.
-- Include the AestheticBiz demo and Star Aesthetic portfolio screenshots near the CTA.
+- Interactive growth calculator (vanilla JS, no dependencies), input-driven
+  with every default labelled Illustrative.
+- Screenshots of the audited site as evidence, at both breakpoints.
+- Section rhythm: generous top/bottom padding and a faint alternating tint so
+  each section reads as its own block.
+- Card labels all one width (24% desktop, full width mobile) and all numbered.
+  Ragged widths read as careless.
+- Full-width primary CTA button, followed by the sign-off block: portrait,
+  name, one credential line, and a secondary "Call now". A lone button has
+  nothing behind it.
+- Portfolio images linked to the live sites, with a visible text link too — an
+  unlinked screenshot is a dead end.
+- Anchors `#findings` and `#talk` so outreach can deep-link.
+- Print styles: `break-inside: avoid` on cards, figures and the sign-off.
 - Footer: "Powered by CRM Solutions — www.crmsolutions.app".
 
-Private report links use `https://www.aestheticbiz.site/r/<token>` unless the user
-specifies another domain.
+Then package it:
+
+```
+node scripts/build-audit.mjs <clinic-slug>
+```
+
+That prints the PDF beside `index.html` (so the report's own download button
+resolves) and writes `audits/<clinic-slug>.zip` containing only what belongs on
+the web server — HTML, images, PDF. The outreach email stays out of the zip.
+
+Private report links use `https://www.aestheticbiz.site/r/<token>` unless the
+user specifies another domain.
