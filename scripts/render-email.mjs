@@ -74,9 +74,14 @@ function parseDraft(raw) {
   return { subject, to, blocks, url };
 }
 
-function render({ subject, blocks, url, clinic }) {
+function render({ subject, blocks, url, clinic, slug, date }) {
   const greeting = blocks[0] ?? "Hello,";
   const paragraphs = blocks.slice(1);
+
+  // Proof of work: their own homepage, served from the uploaded report folder.
+  // Remote images are blocked by default in many clients, so the alt text and
+  // the caption below have to carry the point on their own.
+  const shot = `https://audit.aestheticbiz.site/${slug}/images/audited-desktop.jpg`;
 
   const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
     `Hi Ignatius — I've read the review for ${clinic}.`,
@@ -130,8 +135,17 @@ function render({ subject, blocks, url, clinic }) {
 
     <tr><td class="pad" style="padding:0 40px;"><div style="height:1px;background:#e2dbd1;font-size:0;line-height:0;">&nbsp;</div></td></tr>
 
+    <!-- Proof of work: their own homepage as reviewed -->
+    <tr><td class="pad" align="center" style="padding:26px 40px 0;">
+      <img src="${shot}" width="360" alt="${e(clinic)} homepage, as reviewed"
+           style="display:block;width:360px;max-width:100%;height:auto;border:1px solid #e2dbd1;">
+      <p style="margin:9px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:17px;color:#8d8378;">
+        Your homepage, reviewed ${e(date)}
+      </p>
+    </td></tr>
+
     <!-- Body -->
-    <tr><td class="pad" style="padding:28px 40px 8px;font-family:Georgia,'Times New Roman',serif;">
+    <tr><td class="pad" style="padding:24px 40px 8px;font-family:Georgia,'Times New Roman',serif;">
       <p style="margin:0 0 18px;font-size:16px;line-height:26px;color:#2b2622;">${e(greeting)}</p>
       ${paragraphs.map(p).join("\n      ")}
     </td></tr>
@@ -205,32 +219,75 @@ async function one(slug) {
   const draft = parseDraft(await readFile(txt, "utf8"));
 
   let clinic = slug;
+  let date = "";
   const jsonPath = path.join(dir, "audit.json");
   if (existsSync(jsonPath)) {
-    clinic = JSON.parse(await readFile(jsonPath, "utf8")).clinic ?? slug;
+    const data = JSON.parse(await readFile(jsonPath, "utf8"));
+    clinic = data.clinic ?? slug;
+    date = data.date ?? "";
+  }
+
+  // The proof-of-work screenshot is served from the uploaded report folder,
+  // so a missing capture would render as a broken image in the prospect's inbox.
+  if (!existsSync(path.join(dir, "images", "audited-desktop.jpg"))) {
+    throw new Error("images/audited-desktop.jpg missing — capture it before rendering");
   }
 
   const outPath = path.join(dir, "outreach-email.html");
-  const html = render({ ...draft, clinic });
+  const html = render({ ...draft, clinic, slug, date });
   await writeFile(outPath, html, "utf8");
   console.log(`  ✓ ${outPath} (${Math.round(Buffer.byteLength(html) / 1024)} KB) — "${draft.subject}"`);
+}
+
+/**
+ * The email embeds the report link and the proof screenshot, both served from
+ * the subdomain. Sending before the zip is uploaded gives the prospect a dead
+ * link and a broken image — so check before a send, not after.
+ */
+async function check(slugs) {
+  let bad = 0;
+  for (const slug of slugs) {
+    const targets = [
+      `https://audit.aestheticbiz.site/${slug}/`,
+      `https://audit.aestheticbiz.site/${slug}/images/audited-desktop.jpg`,
+    ];
+    const codes = [];
+    for (const url of targets) {
+      try {
+        codes.push((await fetch(url, { method: "HEAD" })).status);
+      } catch {
+        codes.push(0);
+      }
+    }
+    const ok = codes.every((c) => c === 200);
+    if (!ok) bad += 1;
+    console.log(`  ${ok ? "✓" : "✗"} ${slug}  report ${codes[0]}  screenshot ${codes[1]}`);
+  }
+  console.log(
+    bad
+      ? `\n  ${bad} not ready — upload those zips before sending.`
+      : `\n  All ${slugs.length} live and safe to send.`,
+  );
+  if (bad) process.exitCode = 1;
 }
 
 async function main() {
   const arg = process.argv[2];
   if (!arg) {
-    console.error("Usage: node scripts/render-email.mjs <slug> | --all");
+    console.error("Usage: node scripts/render-email.mjs <slug> | --all | --check");
     process.exit(1);
   }
 
   let slugs = [arg];
-  if (arg === "--all") {
+  if (arg === "--all" || arg === "--check") {
     const entries = await readdir("audits", { withFileTypes: true });
     slugs = entries
       .filter((d) => d.isDirectory() && !d.name.startsWith("_"))
       .map((d) => d.name)
       .filter((s) => existsSync(path.join("audits", s, "outreach-email.txt")));
   }
+
+  if (arg === "--check") return check(slugs);
 
   let failed = 0;
   for (const slug of slugs) {
