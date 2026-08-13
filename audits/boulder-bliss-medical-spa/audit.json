@@ -1,0 +1,120 @@
+{
+  "clinic": "Boulder Bliss Medical Spa",
+  "domain": "boulderblissmedicalspa.com",
+  "location": "Boulder, CO",
+  "date": "13 August 2026",
+  "avgValue": 450,
+  "score": 44,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before an enquiry is made.",
+
+  "summary": [
+    "Boulder Bliss gets one important thing right that most practices get wrong: the address and telephone number are the very first things on the page, before the logo. For a patient searching locally that is exactly the right order, and it is rarer than it should be. There is also a real call to action in the hero — “Schedule Your Consultation” — rather than a browse link.",
+    "The difficulty is that the mobile first screen has a visible layout fault. The address line and telephone number break across two lines and the number collides with the social icons, so the practice's own phone number is partly obscured on the device most patients are holding. Above that, the navigation is a dropdown box rather than a menu, which is a pattern most visitors last saw around 2014.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. Most of what follows is presentation rather than structure — the practice's contact details, service list and call to action are all present, which is the harder half.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "9/20", "status": "Gap", "finding": "“Natural Beauty” could belong to any practice in any town." },
+    { "category": "Trust &amp; authority placement", "score": "7/20", "status": "Structural", "finding": "No practitioner named and no reviews on the first screen." },
+    { "category": "Booking journey &amp; conversion", "score": "10/20", "status": "Gap", "finding": "A real CTA, but styled so faintly it does not read as a button." },
+    { "category": "Patient decision psychology", "score": "7/15", "status": "Gap", "finding": "The action is there; nothing reassuring sits beside it." },
+    { "category": "Mobile experience", "score": "3/10", "status": "Structural", "finding": "The phone number overlaps the social icons; navigation is a dropdown box." },
+    { "category": "Local / public signals", "score": "4/5", "status": "Solid", "finding": "Address and phone are the first thing on the page." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "These are genuine advantages, and much of what follows is about presentation rather than rebuilding anything.",
+  "strengths": [
+    { "title": "The address and phone number come first.", "confidence": "Observed", "body": "“6610 Gunpark Drive #102, Boulder CO or Call Us at: 303-530-1284” sits above everything else, including the logo. For a patient searching locally that is the correct order of priority, and most practices bury it in a footer." },
+    { "title": "There is a real call to action in the hero.", "confidence": "Observed", "body": "“Schedule Your Consultation” asks for the appointment rather than inviting a browse. A great many sites put “View Our Services” in that position and lose the visitor who had already decided." },
+    { "title": "The service structure is plain and scannable.", "confidence": "Observed", "body": "“Our Services” follows immediately below the hero with clear imagery. A visitor does not have to hunt through a menu to see what is offered." },
+    { "title": "The positioning is modest rather than inflated.", "confidence": "Observed", "body": "“Let us bring out your natural beauty” promises less than the superlatives common in this market, which tends to read as more credible to a cautious first-time patient." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. Address and phone lead the page, and “Schedule Your Consultation” is present in the hero.",
+  "captionMobile": "Mobile, 390×844. The phone number wraps onto a second line and overlaps the social icons. Navigation is a dropdown box reading “Home”.",
+
+  "findings": [
+    {
+      "area": "Mobile",
+      "heading": "The practice's phone number collides with the social icons.",
+      "evidence": "At 390×844 the top bar reads “6610 Gunpark Drive #102, Boulder CO or Call Us at: 303-”, and the remainder of the number, “530-1284”, wraps onto the next line where it overlaps the Twitter, Facebook and RSS icons.",
+      "why": "The single most valuable piece of information on the page — how to reach the practice — is broken and partly obscured on the device most patients use. A visitor who wants to call has to work out the number from behind an icon, and some will not bother.",
+      "recommended": "Allow that bar to stack on narrow screens so the address sits on one line and the number on another, and make the number a tap-to-call link so a phone dials it in one touch rather than requiring it to be read and retyped.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Navigation",
+      "heading": "The mobile menu is a dropdown box, not a menu.",
+      "evidence": "On mobile, navigation is presented as a form select control displaying the word “Home”, rather than the menu button now standard on virtually every site.",
+      "why": "Visitors navigate by pattern recognition. A control that looks like a form field is not read as “this is where the pages are”, so a proportion of visitors never open it — and everything the practice offers sits behind it.",
+      "recommended": "Replace it with a conventional menu button. This is usually a theme setting rather than development work, and it makes the whole treatment list reachable again.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Conversion",
+      "heading": "The button does not look like a button.",
+      "evidence": "“Schedule Your Consultation” is set as grey text inside a thin grey outline, over a pale photograph. The line above it, “LET US BRING OUT YOUR”, is also light grey on a light background and runs across the model's face.",
+      "why": "The practice has done the hard part — put the right action in the right place — and then made it visually recede. Low-contrast outlined controls are frequently mistaken for decoration rather than something to press.",
+      "recommended": "Give the button a solid fill in a colour that contrasts with the photograph. Nothing else needs to move; it is the same button, made visible.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Positioning",
+      "heading": "The headline would fit any practice in any town.",
+      "evidence": "The hero reads “Let us bring out your natural beauty.” Neither the treatments offered nor Boulder appears in the headline; the location is present only in the address bar above.",
+      "why": "A patient comparing three practices sees a phrase they have already read on the other two. Nothing in that line says why this practice, or that it is the one twenty minutes from them.",
+      "recommended": "Name the specialism and the town in the headline. “Natural beauty” can stay as the supporting line — it is doing no harm there, it is simply not doing enough work at the top.",
+      "confidence": "Observed (text) · Interpretive (impact)",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Trust",
+      "heading": "No practitioner and no reviews appear on the first screen.",
+      "evidence": "No clinician is named, no qualification or supervising physician is stated, and no patient review or rating appears on the homepage's first screen.",
+      "why": "For injectables and energy-based treatments the deciding question is who performs the treatment and what they are qualified to do. A patient who cannot answer it here will answer it at a practice that says so plainly.",
+      "recommended": "Name the treating practitioner with qualification and a real photograph, and place two or three patient reviews near the consultation button.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Dated signals",
+      "heading": "An RSS icon sits beside the social links.",
+      "evidence": "The top bar carries Twitter, Facebook and RSS icons.",
+      "why": "RSS has not been in general use for over a decade. It is a small thing, but small dated details accumulate into an impression of a practice that has not looked at its own site recently — which a patient may extend to the equipment and the training.",
+      "recommended": "Remove it, and check the social links still point at active accounts. Two current profiles read better than three where one is abandoned.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "A dropdown box for navigation breaks the pattern visitors have learned everywhere else, so some will not recognise it as the menu." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "The consultation button is a decent size — the issue is that it is faint, not that it is small." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "No review, rating or patient wording appears near the consultation button." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "No clinician is named anywhere on the first screen." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Good — one action is offered, not four. It simply needs to look like one." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Leading with the address and phone number is a genuinely helpful default for a local practice." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "The modest promise works in the practice's favour. Notes on suitability and downtime would strengthen it further." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Fix the wrapping phone number and make it tap-to-call. Replace the dropdown navigation with a menu button. Give the consultation button a solid fill. Remove the RSS icon." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name the treating practitioner with qualification and photograph. Add patient reviews near the consultation button. Rewrite the headline to name the specialism and Boulder." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Treatment-page depth with realistic expectations. Consistent listings across directories. Post-treatment review requests. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). The overlapping phone number was observed at 390 pixels wide and may render differently on other devices."
+}
