@@ -118,6 +118,46 @@ signature image. These are one-to-one emails and should look like it.
 
 ---
 
+## 6 · Youthful Balance Medical Center — Raeann · (from list)
+
+**Subject:** `your headline on a phone`
+
+> Hi Raeann,
+>
+> I looked at youthfulbalance.net this morning and put the notes into a short report. Yours to use either way.
+>
+> Worth checking on your own phone: your headline breaks in the middle of a word. "Hormone Therapy" renders as "Hormon" / "e" / "Therapy" across three lines, with the single letter stranded on its own. It's the largest text on the page and the first thing a patient sees.
+>
+> Two others. The only button reads "Find Out More" and leads to a treatment page rather than an appointment, and no phone number appears until a visitor scrolls — which matters more than usual when every enquiry has to become a call.
+>
+> What's genuinely strong: Jennifer Castro named as APRN with her International Peptide Society certification, and five-star badges from both Google and Yelp. Two independent sources and a named certifying body is more evidence than most practices publish at all. It's just sitting below the decision instead of beside it.
+>
+> Full report, with a 90-day order of work: [LINK]
+>
+> Ignatius
+
+---
+
+## 7 · Kalon Medical Spa — Heather · (from list)
+
+**Subject:** `four pop-ups before your headline`
+
+> Hi Heather,
+>
+> I went through kalonmedspa.com this morning. One thing is worth opening on your own phone in a private window, so it behaves as it would for a first-time visitor.
+>
+> The opening screen carries four things at once: the relocation announcement, a form asking for name, phone and email, the cookie banner, and the chat bubble. Your headline and your booking button are behind all of it. Every one of them was added to help, and together they mean a first-time patient's impression of Kalon is formed by four interruptions rather than by anything you chose to say.
+>
+> Related: the form asks for three details and mentions a $249 minimum before the visitor knows what's on offer. That's a large ask from a stranger.
+>
+> What's underneath is strong — "Book Your Free Consult" is a proper booking action, online booking is live, and you're a doctorate-level CRNA/APRN, which is exactly what an injectables patient wants to know. Right now that credential is filed under About. Your relocation notice is the most human thing on the site.
+>
+> Full report: [LINK]
+>
+> Ignatius
+
+---
+
 ## Not sent — and why
 
 Two practices were reviewed and deliberately **not** contacted.
