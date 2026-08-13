@@ -1,0 +1,100 @@
+{
+  "clinic": "Jiva Med Spa",
+  "domain": "jivamedspa.com",
+  "location": "Columbus, Dayton & Cincinnati, OH · Boca Raton & Wesley Chapel, FL",
+  "date": "13 August 2026",
+  "avgValue": 600,
+  "score": 78,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a consultation is booked.",
+
+  "summary": [
+    "This report is shorter than most we write, because there is less to say. Jiva's first screen names the locations, names the treatments, offers a free consultation in a solid button, and carries a 4.9 rating from hundreds of clients alongside BBB accreditation and a HIPAA compliance badge. A separate control splits Ohio from Florida locations. That is more of the job done properly than almost any practice we review.",
+    "Three refinements are worth the time. The headline names three cities while the line beneath it names five, so the footprint is undersold at the top of the page. “Top Med Spa in Two States” sits immediately beside “4.9 Stars from Hundreds of Clients”, and the unverifiable claim slightly dilutes the verifiable one. And no practitioner is named anywhere on the first screen — the one strong signal the page does not carry.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. This is the highest score we have given in this batch by a wide margin, and the recommendations are refinements rather than repairs.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "15/20", "status": "Solid", "finding": "Locations and treatments both named — the headline undersells the footprint." },
+    { "category": "Trust &amp; authority placement", "score": "15/20", "status": "Solid", "finding": "4.9 stars, BBB and HIPAA on the first screen; no practitioner named." },
+    { "category": "Booking journey &amp; conversion", "score": "16/20", "status": "Solid", "finding": "A free consultation button, a second CTA, and a location selector." },
+    { "category": "Patient decision psychology", "score": "11/15", "status": "Solid", "finding": "Proof sits high, where it does the most work." },
+    { "category": "Mobile experience", "score": "8/10", "status": "Solid", "finding": "Clean, legible, generous tap targets, nothing overlapping." },
+    { "category": "Local / public signals", "score": "5/5", "status": "Solid", "finding": "Five locations across two states, with a clear state selector." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "Most of the recommendations we make to other practices are already implemented here. These are worth naming explicitly.",
+  "strengths": [
+    { "title": "The headline names both what and where.", "confidence": "Observed", "body": "“Medical Spa in Columbus Ohio, Dayton &amp; Cincinnati”, followed immediately by the treatment list. A patient learns the two things that decide whether to keep reading, before scrolling once. The great majority of sites we review name neither." },
+    { "title": "A rating with a number and a geography.", "confidence": "Observed", "body": "“4.9 Stars from Hundreds of Clients Across Ohio &amp; Florida”, with stars, on the first screen. A rating with volume attached is far more persuasive than a rating alone, and placing it high means it reaches the doubt rather than following it." },
+    { "title": "BBB accreditation and HIPAA compliance are both shown.", "confidence": "Observed", "body": "Third-party marks a visitor recognises and the practice cannot self-award. For treatments involving health data, the HIPAA badge quietly answers a question many patients have but few ask." },
+    { "title": "The free consultation removes the cost of the first step.", "confidence": "Observed", "body": "“Book Your Free Consultation” in a solid, high-contrast button, with a second consultation CTA lower down. The offer and the button are both doing their jobs." }
+  ],
+
+  "captionDesktop": "The homepage names locations and treatments, offers a free consultation, and carries BBB, HIPAA and a 4.9 rating.",
+  "captionMobile": "Mobile, 390×844. Locations, treatments, a free-consultation button, a state selector, and three separate trust marks — all above the fold.",
+
+  "findings": [
+    {
+      "area": "Positioning",
+      "heading": "The headline names three cities; the line beneath names five.",
+      "evidence": "The headline reads “Medical Spa in Columbus Ohio, Dayton &amp; Cincinnati”. The supporting sentence reads “Personalized care by experts in Columbus, Dayton, Cincinnati, Boca Raton, and Wesley Chapel.” Two Florida locations appear only in the smaller line.",
+      "why": "A patient in Boca Raton or Wesley Chapel reads a headline that does not include them and may conclude the practice is an Ohio business. The footprint is a genuine asset and the largest text on the page is understating it by two locations.",
+      "recommended": "Either name both states in the headline — “Medical spas across Ohio and Florida” — or run a location-aware headline. The state selector already exists beneath, so the structure supports it.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Proof",
+      "heading": "An unverifiable claim sits beside a verifiable one.",
+      "evidence": "“TOP MED SPA IN TWO STATES” appears in a bordered box directly above “★★★★★ 4.9 Stars from Hundreds of Clients Across Ohio &amp; Florida”.",
+      "why": "The second of those is excellent — specific, sourced and checkable. The first is a claim the practice makes about itself, and a sceptical reader who discounts it tends to discount what sits next to it. The strong signal is carrying the weak one.",
+      "recommended": "Lead with the rating and let it stand alone. If the “top med spa” designation comes from a named body or publication, name it — that turns it into a second piece of evidence rather than a claim.",
+      "confidence": "Observed (text) · Interpretive (impact)",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Trust",
+      "heading": "No practitioner is named on the first screen.",
+      "evidence": "BBB, HIPAA and the rating all appear above the fold. No clinician, qualification or supervising physician is named, and no practitioner photograph appears.",
+      "why": "This is the one strong signal the page does not carry. Institutional trust marks answer “is this a legitimate business”; a named clinician answers “who is holding the needle”, which is the question that actually decides an injectables booking.",
+      "recommended": "Name the lead clinician with their qualification and a photograph on the first screen. Against everything else already in place, this is the single remaining gap.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Positioning",
+      "heading": "The treatment list spans a very wide range.",
+      "evidence": "The headline treatment list reads “TATTOO REMOVAL, LASER HAIR REMOVAL, SEXUAL HEALTH, WEIGHT LOSS AND MORE!”",
+      "why": "Naming treatments is right, and this is more specific than most sites manage. The observation is only that the four named span very different patient intents, and a full-fee injectables patient may not recognise themselves in the list. Practices with a broad menu usually do better leading with the highest-value category and letting the rest follow.",
+      "recommended": "Consider leading with the treatments that carry the best margin and lifetime value, with the wider menu one line below. This is a matter of order rather than removal — nothing needs to come off the site.",
+      "confidence": "Observed (text) · Interpretive (impact)",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "Conventions followed throughout. Cart, menu, hero, CTA all sit where a visitor expects them." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "Excellent. Large pill button, plus generous Ohio and Florida location blocks that are easy targets." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "Strong — the rating and the trust marks are on the first screen, close to the second consultation CTA." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "Institutional authority is well covered by BBB and HIPAA; personal clinical authority is the missing piece." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Clear — book a free consultation, with the state selector helping rather than competing." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Splitting Ohio from Florida before asking anything else is a genuinely helpful default for a five-location practice." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“4.9 Stars from Hundreds of Clients” is more credible than a claimed five, precisely because it is not perfect. That is the right instinct." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Bring both states into the headline. Let the 4.9 rating stand alone, or name the body behind the “top med spa” designation." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name the lead clinician with qualification and photograph on the first screen. Consider leading the treatment list with the highest-value categories." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Separate location pages so each city ranks in its own market. Keep the review engine running — the rating is the practice's strongest asset. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "This review assessed the homepage at 390 pixels wide together with publicly visible information. Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available)."
+}

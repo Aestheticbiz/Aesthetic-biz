@@ -1,0 +1,33 @@
+TO:      hello@giovannimedspa.com  (Giovanni)
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: Gilbert isn't on your first screen
+
+------------------------------------------------------------
+
+Hi Giovanni,
+
+I went through giovannimedspa.com this morning and wrote up what I found.
+Yours to use either way.
+
+The thing worth thirty seconds: nothing on your first screen says where you
+are. No town, no address, no phone number. A patient arriving from a search
+can't tell whether you're ten minutes away or two hours, and proximity is the
+first filter they apply — before price, before treatment, before practitioner.
+
+Related: no treatment is named either. Someone searching for filler or laser
+can't tell from that screen whether you offer it, so they either press the
+button on faith or leave.
+
+What's genuinely good is the build. "Schedule a Consultation" is a proper
+booking button rather than a browse link, the page is unusually calm and
+readable on a phone, and your photography is the actual reception with your own
+signage rather than a stock interior. That last one does more for trust than
+most owners realise.
+
+Two lines — your town and your main treatments — would put the information
+back on a page that's already well made.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/giovanni-med-spa/
+
+Ignatius
