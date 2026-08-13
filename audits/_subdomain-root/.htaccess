@@ -1,0 +1,16 @@
+# Audit subdomain root — upload alongside index.html into public_html/audit/
+#
+# Reports are shared by direct link only. Without this, anyone who trims a URL
+# back to the subdomain root can see a directory listing naming every clinic
+# audited — including each other.
+
+# No directory listings, anywhere under this subdomain.
+Options -Indexes
+
+# Belt and braces: if a listing is ever generated, serve the holding page.
+DirectoryIndex index.html index.htm
+
+# Keep reports out of search results even if a link is shared onward.
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
