@@ -1,0 +1,35 @@
+TO:      info@koraaesthetics.com  (Katie)
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your hero video is showing its filename
+
+------------------------------------------------------------
+
+Hi Katie,
+
+I reviewed koraaesthetics.com this morning. Two things worth thirty seconds
+each, and one of them is on your first screen right now.
+
+Your hero video is playing with the player's own labels over it — "Kora
+Aesthetics" and "tourhazara" in the top left, plus a pause control in the
+middle of the frame. That's the video file's title and uploader showing
+through, not anything you wrote. It's a settings toggle, not a rebuild.
+
+Second: your headline is "Medical Spa in Scottsdale, AZ & Paradise Valley |
+Founder-Led by a National Clinical Trainer". That's a page title, pipe and all,
+sitting where a headline should be. Keep it as your title tag — but the part
+that actually sells is the last six words, and they're buried behind a location
+list.
+
+Which brings me to the thing I'd change first. Founder-led by a national
+clinical trainer is close to the strongest authority claim available in
+aesthetics, and almost nobody can make it. But the trainer is never named on
+that screen. A name, a qualification and a face would turn a claim into
+evidence.
+
+Your booking setup is better than most sites I look at — Book Now in the
+header, a free consultation, and a sticky contact bar on mobile.
+
+Full report:
+https://audit.aestheticbiz.site/kora-aesthetics/
+
+Ignatius
