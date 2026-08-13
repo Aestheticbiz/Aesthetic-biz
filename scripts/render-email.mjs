@@ -24,9 +24,13 @@ import path from "node:path";
 const ASSETS = "https://audit.aestheticbiz.site/_assets";
 const WHATSAPP = "27761809799";
 
-// CAN-SPAM requires a real postal address in commercial email. Fill this in
-// before sending — an invented or omitted address is its own violation.
-const POSTAL_ADDRESS = "[POSTAL ADDRESS — see note in render-email.mjs]";
+// CAN-SPAM requires a valid physical postal address and a working opt-out in
+// commercial email. A non-US address is fine; an invented or omitted one is its
+// own violation. The opt-out must keep working for at least 30 days after the
+// send, so this inbox has to stay live and be actioned into a suppression list.
+const POSTAL_ADDRESS =
+  "104 Lothian Road, Parkhill, Durban North, KwaZulu-Natal 4051, South Africa";
+const UNSUBSCRIBE = "unsubscribe@aestheticbiz.site";
 
 const e = (s) =>
   String(s)
@@ -178,7 +182,7 @@ function render({ subject, blocks, url, clinic }) {
       </p>
       <p style="margin:0;">
         You received this because your practice is publicly listed as an aesthetic provider. This is a one-off review, not a subscription.
-        <a href="mailto:ignatius@aestheticbiz.site?subject=Unsubscribe&amp;body=Please%20do%20not%20contact%20this%20address%20again."
+        <a href="mailto:${UNSUBSCRIBE}?subject=Unsubscribe&amp;body=Please%20do%20not%20contact%20this%20address%20again."
            style="color:#8d8378;text-decoration:underline;">Unsubscribe</a>
         and you will not be contacted again.
       </p>
