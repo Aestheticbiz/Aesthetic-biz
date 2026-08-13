@@ -3,7 +3,7 @@ NOTE:    Reception inbox, not a personal address. Addressed to Kristy Murrow
          because she is named as managing partner on the homepage — which also
          signals the site was actually read rather than mail-merged.
 FROM:    ignatius@aestheticbiz.site
-SUBJECT: your two buttons
+SUBJECT: Kristy — your two buttons
 
 ------------------------------------------------------------
 

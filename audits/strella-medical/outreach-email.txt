@@ -1,0 +1,41 @@
+TO:      info@strellapa.com
+NOTE:    Reception inbox. The CSV first name is the business, not a person, so
+         no greeting name is used. Dr. Benjamin Lam is named on the homepage as
+         medical director if a personal address is found later.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your gift card banner is sitting on your logo
+
+------------------------------------------------------------
+
+Hello,
+
+I review aesthetic practice websites, and I went through strellapa.com this
+morning. The notes are yours to use whether or not we ever speak.
+
+Open your own homepage on a desktop before you read further. The gift-card bar
+is layered on top of your header rather than above it — your logo is clipped
+through the middle, and the row underneath carrying "Shop Now | My Cart | Call
+Now" is sliced in half horizontally. It's a display fault rather than a design
+choice, and it's on every page, not just the homepage.
+
+On a phone the same banner pushes the top of your headline off the screen, so
+the first thing a visitor reads is "AESTHETICS -" — a word starting halfway
+through.
+
+That's worth fixing quickly because of what it's covering. Your opening
+paragraph is better than almost any I review: it names Lower Gwynedd twice,
+names Botox, laser, skin rejuvenation and body contouring, and names Dr.
+Benjamin Lam as medical director. Three of the four things a first-time patient
+needs, answered before they scroll. Most practices answer none of them, and
+yours is currently sitting behind a promotion.
+
+One other note: "award winning" doesn't say which award. Name it and the year
+and it stops reading as marketing.
+
+I scored the site 64 — the information is well ahead of the market, the
+presentation is what's costing you.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/strella-medical/
+
+Ignatius

@@ -1,0 +1,121 @@
+{
+  "clinic": "Evolve Med Spa",
+  "domain": "evolvemedspa.com",
+  "location": "Hoboken, NJ",
+  "date": "13 August 2026",
+  "avgValue": 900,
+  "score": 53,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "This is a well-resourced practice and the site shows it. The header names the treatments — “Award-winning Botox, filler &amp; aesthetics provider” — carries a telephone number and two Book Now buttons, and the wider site has a treatment quiz, a membership programme, financing, an awards page and published pricing. Very little of the underlying machinery is missing.",
+    "The problem is that the most important information is on a timer. The promotional bar rotates through at least four messages, and one of them reads: “The wait is finally over, NYC. Come visit our new temporary home at Sola Salon (50 W 17th St).” A temporary address change is operational information a patient must not miss, and it is currently sharing a rotating slot with three discount offers. Beneath it the hero rotates through six more slides.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible pages. Individual treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. The assets here are well above average for this market — nearly all of the lost score is presentation of the first screen, not absence of substance.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "12/20", "status": "Gap", "finding": "Treatments named in the eyebrow line; the headline itself says nothing specific." },
+    { "category": "Trust &amp; authority placement", "score": "6/20", "status": "Structural", "finding": "“Award-winning” is unnamed, and no practitioner or review appears." },
+    { "category": "Booking journey &amp; conversion", "score": "16/20", "status": "Solid", "finding": "Two Book Now buttons, a visible number and a treatment quiz." },
+    { "category": "Patient decision psychology", "score": "6/15", "status": "Structural", "finding": "Two carousels; an address change rotating beside discount offers." },
+    { "category": "Mobile experience", "score": "6/10", "status": "Gap", "finding": "Legible, but the content moves while it is being read." },
+    { "category": "Local / public signals", "score": "2/5", "status": "Gap", "finding": "A toll-free number and no town on the first screen." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "Several of these are ahead of almost every practice in this review, and they are worth protecting while the first screen is adjusted.",
+  "strengths": [
+    { "title": "The treatment quiz is a genuine advantage.", "confidence": "Observed", "body": "“Our interactive consultation is designed to make achieving your aesthetic goals effortless.” A patient who does not yet know what they want is the hardest to convert, and a quiz gives them a way in that does not require them to already have the vocabulary. Very few practices build one." },
+    { "title": "A membership programme, financing and published pricing.", "confidence": "Observed", "body": "Membership turns one-off treatments into recurring revenue; financing removes the affordability objection before it is raised; published pricing filters for patients who can proceed. Most practices have none of the three." },
+    { "title": "The promotions state real numbers.", "confidence": "Observed", "body": "“3–10 syringes starting at $1,600”, “2-Session Microneedling Package — $550. Save $180”, “Radiesse BBL … starting at $2,750”. Specific, checkable and credible — a long way from “call for pricing”." },
+    { "title": "The eyebrow line does the headline's job well.", "confidence": "Observed", "body": "“Award-winning Botox, filler &amp; aesthetics provider” names the treatments in seven words, directly above the headline. A patient searching for filler knows within a second that they are in the right place." },
+    { "title": "Booking is available from anywhere on the page.", "confidence": "Observed", "body": "A Book Now button in the header, the telephone number beside it, and a second Book Now in the hero. Two routes, always in reach." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. The eyebrow line names the treatments; the headline beneath is set in a brush script. Six carousel dots sit at the foot of the hero.",
+  "captionMobile": "Mobile, 390×844. The rotating promotional bar sits above a six-slide hero carousel.",
+
+  "findings": [
+    {
+      "area": "Operational risk",
+      "heading": "A temporary address change is rotating alongside discount offers.",
+      "evidence": "The promotional bar cycles through at least four messages: the Mix &amp; Match filler offer, a $550 microneedling package, a $2,750 Radiesse BBL offer, and “The wait is finally over, NYC. Come visit our new temporary home at Sola Salon (50 W 17th St). We can't wait to see you!”",
+      "why": "Three of those are offers a patient can afford to miss. The fourth is where to physically go. A patient who sees only slides one to three and travels to the previous address arrives at a locked door — and that becomes a missed appointment, a refund conversation and, often, a review that outlives the relocation.",
+      "recommended": "Lift the address change out of the rotation entirely and give it its own fixed notice until the move settles. Offers can rotate; an address cannot.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "First screen",
+      "heading": "Two carousels rotate on the same screen.",
+      "evidence": "The promotional bar carries left and right arrows and cycles through its messages. Beneath it the hero shows six position dots and its own arrows, rotating through six slides.",
+      "why": "Two patients arriving seconds apart see different pages, so the practice cannot learn which message persuaded anyone. Visitors also learn to disregard anything that moves, which means the later slides are seen by very few people — the work of building six of them largely goes unread.",
+      "recommended": "Choose the single strongest message and hold it still. Whichever treatment brings the best patients should own that space permanently rather than sharing it on a timer.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Trust",
+      "heading": "The award is real, and the hero does not say which one.",
+      "evidence": "The eyebrow line reads “Award-winning Botox, filler &amp; aesthetics provider”. An Awards page exists in the site footer, but the hero names no award, no body and no year.",
+      "why": "This is the unusual case of a claim that is genuinely backed and presented as though it were not. An unnamed award reads as marketing language and gets discounted; a named one with a year is evidence. The proof already exists — it is simply two clicks from where the doubt occurs.",
+      "recommended": "Name the award and year in the eyebrow line and link it to the Awards page. Nothing new needs to be created.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Readability",
+      "heading": "The headline is a brush script that says nothing specific.",
+      "evidence": "“Confidence is the new currency.” is set in a decorative brush face at very large size, occupying two lines and the largest block of space on the first screen.",
+      "why": "Script faces read considerably more slowly than plain ones, and this one is carrying a sentiment rather than information — it names no treatment, no town and no reason to choose this practice. The small eyebrow line above it is doing the real work in a fraction of the space.",
+      "recommended": "Swap their weights. Give the treatments, the award and the location the large type, and keep the script line small if the brand needs it.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Local",
+      "heading": "A toll-free number stands in for a local one.",
+      "evidence": "The header carries (800) 867-8015. No town or address appears on the first screen; locations are reachable only through the nav item.",
+      "why": "For a multi-location practice a single number is administratively sensible, but an 800 prefix reads as a call centre rather than a clinic, and proximity is the first filter an aesthetic patient applies. A visitor arriving from a search cannot tell whether the nearest location is walkable or an hour away.",
+      "recommended": "Show the nearest location's town and local number on the first screen, with the toll-free number as the secondary route. Even a static “Hoboken · Manhattan · …” line would answer the question before it is asked.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "2–4 weeks"
+    },
+    {
+      "area": "Proof",
+      "heading": "No practitioner and no reviews before the decision.",
+      "evidence": "No clinician, qualification or supervising physician is named on the first screen, and no patient rating or review count appears anywhere near the booking buttons.",
+      "why": "The promotions here are selling injectables at $1,600 to $2,750. At that value the question that decides the booking is who is holding the needle and what they are qualified to do — and the page answers neither before asking for the appointment.",
+      "recommended": "Name the lead injector with their qualification and photograph, and place a rating with its review count beside Book Now.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "Header and navigation follow convention well. Rotating heroes are a pattern most sites have abandoned, and two at once is unusual." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "Two generous Book Now targets, and the telephone number sits beside the header button." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "The Awards page exists but is in the footer; no rating or credential appears near either booking button." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "No clinician is named, so an award claim and a $2,750 offer both stand without anyone behind them." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Book Now is unmistakable — but the message around it changes while the visitor is deciding." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Strong. The treatment quiz, published pricing and financing all remove work from the patient rather than adding it." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“Save $180 through August 31” is specific and credible. “Sets the standard in medical aesthetics” is neither, and they appear on the same page." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Lift the temporary address out of the rotating bar into a fixed notice. Name the award and link it to the Awards page. Stop both carousels and commit to one message." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Give the treatments and location the large type and demote the script line. Name the lead injector with photograph and qualification. Add a rating and review count beside Book Now." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Surface the nearest location's town and local number on the first screen. Promote the treatment quiz to the hero, where it earns more than a rotating slide. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "This review assessed the homepage at 1366×768 and at 390 pixels wide, together with publicly visible pages. Individual treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). Both the promotional bar and the hero rotate, so the messages described here are those shown during this review and may differ from those another visitor sees. The temporary address noted above was live at the time of review."
+}
