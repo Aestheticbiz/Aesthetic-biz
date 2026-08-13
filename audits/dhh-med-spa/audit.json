@@ -1,0 +1,100 @@
+{
+  "clinic": "DHH Med Spa",
+  "domain": "dhhmedspa.com",
+  "location": "Scottsdale, AZ",
+  "date": "13 August 2026",
+  "avgValue": 650,
+  "score": 64,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before contact is made.",
+
+  "summary": [
+    "This is the strongest site in our current batch. “Call or Text 480-336-4195” sits in the header — giving the patient who wants to speak and the one who would rather not the same easy route. A “★★★★★ Over 450+ Five-Star Reviews” badge sits directly on the hero image, and the photograph is a real practitioner in gloves rather than a stock model. Those three things together put DHH ahead of almost every practice we review.",
+    "The gaps are small and specific. The person in that photograph is never named, so the site shows a practitioner without introducing one. “Award-Winning” appears in the headline without saying which award. And a chat widget sits over the opening paragraph on mobile, covering the sentence that lists what the practice actually does.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. This is a well-built site — the recommendations below are refinements to work already done, not repairs.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "13/20", "status": "Solid", "finding": "Location is clear; “Award-Winning” never says which award." },
+    { "category": "Trust &amp; authority placement", "score": "14/20", "status": "Solid", "finding": "450+ five-star reviews on the hero — but the practitioner is unnamed." },
+    { "category": "Booking journey &amp; conversion", "score": "15/20", "status": "Solid", "finding": "Call or text in the header; no booking button on the first screen." },
+    { "category": "Patient decision psychology", "score": "10/15", "status": "Solid", "finding": "Proof sits high, where it does the most good." },
+    { "category": "Mobile experience", "score": "7/10", "status": "Gap", "finding": "A chat widget covers the paragraph listing the treatments." },
+    { "category": "Local / public signals", "score": "5/5", "status": "Solid", "finding": "Scottsdale named in the headline; number visible immediately." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "Several of these are things we recommend to other practices. They are already in place here.",
+  "strengths": [
+    { "title": "“Call or Text” in the header.", "confidence": "Observed", "body": "Offering both, in the header, on the first screen. Texting suits the patient who wants to ask about suitability or price without committing to a conversation — and a large share of aesthetic enquiries begin exactly there." },
+    { "title": "450+ five-star reviews, on the hero image.", "confidence": "Observed", "body": "A star badge reading “Over 450+ Five-Star Reviews” placed directly over the hero. Both the volume and the placement are excellent — proof of that scale, positioned where the decision happens, is the single most persuasive thing an aesthetic site can show." },
+    { "title": "The hero photograph is real.", "confidence": "Observed", "body": "A practitioner in gloves holding a syringe, in what appears to be the practice's own room. Not a stock model. Patients recognise the difference more than most practices assume." },
+    { "title": "The location is in the headline.", "confidence": "Observed", "body": "“Med Spa in Scottsdale, AZ” — exactly what a patient searching locally needs, in the largest text on the page." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. Call or Text in the header, and the five-star review badge carried on the hero image.",
+  "captionMobile": "Mobile, 390×844. The review badge and phone number both land on the first screen. The chat widget sits over the paragraph listing the treatments.",
+
+  "findings": [
+    {
+      "area": "Trust",
+      "heading": "The practitioner in the photograph is never named.",
+      "evidence": "The hero shows a practitioner in gloves holding a syringe. No name, qualification or role appears with the image on the first screen.",
+      "why": "The site is one line away from the strongest trust signal available. A patient looking at that photograph is already asking who she is — and being shown a clinician without being introduced to one leaves the question open at exactly the wrong moment.",
+      "recommended": "Add her name and qualification beneath or beside the photograph. Given the 450+ reviews already displayed, naming the person responsible for them compounds both signals rather than adding a separate one.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Mobile",
+      "heading": "The chat widget covers the sentence listing the treatments.",
+      "evidence": "At 390×844 a “Click to send us a message” bubble is fixed over the paragraph beneath the headline, obscuring part of the line reading “Injectables, dermal fillers, … loss, and so much more”.",
+      "why": "That paragraph is where a visitor learns what the practice actually offers, and it is the one thing on the screen the widget is covering. The tool intended to start conversations is hiding the reason to have one.",
+      "recommended": "Collapse the widget to a small closed bubble in the corner, and let it expand only on tap or after the visitor has scrolled.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Message",
+      "heading": "“Award-Winning” does not say which award.",
+      "evidence": "The headline reads “Award-Winning Med Spa in Scottsdale, AZ”. No award, body or year is named on the first screen.",
+      "why": "An unnamed award is read as a figure of speech rather than a fact, so it works no harder than any other adjective — while a named one is checkable and therefore persuasive. The practice appears to have the substance; it is the specificity that is missing.",
+      "recommended": "Name it: the award, who gave it and when. If there is more than one, the most recognisable belongs in the headline and the rest on the About page.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Conversion",
+      "heading": "There is no booking button on the first screen.",
+      "evidence": "The first screen offers “Call or Text” in the header. No online booking or enquiry button appears above the fold on either desktop or mobile.",
+      "why": "Call and text are strong and cover most people. The remaining group is the patient who will not phone a stranger and does not want to start a conversation yet — they want to pick a time and be done. With 450+ reviews doing the persuading, that patient is arriving ready and finding no way to finish.",
+      "recommended": "Add a booking button beside the call-or-text option. It serves a different patient rather than replacing the one already served well.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "2–4 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "Conventions followed cleanly. Logo, contact in the header, menu right — nothing surprises." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "The call-or-text control is large and sits in the header where a thumb reaches it immediately." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "Excellent — the review badge is placed on the hero itself, so proof arrives before the doubt does." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "A real practitioner is pictured but not named, so the authority is visual rather than verifiable." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Clear — call or text. The gap is that there is no third option for the patient who wants neither." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Offering text alongside call is a genuinely helpful default for a nervous first-time enquirer." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "A real photograph and a specific review count read as credible. “Award-Winning” without the award is the one line that does not." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Name the practitioner in the hero photograph with her qualification. Name the award. Collapse the chat widget so it stops covering the treatment list." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Add an online booking button beside call-or-text. Carry the review count onto the highest-value treatment pages. Add treatment-specific reassurance." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Build authority content around the named practitioner and the award. Keep the review engine running — 450+ is an asset worth compounding. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available)."
+}
