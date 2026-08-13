@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Website Conversion Audit — Monaco MedSpa</title>
+<style>
+:root{
+    --navy:#0f2647; --navy-mid:#1b3d6e; --gold:#c8a882; --gold-dk:#a8896a;
+    --ink:#1c1f26; --muted:#5c5f68; --line:#e2e2e6; --canvas:#f7f7f8;
+    --ok:#2f7a59; --warn:#8a6c4c; --bad:#a2453f;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+  .wrap{width:min(880px,calc(100% - 40px));margin-inline:auto}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--navy);margin:0}
+  p{margin:0 0 16px}
+  a{color:var(--gold-dk)}
+
+  /* Header */
+  .top{background:var(--navy);color:#f2efe8;padding:44px 0 40px}
+  .top .wrap>p{color:rgba(255,255,255,.75)}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+  .top h1{color:#f7f4ec;font-size:clamp(30px,5vw,44px);margin-bottom:14px}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
+  .meta div span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .meta div strong{font-weight:600;font-size:15px;color:#f7f4ec}
+
+  /* Generous, even rhythm, with a faint tint alternating so each section reads
+     as its own block rather than one continuous scroll. */
+  section{padding:clamp(56px,7vw,88px) 0;border-bottom:1px solid var(--line);background:var(--canvas)}
+  section:nth-of-type(even){background:#fff}
+  section h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:18px}
+  .lead{font-size:17px;color:var(--muted)}
+
+  /* Score */
+  .scorewrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);padding:26px;margin-bottom:22px}
+  .bigscore{font-family:var(--serif);font-size:60px;line-height:1;color:var(--navy)}
+  .bigscore small{font-size:20px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--navy);color:#f2efe8;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .pill{display:inline-block;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+  .p-ok{background:rgba(47,122,89,.12);color:var(--ok)}
+  .p-warn{background:rgba(200,168,130,.18);color:var(--warn)}
+  .p-bad{background:rgba(162,69,63,.1);color:var(--bad)}
+  .p-none{background:rgba(92,95,104,.09);color:var(--muted)}
+  .tblwrap{overflow-x:auto}
+
+  .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  /* One fixed width for every card label — ragged widths read as careless. */
+  .label{display:block;width:100%;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;background:var(--navy);color:var(--gold);margin-bottom:14px}
+  @media(min-width:760px){.label{width:24%;min-width:210px}}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:6px 16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
+  .row dt{font-weight:700;color:var(--navy)}
+  .row dd{margin:0;color:var(--muted)}
+
+  figure{margin:0 0 20px}
+  figure img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+  figcaption{margin-top:8px;font-size:13px;color:var(--muted);font-style:italic}
+  .shots{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:760px){.shots{grid-template-columns:1.6fr 1fr;align-items:start}}
+
+  ul.clean{margin:0 0 16px;padding-left:20px}
+  ul.clean li{margin-bottom:9px}
+
+  /* Calculator */
+  .calc{background:var(--navy);color:#f2efe8;padding:28px 26px}
+  .calc h2{color:#f7f4ec}
+  .calc .lead{color:rgba(255,255,255,.75)}
+  .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+  .field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .field input{width:100%;padding:11px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:16px;font-family:inherit}
+  .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .field small{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.5)}
+  .scen{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:8px}
+  @media(min-width:700px){.scen{grid-template-columns:repeat(3,1fr)}}
+  .scen>div{background:var(--navy);padding:18px}
+  .scen h4{margin:0 0 4px;font-family:var(--serif);font-size:18px;color:var(--gold)}
+  .scen .rate{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px}
+  .scen .out{font-family:var(--serif);font-size:27px;color:#f7f4ec;line-height:1.2}
+  .scen .cap{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+  .workings{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.7)}
+  .workings code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--gold)}
+  .disclaim{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.06);font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6}
+
+  /* CTA */
+  .cta{background:#fff;border:1px solid var(--gold);padding:0;overflow:hidden}
+  .cta-grid{display:grid;grid-template-columns:1fr}
+  @media(min-width:820px){.cta-grid{grid-template-columns:1.05fr .95fr}}
+  .cta-copy{padding:32px 30px}
+  .cta-copy h2{margin-bottom:12px}
+  .cta-img{background:var(--canvas) center/cover no-repeat;min-height:250px}
+  .btn{display:block;width:100%;padding:18px 30px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;font-size:16px;text-align:center}
+  .btn:hover{background:#dcbe9c}
+
+  /* A lone button has nothing behind it. A face, a name and a second, lower-
+     commitment action give the reader something to say yes to. */
+  .signoff{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .signoff img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;background:#fff;border:1px solid var(--line)}
+  .signoff .who{flex:1;min-width:150px}
+  .signoff .who strong{display:block;font-size:15px;color:var(--navy)}
+  .signoff .who span{font-size:13px;color:var(--muted)}
+  .btn-call{display:inline-block;padding:11px 22px;background:var(--navy);color:#f7f4ec;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .btn-call:hover{background:var(--navy-mid)}
+
+  .work figure a{display:block;text-decoration:none}
+  .work figure a img{transition:border-color .2s ease}
+  .work figure a:hover img{border-color:var(--gold)}
+  .visit{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--gold-dk);text-decoration:none}
+  .visit:hover{text-decoration:underline}
+  .why{margin:18px 0;padding-left:0;list-style:none}
+  .why li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15px}
+  .why li:before{content:"→";position:absolute;left:0;color:var(--gold-dk);font-weight:700}
+
+  .work{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px}
+  @media(min-width:760px){.work{grid-template-columns:1fr 1fr}}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.62);padding:30px 0;font-size:13px}
+  footer a{color:var(--gold)}
+  .fine{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+  .btn-pdf{display:inline-block;padding:11px 20px;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;text-decoration:none}
+  .btn-pdf:hover{background:var(--gold);color:var(--navy)}
+
+  /* Print / PDF: keep evidence and findings whole across page breaks, and drop
+     the things that only make sense on screen. */
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    section{padding:22px 0;background:#fff !important;break-inside:auto}
+    .btn-pdf,.btn,.btn-call{display:none !important}
+    .card,figure,.scen>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    .calc,.top,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cta-img{min-height:190px}
+    a{text-decoration:none}
+  }
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Private website conversion audit</p>
+    <h1>Monaco MedSpa</h1>
+    <p>An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.</p>
+    <div class="meta">
+      <div><span>Website</span><strong>monacomedspa.com</strong></div>
+      <div><span>Location</span><strong>Midtown Miami, FL</strong></div>
+      <div><span>Review date</span><strong>13 August 2026</strong></div>
+      <div><span>Devices tested</span><strong>Desktop 1366 · Mobile 390</strong></div>
+    </div>
+    <p style="margin:22px 0 0"><a class="btn-pdf" href="monaco-medspa-audit.pdf" download>Download this report as a PDF ↓</a></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Executive summary</h2>
+    <p>Monaco is better equipped than most. Dr. Barrueta is named on the homepage — a named cosmetic doctor is the strongest trust signal an aesthetic practice can publish, and most never do it. The navigation carries Before &amp; After, Financing and Reviews, which are the three things a hesitating patient actually goes looking for. The phone number and a Book Now button both sit in the header.</p>
+    <p>On a phone, none of that survives the first screen. Every line of the headline runs off the right edge — “Monaco M…”, “Midtown M…”, “Where A Passion…”, “Aesthetic…” — and the subheading naming Dr. Barrueta is cut off before his name appears. A search field also sits over the Book Now button in the header, with a second Book Now beneath it.</p>
+    <p><strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>At a glance</h2>
+    <div class="scorewrap">
+      <div class="bigscore">53<small>/100</small></div>
+      <div style="flex:1;min-width:230px"><p style="margin:0"><strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. The assets here are genuinely strong — nearly all the score lost is lost to how the first screen renders on a phone.</p></div>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Category</th><th>Score</th><th>Status</th><th>One-line finding</th></tr></thead>
+        <tbody>
+          <tr><td>First impression &amp; positioning</td><td>8/20</td><td><span class="pill p-bad">Structural</span></td><td>Every headline line is cut off at the right edge on mobile.</td></tr>
+          <tr><td>Trust &amp; authority placement</td><td>12/20</td><td><span class="pill p-ok">Solid</span></td><td>A named cosmetic doctor — whose name is cut off on a phone.</td></tr>
+          <tr><td>Booking journey &amp; conversion</td><td>13/20</td><td><span class="pill p-ok">Solid</span></td><td>Book Now, phone and Financing all present; the header overlaps on mobile.</td></tr>
+          <tr><td>Patient decision psychology</td><td>8/15</td><td><span class="pill p-warn">Gap</span></td><td>Before &amp; After and Reviews are in the menu, not near the decision.</td></tr>
+          <tr><td>Mobile experience</td><td>2/10</td><td><span class="pill p-bad">Structural</span></td><td>Headline overflow and overlapping header controls.</td></tr>
+          <tr><td>Local / public signals</td><td>5/5</td><td><span class="pill p-ok">Solid</span></td><td>Midtown Miami named, phone number in the header.</td></tr>
+          <tr><td>Treatment content quality</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
+          <tr><td>Technical / performance</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What the practice is already doing well</h2>
+    <p class="lead">Several of these are things we spend most reports recommending to other practices. They are already here.</p>
+    <ul class="clean">
+      <li><strong>The cosmetic doctor is named on the homepage.</strong> <em>(Observed)</em> “…staffed by the Best Cosmetic Doctor in Miami: Dr. Barrueta”. Naming the doctor is the single most valuable trust signal in aesthetics, and the majority of practices we review never do it at all.</li>
+      <li><strong>Financing is in the main navigation.</strong> <em>(Observed)</em> Answering the price objection before it is raised, rather than waiting for a patient to ask and hoping. Very few practices give it a menu item, and for higher-ticket treatment plans it removes a real barrier.</li>
+      <li><strong>Before &amp; After has its own section.</strong> <em>(Observed)</em> It is the first thing an aesthetic patient looks for and the hardest to fake. Giving it a navigation item rather than burying it inside a treatment page is the right call.</li>
+      <li><strong>Phone, booking and reviews are all in reach.</strong> <em>(Observed)</em> “Call 786-536-6117” top left, a Book Now button top right, and Reviews in the menu. A visitor has several routes forward and none of them is hidden.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The evidence</h2>
+    <div class="shots">
+      <figure>
+        <img src="images/audited-desktop.jpg" alt="Monaco MedSpa homepage on a 1366-pixel desktop screen" />
+        <figcaption>Desktop, 1366×768. The full headline is readable, Dr. Barrueta is named in the subheading, and the navigation carries Before & After, Financing and Reviews.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/audited-mobile.jpg" alt="Monaco MedSpa homepage on a 390-pixel mobile screen" />
+        <figcaption>Mobile, 390×844. Every headline line runs off the right edge, the doctor's name is cut off, and a search field sits over the Book Now button.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 id="findings">Priority opportunities</h2>
+
+    <div class="card">
+      <span class="label">1 · Mobile</span>
+      <h3>The whole headline runs off the side of the screen.</h3>
+      <p><strong>Evidence:</strong> At 390×844 the hero reads “Monaco M”, “Midtown M”, “Where A Passion”, “Aesthetic” — every line clipped at the right margin. The subheading is cut at “The Best Med Spa in Mi…” and “Cosmetic Doctor in M…”, so Dr. Barrueta's name never appears on the screen at all.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> The largest text on the site is unreadable on the device most patients use, and the casualty is the practice's best asset. A named doctor is the reason a full-fee patient chooses one clinic over another — and on a phone that name is off-screen.</p>
+      <p><strong>Recommended:</strong> Reduce the headline size at phone widths so the text wraps inside the viewport rather than overflowing it. One mobile styling rule usually corrects every line at once.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>Same day</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">2 · Mobile</span>
+      <h3>The header controls sit on top of each other.</h3>
+      <p><strong>Evidence:</strong> On mobile a white search field overlays the header, covering the first Book Now button, with a second Book Now button appearing below it. Two booking controls and a search box occupy the same space.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> The first thing a visitor sees is controls colliding, and the booking button — the one thing the practice wants pressed — is the element being covered.</p>
+      <p><strong>Recommended:</strong> Collapse the search into the menu on narrow screens and keep a single Book Now button in the header. Search is rarely used on a clinic homepage; booking always is.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">3 · Message</span>
+      <h3>Two superlatives in one sentence.</h3>
+      <p><strong>Evidence:</strong> The subheading reads “The Best Med Spa in Miami staffed by the Best Cosmetic Doctor in Miami: Dr. Barrueta”.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> A sceptical patient discounts claims a practice makes about itself, and doubling them halves rather than doubles the effect. The genuinely persuasive part of that sentence is the last two words — a named doctor — and it is currently doing the least work because it arrives after two unverifiable claims. Superlative claims in medical advertising are also an area where rules vary by state and warrant professional review; that is a question for your own adviser rather than this report.</p>
+      <p><strong>Recommended:</strong> Lead with the doctor and his qualification, and let the credential replace the adjectives. “Cosmetic treatments led by Dr. Barrueta” is stronger than “the best” precisely because it can be checked.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed (text) · Interpretive (impact)</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">4 · Copy</span>
+      <h3>A grammatical slip in the largest text on the site.</h3>
+      <p><strong>Evidence:</strong> The headline reads “Where A Passion For Beauty And Aesthetics Meet!” — a singular subject with a plural verb. Every word is also capitalised.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> It is small, and on the biggest words on the page it is the kind of thing a careful reader notices without being able to say why the site feels less polished. For a practice whose subheading claims to be the best in the city, precision in the sentence above it matters.</p>
+      <p><strong>Recommended:</strong> “Where a passion for beauty and aesthetics meets” — and set it in sentence case, which reads faster than title case at large sizes.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>Same day</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">5 · Positioning</span>
+      <h3>The hero photograph sits in a different register to the offer.</h3>
+      <p><strong>Evidence:</strong> The hero is a full-bleed image of a woman in a black bikini reclining on a lounger, lit and cropped to emphasise the body, occupying the whole first screen behind the headline.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> This is a commercial observation rather than a matter of taste. The subheading below it leads with a cosmetic doctor — a clinical proposition — while the image reads closer to lifestyle or resort photography. A patient researching injectables is making a medical decision and looking for clinical confidence, and the two signals pull against each other. Practices that show their own room, team or results generally hold that patient more effectively.</p>
+      <p><strong>Recommended:</strong> Consider the practice's own premises, Dr. Barrueta at work, or a genuine before-and-after as the hero. The Before &amp; After material already exists on the site and would do more work here than a stock lifestyle image.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed (image) · Interpretive (impact)</dd><dt>Effort</dt><dd>Medium</dd><dt>Timeframe</dt><dd>2–4 weeks</dd></dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Patient decision psychology</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Principle</th><th>In plain English</th><th>What the site shows</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Familiarity<br>Jacob's Law</strong></td><td>People expect a site to behave like the others they use.</td><td>Desktop follows convention well. On mobile, overlapping header controls break the pattern immediately.</td></tr>
+          <tr><td><strong>Reachability<br>Fitts's Law</strong></td><td>Important actions should be big and easy to thumb.</td><td>Book Now is a good size — the difficulty is that a search field is sitting on top of one of the two copies of it.</td></tr>
+          <tr><td><strong>Proximity of proof</strong></td><td>Reassurance has to sit where the doubt is.</td><td>Reviews and Before & After are in the menu rather than beside the booking button, so they reach only the visitors who go looking.</td></tr>
+          <tr><td><strong>Authority</strong></td><td>Real expertise, visible near decisions.</td><td>Strong on desktop — a named cosmetic doctor. On mobile his name is cut off the screen.</td></tr>
+          <tr><td><strong>Decision clarity</strong></td><td>One obvious next step.</td><td>Two Book Now buttons and a search field compete on mobile, so the single clear action becomes three.</td></tr>
+          <tr><td><strong>Helpful defaults</strong></td><td>Sensible pre-selections that serve the patient.</td><td>Putting Financing in the navigation is a genuinely helpful default — it answers the unasked question early.</td></tr>
+          <tr><td><strong>Believability<br>Pratfall Effect</strong></td><td>Balanced, realistic communication is trusted more than perfection.</td><td>Two “best in Miami” claims in one sentence is the least believable moment on the page. The named doctor beside them is the most.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="border:0;padding-bottom:0">
+  <div class="wrap">
+    <div class="calc">
+      <h2>Illustrative growth scenario</h2>
+      <p class="lead">This is a model, not a measurement. Every figure below starts as an illustrative placeholder — replace them with your own numbers and the scenarios update immediately. Nothing here is drawn from your analytics, and no result is predicted or guaranteed.</p>
+      <div class="fields">
+        <div class="field"><label for="visitors">Monthly website visitors</label><input id="visitors" type="number" min="0" value="2000" /><small>Illustrative — from your analytics</small></div>
+        <div class="field"><label for="curRate">Current visitor → enquiry %</label><input id="curRate" type="number" min="0" max="100" step="0.1" value="1.5" /><small>Illustrative</small></div>
+        <div class="field"><label for="bookRate">Enquiry → booking %</label><input id="bookRate" type="number" min="0" max="100" step="1" value="40" /><small>Illustrative</small></div>
+        <div class="field"><label for="attend">Attendance %</label><input id="attend" type="number" min="0" max="100" step="1" value="80" /><small>Illustrative</small></div>
+        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="650" /><small>Illustrative</small></div>
+      </div>
+      <div class="scen">
+        <div><h4>Conservative</h4><p class="rate">Proposed enquiry rate <strong id="r1">2.0%</strong></p><p class="out" id="o1">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p1"></p></div>
+        <div><h4>Target</h4><p class="rate">Proposed enquiry rate <strong id="r2">2.5%</strong></p><p class="out" id="o2">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p2"></p></div>
+        <div><h4>Strong</h4><p class="rate">Proposed enquiry rate <strong id="r3">3.0%</strong></p><p class="out" id="o3">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p3"></p></div>
+      </div>
+      <div class="workings">
+        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
+        <p style="margin:0 0 6px"><code>current enquiries = visitors × current rate</code> → <span id="w1">—</span></p>
+        <p style="margin:0 0 6px"><code>improved enquiries = visitors × proposed rate</code></p>
+        <p style="margin:0 0 6px"><code>additional attended = (improved − current) × booking % × attendance %</code></p>
+        <p style="margin:0"><code>additional revenue = additional attended × average first-visit value</code></p>
+      </div>
+      <p class="disclaim">Only the proposed enquiry rate changes between the three scenarios; every other input stays as you entered it. This is an illustrative scenario built on stated assumptions — not a forecast, a projection or a guarantee. Actual results depend on factors no website review can measure.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>90-day improvement roadmap</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Window</th><th>Focus</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Days 1–14</strong></td><td>Quick wins</td><td>Fix the headline overflow at phone widths so Dr. Barrueta's name reaches the screen. Collapse search into the menu and keep one Book Now button. Correct the headline grammar.</td></tr>
+          <tr><td><strong>Days 15–45</strong></td><td>Trust &amp; conversion</td><td>Lead the subheading with the doctor and his qualification instead of the superlatives. Bring a rating and one before-and-after beside the booking button. Consider clinical imagery for the hero.</td></tr>
+          <tr><td><strong>Days 46–90</strong></td><td>Authority &amp; measurement</td><td>Build authority content around Dr. Barrueta. Expand Before & After with consistent lighting and consent. Post-treatment review requests. Begin measuring enquiry-to-booking so the calculator figures above become yours.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Limitations &amp; methodology</h2>
+    <p class="fine">This review is based on the public homepage of monacomedspa.com viewed on 13 August 2026 at 1366×768 and 390×844, page source retrieved the same day, and publicly visible business information. Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). The mobile faults were observed at 390 pixels wide and may render differently on other devices. Nothing in this report constitutes advertising, regulatory or legal advice.</p>
+    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Findings labelled <em>Observed</em> are directly visible; findings labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Figures in the growth scenario are illustrative placeholders supplied by this report, not measurements of your practice.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta" id="talk">
+      <div class="cta-grid">
+        <div class="cta-copy">
+          <h2>A short conversation, if it is useful</h2>
+          <p>Most of what is above can be done by your existing web team, and this report is yours to use whether or not we ever speak.</p>
+          <p>Where the gaps are structural rather than cosmetic — booking that lives on someone else's platform, trust signals with nowhere to sit, no loop that brings a patient back after treatment — those are the problems we build for.</p>
+          <ul class="why">
+            <li>The changes above compound: each month they are not made is a month of the same visitors deciding elsewhere.</li>
+            <li>Aesthetic demand is seasonal. Work started now is live before the year-end run.</li>
+            <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
+          </ul>
+          <p style="margin-bottom:0"><a class="btn" href="https://www.aestheticbiz.site/book-discovery?source=audit-monaco-medspa">Book a 20-minute conversation →</a></p>
+          <div class="signoff">
+            <img src="images/ignatius-ackermann.webp" alt="Ignatius Ackermann, CRM Solutions" />
+            <div class="who">
+              <strong>Ignatius Ackermann</strong>
+              <span>CRM Solutions · building commercial platforms since 2001<br />Reply on WhatsApp — usually within a few hours</span>
+            </div>
+            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20audit%20for%20Monaco%20MedSpa." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
+          </div>
+        </div>
+        <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What this looks like built</h2>
+    <p class="lead">Two working examples — not mockups. Both are live and clickable.</p>
+    <div class="work">
+      <figure>
+        <a href="https://www.aestheticbiz.site/" target="_blank" rel="noopener"><img src="images/aestheticbiz-demo.jpg" alt="AestheticBiz demonstration practice homepage" /></a>
+        <figcaption><strong>aestheticbiz.site</strong> — a complete demonstration practice: booking, retail, gift vouchers, rewards and reviews. Book a test appointment on it yourself.
+          <a class="visit" href="https://www.aestheticbiz.site/" target="_blank" rel="noopener">Open the demo practice →</a></figcaption>
+      </figure>
+      <figure>
+        <a href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener"><img src="images/star-aesthetic-portfolio.jpg" alt="Star Aesthetic Centre homepage" /></a>
+        <figcaption><strong>staraesthetic.co.za</strong> — a doctor-led practice with twenty years of reputation, rebuilt and running: booking, skincare commerce, rewards and vouchers.
+          <a class="visit" href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener">Open staraesthetic.co.za →</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 6px">Prepared for Monaco MedSpa · 13 August 2026 · This report is confidential to the recipient.</p>
+    <p style="margin:0">Powered by CRM Solutions — <a href="https://www.crmsolutions.app">www.crmsolutions.app</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var ids = ['visitors', 'curRate', 'bookRate', 'attend', 'value'];
+  var scenarios = [
+    { rate: 2.0, out: 'o1', label: 'r1', pat: 'p1' },
+    { rate: 2.5, out: 'o2', label: 'r2', pat: 'p2' },
+    { rate: 3.0, out: 'o3', label: 'r3', pat: 'p3' }
+  ];
+
+  function num(id) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isFinite(v) && v >= 0 ? v : 0;
+  }
+
+  function money(n) {
+    return 'US$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function recalc() {
+    var visitors = num('visitors');
+    var cur = num('curRate') / 100;
+    var book = num('bookRate') / 100;
+    var attend = num('attend') / 100;
+    var value = num('value');
+
+    var currentEnq = visitors * cur;
+    document.getElementById('w1').textContent =
+      visitors.toLocaleString('en-US') + ' × ' + (cur * 100).toFixed(1) + '% = ' +
+      currentEnq.toFixed(1) + ' enquiries / month';
+
+    scenarios.forEach(function (s) {
+      // Only the proposed rate varies; a proposal below current shows nothing
+      // rather than a negative, which would be meaningless here.
+      var proposed = Math.max(s.rate / 100, cur);
+      var improvedEnq = visitors * proposed;
+      var addEnq = Math.max(improvedEnq - currentEnq, 0);
+      var addAttended = addEnq * book * attend;
+      var revenue = addAttended * value;
+
+      document.getElementById(s.label).textContent = (proposed * 100).toFixed(1) + '%';
+      document.getElementById(s.out).textContent = money(revenue);
+      document.getElementById(s.pat).textContent =
+        addAttended.toFixed(1) + ' additional attended patients · ' +
+        money(revenue * 12) + ' over twelve months';
+    });
+  }
+
+  ids.forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener('input', recalc);
+    el.addEventListener('change', recalc);
+  });
+
+  recalc();
+})();
+
+</script>
+
+</body>
+</html>

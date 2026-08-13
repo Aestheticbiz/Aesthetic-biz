@@ -1,0 +1,30 @@
+TO:      info@ebbmedspa.com  (Helen)
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: something is covering your headline
+
+------------------------------------------------------------
+
+Hi Helen,
+
+I looked at ebbmedspa.com this morning and wrote up what I found. Yours to use
+whether or not we ever speak.
+
+Worth opening on your phone: your accessibility widget is sitting on top of
+your headline. "The Complete Solution for Beauty" loses its last letters behind
+the button, so the largest words on the page are cut off — and because the
+widget is fixed, scrolling doesn't reveal what's underneath.
+
+Two others. The practitioner in your hero photo — gloves, examining a patient's
+face — is never named. That image raises exactly the right question and the
+page doesn't answer it. And Boca Raton doesn't appear anywhere on the first
+screen, so a patient arriving from a search can't tell you're near them.
+
+What you've got right is the part most practices get wrong. Your phone number
+is the very first thing on the page, above the logo. "Book Online" is a
+full-width bar nobody could miss. And your hero is real clinical work rather
+than a stock model — patients can tell, more than most owners assume.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/everybody-is-beautiful/
+
+Ignatius
