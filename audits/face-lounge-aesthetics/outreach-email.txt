@@ -1,0 +1,39 @@
+TO:      yancey@faceloungeaz.com  (Yancey)
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: Yancey — your Book menu is off the screen on a phone
+
+------------------------------------------------------------
+
+Hi Yancey,
+
+I review aesthetic practice websites and I went through faceloungeaz.com this
+morning. The notes are yours to use whether or not we ever speak.
+
+The one worth doing today: on a phone your menu renders as a single row that
+runs past the right edge of the screen. Only Home, Treatments and Shop are
+visible — Book, Memberships, About, Blog and Contact are all outside it, and
+there's no menu button offered instead. Book is the one that earns, and a
+phone visitor currently has no visible way to reach it.
+
+Second, your first screen doesn't say whose website it is. The hero plays a
+close-up of a machine's control panel — 45.0 °C, a timer, "ELAPSED", "LIVE
+TEMP" — with no logo, no practice name, no headline and no location. There's
+also a dark empty panel sitting across the middle of it that looks like
+something that didn't load.
+
+What makes this worth thirty minutes rather than a rebuild: the material is
+already written. "Hello Gorgeous. Welcome to Face Lounge Aesthetics. We are a
+locally owned med spa in Scottsdale, AZ, located in the Edwards Professional
+Park II" — naming the actual building is exactly the kind of detail that earns
+trust, and no invented business ever supplies it. Your treatment menu is
+properly grouped the way patients search, your page description names
+Scottsdale, the number and the free consultation, and you've got memberships,
+a real shop and $25 off a first service.
+
+Almost all of it sits below the point where most visitors decide whether to
+stay. Moving it up is a smaller job than it sounds.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/face-lounge-aesthetics/
+
+Ignatius

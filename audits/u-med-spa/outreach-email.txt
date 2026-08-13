@@ -1,0 +1,42 @@
+TO:      contact@umedspa.com
+NOTE:    Reception inbox. The CSV first name is the business, not a person, so
+         no greeting name is used.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your 1,000 reviews are behind the cookie banner
+
+------------------------------------------------------------
+
+Hello,
+
+I review aesthetic practice websites, and I went through umedspa.com this
+morning expecting to write the usual list. This is a much shorter note than I
+normally send, because there isn't much wrong with it. I scored it 77 — the
+highest in this batch bar one.
+
+Your desktop first screen does nearly everything right. The region is in the
+headline, "over 1,000 5 star patient reviews" sits directly beneath it, three
+reasons to choose you follow, and there are two ways to act — book, or call,
+with the number written into the button rather than hidden behind an icon.
+The photograph is a real treatment in your actual room. Most practices I look
+at manage none of that.
+
+One thing costs you more than it looks. On a phone, your cookie panel takes up
+rather more than half the screen. Everything below the headline is behind it —
+the thousand reviews, the three reasons, and both buttons. A visitor on a
+phone sees a banner, a logo, a photo, two lines of headline, then a wall of
+consent text. All of your persuasion is underneath it, and most aesthetic
+traffic is on a phone.
+
+Two smaller ones. "Most trusted" and "top 1% of injectable practices" sit on
+either side of "over 1,000 5 star reviews" — the review count is checkable and
+the other two aren't, and a sceptical reader who discounts one tends to
+discount what's beside it. And your star row is a pale pink that's nearly
+invisible in daylight, which is a shame given what it's carrying.
+
+Your mobile hero already shows a clinician holding the syringes. Captioning
+her with a name and credential would close the last real gap.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/u-med-spa/
+
+Ignatius

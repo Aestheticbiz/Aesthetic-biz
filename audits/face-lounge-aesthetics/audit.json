@@ -1,0 +1,101 @@
+{
+  "clinic": "Face Lounge Aesthetics",
+  "domain": "faceloungeaz.com",
+  "location": "Scottsdale, AZ",
+  "date": "13 August 2026",
+  "avgValue": 600,
+  "score": 30,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "There is a well-run practice behind this website, and the evidence for that is easy to find. The treatment menu is unusually well organised — RF and laser, skin health, injectables, peels, hair restoration, each with its own named treatments. There is a membership programme, a working product shop carrying named brands, a $25 offer for new clients, and a page description that names Scottsdale, the telephone number and a free consultation. The words further down the page are good too: “locally owned med spa in Scottsdale, AZ, located in the Edwards Professional Park II” is exactly the kind of specificity that earns trust.",
+    "None of it appears on the first screen. What a visitor sees instead is a close-up video of a treatment machine's control panel — a temperature readout of 45.0 °C, a timer, and the words “ELAPSED” and “LIVE TEMP”. There is no logo, no practice name, no headline and no location. A dark panel sits across the middle of the hero with nothing visible in it. On a phone the situation is worse: the navigation renders as a single horizontal row that runs past the right edge of the screen, so of eight items only Home, Treatments and Shop can be seen — Book, Memberships, About, Blog and Contact all fall outside it, and no menu button is offered in their place.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible page source. Individual treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> This score reflects the first screen, not the practice. The material needed to score well is already written and already on the site — almost all of it sits below the point where most visitors decide whether to stay.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "5/20", "status": "Structural", "finding": "No logo, name, headline or location — the hero is a machine readout." },
+    { "category": "Trust &amp; authority placement", "score": "4/20", "status": "Structural", "finding": "The 5-star claim and the practice's story sit below the first screen." },
+    { "category": "Booking journey &amp; conversion", "score": "10/20", "status": "Gap", "finding": "Phone and Book are in the desktop header; neither survives on a phone." },
+    { "category": "Patient decision psychology", "score": "4/15", "status": "Structural", "finding": "Nothing on the opening screen tells a visitor what they are looking at." },
+    { "category": "Mobile experience", "score": "2/10", "status": "Structural", "finding": "The navigation runs off the screen and no menu button replaces it." },
+    { "category": "Local / public signals", "score": "2/5", "status": "Gap", "finding": "A local 480 number on desktop, but Scottsdale is not on the first screen." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "These are real assets, and the recommendations below are almost entirely about moving them to where they can be seen.",
+  "strengths": [
+    { "title": "The treatment menu is properly structured.", "confidence": "Observed", "body": "RF and laser, skin health, injectables, peels, hair restoration — each grouped with its own named treatments, from Morpheus8 and NuEra Tight through to PRX-T33, PDO threads and BioRePeel. That is how a patient actually searches, and it is a great deal of work already done." },
+    { "title": "The page description is genuinely well written.", "confidence": "Observed", "body": "“Your top med spa and aesthetics in Scottsdale … Call (480) 597-4603 to book your free consultation!” This is the line that appears beneath the practice in search results, and it names the town, the number and the offer. Most practices leave it as boilerplate." },
+    { "title": "The introduction is specific in the way that earns trust.", "confidence": "Observed", "body": "“A locally owned med spa in Scottsdale, AZ, located in the Edwards Professional Park II … a quiet and intimate setting.” Naming the actual building is the sort of detail an invented business never supplies, and it answers the proximity question outright." },
+    { "title": "Memberships, a product shop and a new-client offer.", "confidence": "Observed", "body": "Recurring revenue, retail income between appointments, and “$25 off your first service” to convert the undecided. Three commercial mechanisms most practices in this review do not have at all." },
+    { "title": "The telephone number is in the desktop header.", "confidence": "Observed", "body": "A local 480 number, visible without scrolling, for the patient who would rather speak to someone than fill anything in." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. The first screen carries the navigation and a telephone number above a video of a treatment machine's temperature readout. No logo, practice name or headline appears.",
+  "captionMobile": "Mobile, 390×844. The navigation runs past the right edge — Book, Memberships, About, Blog and Contact are all outside the screen, with no menu button in their place.",
+
+  "findings": [
+    {
+      "area": "Mobile navigation",
+      "heading": "Five of the eight menu items are off the screen, including Book.",
+      "evidence": "At 390×844 the navigation renders as one horizontal row. Only Home, Treatments and Shop are visible; Book, Memberships, About, Blog and Contact continue past the right edge. No hamburger or menu button is presented in their place.",
+      "why": "Most aesthetic traffic is on a phone, and the item that has fallen off the edge is the one that earns. A visitor who wants to book has no visible way to do it, no visible telephone number on that screen, and no menu button to look for it in — so the practice's own booking page is effectively unreachable from the homepage.",
+      "recommended": "Switch the header to the mobile menu pattern the site builder already provides, so the eight items collapse behind a menu button. This is a setting rather than a rebuild, and it is the single highest-value change on this list.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "First screen",
+      "heading": "The opening image is a close-up of a machine's control panel.",
+      "evidence": "The desktop hero plays a video showing a device readout: “TEMP °C 45.0”, “TIME (min)”, “ELAPSED” and “LIVE TEMP 46.1”. On mobile the hero shows an out-of-focus frame of a treatment in progress. Neither carries a logo, practice name, headline or location.",
+      "why": "A first-time visitor cannot tell whose website they are on. Equipment readouts are meaningful to the operator and to nobody else — a patient does not choose a practice on temperature settings, and a blurred clinical close-up asks them to identify with the procedure rather than the result.",
+      "recommended": "Put the practice name, “Scottsdale, AZ” and one line naming the main treatments over that hero, with the Book button beneath. The wording already exists further down the page — “Hello Gorgeous. Welcome to Face Lounge Aesthetics” — it simply needs to be first.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Display fault",
+      "heading": "A dark panel sits across the hero with nothing in it.",
+      "evidence": "At 1366×768 a dark translucent rectangle with a small downward notch spans the centre of the hero video. No text or image is visible within it.",
+      "why": "An empty container reads as something that failed to load, and it is sitting in the most valuable space on the site. If it is meant to hold a headline, that headline is not reaching anybody; if it is left over from an earlier layout, it is obscuring the video it sits on.",
+      "recommended": "Worth checking in the editor — either fill it with the practice name and headline, or remove it.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Proof",
+      "heading": "The strongest claims are below the decision point.",
+      "evidence": "“Welcome to Scottsdale's 5-Star Rated Med Spa”, the locally-owned introduction and the “$25 off your first service” offer for new clients all appear below the opening screen. No practitioner is named on it.",
+      "why": "A rating, a local story and a first-visit discount are the three things most likely to convert a hesitant first-time patient, and all three are currently behind a scroll that a large share of visitors will not make. The offer in particular is doing no work where it sits.",
+      "recommended": "Move the 5-star claim with its review count and the $25 new-client offer onto the first screen beside the booking button, and name the practitioner with a photograph.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "A homepage that opens without a logo or name, and a phone menu that runs off the screen, are both outside what a visitor expects." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "On desktop the number and Book are reachable. On a phone the Book item is outside the screen entirely." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "The 5-star claim and the locally-owned story are real, and both sit below the point where the visitor decides." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "No practitioner is named on the first screen, and the equipment is shown instead of the person operating it." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "The opening screen offers no next step at all — no button, and on mobile no visible way to reach one." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Strong once found. The treatment menu is grouped the way patients think, and the shop and memberships are well organised." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“Located in the Edwards Professional Park II” is precise and highly credible — exactly the detail worth promoting to the top." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Enable the mobile menu button so Book and Contact are reachable on a phone. Fill or remove the empty panel on the hero. Put the practice name, Scottsdale and a Book button on the first screen." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Move the 5-star rating with its review count and the $25 new-client offer above the fold. Name the practitioner with a photograph. Replace the equipment video with the treatment room or a result." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Give the strongest treatments their own pages with candidacy and downtime notes. Build a post-treatment review request into the follow-up. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "This review assessed the homepage at 1366×768 and at 390 pixels wide, together with publicly visible page source. Individual treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). The hero is a video, so the frame described here is the one shown during this review. Navigation items that fall outside the screen were judged on what is visible without horizontal scrolling."
+}

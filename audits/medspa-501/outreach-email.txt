@@ -1,0 +1,44 @@
+TO:      hello@medspa501.com
+NOTE:    Reception inbox. The CSV first name is the business, not a person, so
+         no greeting name is used.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: on a phone, neither of your buttons books anything
+
+------------------------------------------------------------
+
+Hello,
+
+I review aesthetic practice websites and I went through medspa501.com this
+morning. The notes are yours to use whether or not we ever speak.
+
+On desktop your "Book Your Appointment" button is exactly where it should be —
+solid black, top right, impossible to miss. On a phone it moves into the menu,
+and the two buttons left on screen are "Aesthetic Solutions" and "Wellness &
+Functional Medicine Solutions". Both lead to more reading. Neither books
+anything. Your cookie panel then takes the bottom third and covers half the
+second one.
+
+So a patient who arrived ready to book has to find the menu, open it, and go
+looking — and every extra step loses some of the people who were willing.
+Keeping a compact Book button in the mobile header is the single highest-value
+change on the list.
+
+Your headline also runs to five lines at phone width, which eats roughly a
+third of the screen before you've given anyone a reason to stay. A size
+smaller would settle it onto three.
+
+What's genuinely strong: "Chapel Hill Med Spa for Aesthetics & Longevity
+Medicine" names the town and stakes out a specific territory in one line, and
+you name Chapel Hill again in the sentence beneath. Longevity medicine is a
+real differentiator and it attracts a longer relationship than a single
+treatment does. "Medical-led" separates you from the salon end of the market
+in two words.
+
+The gap is that nothing on that screen can be checked — no rating, no review
+count, and "medical-led" doesn't say led by whom. Your whole position rests on
+medical authority, and the page never shows the person it belongs to.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/medspa-501/
+
+Ignatius

@@ -126,6 +126,18 @@ async function main() {
     const client = connect(target.webSocketDebuggerUrl);
     await client.ready;
     await client.send("Page.enable");
+
+    // Headless Chrome advertises "HeadlessChrome" in its UA, and some clinic
+    // sites sit behind a WAF that resets the connection on sight of it. We are
+    // photographing a public homepage as a visitor would see it, so present the
+    // matching desktop or mobile UA rather than the headless one.
+    await client.send("Network.setUserAgentOverride", {
+      userAgent:
+        width < 700
+          ? "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1"
+          : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+    });
+
     await client.send("Emulation.setDeviceMetricsOverride", {
       width,
       height,

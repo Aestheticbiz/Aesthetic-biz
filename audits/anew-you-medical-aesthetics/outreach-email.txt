@@ -1,0 +1,41 @@
+TO:      info@anewyousa.com
+NOTE:    Reception inbox. The CSV first name is the business, not a person.
+         Addressed to Dr. Wehner because she is named in the logo on every
+         page — which also signals the site was actually read.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your phone number is cut off at both ends
+
+------------------------------------------------------------
+
+Dear Dr. Wehner,
+
+I review aesthetic practice websites and I went through anewyousa.com this
+morning. The notes are yours to use whether or not we ever speak.
+
+Worth checking on a phone right now: just below your green "Schedule Your Free
+Consultation" button, a line of text runs off both edges of the screen. It
+shows as "ULTATION - (210) 688-485" — the opening words and the last digit of
+your number are both outside the screen. A patient who wants to call can't
+read the number, and one who dials what they can see gets a wrong number and
+believes they tried.
+
+The second thing is less obvious but matters more over time. Your hero is an
+embedded image rather than a designed section — the widget's own zoom and
+expand controls are visible in its corner — and "Wellness - Focused Aesthetics"
+is pixels inside that picture rather than real text. Search engines and screen
+readers can't read it. The largest words on your homepage are invisible to the
+systems that decide whether you get found.
+
+What's ahead of nearly every practice I review: "by Dr. Sherry Wehner, MD" is
+in your logo, so it travels on every page rather than sitting on an About page
+nobody reaches. For injectables the decision is about a person, and you answer
+that before it's asked. Your photograph being on the homepage does the same
+work again.
+
+That asset deserves a first screen that isn't undermining it — and one that
+names San Antonio, which currently appears nowhere on it.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/anew-you-medical-aesthetics/
+
+Ignatius

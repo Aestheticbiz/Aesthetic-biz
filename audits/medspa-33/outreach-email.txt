@@ -1,0 +1,41 @@
+TO:      hello@medspa33.com
+NOTE:    Reception inbox. The CSV first name is the business, not a person, so
+         no greeting name is used.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your two buttons are the wrong way round
+
+------------------------------------------------------------
+
+Hello,
+
+I review aesthetic practice websites and I went through medspa33.com this
+morning. The notes are yours to use whether or not we ever speak.
+
+The quickest win on the site takes about five minutes. You have two buttons in
+your hero. "Book Your Consultation" is drawn as a thin outline. "Explore All
+Treatments" is a solid black block. The eye goes to the solid one every time —
+so the strongest-looking action on your page leads to more browsing, and the
+one that earns is the quieter of the two.
+
+Swap the styles. Same buttons, same words, the other way round.
+
+It matters more on a phone, because that's where your header "Book Now"
+disappears into the menu and those two are the only actions left. There's no
+tappable number there either.
+
+What's genuinely good, and worth saying: "Top Med Spa in Plano TX for
+Natural-Looking Results" names the town and the promise in one line. "Enhance
+your natural beauty—not change it" is the best sentence on the page — it
+answers the fear that stops most first-time injectable patients, directly.
+Your copy names Botox, fillers, laser and medical weight loss so a searcher
+can self-qualify without clicking. Your hero photo is your actual reception,
+not a stock interior. And offering Affirm and Klarna up front removes the
+affordability objection before it's raised.
+
+The one thing missing is anything a visitor can check independently — no
+rating, no review count, and "medically guided" doesn't say by whom.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/medspa-33/
+
+Ignatius

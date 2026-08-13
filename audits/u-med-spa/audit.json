@@ -1,0 +1,101 @@
+{
+  "clinic": "U Med Spa",
+  "domain": "umedspa.com",
+  "location": "Plano, TX",
+  "date": "13 August 2026",
+  "avgValue": 750,
+  "score": 77,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "This is a short report, because there is not a great deal wrong. The desktop first screen answers nearly every question a first-time patient has before they scroll: the region is named in the headline, a five-star row carries “over 1,000 5 star patient reviews”, three reasons to choose the practice sit beneath it, and there are two ways to act — “Book an appointment now” and “Call us at (972) 636-6299”, with the same number repeated in the bar above. The photograph is a real treatment being performed in the actual room, not a stock model.",
+    "The one substantial problem is on a phone, and it is not really about the design at all. The cookie consent panel occupies rather more than half the screen — everything below the headline is behind it, including the thousand reviews, the three reasons and both buttons. A visitor arriving on a phone sees a promotional bar, a logo, a photograph, two lines of headline, and then a wall of consent text with three grey buttons. All the persuasion is underneath it.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> This is the second-highest score in the current review set. Where a category loses points it is generally a refinement rather than a repair, and the mobile score is the one genuine exception.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "17/20", "status": "Solid", "finding": "Region, positioning and reasons to choose, all before the scroll." },
+    { "category": "Trust &amp; authority placement", "score": "15/20", "status": "Solid", "finding": "Over 1,000 reviews on the first screen; no individual clinician named." },
+    { "category": "Booking journey &amp; conversion", "score": "17/20", "status": "Solid", "finding": "Book, call and a written number — three routes, all above the fold." },
+    { "category": "Patient decision psychology", "score": "11/15", "status": "Gap", "finding": "Unverifiable claims sit beside the verifiable ones and dilute them." },
+    { "category": "Mobile experience", "score": "5/10", "status": "Gap", "finding": "The consent panel covers over half the screen and buries both buttons." },
+    { "category": "Local / public signals", "score": "4/5", "status": "Solid", "finding": "DFW named in the headline; Locations carried in the navigation." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "Most of this page is already doing what the rest of this review set is being asked to do. It is worth being explicit about why.",
+  "strengths": [
+    { "title": "A thousand reviews, on the first screen.", "confidence": "Observed", "body": "“Over 1,000 5 star patient reviews”, with the star row, directly beneath the headline. A count is far more persuasive than a rating alone, because it answers how many people the rating is built on. Almost no practice in this review set puts this above the fold." },
+    { "title": "Three ways to make contact, all visible at once.", "confidence": "Observed", "body": "“Book Now” in the header, “Book an appointment now” in the hero, and “Call us at (972) 636-6299” written out as its own button — with the number repeated in the bar above. The patient who books online and the patient who will only ever telephone are both served without either having to search." },
+    { "title": "The photograph is real, and it shows the work.", "confidence": "Observed", "body": "An actual practitioner treating an actual patient in the actual room, and on mobile a clinician in scrubs holding the syringes. This is what the patient is buying. Stock photography of a serene model says nothing; this says the practice does this every day." },
+    { "title": "“Why choose U Med Spa” answers the question directly.", "confidence": "Observed", "body": "Three lines — top 1% of injectable practices, board-certified and licensed practitioners, known for natural-looking results. Naming “natural-looking results and facial balance” speaks precisely to the fear that stops most first-time injectable patients from booking." },
+    { "title": "The consent panel offers a genuine choice.", "confidence": "Observed", "body": "Customise, Reject All and Accept All are all presented as real options rather than one obvious button and a buried alternative. That is more respectful of the visitor than most, and it is the right instinct — the recommendation below concerns only its size on a phone." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. The headline names the region, the review count sits directly beneath it, and booking and calling are both offered as buttons.",
+  "captionMobile": "Mobile, 390×844. The consent panel covers rather more than half the screen; the review count, the reasons to choose and both buttons all sit behind it.",
+
+  "findings": [
+    {
+      "area": "Mobile",
+      "heading": "The consent panel covers more than half the phone screen.",
+      "evidence": "At 390×844 the cookie panel begins immediately below the second line of the headline and continues past the foot of the screen. The star row, the review count, the three reasons and both the booking and calling buttons are all behind it.",
+      "why": "Everything this page does well is underneath a grey box. A visitor must read and act on a legal notice before they are allowed to see a single reason to choose the practice — and on a phone, where most aesthetic traffic arrives, that is the entire first impression. The thousand reviews are the strongest asset on the site and no phone visitor sees them until they have dismissed something else.",
+      "recommended": "Reduce it to a slim bar across the foot of the screen on mobile, keeping the same three choices. The consent is unchanged; it simply stops standing in front of the page.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Proof",
+      "heading": "The unverifiable claims are standing next to the verifiable one.",
+      "evidence": "“Most Trusted Med Spa in DFW” is the headline, and “Top 1% of injectable practices nationwide” is the first reason listed. Directly between them sits “over 1,000 5 star patient reviews”.",
+      "why": "The review count is checkable and therefore believable. “Most trusted” and “top 1%” are claims the practice makes about itself with no stated source, and a sceptical reader who discounts one tends to discount whatever is beside it. The strongest asset on the page is being asked to share space with two of the weakest.",
+      "recommended": "Either attribute the top 1% claim — by whom, measured how, in what year — or let the review count carry the headline on its own. “Over 1,000 five-star reviews in DFW” is a stronger opening line than “most trusted”, because nobody has to take it on faith.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Trust",
+      "heading": "The practitioners are described but never named.",
+      "evidence": "“Expert treatments by Board-Certified and licensed practitioners” appears in the reasons to choose. No individual clinician is named on the first screen, and the mobile hero photograph of a practitioner carries no caption.",
+      "why": "For injectables the decision is about a person, not a business. The mobile hero already shows a clinician holding the syringes — the visitor can see who would treat them but not who they are, which invites the question without answering it. Board-certified is a category; a name and a qualification is a person.",
+      "recommended": "Caption that photograph with her name and credential, and name the lead injector beside the booking button. The picture is already doing most of the work.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Readability",
+      "heading": "The star row is nearly the same colour as the page.",
+      "evidence": "The five stars beside “over 1,000 5 star patient reviews” are rendered in a pale pink against the off-white background, considerably lighter than the surrounding text.",
+      "why": "The stars are the visual shorthand that carries the review count — most visitors register the shape before they read the words. At that contrast they are close to invisible on a bright screen or in daylight, so the strongest proof on the page is quieter than the claims around it.",
+      "recommended": "Darken the stars to match the body text. A small change to the most valuable element on the page.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "Conventional and well executed throughout. Nothing here asks the visitor to learn anything new." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "Generous targets on desktop. On a phone both are behind the consent panel until it is dismissed." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "Strong on desktop — the review count sits between the headline and the booking button, which is exactly right." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "Board certification is stated and a clinician is pictured, but nobody is named." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Book is clearly primary and calling clearly secondary. The hierarchy is correct." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Writing the telephone number into the button label rather than hiding it behind an icon is a small, genuinely helpful decision." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“Natural-looking results, facial balance” is credible and well judged. “Most trusted” and “top 1%” pull in the opposite direction." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Reduce the mobile consent panel to a footer bar. Darken the star row. Attribute or retire the “top 1%” claim." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name the injector in the hero photograph caption and beside the booking button. Consider leading with the review count instead of “most trusted”." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Give the highest-value treatments their own pages with candidacy and downtime notes. Keep the review engine running — it is the strongest asset here. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "This review assessed the homepage at 1366×768 and at 390 pixels wide, together with publicly visible information. Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). The consent panel behaves differently for returning visitors who have already answered it, and the promotional bar rotates, so the message described here may differ from the one another visitor sees."
+}
