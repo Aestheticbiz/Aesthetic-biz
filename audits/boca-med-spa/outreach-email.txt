@@ -1,0 +1,27 @@
+TO:      info@bocamedspa.com  (Monica)
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: the heading on your homepage
+
+------------------------------------------------------------
+
+Hi Monica,
+
+I spent half an hour on bocamedspa.com this morning and wrote up what I found.
+No catch — it's yours whether we ever speak.
+
+One thing worth thirty seconds: the largest heading on your homepage is the
+word "Home". That's the line Google reads hardest and the first thing a screen
+reader announces, and it says nothing about medical aesthetics in Boca Raton.
+
+Two others. There's no button or phone number anywhere on the first screen, on
+desktop or mobile. And your main message — "Total Skin and Body Transformation"
+— is inside the picture rather than written as text, so it can't be searched
+and softens on a phone.
+
+What's already right: you're clearer than most that you're a medical practice,
+not a spa. Your navigation is genuinely well organised too.
+
+Full report, with a scorecard and a 90-day order of work:
+[LINK]
+
+Ignatius
