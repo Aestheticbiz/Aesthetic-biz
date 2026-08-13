@@ -62,23 +62,53 @@ Then stop talking. Do not justify it. The silence is theirs to fill.
 
 A discount says the first number was invented. Removing scope says it was real.
 
-### Getting paid — offer bank transfer first
+### Getting paid
 
-PayPal's published rates for a ZA merchant receiving from a US buyer:
+**Default: Wise Business. PayPal only if they insist.**
 
-| | |
+Wise issues US bank account details. From the client's side it is an ordinary
+domestic US transfer — the most normal payment they can make, and one their
+bookkeeper prefers. No international wire, nothing unusual to explain.
+
+| Route on $10,000 | Cost |
 |---|---|
-| International commercial transaction | 4.40% + $0.30 |
-| On two $5,000 instalments | $440.60 |
-| Currency conversion USD → ZAR | 3.0% merchant page / 4.0% consumer page — plan on 4% |
-| Conversion on the $9,559 remaining | $287 – $382 |
-| **Total on a $10,000 engagement** | **≈ $730 – $823 (7–8%)** |
+| **Wise Business** | **≈ $50** |
+| Stripe (2.9% + $0.30) | ≈ $290 |
+| PayPal | ≈ $730 – $823 |
 
-So: **lead with bank transfer, keep PayPal as the convenient fallback.** A US business wires $5,000 for professional services without hesitation — their accounts department prefers it.
+PayPal's published ZA merchant rates, for reference: 4.40% + $0.30 on
+international commercial receipts ($440.60 across two instalments), then a
+further 3–4% on currency conversion ($287–$382). The conversion never appears
+as a line item — it is taken inside the exchange rate, which is why it is easy
+to have used PayPal for years without noticing it.
 
-Receive into a USD account (FNB Global, Standard Bank CFC, or Wise Business) rather than converting inside PayPal. Conversion drops from 3–4% to roughly 0.5–1%. Across both routes that is about **$700 kept per engagement**.
+**On the call, say it plainly and without apology:**
 
-Never put bank details in an email body — they go in the Payment Panel behind the private access link. Emailed invoices are a known wire-fraud target in US B2B; if their finance team telephones to verify, that is a good sign.
+> "Bank transfer is easiest — I'll send US account details, so it's a normal
+> domestic transfer at your end. If you'd rather use PayPal, that works too."
+
+**Do not put bank details in an email body.** They go in the Payment Panel,
+behind the private access link. Emailed invoices are a known wire-fraud target
+in US B2B — if their finance team telephones to verify, that is a good sign,
+not an obstacle.
+
+### Stripe — not yet, and not for this
+
+Stripe does not serve South Africa directly, and Wise's account details do not
+substitute. Stripe requires a US legal entity, an EIN, a US address and a
+responsible party with an SSN or ITIN. Registering without those means
+declaring a business location that does not exist — Stripe detects it through
+IP, device and payout patterns, and the usual outcome is a frozen account with
+funds held for 90–120 days. Not a risk worth taking on the first engagement.
+
+The legitimate route is a real US LLC (Stripe Atlas, Firstbase, doola), an EIN
+and a Mercury or Relay account — roughly $300–500 to set up, plus annual fees,
+and it brings US filing obligations including Form 5472, where the penalty for
+missing it is $25,000. A decision for the accountant, not for one deal.
+
+**Worth doing when** the offer becomes recurring and lower-priced — a monthly
+retainer at $200–500 with card on file. Card processing earns its fee there.
+It does not earn it on a $5,000 invoice a client would rather wire anyway.
 
 ---
 
