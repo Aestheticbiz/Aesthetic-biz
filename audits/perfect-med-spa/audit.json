@@ -1,0 +1,110 @@
+{
+  "clinic": "Perfect Med Spa",
+  "domain": "perfectmedspa.com",
+  "location": "NYC & Long Island, NY",
+  "date": "13 August 2026",
+  "avgValue": 750,
+  "score": 43,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "Two things here are done thoughtfully. Both locations — NYC and Long Island — get their own complete contact set: address, telephone, email and booking, side by side. For a two-site practice that is the correct answer, and most give one address and leave the other patient guessing. “Book Now” is also a prominent, high-contrast button rather than a browse link.",
+    "The difficulty is that a first-time visitor on a phone can barely read the page. The headline — “Lift, Tighten &amp; Restore — Without Surgery” — is set in light grey over a photograph of faces, so it nearly disappears, and the paragraph beneath it is fainter still. Below that, a cookie consent panel occupies roughly the lower half of the first screen. Between the promotional bar, eight contact icons, the consent panel and the accessibility widget, very little of the opening screen belongs to the practice's own message.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. The copy and the two-location handling are good — the score reflects how little of it a visitor can actually see on arrival.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "7/20", "status": "Structural", "finding": "The headline is too faint to read against the photograph." },
+    { "category": "Trust &amp; authority placement", "score": "5/20", "status": "Structural", "finding": "No practitioner, credential or review on the first screen." },
+    { "category": "Booking journey &amp; conversion", "score": "13/20", "status": "Solid", "finding": "Book Now is prominent; both locations have their own booking route." },
+    { "category": "Patient decision psychology", "score": "6/15", "status": "Structural", "finding": "Eight icons, a promo bar, a consent panel — before any message." },
+    { "category": "Mobile experience", "score": "3/10", "status": "Structural", "finding": "The consent panel covers roughly half the opening screen." },
+    { "category": "Local / public signals", "score": "5/5", "status": "Solid", "finding": "Both locations named with full contact details each." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "The thinking behind this site is better than the first screen suggests. Most of what follows is about letting it show.",
+  "strengths": [
+    { "title": "Both locations get a full contact set.", "confidence": "Observed", "body": "NYC and Long Island each carry their own address, telephone, email and booking control, side by side at the top of the page. For a two-site practice this is exactly right, and most sites give one address and leave half their catchment guessing." },
+    { "title": "The headline copy is genuinely good.", "confidence": "Observed", "body": "“Lift, Tighten &amp; Restore — Without Surgery” names the benefit and the differentiator in six words. “Without surgery” answers the fear a first-time patient actually has. The writing is right; only the styling is letting it down." },
+    { "title": "“Book Now” is unmistakable.", "confidence": "Observed", "body": "Solid gold against white, in the header, present before the visitor scrolls. It asks for the appointment rather than inviting a browse." },
+    { "title": "“No downtime” is addressed up front.", "confidence": "Observed", "body": "Downtime is one of the two questions every aesthetic patient asks before booking. Answering it in the opening paragraph rather than three pages in is the right instinct." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. Both locations carry their own contact set, and Book Now sits prominently in the header.",
+  "captionMobile": "Mobile, 390×844. The headline is barely legible against the photograph, and a cookie consent panel occupies roughly the lower half of the screen.",
+
+  "findings": [
+    {
+      "area": "Readability",
+      "heading": "The headline is too faint to read.",
+      "evidence": "“Lift, Tighten &amp; Restore — Without Surgery” is set in light grey directly over a photograph of three faces, with the supporting paragraph beneath it fainter still. At 390 pixels wide both are close to illegible against the image behind them.",
+      "why": "This is the best sentence on the site. It names the benefit and removes the biggest objection in six words — and a visitor cannot read it. The practice is getting no return on copy that is already right.",
+      "recommended": "Set the headline in white with a dark scrim behind it, or move it clear of the faces. This is a styling change, not a rewrite — the words themselves should not change.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "First screen",
+      "heading": "The consent panel takes roughly half the opening screen.",
+      "evidence": "At 390×844 a “We value your privacy” panel with Accept All, Customize and Reject All buttons occupies approximately the lower half of the first screen, with the accessibility widget overlapping its left edge.",
+      "why": "Consent notices are necessary. This one is presented at a size that leaves the practice's own message with less than half the screen it paid for — and the patient's first interaction with the practice is dismissing something.",
+      "recommended": "Reduce it to a single compact bar along the bottom edge with Accept and Manage. It meets the same obligation in a fifth of the space.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Decision clarity",
+      "heading": "Eight icons arrive before any message does.",
+      "evidence": "Above the logo, NYC and Long Island each carry four circular icons — location, telephone, email and booking — making eight controls in a row before the practice's name, headline or offer appears.",
+      "why": "The intent is generous and the information is right; the placement asks the visitor to choose a location and a contact method before they know what the practice does or whether they want it. Choice presented too early reads as work rather than service.",
+      "recommended": "Keep one combined “Locations” control at the top, and give each location its own full contact block further down where a visitor who has decided will look for it.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "2–4 weeks"
+    },
+    {
+      "area": "Positioning",
+      "heading": "The page opens on a discounted price.",
+      "evidence": "The top bar of the site reads “DOUBLE CHIN LIFTING $999”, above everything else on the page.",
+      "why": "A specific offer can work well, but placed first it sets a price frame before any value has been established — and it invites comparison shopping from the visitor most likely to choose on cost. For a practice positioned around results without surgery, that is the wrong first conversation.",
+      "recommended": "Move the offer below the headline, so the patient meets the proposition before the price. The offer itself is fine; it is simply arriving before the reason to want it.",
+      "confidence": "Observed (text) · Interpretive (impact)",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Trust",
+      "heading": "No practitioner or review appears before the decision.",
+      "evidence": "No clinician is named, no qualification or supervising physician is stated, and no patient review or rating appears on the first screen of either device.",
+      "why": "For non-surgical lifting and tightening the question that decides the booking is who performs it and how experienced they are. A patient who cannot answer it here will answer it at a practice that says so plainly.",
+      "recommended": "Name the treating practitioner with qualification and a real photograph, and put a rating with its review count beside the Book Now button.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "Logo, Book Now and menu all sit where expected. The unfamiliar part is meeting eight contact icons before the practice introduces itself." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "Book Now is well sized. The eight small circular icons above it are considerably harder targets on a phone." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "No review, rating or credential appears anywhere near the booking action." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "No practitioner is named on the first screen of either device." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "A promotional bar, eight icons, a booking button and a consent panel all compete before the visitor reads a sentence." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Giving each location its own booking route is genuinely helpful — it is the timing rather than the idea that costs." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“Without surgery” and “no downtime” are specific, checkable and credible — the strongest writing on the page." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Make the headline legible with white type and a scrim. Reduce the consent panel to a compact bar. Move the $999 offer below the headline." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name the treating practitioner with qualification and photograph. Add a rating and review count beside Book Now. Consolidate the eight icons into one Locations control at the top." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Separate location pages so NYC and Long Island each rank in their own market. Treatment-page depth with candidacy and downtime detail. Post-treatment review requests. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). Consent panels behave differently for returning visitors, so a repeat visitor's first screen will not match the one described here."
+}
