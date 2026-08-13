@@ -1,0 +1,110 @@
+{
+  "clinic": "Moderne Medical",
+  "domain": "modernemedical.com",
+  "location": "Scottsdale, AZ",
+  "date": "13 August 2026",
+  "avgValue": 650,
+  "score": 43,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before an appointment is booked.",
+
+  "summary": [
+    "On a desktop this site is clean and well made. “Schedule an Appointment Online!” sits in the header as a proper button — and that wording is better than most, because it tells the patient not just to act but that they can finish without phoning anyone. The hero shows a real clinician in a white coat with a patient, not a stock model.",
+    "On a phone it comes apart. The booking button's text breaks out of the button itself — the box holds “SCHEDULE AN” while “APPOINTMENT ONLINE!” spills onto the background below, with the word “APPOINTMENT” split across two lines. It also overlaps the menu icon. Below that, the headline runs off the right edge of the screen: “Award Winning” loses its last letter and “in Scottsdale” is cut mid-word.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. Almost all of the score lost here is lost on mobile — the desktop version of this site would score considerably higher.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "9/20", "status": "Gap", "finding": "The headline runs off the right edge of a phone screen." },
+    { "category": "Trust &amp; authority placement", "score": "6/20", "status": "Structural", "finding": "Real clinical imagery, but no name, credential or review." },
+    { "category": "Booking journey &amp; conversion", "score": "11/20", "status": "Gap", "finding": "Excellent CTA wording, in a button that breaks on mobile." },
+    { "category": "Patient decision psychology", "score": "7/15", "status": "Gap", "finding": "One clear action — presented as a layout fault on a phone." },
+    { "category": "Mobile experience", "score": "2/10", "status": "Structural", "finding": "Button overflow, menu overlap and a clipped headline." },
+    { "category": "Local / public signals", "score": "4/5", "status": "Solid", "finding": "Scottsdale named in the headline." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "The desktop version of this site is genuinely well made. That is worth saying before anything else, because most of what follows applies only to phones.",
+  "strengths": [
+    { "title": "The call to action is better worded than most.", "confidence": "Observed", "body": "“Schedule an Appointment Online!” does two jobs — it names the action and it tells the patient they can finish without speaking to anyone. A great many practices write “Contact Us” and lose the visitor who did not want a conversation." },
+    { "title": "The hero shows a real clinician with a patient.", "confidence": "Observed", "body": "A practitioner in a white coat, consulting over a tablet, in what appears to be the practice's own room. Clinical, authentic and considerably more persuasive than the stock portraits common in this market." },
+    { "title": "The desktop layout is clean and confident.", "confidence": "Observed", "body": "At 1366 pixels everything sits where it should — logo centred, booking button clearly separated, generous proportions. The design work underneath is sound." },
+    { "title": "The location is in the headline.", "confidence": "Observed", "body": "“Award Winning Medical Spa in Scottsdale” names the town in the largest text on the page, which is what a locally searching patient needs to see first." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. “Schedule an Appointment Online!” fits its button cleanly and the layout is well proportioned. Nothing here is broken.",
+  "captionMobile": "Mobile, 390×844. The same button holds only “SCHEDULE AN”; “APPOINTMENT ONLINE!” spills out below it and overlaps the menu icon. The headline is clipped at the right edge.",
+
+  "findings": [
+    {
+      "area": "Mobile",
+      "heading": "The booking button's text breaks out of the button.",
+      "evidence": "At 390×844 the grey button contains only the words “SCHEDULE AN”. The remainder — “APPOINTMENT ONLINE!” — appears below and outside the button, on the pink background, with “APPOINTMENT” split across two lines as “APPOINTME” and “NT”. The block also overlaps the hamburger menu icon.",
+      "why": "This is the practice's only call to action, and on a phone it looks like a fault rather than a control. A visitor cannot tell which part is clickable, and text sitting outside its own container reads as a site nobody has checked — on the device most patients are using.",
+      "recommended": "Shorten the button text on narrow screens to “Book Online” or “Schedule Now”, or allow the button to grow to fit its label. This is a mobile styling rule, not a rebuild.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Mobile",
+      "heading": "The headline runs off the edge of the screen.",
+      "evidence": "At 390 pixels wide, “Award Winning” is cut at the right margin with its final letter clipped, and the line beneath reads “IN SCOTTSDA” before disappearing off-screen.",
+      "why": "The largest words on the page are incomplete. A patient cannot read the claim being made, and the town — the single most important word for someone choosing a local practice — is cut in half.",
+      "recommended": "Reduce the headline size on narrow screens so it wraps within the viewport. The same setting usually fixes both lines at once.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Why this persists",
+      "heading": "The desktop version is fine, which is how this survives.",
+      "evidence": "At 1366×768 the button fits its label, the layout is well proportioned, and nothing overflows. Every fault described above appears only at phone widths.",
+      "why": "An owner reviewing their own site almost always does it on the machine they work at. The version they see is correct, so nothing prompts a fix — while the version most patients see is the broken one. This is not carelessness; it is the most common blind spot in the whole market.",
+      "recommended": "Make a habit of opening the site on your own phone once a month, in a private window. Two minutes catches almost everything of this kind before a patient does.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Ongoing"
+    },
+    {
+      "area": "Trust",
+      "heading": "The clinician is pictured but never named.",
+      "evidence": "The hero shows a practitioner in a white coat consulting with a patient. No name, qualification or supervising physician appears on the first screen, and no patient review or rating is shown.",
+      "why": "The photograph is doing exactly the right job and stopping one step short. A patient looking at a clinician wants to know who she is and what she is qualified to do — and the site raises the question without answering it.",
+      "recommended": "Name her with her qualification beneath the hero, and add a rating with its review count near the booking button.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Message",
+      "heading": "“Award Winning” does not say which award.",
+      "evidence": "The headline reads “Award Winning Medical Spa in Scottsdale”. No award, awarding body or year is named on the first screen.",
+      "why": "An unnamed award reads as a turn of phrase rather than a fact, so it persuades no more than any other adjective. Named, it becomes checkable — and checkable claims are the only kind a sceptical patient credits.",
+      "recommended": "Name the award and the year. If there are several, put the most recognisable in the headline and the rest on the About page.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "Desktop follows convention well. On mobile, a control whose text sits outside it breaks the pattern badly enough that visitors may not recognise it as a button." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "The button is large enough, but its true tappable area is unclear because the label extends beyond it." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "No review, rating or credential appears near the booking action on either device." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "A clinician is shown but not identified, so the authority is implied rather than evidenced." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Strong in principle — a single booking action, no competing calls. The clarity is lost only to the layout fault." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Telling the patient the booking can be completed online is a genuinely helpful thing to say up front." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "The real clinical photography reads as credible. “Award Winning” without the award is the one line that does not." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Fix the button overflow and the clipped headline at phone widths. Shorten the button label on narrow screens. Name the award." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name the clinician with her qualification beneath the hero. Add a rating and review count near the booking button. Add treatment-specific reassurance on the highest-value pages." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Practitioner authority content. Post-treatment review requests. Monthly mobile check as a standing habit. Begin measuring enquiry-to-booking so the calculator figures above become yours." }
+  ],
+
+  "limitations": "Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). The mobile faults were observed at 390 pixels wide and may render differently on other devices and browsers."
+}

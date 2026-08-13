@@ -1,0 +1,34 @@
+TO:      support@modernemedical.com  (Allison)
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your site is fine on desktop
+
+------------------------------------------------------------
+
+Hi Allison,
+
+I looked at modernemedical.com this morning. Everything below is worth checking
+on your own phone, because on a desktop the site looks correct — which is
+almost certainly why nobody has spotted it.
+
+On a phone, your "Schedule an Appointment Online!" button only holds the words
+"SCHEDULE AN". The rest — "APPOINTMENT ONLINE!" — spills out below the button
+onto the pink background, with APPOINTMENT split across two lines. It also
+overlaps your menu icon. It reads as a fault rather than a button, and it's
+your only call to action.
+
+Just below it, your headline runs off the right edge. "Award Winning" loses its
+last letter and "in Scottsdale" is cut mid-word — so the town, the one word a
+local patient is looking for, is chopped in half.
+
+None of this happens at desktop width. That's the whole reason it's still
+there: the version you review is the working one.
+
+What's good is worth saying. "Schedule an Appointment Online!" is better
+wording than most practices manage — it names the action and tells the patient
+they can finish without phoning. And your hero shows a real clinician with a
+patient rather than a stock model.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/moderne-medical/
+
+Ignatius
