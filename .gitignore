@@ -32,6 +32,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ...but the template must be tracked: it is how anyone knows which variables
+# the site needs. Supabase went unconfigured because this file was invisible.
+!.env.example
 
 # vercel
 .vercel

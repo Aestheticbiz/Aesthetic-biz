@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import {
+  adminBookingEmail,
+  clientBookingEmail,
+  emailReady,
+  sendEmail,
+  type BookingEmailData,
+} from "@/lib/server/email";
+import {
   buildDiscoveryAvailability,
   discoverySlotStart,
   DISCOVERY_DURATION_MINUTES,
@@ -132,25 +139,51 @@ export async function POST(req: Request) {
       return NextResponse.json({ booking: publicBooking(booking) });
     }
 
+    // --- Store -------------------------------------------------------------
+    let stored = false;
     const supabase = getSupabaseServer();
+
     if (!supabase) {
       console.error("[discovery-bookings] STORAGE SKIPPED — Supabase not configured. LEAD", JSON.stringify(booking));
-      return NextResponse.json({ booking: publicBooking(booking) });
+    } else {
+      const { error } = await supabase.from(TABLE).insert(booking);
+
+      // 23505 = unique violation on start_utc: somebody took the slot first.
+      // The only case where we refuse outright — the slot genuinely is gone.
+      if (error?.code === "23505") {
+        return NextResponse.json(
+          { error: "That time has just been booked. Please choose another slot." },
+          { status: 409 },
+        );
+      }
+      if (error) {
+        console.error("[discovery-bookings] STORAGE FAILED", error);
+        console.error("[discovery-bookings] LEAD", JSON.stringify(booking));
+      } else {
+        stored = true;
+      }
     }
 
-    const { error } = await supabase.from(TABLE).insert(booking);
+    // --- Notify ------------------------------------------------------------
+    const notified = await sendBookingEmails(booking);
 
-    // 23505 = unique violation on start_utc: somebody took the slot first.
-    if (error?.code === "23505") {
+    // A booking is only safe if it landed somewhere we will actually look:
+    // the database, or an admin inbox. If neither worked the lead is gone, and
+    // telling the visitor "confirmed" would lose them silently — which is
+    // exactly how this endpoint dropped every booking before the table existed.
+    if (!stored && !notified) {
+      console.error("[discovery-bookings] LEAD LOST — storage and email both failed", booking.email);
       return NextResponse.json(
-        { error: "That time has just been booked. Please choose another slot." },
-        { status: 409 },
+        {
+          error:
+            "We could not confirm that booking. Please email us directly and we will secure your slot.",
+        },
+        { status: 503 },
       );
     }
-    if (error) {
-      console.error("[discovery-bookings] STORAGE FAILED — booking captured in log only", error);
-      console.error("[discovery-bookings] LEAD", JSON.stringify(booking));
-      return NextResponse.json({ booking: publicBooking(booking) });
+
+    if (!stored) {
+      console.warn("[discovery-bookings] stored=false but admin notified — recover from email", booking.email);
     }
 
     return NextResponse.json({ booking: publicBooking(booking) });
@@ -162,6 +195,59 @@ export async function POST(req: Request) {
     }
     return NextResponse.json({ error: "The booking could not be completed." }, { status: 500 });
   }
+}
+
+/**
+ * Confirmation to the visitor + notification to the admin inbox.
+ *
+ * Returns true only if the ADMIN was reached — that is what makes a lead
+ * recoverable when the database is unavailable. A failed client confirmation
+ * is bad, but it does not lose the lead.
+ */
+async function sendBookingEmails(b: StoredBooking): Promise<boolean> {
+  if (!emailReady()) {
+    console.error("[discovery-bookings] EMAIL NOT CONFIGURED — set RESEND_API_KEY and DISCOVERY_FROM_EMAIL");
+    return false;
+  }
+
+  const data: BookingEmailData = {
+    firstName: b.first_name,
+    lastName: b.last_name,
+    email: b.email,
+    phone: b.phone,
+    company: b.company,
+    role: b.role,
+    website: b.website,
+    message: b.message,
+    startUtc: b.start_utc,
+    timezone: b.timezone,
+    durationMinutes: DISCOVERY_DURATION_MINUTES,
+    source: b.source,
+  };
+
+  const adminTo = process.env.DISCOVERY_ADMIN_EMAIL;
+  let adminOk = false;
+
+  if (!adminTo) {
+    console.error("[discovery-bookings] DISCOVERY_ADMIN_EMAIL not set — nobody is being notified");
+  } else {
+    const mail = adminBookingEmail(data);
+    const res = await sendEmail(
+      { to: adminTo, subject: mail.subject, html: mail.html, replyTo: b.email },
+      `${b.id}-admin`,
+    );
+    if (res.error) console.error("[discovery-bookings] admin email failed", res.error);
+    else adminOk = true;
+  }
+
+  const clientMail = clientBookingEmail(data);
+  const clientRes = await sendEmail(
+    { to: b.email, subject: clientMail.subject, html: clientMail.html, ...(adminTo ? { replyTo: adminTo } : {}) },
+    `${b.id}-client`,
+  );
+  if (clientRes.error) console.error("[discovery-bookings] client email failed", clientRes.error);
+
+  return adminOk;
 }
 
 function publicBooking(b: StoredBooking) {
