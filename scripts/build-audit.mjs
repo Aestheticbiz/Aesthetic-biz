@@ -20,7 +20,8 @@ import { writeFile, rm, mkdir, cp } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 
-const PORT = 9377;
+// Derived from the pid so concurrent runs do not fight over one port.
+const PORT = 9900 + (process.pid % 90);
 const CHROME_CANDIDATES = [
   "C:/Program Files/Google/Chrome/Application/chrome.exe",
   "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
@@ -108,7 +109,10 @@ async function makePdf() {
       `--remote-debugging-port=${PORT}`,
       "--disable-gpu",
       "--no-first-run",
-      "--user-data-dir=" + path.join(process.cwd(), ".chrome-capture-profile"),
+      // Per-process profile. Two Chrome instances sharing one user-data-dir
+      // fight over it and the second never opens its debugging port, so a
+      // build cannot run while a capture batch is going.
+      "--user-data-dir=" + path.join(process.cwd(), `.chrome-capture-profile-${process.pid}`),
       "about:blank",
     ],
     { stdio: "ignore" },
