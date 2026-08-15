@@ -58,3 +58,6 @@ next-env.d.ts
 # built audit bundles — regenerate with scripts/build-audit.mjs
 audits/*.zip
 audits/**/*.pdf
+
+# Disposable headless Chrome profiles, one per capture process
+.chrome-capture-profile*

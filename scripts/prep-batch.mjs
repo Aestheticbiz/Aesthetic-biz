@@ -90,8 +90,11 @@ async function main() {
     console.log(`  ${shots === 2 && !extract.error ? "✓" : "✗"} ${c.slug}  shots ${shots}/2`);
   }
 
-  await writeFile("data/leads/friday-evidence.json", JSON.stringify(notes, null, 1), "utf8");
-  console.log(`\n  Wrote data/leads/friday-evidence.json`);
+  // Derived from the input, never hardcoded — a partial re-run must not
+  // overwrite the evidence for the full batch.
+  const outPath = listPath.replace(/\.json$/, "-evidence.json");
+  await writeFile(outPath, JSON.stringify(notes, null, 1), "utf8");
+  console.log(`\n  Wrote ${outPath}`);
   if (failed.length) console.log(`  Needs a decision before auditing:\n   - ${failed.join("\n   - ")}`);
 }
 

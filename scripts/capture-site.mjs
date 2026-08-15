@@ -13,10 +13,28 @@
  * and report pages are opened on phones.
  */
 
-import { spawn } from "node:child_process";
+import { spawn, execFileSync } from "node:child_process";
 import { writeFile, mkdir } from "node:fs/promises";
-import { existsSync } from "node:fs";
+import { existsSync, rmSync } from "node:fs";
 import path from "node:path";
+
+/**
+ * Chrome spawns a tree of child processes — renderer, GPU, network service.
+ * child.kill() reaps only the parent and leaves the rest running, which over a
+ * batch of captures accumulates into hundreds of orphans that eventually stop
+ * any new Chrome from launching at all. Kill the whole tree.
+ */
+function killTree(pid) {
+  try {
+    if (process.platform === "win32") {
+      execFileSync("taskkill", ["/PID", String(pid), "/T", "/F"], { stdio: "ignore" });
+    } else {
+      process.kill(-pid, "SIGKILL");
+    }
+  } catch {
+    /* already gone */
+  }
+}
 
 // Derived from the pid so concurrent runs do not fight over one port.
 const PORT = 9000 + (process.pid % 900);
@@ -165,7 +183,20 @@ async function main() {
       `  ✓ ${url} @ ${width}×${height}@${scale}x → ${out} (${Math.round(buf.length / 1024)} KB)`,
     );
   } finally {
-    chrome.kill();
+    killTree(chrome.pid);
+    // The per-process profile is disposable, but Chrome may not have released
+    // its file locks yet. Never let tidying up fail a capture that succeeded —
+    // leftovers are gitignored and harmless.
+    try {
+      rmSync(path.join(process.cwd(), `.chrome-capture-profile-${process.pid}`), {
+        recursive: true,
+        force: true,
+        maxRetries: 5,
+        retryDelay: 200,
+      });
+    } catch {
+      /* locked — leave it */
+    }
   }
 }
 

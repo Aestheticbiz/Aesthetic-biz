@@ -157,7 +157,19 @@ async function makePdf() {
     await writeFile(pdf, buf);
     console.log(`  ✓ PDF   ${pdfName} (${Math.round(buf.length / 1024)} KB)`);
   } finally {
-    chrome.kill();
+    // Chrome spawns renderer, GPU and network-service children. child.kill()
+    // reaps only the parent; the rest survive and accumulate until no new
+    // Chrome can launch at all. Kill the tree, then drop the profile.
+    try {
+      execFileSync("taskkill", ["/PID", String(chrome.pid), "/T", "/F"], { stdio: "ignore" });
+    } catch {
+      chrome.kill();
+    }
+    await rm(path.join(process.cwd(), `.chrome-capture-profile-${process.pid}`), {
+      recursive: true,
+      force: true,
+      maxRetries: 3,
+    });
   }
 }
 
