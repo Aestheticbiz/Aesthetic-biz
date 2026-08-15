@@ -123,11 +123,16 @@ export function DiscoveryBookingWizard() {
     return (
       <div className="booking-wizard discovery-wizard">
         <div className="booking-success">
-          <h2>Availability temporarily unavailable</h2>
-          <p>{loadError || "Please try again shortly."}</p>
-          <a className="btn btn-navy" href="https://www.crmsolutions.app/book-discovery-call">
-            Book on CRM Solutions →
-          </a>
+          <h2>We can&rsquo;t load available times right now</h2>
+          <p>{loadError || "Please try again in a moment."}</p>
+          <p>
+            If it keeps happening, email{" "}
+            <a href="mailto:info@aestheticbiz.site">info@aestheticbiz.site</a> and we&rsquo;ll book
+            you in directly.
+          </p>
+          <button type="button" className="btn btn-navy" onClick={() => window.location.reload()}>
+            Try again
+          </button>
         </div>
       </div>
     );
@@ -177,8 +182,7 @@ export function DiscoveryBookingWizard() {
       </div>
 
       <p className="discovery-hours-note">
-        Same hours as CRM Solutions · Monday–Friday · 14:00 / 15:00 / 16:00 SAST · 60 minutes ·
-        book at least 24 hours ahead
+        Monday–Friday · 14:00 / 15:00 / 16:00 SAST · 60 minutes · book at least 24 hours ahead
       </p>
 
       {step === 1 && (
@@ -324,12 +328,9 @@ export function DiscoveryBookingWizard() {
               </button>
             </div>
             <p className="discovery-consent">
-              By booking, you agree that CRM Solutions may contact you about this Discovery Call.
-              Demo reservations are stored on AestheticBiz; live calendar sync matches{" "}
-              <Link href="https://www.crmsolutions.app/book-discovery-call">
-                crmsolutions.app
-              </Link>
-              .
+              By booking, you agree that AestheticBiz may contact you about this Discovery Call. We
+              use your details for this call only — see our{" "}
+              <Link href="/privacy">Privacy Policy</Link>.
             </p>
           </form>
         </div>

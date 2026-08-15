@@ -68,9 +68,14 @@ export default function DiscoveryThankYouPage() {
                 </p>
               )}
               <p style={{ fontSize: 14, color: "var(--text-muted)" }}>
-                Demo storage on AestheticBiz. Production wires the same slot hours into Google
-                Calendar + email — identical to{" "}
-                <a href="https://www.crmsolutions.app/book-discovery-call">crmsolutions.app</a>.
+                {booking?.email ? (
+                  <>
+                    A confirmation is on its way to <strong>{booking.email}</strong>.
+                    <br />
+                  </>
+                ) : null}
+                We&rsquo;ll follow up shortly with joining details. If you need to move or cancel
+                the call, just reply to that email.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
                 <Link className="btn btn-navy" href="/">
@@ -84,7 +89,7 @@ export default function DiscoveryThankYouPage() {
           </div>
         </div>
       </section>
-      <SiteFooter compact note="Discovery thank-you · CRM Solutions preview" />
+      <SiteFooter compact note="Discovery Call · AestheticBiz" />
     </>
   );
 }

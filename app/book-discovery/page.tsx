@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { DiscoveryBookingWizard } from "@/components/discovery-booking-wizard";
 import { PreviewBar } from "@/components/preview-bar";
 import { SiteFooter } from "@/components/site-footer";
@@ -8,19 +7,14 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Book a Discovery Call",
   description:
-    "Book a 60-minute Discovery Call with Ignatius Ackermann — same Monday–Friday 14:00 / 15:00 / 16:00 SAST hours as CRM Solutions.",
+    "Book a 60-minute Discovery Call with Ignatius Ackermann — Monday to Friday, 14:00 / 15:00 / 16:00 SAST.",
 };
 
 export default function BookDiscoveryPage() {
   return (
     <>
       <PreviewBar>
-        <strong>Discovery Call engine</strong> · Same hours as{" "}
-        <a href="https://www.crmsolutions.app/book-discovery-call" target="_blank" rel="noreferrer">
-          crmsolutions.app
-        </a>
-        {" "}
-        · Mon–Fri 14:00 / 15:00 / 16:00 SAST
+        <strong>Discovery Call</strong> · Mon–Fri 14:00 / 15:00 / 16:00 SAST · 60 minutes
       </PreviewBar>
       <SiteHeader variant="platform" />
 
@@ -40,7 +34,7 @@ export default function BookDiscoveryPage() {
               <span>02</span> The current numbers and commercial opportunity
             </li>
             <li>
-              <span>03</span> A practical next decision — with or without CRM Solutions
+              <span>03</span> A practical next decision — whether or not we work together
             </li>
           </ul>
         </div>
@@ -61,19 +55,14 @@ export default function BookDiscoveryPage() {
             the one commercial problem you most want to solve.
           </p>
           <p style={{ color: "var(--text-muted)", lineHeight: 1.7 }}>
-            If the economics do not justify a US$10,000+ engagement, Ignatius will say so. Prefer
-            the live CRM Solutions calendar?{" "}
-            <Link href="https://www.crmsolutions.app/book-discovery-call?source=aestheticbiz">
-              Open crmsolutions.app →
-            </Link>
+            If the economics do not justify a US$10,000+ engagement, Ignatius will say so. You will
+            leave the call with a clear view either way — there is no obligation and no follow-up
+            sequence.
           </p>
         </div>
       </section>
 
-      <SiteFooter
-        note="Discovery Call engine · AestheticBiz / CRM Solutions"
-        source="aestheticbiz-discovery"
-      />
+      <SiteFooter note="Discovery Call · AestheticBiz" source="aestheticbiz-discovery" />
     </>
   );
 }

@@ -8,8 +8,24 @@ type SiteFooterProps = {
   compact?: boolean;
 };
 
+/**
+ * CRM Solutions is credited here and nowhere else. Visitors deal with
+ * AestheticBiz throughout — a prospect mid-booking should never be handed off
+ * to a brand they have not been introduced to.
+ */
+function PoweredBy() {
+  return (
+    <span>
+      Powered by{" "}
+      <a href="https://crmsolutions.app" target="_blank" rel="noopener noreferrer">
+        CRM Solutions
+      </a>
+    </span>
+  );
+}
+
 export function SiteFooter({
-  note = "Prepared by CRM Solutions · AestheticBiz demo · Preview only",
+  note = "AestheticBiz demo · Preview only",
   source = "aestheticbiz",
   compact = false,
 }: SiteFooterProps) {
@@ -18,7 +34,9 @@ export function SiteFooter({
       <footer className="site-footer">
         <div className="shell">
           <div className="footer-bottom" style={{ border: 0, paddingTop: 0 }}>
-            <span>{note}</span>
+            <span>
+              {note} · <PoweredBy />
+            </span>
             <Link href={discoveryUrl(source)}>Book a Discovery Call →</Link>
           </div>
         </div>
@@ -75,7 +93,9 @@ export function SiteFooter({
           </div>
         </div>
         <div className="footer-bottom">
-          <span>{note}</span>
+          <span>
+            {note} · <PoweredBy />
+          </span>
           <span className="footer-legal-inline">
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
