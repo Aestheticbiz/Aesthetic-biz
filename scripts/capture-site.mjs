@@ -24,6 +24,9 @@ import path from "node:path";
  * batch of captures accumulates into hundreds of orphans that eventually stop
  * any new Chrome from launching at all. Kill the whole tree.
  */
+/** Pid of the Chrome we launched, so the exit handler can always reap it. */
+let launched = null;
+
 function killTree(pid) {
   try {
     if (process.platform === "win32") {
@@ -130,6 +133,10 @@ async function main() {
     { stdio: "ignore" },
   );
 
+  // Recorded immediately, so the exit handler can reap this tree even if we
+  // are killed before reaching the finally block below.
+  launched = chrome.pid;
+
   try {
     for (let i = 0; i < 80; i += 1) {
       try {
@@ -200,7 +207,31 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
+/**
+ * Self-imposed deadline, deliberately shorter than the 120s prep-batch allows
+ * each capture. If the parent times us out first it sends SIGTERM to this
+ * process, which never reaches the finally block above — so Chrome and its
+ * whole tree survive. Enough of those in one batch and no further Chrome can
+ * launch, which is why slow sites used to poison every capture after them.
+ * Losing one screenshot is fine; leaking the browser is not.
+ */
+const DEADLINE_MS = 90000;
+
+const deadline = setTimeout(() => {
+  console.error(`  ✗ ${url} — gave up after ${DEADLINE_MS / 1000}s`);
+  process.exit(1); // triggers the exit handler below
+}, DEADLINE_MS);
+deadline.unref();
+
+// Covers the deadline above, an uncaught throw, and Ctrl-C alike.
+process.on("exit", () => {
+  if (launched) killTree(launched);
 });
+for (const sig of ["SIGINT", "SIGTERM"]) process.on(sig, () => process.exit(1));
+
+main()
+  .then(() => clearTimeout(deadline))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
