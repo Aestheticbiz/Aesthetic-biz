@@ -74,6 +74,19 @@ export function DiscoveryBookingWizard() {
     const form = new FormData(event.currentTarget);
     const payload = Object.fromEntries(form.entries());
 
+    /**
+     * People type their own website the way they say it - "www.example.com" or
+     * just "example.com". type="url" rejected both, which put a validation
+     * error on the last field before the button on our highest-value form.
+     * The field now accepts what they type and we add the scheme here.
+     */
+    const site = String(payload.website ?? "").trim();
+    if (site && !/^https?:\/\//i.test(site)) {
+      payload.website = `https://${site.replace(/^\/+/, "")}`;
+    } else {
+      payload.website = site;
+    }
+
     try {
       const response = await fetch("/api/discovery-bookings", {
         method: "POST",
@@ -296,7 +309,13 @@ export function DiscoveryBookingWizard() {
             </div>
             <div className="form-row">
               <label>Website</label>
-              <input name="website" type="url" placeholder="https://" inputMode="url" />
+              <input
+                name="website"
+                type="text"
+                inputMode="url"
+                autoComplete="url"
+                placeholder="www.yourpractice.com"
+              />
             </div>
             <div className="form-row">
               <label>What would make this call valuable? *</label>
