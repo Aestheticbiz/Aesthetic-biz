@@ -4648,3 +4648,33 @@ input, select, textarea {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* AestheticBiz logo artwork. The header lockup is a stacked flex column sized
+   for a 28px wordmark plus a 10px tagline; the logo replaces both, so it needs
+   more height than the customizer's uploaded-logo cap of 44px. */
+.site-header .logo-image {
+  max-height: 52px;
+  max-width: 240px;
+}
+
+.footer-brand .logo-image {
+  max-height: 58px;
+  max-width: 260px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+  .site-header .logo-image {
+    max-height: 40px;
+    max-width: 180px;
+  }
+}
+
+.gift-preview-logo {
+  display: block;
+  width: auto;
+  max-width: 230px;
+  max-height: 56px;
+  margin: 0 auto 24px;
+  object-fit: contain;
+}

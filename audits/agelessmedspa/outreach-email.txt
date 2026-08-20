@@ -1,0 +1,37 @@
+TO:      info@agelessmedspa.net
+NOTE:    Reception inbox. The CSV first name is the business, not a person.
+         Addressed to Dr. Sypien because the practice is named after them in
+         the logo on every page — which also signals the site was actually
+         read.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your booking button is sharing the header with a cart icon
+
+------------------------------------------------------------
+
+Dear Dr. Sypien,
+
+I review aesthetic practice websites and I went through agelessmedspa.com
+this morning. The notes are yours to use whether or not we ever speak.
+
+Worth checking on a phone: the header shows a phone icon and a map-pin icon
+with no number or address next to either — a visitor has to tap to find out
+where you are or how to call. Your desktop header does show both as plain
+text, so this is a mobile-only gap, not a missing asset.
+
+On both desktop and mobile, the first screen without scrolling puts your
+"Book Now" button in the same row as a shopping cart, social icons and
+contact details, then a navigation bar of eleven items plus a highlighted
+"SPECIALS" link — all before a visitor reaches any call-to-action inside the
+hero section itself. The button that leads to a booking has to compete for
+attention rather than stand apart.
+
+What's already working well: "ageless medspa by Dr. Sypien M.D." is in your
+logo, and the opening line, "Discover the difference in physician-led care,"
+says the same thing in words. For injectables the decision is about a
+person, and you answer that before it's asked — most practices I review
+don't.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/agelessmedspa/
+
+Ignatius

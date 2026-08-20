@@ -18,6 +18,7 @@ const CATEGORY_BLURB: Record<string, string> = {
   Convert: "Turning interest into a booked, paid appointment.",
   Commerce: "Earning beyond chair time.",
   Retain: "Making the second visit likelier than the first.",
+  Measure: "The arithmetic underneath all of it — the numbers that decide what you can afford.",
 };
 
 export default function GlossaryIndexPage() {

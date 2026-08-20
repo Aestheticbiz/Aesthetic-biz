@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { SITE } from "@/lib/site";
@@ -95,7 +97,14 @@ export function GiftCardForm() {
       </form>
 
       <div className="gift-preview-card" aria-live="polite">
-        <div className="logo-main">{SITE.name}</div>
+        {/* Navy gradient card, so the light artwork. */}
+        <Image
+          className="gift-preview-logo"
+          src="/aestheticbiz-logo-transparent.png"
+          alt={SITE.name}
+          width={1456}
+          height={343}
+        />
         <div className="gift-amount">${amount}</div>
         <p className="gift-message">
           {msg ||

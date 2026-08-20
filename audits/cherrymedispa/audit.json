@@ -1,0 +1,100 @@
+{
+  "clinic": "Cherry Medical Aesthetics",
+  "domain": "cherrymedispa.com",
+  "location": "Denver, CO",
+  "date": "17 August 2026",
+  "avgValue": 650,
+  "score": 58,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "The homepage gets the basics of booking right: “Book a Free Consult” sits in the hero on both desktop and mobile, a “Book Now” button sits permanently in the header, and a red “BOOK NOW” tab stays pinned to the screen edge as a visitor scrolls. The location is named immediately too — “Located in the heart of Denver's LoHi” runs directly under the headline, so a visitor knows within seconds whether the practice is nearby.",
+    "Two things work against that effort. On mobile, a round call-icon button is cut in half by the left edge of the screen, overlapping the heading text beneath the hero — the one button built specifically for a nervous visitor to tap and call is the hardest one on the page to actually hit. And nowhere on the homepage is a physician, medical director or lead injector named — for Botox and filler work, that is the question a full-fee patient is most likely to be holding when they land on the page.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus the page's own text content. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. No traffic, ranking or revenue figures have been estimated, and no private Google Business Profile data was used."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> The booking journey and local signals carry the score — three consistent calls to action and a named neighbourhood. What holds it back is trust: no named clinician anywhere on the homepage, and a mobile call button that is only half on the screen.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "12/20", "status": "Gap", "finding": "Denver's LoHi is named at once, but the headline is the brand name alone." },
+    { "category": "Trust &amp; authority placement", "score": "8/20", "status": "Structural", "finding": "No physician or clinician is named anywhere on the homepage." },
+    { "category": "Booking journey &amp; conversion", "score": "14/20", "status": "Gap", "finding": "Three consistent booking CTAs; the mobile call button is clipped at the screen edge." },
+    { "category": "Patient decision psychology", "score": "9/15", "status": "Gap", "finding": "The one testimonial sits mid-page, away from the booking buttons." },
+    { "category": "Mobile experience", "score": "5/10", "status": "Gap", "finding": "A floating call button is cut in half by the left edge of the screen." },
+    { "category": "Local / public signals", "score": "4/5", "status": "Gap", "finding": "LoHi, Denver is named in the hero; the header phone number is consistent." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "The booking journey is more complete here than in most sites in this review set — the gap is in what surrounds it.",
+  "strengths": [
+    { "title": "The neighbourhood is named in the hero.", "confidence": "Observed", "body": "“Located in the heart of Denver's LoHi” sits directly under the headline on both desktop and mobile. A visitor doesn't have to hunt for an address to know roughly where the practice is." },
+    { "title": "Three consistent routes to booking.", "confidence": "Observed", "body": "“Book Now” in the header, “Book a Free Consult” in the hero, and a “BOOK NOW” tab pinned to the right edge of the screen as a visitor scrolls. Wherever attention lands, a next step is close by." },
+    { "title": "A genuine patient testimonial, in the patient's own words.", "confidence": "Observed", "body": "“I love this place... they are true artists with the face... I never worry about where they are injecting.” It reads as a real quote rather than a generic trust badge, and it speaks directly to the fear a new injectables patient has." },
+    { "title": "A broad, named treatment menu.", "confidence": "Observed", "body": "Botox, fillers, Sciton BBL, Sciton MOXI, Sculptra, Cryoskin and Venus Reverso all appear in the navigation itself, signalling a practice equipped beyond the basics — a genuine differentiator if it's carried through onto the page." }
+  ],
+
+  "captionDesktop": "Desktop. Header shows the phone number and email beside the logo; the hero states the neighbourhood and offers a free consult. No practitioner name appears on this screen.",
+  "captionMobile": "Mobile, 390px wide. Below the hero, a round red call-icon button is cut in half by the left edge of the screen, overlapping the heading text beneath it. The header carries no phone number, only a hamburger menu.",
+
+  "findings": [
+    {
+      "area": "Display fault",
+      "heading": "The mobile call button is cut in half by the screen edge.",
+      "evidence": "On the mobile screenshot, a round red phone-icon button sits at the far left edge of the viewport with roughly half its circle rendering off-screen, overlapping the “Denver, CO” heading text that follows the hero.",
+      "why": "This is the one button built specifically for someone to tap and call — and it's the hardest target on the page to hit accurately, at the exact point a hesitant visitor reaches for the phone.",
+      "recommended": "Reposition the floating call button fully inside the screen margin, clear of the heading text it currently overlaps.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Trust &amp; authority",
+      "heading": "No physician or clinician is named on the homepage.",
+      "evidence": "The homepage's title, meta description, navigation, hero, services section, testimonial and visible footer text contain no practitioner name, credential, or “Dr.” reference anywhere.",
+      "why": "For Botox, filler and laser work, a patient is choosing a person's hands as much as a brand. Leaving the medical director or lead injector unnamed on the homepage leaves the question a full-fee patient is most likely to be holding — who is doing this — unanswered at the page most visitors judge first.",
+      "recommended": "Name the medical director or lead injector on the homepage, with a credential line, ideally near the booking buttons.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Proximity of proof",
+      "heading": "The one testimonial sits well below the booking buttons.",
+      "evidence": "The testimonial (“I love this place... they are true artists with the face...”) appears after the services list, several scrolls below both the header's “Book Now” button and the hero's “Book a Free Consult” button.",
+      "why": "Reassurance works best where the hesitation is, not several scrolls later. A visitor who is unsure has already had two chances to leave before reaching the only piece of social proof on the page.",
+      "recommended": "Place a short testimonial line or rating next to, or immediately below, the hero's “Book a Free Consult” button.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Mobile",
+      "heading": "The mobile header drops the phone number shown on desktop.",
+      "evidence": "At desktop width the header shows “(720) 479-8793” and “reception@cherrymedispa.com” beside the logo. On mobile, the header shows only the logo and a hamburger icon — no phone number or email is visible until the menu is opened.",
+      "why": "A desktop visitor can call without an extra tap; a mobile visitor — the one most likely to be calling from the site — has to open the menu, or find the partially clipped floating call button, to do the same thing.",
+      "recommended": "Keep a tap-to-call phone number visible in the mobile header, not only inside the menu.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "The logo, nav, hero and CTA follow the pattern visitors expect from a medspa site — nothing here surprises them." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "The pinned “BOOK NOW” tab stays reachable throughout the scroll, but the mobile call-icon button is only half inside the screen." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "The one testimonial on the page sits mid-scroll, well below the booking buttons it would support." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "No physician or clinician is named on the homepage; authority currently rests on the treatment-brand names alone (Sciton, Sculptra)." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Clear and repeated: “Book a Free Consult” appears three separate ways across the page." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Offering the consultation free removes the first objection before it's raised, on both devices." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“Premier MedSpa Services” and “state-of-the-art technology... without the five-star price tag” promise a lot; nothing on the homepage balances the claim with a named clinician or credential." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Reposition the clipped mobile call button fully inside the screen. Add a visible tap-to-call number to the mobile header. Move the testimonial, or a short rating line, up near the hero's booking button." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name the medical director or lead injector on the homepage with a credential line. Give the hero headline a specific differentiator beyond the brand name. Keep “Denver” and “LoHi” consistent wherever the location is mentioned." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Build out treatment-specific pages for the higher-ticket devices already named in the navigation (Sciton BBL, Sciton MOXI, Sculptra) with candidacy and downtime information. Begin measuring enquiry-to-booking so future growth figures can be the practice's own." }
+  ],
+
+  "limitations": "This review assessed the homepage at desktop and mobile widths, together with the page's own text content (title, meta description, navigation, hero, services and testimonial copy, and the visible portion of the footer). No treatment page was fetched, no PageSpeed/Lighthouse test was run, and no public rating or review count was visible in the evidence gathered, so Treatment content quality and Technical / performance are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available)."
+}

@@ -1,0 +1,246 @@
+"use client";
+
+import { useMemo, useState } from "react";
+
+/**
+ * The Second-Visit Calculator.
+ *
+ * The argument it makes: a practice's affordable acquisition cost is set by how
+ * many times a patient comes back, not by how cheap its advertising is. Raising
+ * the return rate raises what you can pay for the next patient — which is how a
+ * practice outbids its market.
+ *
+ * MODEL (deliberately simple, and stated on the page so nobody is misled):
+ *   expected visits = 1 / (1 − return rate)   — geometric, each cycle independent
+ *   margin per visit = treatment value × gross margin
+ *   LTV = expected visits × margin per visit
+ *   affordable CAC = LTV ÷ 3          — the conventional healthy LTV:CAC floor
+ *
+ * Nothing is sent anywhere. There is no gate, no email, no storage.
+ */
+
+const TARGET_RETURN = 45;
+const HEALTHY_RATIO = 3;
+
+const FIELDS = [
+  {
+    key: "patients",
+    label: "New patients a month",
+    hint: "People seen for the first time.",
+    min: 1,
+    max: 200,
+    step: 1,
+    prefix: "",
+  },
+  {
+    key: "value",
+    label: "Average treatment value",
+    hint: "What a typical visit invoices, including anything taken home.",
+    min: 100,
+    max: 5000,
+    step: 25,
+    prefix: "$",
+  },
+  {
+    key: "returnRate",
+    label: "Share who return within 90 days",
+    hint: "Your best estimate is enough. Most practices guess high.",
+    min: 0,
+    max: 90,
+    step: 1,
+    prefix: "",
+    suffix: "%",
+  },
+  {
+    key: "spend",
+    label: "Marketing spend a month",
+    hint: "Ads, agency, boosted posts, introductory discounts.",
+    min: 0,
+    max: 50000,
+    step: 250,
+    prefix: "$",
+  },
+  {
+    key: "margin",
+    label: "Gross margin on a visit",
+    hint: "What is left after product, consumables and clinician time.",
+    min: 20,
+    max: 95,
+    step: 1,
+    prefix: "",
+    suffix: "%",
+  },
+] as const;
+
+type FieldKey = (typeof FIELDS)[number]["key"];
+
+const DEFAULTS: Record<FieldKey, number> = {
+  patients: 25,
+  value: 600,
+  returnRate: 30,
+  spend: 3000,
+  margin: 65,
+};
+
+const usd = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
+
+function money(n: number) {
+  if (!Number.isFinite(n)) return "—";
+  return usd.format(Math.round(n));
+}
+
+export function SecondVisitCalculator() {
+  const [values, setValues] = useState<Record<FieldKey, number>>(DEFAULTS);
+
+  const result = useMemo(() => {
+    const { patients, value, returnRate, spend, margin } = values;
+
+    const r = Math.min(Math.max(returnRate, 0), 90) / 100;
+    const target = Math.max(TARGET_RETURN / 100, r);
+
+    const marginPerVisit = value * (margin / 100);
+    const visitsNow = 1 / (1 - r);
+    const visitsTarget = 1 / (1 - target);
+
+    const cac = patients > 0 ? spend / patients : 0;
+    const ltvNow = visitsNow * marginPerVisit;
+    const ltvTarget = visitsTarget * marginPerVisit;
+
+    const affordableNow = ltvNow / HEALTHY_RATIO;
+    const affordableTarget = ltvTarget / HEALTHY_RATIO;
+
+    const paybackVisits = marginPerVisit > 0 ? cac / marginPerVisit : 0;
+    const ratio = cac > 0 ? ltvNow / cac : Infinity;
+
+    // The headline: a full year's intake, at the target return rate instead of today's.
+    const cohort = patients * 12;
+    const gap = (visitsTarget - visitsNow) * value * cohort;
+
+    return {
+      gap,
+      cac,
+      ltvNow,
+      ltvTarget,
+      affordableNow,
+      affordableTarget,
+      paybackVisits,
+      ratio,
+      visitsNow,
+      visitsTarget,
+      targetPct: Math.round(target * 100),
+      uplift: affordableNow > 0 ? affordableTarget / affordableNow - 1 : 0,
+      atTarget: target <= r,
+    };
+  }, [values]);
+
+  return (
+    <div className="svc-calc">
+      <div className="svc-calc-inputs">
+        {FIELDS.map((field) => (
+          <label className="svc-field" key={field.key}>
+            <span className="svc-field-head">
+              <span className="svc-field-label">{field.label}</span>
+              <output className="svc-field-value">
+                {field.prefix}
+                {values[field.key].toLocaleString("en-US")}
+                {"suffix" in field ? field.suffix : ""}
+              </output>
+            </span>
+            <input
+              type="range"
+              min={field.min}
+              max={field.max}
+              step={field.step}
+              value={values[field.key]}
+              onChange={(e) =>
+                setValues((v) => ({ ...v, [field.key]: Number(e.target.value) }))
+              }
+            />
+            <span className="svc-field-hint">{field.hint}</span>
+          </label>
+        ))}
+      </div>
+
+      <div className="svc-calc-out">
+        <div className="svc-headline">
+          <span className="svc-headline-label">
+            {result.atTarget
+              ? "Your patients already return well. Across the relationship, one of them is worth"
+              : `On a year of new patients, the gap between your return rate and ${result.targetPct}% is worth`}
+          </span>
+          <strong className="svc-headline-figure">
+            {money(result.atTarget ? result.ltvNow : result.gap)}
+          </strong>
+          <span className="svc-headline-sub">
+            {result.atTarget
+              ? "That is the number worth defending — and the one that decides what you can outbid your market by."
+              : "Same patients. Same marketing spend. Same rooms."}
+          </span>
+        </div>
+
+        <div className="svc-afford">
+          <div className="svc-afford-col">
+            <span className="svc-afford-label">You can afford to pay, per patient</span>
+            <strong>{money(result.affordableNow)}</strong>
+            <span className="svc-afford-note">at your return rate today</span>
+          </div>
+          <div className="svc-afford-arrow" aria-hidden="true">
+            →
+          </div>
+          <div className="svc-afford-col svc-afford-col-target">
+            <span className="svc-afford-label">You could afford</span>
+            <strong>{money(result.affordableTarget)}</strong>
+            <span className="svc-afford-note">at a {result.targetPct}% return rate</span>
+          </div>
+        </div>
+
+        {!result.atTarget && (
+          <p className="svc-afford-read">
+            That is {Math.round(result.uplift * 100)}% more than you can bid today for exactly the
+            same patient. Whoever in your market can pay the most wins it — and that capacity is
+            decided by the second visit, not by the ad account.
+          </p>
+        )}
+
+        <dl className="svc-metrics">
+          <div>
+            <dt>What a patient costs you now</dt>
+            <dd>{money(result.cac)}</dd>
+          </div>
+          <div>
+            <dt>What a patient is worth to you</dt>
+            <dd>{money(result.ltvNow)}</dd>
+          </div>
+          <div>
+            <dt>Value against cost</dt>
+            <dd>
+              {Number.isFinite(result.ratio) ? `${result.ratio.toFixed(1)} : 1` : "no spend"}
+            </dd>
+          </div>
+          <div>
+            <dt>Visits to pay back acquisition</dt>
+            <dd>{result.paybackVisits.toFixed(1)}</dd>
+          </div>
+          <div>
+            <dt>Visits an average patient makes</dt>
+            <dd>{result.visitsNow.toFixed(1)}</dd>
+          </div>
+          <div>
+            <dt>At {result.targetPct}% they would make</dt>
+            <dd>{result.visitsTarget.toFixed(1)}</dd>
+          </div>
+        </dl>
+
+        <p className="svc-method">
+          Expected visits are modelled as 1 ÷ (1 − return rate). Affordable spend is lifetime margin
+          divided by three, the conventional healthy ratio. Nothing you type is sent anywhere, saved
+          or required — there is no sign-up on this page.
+        </p>
+      </div>
+    </div>
+  );
+}

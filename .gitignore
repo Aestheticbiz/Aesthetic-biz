@@ -61,3 +61,9 @@ audits/**/*.pdf
 
 # Disposable headless Chrome profiles, one per capture process
 .chrome-capture-profile*
+
+# Nested clone - not part of this project
+"Aesthetic Biz"/
+
+# Scratch audit previews
+audits-short/preview/

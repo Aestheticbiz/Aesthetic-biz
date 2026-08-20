@@ -1,0 +1,31 @@
+TO:      info@vivadayspa.com
+NOTE:    Reception/general inbox — no individual name was visible on the
+         homepage content reviewed, so this is addressed to the team.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your cookie banner is hiding your mobile CTA
+
+------------------------------------------------------------
+
+Hi Viva Day Spa team,
+
+I review aesthetic and med spa websites, and I went through vivadayspa.com
+this morning on both desktop and mobile. These notes are yours whether or
+not we ever speak.
+
+Worth checking on a phone right now: right under your "Introducing Korean
+Glass Skin Facials" headline, the cookie-consent card takes over the rest
+of the screen. The "Shop Facials" button that shows on desktop doesn't
+appear anywhere in the mobile view — it's either below the fold or hidden
+behind that card. Until a visitor taps Allow, Customize or Decline, there
+is nothing else to do on the page.
+
+Your desktop header is genuinely well built — "Book Appointment", "Gift
+Certificates", the phone number and full navigation are all visible at
+once, with "Med Spa" kept separate from "Spa Treatments" so injectables
+visitors aren't sorted through a combined menu. That's ahead of most
+practices I review.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/vivadayspa/
+
+Ignatius

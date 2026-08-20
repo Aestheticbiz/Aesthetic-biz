@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Where Ageless MedSpa by Dr. Sypien loses patients</title>
+<style>
+:root{
+    --navy:#0f2647; --navy-mid:#1b3d6e; --gold:#c8a882; --gold-dk:#a8896a;
+    --ink:#1c1f26; --muted:#5c5f68; --line:#e2e2e6; --canvas:#f7f7f8;
+    --ok:#2f7a59; --warn:#8a6c4c; --bad:#a2453f;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+  .wrap{width:min(880px,calc(100% - 40px));margin-inline:auto}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--navy);margin:0}
+  p{margin:0 0 16px}
+  a{color:var(--gold-dk)}
+
+  /* Header */
+  .top{background:var(--navy);color:#f2efe8;padding:44px 0 40px}
+  .top .wrap>p{color:rgba(255,255,255,.75)}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+  .top h1{color:#f7f4ec;font-size:clamp(30px,5vw,44px);margin-bottom:14px}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
+  .meta div span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .meta div strong{font-weight:600;font-size:15px;color:#f7f4ec}
+
+  /* Generous, even rhythm, with a faint tint alternating so each section reads
+     as its own block rather than one continuous scroll. */
+  section{padding:clamp(56px,7vw,88px) 0;border-bottom:1px solid var(--line);background:var(--canvas)}
+  section:nth-of-type(even){background:#fff}
+  section h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:18px}
+  .lead{font-size:17px;color:var(--muted)}
+
+  /* Score */
+
+  .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  /* One fixed width for every card label — ragged widths read as careless. */
+  .label{display:block;width:100%;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;background:var(--navy);color:var(--gold);margin-bottom:14px}
+  @media(min-width:760px){.label{width:24%;min-width:210px}}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:6px 16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
+  .row dt{font-weight:700;color:var(--navy)}
+  .row dd{margin:0;color:var(--muted)}
+
+  figure{margin:0 0 20px}
+  figure img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+  figcaption{margin-top:8px;font-size:13px;color:var(--muted);font-style:italic}
+  .shots{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:760px){.shots{grid-template-columns:1.6fr 1fr;align-items:start}}
+
+
+  /* Calculator */
+  .calc{background:var(--navy);color:#f2efe8;padding:28px 26px}
+  .calc h2{color:#f7f4ec}
+  .calc .lead{color:rgba(255,255,255,.75)}
+  .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+  .field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .field input{width:100%;padding:11px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:16px;font-family:inherit}
+  .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .field small{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.5)}
+
+  /* Leak result — the one number the report exists to show */
+  .leak{margin-top:6px;padding:22px 0 18px;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+  .leak-label{margin:0 0 6px;font-size:14px;color:rgba(255,255,255,.72);max-width:46ch}
+  .leak-figure{margin:0 0 4px;font-family:var(--serif);font-size:clamp(36px,7vw,52px);line-height:1.05;color:var(--gold)}
+  .leak-sub{margin:0;font-size:13px;color:rgba(255,255,255,.55)}
+  .afford{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:18px}
+  @media(min-width:600px){.afford{grid-template-columns:repeat(2,1fr)}}
+  .afford>div{background:var(--navy);padding:16px 18px}
+  .afford span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
+  .afford strong{display:block;font-family:var(--serif);font-size:26px;line-height:1.15;color:#f7f4ec}
+  .afford>div:last-child strong{color:var(--gold)}
+  .afford small{display:block;margin-top:4px;font-size:12px;color:rgba(255,255,255,.5)}
+  .leak-read{margin:14px 0 0;max-width:56ch;font-size:14px;color:rgba(255,255,255,.75)}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:18px}
+  .metrics>div{background:var(--navy);padding:13px 15px}
+  .metrics span{display:block;font-size:11.5px;color:rgba(255,255,255,.55);margin-bottom:4px;line-height:1.4}
+  .metrics strong{display:block;font-size:18px;color:#f7f4ec}
+  .leak-cost{color:var(--bad)}
+  .workings{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.7)}
+  .workings code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--gold)}
+  .disclaim{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.06);font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6}
+
+  /* CTA */
+  .cta{background:#fff;border:1px solid var(--gold);padding:0;overflow:hidden}
+  .cta-grid{display:grid;grid-template-columns:1fr}
+  @media(min-width:820px){.cta-grid{grid-template-columns:1.05fr .95fr}}
+  .cta-copy{padding:32px 30px}
+  .cta-copy h2{margin-bottom:12px}
+  .cta-img{background:var(--canvas) center/cover no-repeat;min-height:250px}
+  .btn{display:block;width:100%;padding:18px 30px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;font-size:16px;text-align:center}
+  .btn:hover{background:#dcbe9c}
+
+  /* A lone button has nothing behind it. A face, a name and a second, lower-
+     commitment action give the reader something to say yes to. */
+  .signoff{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .signoff img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;background:#fff;border:1px solid var(--line)}
+  .signoff .who{flex:1;min-width:150px}
+  .signoff .who strong{display:block;font-size:15px;color:var(--navy)}
+  .signoff .who span{font-size:13px;color:var(--muted)}
+  .btn-call{display:inline-block;padding:11px 22px;background:var(--navy);color:#f7f4ec;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .btn-call:hover{background:var(--navy-mid)}
+
+  .work figure a{display:block;text-decoration:none}
+  .work figure a img{transition:border-color .2s ease}
+  .work figure a:hover img{border-color:var(--gold)}
+  .visit{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--gold-dk);text-decoration:none}
+  .visit:hover{text-decoration:underline}
+  .why{margin:18px 0;padding-left:0;list-style:none}
+  .why li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15px}
+  .why li:before{content:"→";position:absolute;left:0;color:var(--gold-dk);font-weight:700}
+
+  .work{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px}
+  @media(min-width:760px){.work{grid-template-columns:1fr 1fr}}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.62);padding:30px 0;font-size:13px}
+  footer a{color:var(--gold)}
+  .fine{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+  .btn-pdf{display:inline-block;padding:11px 20px;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;text-decoration:none}
+  .btn-pdf:hover{background:var(--gold);color:var(--navy)}
+
+  /* Print / PDF: keep evidence and findings whole across page breaks, and drop
+     the things that only make sense on screen. */
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    section{padding:22px 0;background:#fff !important;break-inside:auto}
+    .btn-pdf,.btn,.btn-call{display:none !important}
+    .card,figure,.metrics>div,.afford>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    .calc,.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cta-img{min-height:190px}
+    a{text-decoration:none}
+  }
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Private website review</p>
+    <h1>Where Ageless MedSpa by Dr. Sypien loses patients</h1>
+    <p>An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.</p>
+    <div class="meta">
+      <div><span>Website</span><strong>agelessmedspa.com</strong></div>
+      <div><span>Location</span><strong>Chicago, IL</strong></div>
+      <div><span>Review date</span><strong>17 August 2026</strong></div>
+      <div><span>Devices tested</span><strong>Desktop 1366 · Mobile 390</strong></div>
+    </div>
+    <p style="margin:22px 0 0"><a class="btn-pdf" href="agelessmedspa-audit.pdf" download>Download this report as a PDF ↓</a></p>
+  </div>
+</header>
+
+<section style="border:0">
+  <div class="wrap">
+    <div class="calc">
+      <h2>What the leak is worth</h2>
+      <p class="lead">Five figures, entered by you. Nothing below is drawn from your analytics, estimated on your behalf, or sent anywhere — it recalculates in your browser as you type. The arithmetic is printed in full underneath.</p>
+      <div class="fields">
+        <div class="field"><label for="patients">New patients a month</label><input id="patients" type="number" min="0" step="1" value="25" /><small>People seen for the first time</small></div>
+        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="600" /><small>Including anything taken home</small></div>
+        <div class="field"><label for="returnRate">Share who return within 90 days (%)</label><input id="returnRate" type="number" min="0" max="90" step="1" value="30" /><small>Your best estimate is enough</small></div>
+        <div class="field"><label for="spend">Marketing spend a month (US$)</label><input id="spend" type="number" min="0" step="100" value="3000" /><small>Ads, agency, intro discounts</small></div>
+        <div class="field"><label for="margin">Gross margin on a visit (%)</label><input id="margin" type="number" min="1" max="95" step="1" value="65" /><small>After product and clinician time</small></div>
+      </div>
+
+      <div class="leak">
+        <p class="leak-label" id="leakLabel">—</p>
+        <p class="leak-figure" id="leakFigure">—</p>
+        <p class="leak-sub" id="leakSub">—</p>
+      </div>
+
+      <div class="afford">
+        <div><span>You can afford to pay, per patient</span><strong id="affordNow">—</strong><small>at your return rate today</small></div>
+        <div><span>You could afford</span><strong id="affordTarget">—</strong><small id="affordTargetNote">—</small></div>
+      </div>
+      <p class="leak-read" id="affordRead"></p>
+
+      <div class="metrics">
+        <div><span>What a patient costs you now</span><strong id="mCac">—</strong></div>
+        <div><span>What a patient is worth to you</span><strong id="mLtv">—</strong></div>
+        <div><span>Value against cost</span><strong id="mRatio">—</strong></div>
+        <div><span>Visits to pay back acquisition</span><strong id="mPayback">—</strong></div>
+        <div><span>Visits an average patient makes</span><strong id="mVisitsNow">—</strong></div>
+        <div><span>At the benchmark they would make</span><strong id="mVisitsTarget">—</strong></div>
+      </div>
+
+      <div class="workings">
+        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
+        <p style="margin:0 0 6px"><code>expected visits = 1 ÷ (1 − return rate)</code></p>
+        <p style="margin:0 0 6px"><code>margin per visit = first-visit value × gross margin</code></p>
+        <p style="margin:0 0 6px"><code>lifetime value = expected visits × margin per visit</code></p>
+        <p style="margin:0"><code>affordable spend per patient = lifetime value ÷ 3</code></p>
+      </div>
+      <p class="disclaim">A model built entirely on figures you supply — not a forecast, a projection or a guarantee, and not a measurement of your practice. Actual results depend on factors no website review can see.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What was looked at</h2>
+    <div class="shots">
+      <figure>
+        <img src="images/audited-desktop.jpg" alt="Ageless MedSpa by Dr. Sypien homepage on a 1366-pixel desktop screen" />
+        <figcaption>Desktop, 1366×768 (captured at 1.5x). The header shows social icons, phone, address, email, a shopping cart and a “Book Now” button, followed by an 11-item navigation bar and a highlighted “SPECIALS” link, before the hero headline appears.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/audited-mobile.jpg" alt="Ageless MedSpa by Dr. Sypien homepage on a 390-pixel mobile screen" />
+        <figcaption>Mobile, 390×844. The header shows icons only for phone and location, with no adjoining text. The hero headline and subtext are visible above the fold; no call-to-action button appears within that first screen.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 id="findings">Where the patients leave</h2>
+    <p class="lead">Each of these is a point at which somebody who wanted to book stops. They are listed in the order they cost you most.</p>
+
+    <div class="card">
+      <span class="label">Leak 1 · Mobile header</span>
+      <h3>The phone number and address are icons only on mobile — no text alongside them.</h3>
+      <p><strong>Where it happens:</strong> At 390×844, the mobile header shows a phone icon and a map-pin icon with no visible digits or street address next to either. The desktop header at 1366×768 shows both as full readable text: (773) 205-8800 and 5008 W. Lawrence Ave, Chicago, IL 60630-3822.</p>
+      <p><strong>How the patient is lost:</strong> A mobile visitor scanning for reassurance that this is a real, local, reachable practice sees only symbols, not the number or the neighbourhood — the exact information a first-time patient checks before trusting a booking button. It is present on desktop, so this is a mobile-specific gap rather than a missing asset.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">Leak 2 · First screen</span>
+      <h3>No call-to-action sits inside the hero itself — only a header button competing with a cart icon and a long nav bar.</h3>
+      <p><strong>Where it happens:</strong> On both devices, the first screen without scrolling shows the header (with its “Book Now” button), a full navigation bar, and the hero headline and subheading — but no button or link inside the hero section itself. On desktop the header also carries a shopping cart reading “$0.00 Cart,” positioned directly beside “Book Now.”</p>
+      <p><strong>How the patient is lost:</strong> The single dark “Book Now” button in the top-right corner has to compete visually with a cart icon, social icons, contact details and a highlighted “SPECIALS” link in the same row, plus an 11-item menu directly below it. A first-time visitor's eye has several places to land before it reaches the one action that leads to booking.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">Leak 3 · Trust &amp; authority</span>
+      <h3>“Recognized among Chicago's most trusted med spas” is stated without a named source.</h3>
+      <p><strong>Where it happens:</strong> The hero subheading reads: “Recognized among Chicago's most trusted med spas, we offer advanced anti-aging and aesthetic treatments rooted in science, guided by experience, and tailored to you.” No publication, award or ranking body is named beside it in the captured page.</p>
+      <p><strong>How the patient is lost:</strong> An unattributed claim of recognition reads as marketing language rather than evidence to a sceptical patient comparing practices, even when the underlying reputation is real. Naming the specific source turns the same sentence into verifiable proof.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Interpretive</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">Leak 4 · Navigation</span>
+      <h3>Eleven top-level menu items plus a highlighted “SPECIALS” link sit between the headline and any decision.</h3>
+      <p><strong>Where it happens:</strong> The desktop navigation bar lists: Injectables, Laser Treatments, Microneedling, Facials, Peels, Body Treatments, Permanent Makeup, Ageless Wellness, Shop, About, and Contact, with a separate green-boxed “SPECIALS” link beside it — twelve destinations in one row, most with their own dropdown of further sub-treatments.</p>
+      <p><strong>How the patient is lost:</strong> A first-time visitor who has not yet decided what they want faces a wide menu before any single differentiator or offer is presented. Breadth signals a full-service practice, which is a genuine strength, but it also means the page asks the visitor to choose a category before it makes the case for choosing this practice at all.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Interpretive</dd></dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Limitations &amp; methodology</h2>
+    <p class="fine">This review is based on the public homepage of agelessmedspa.com viewed on 17 August 2026 at 1366×768 and 390×844, page source retrieved the same day, and publicly visible business information. This review assessed the homepage at 1366×768 and at 390 pixels wide, together with the publicly captured page text. Treatment-page depth, the live booking flow, and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). No public review count or rating was visible in the captured material, so the local/public-signals score reflects the Chicago mention in the hero copy only.</p>
+    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Leaks labelled <em>Observed</em> are directly visible; leaks labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Every figure in the calculator is one you entered yourself.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta" id="talk">
+      <div class="cta-grid">
+        <div class="cta-copy">
+          <h2>A short conversation, if it is useful</h2>
+          <p>This report is yours to use whether or not we ever speak, and your existing web team can act on most of it.</p>
+          <p>Where the leaks are structural rather than cosmetic — booking that lives on someone else's platform, no record that remembers a patient, nothing that brings them back after treatment — those are the problems we build for.</p>
+          <ul class="why">
+            <li>Every month the leaks stay open is another month of the same visitors deciding elsewhere.</li>
+            <li>Aesthetic demand is seasonal. Work started now is live before the year-end run.</li>
+            <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
+          </ul>
+          <p style="margin-bottom:0"><a class="btn" href="https://www.aestheticbiz.site/book-discovery?source=audit-agelessmedspa">Book a 20-minute conversation →</a></p>
+          <div class="signoff">
+            <img src="images/ignatius-ackermann.webp" alt="Ignatius Ackermann, CRM Solutions" />
+            <div class="who">
+              <strong>Ignatius Ackermann</strong>
+              <span>CRM Solutions · building commercial platforms since 2001<br />Reply on WhatsApp — usually within a few hours</span>
+            </div>
+            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20review%20for%20Ageless%20MedSpa%20by%20Dr.%20Sypien." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
+          </div>
+        </div>
+        <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What this looks like built</h2>
+    <p class="lead">Two working examples — not mockups. Both are live and clickable.</p>
+    <div class="work">
+      <figure>
+        <a href="https://www.aestheticbiz.site/" target="_blank" rel="noopener"><img src="images/aestheticbiz-demo.jpg" alt="AestheticBiz demonstration practice homepage" /></a>
+        <figcaption><strong>aestheticbiz.site</strong> — a complete demonstration practice: booking, retail, gift vouchers, rewards and reviews. Book a test appointment on it yourself.
+          <a class="visit" href="https://www.aestheticbiz.site/" target="_blank" rel="noopener">Open the demo practice →</a></figcaption>
+      </figure>
+      <figure>
+        <a href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener"><img src="images/star-aesthetic-portfolio.jpg" alt="Star Aesthetic Centre homepage" /></a>
+        <figcaption><strong>staraesthetic.co.za</strong> — a doctor-led practice with twenty years of reputation, rebuilt and running: booking, skincare commerce, rewards and vouchers.
+          <a class="visit" href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener">Open staraesthetic.co.za →</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 6px">Prepared for Ageless MedSpa by Dr. Sypien · 17 August 2026 · This report is confidential to the recipient.</p>
+    <p style="margin:0">Powered by CRM Solutions — <a href="https://www.crmsolutions.app">www.crmsolutions.app</a></p>
+  </div>
+</footer>
+
+<script>
+window.AUDIT_CURRENCY = "US$";
+(function () {
+  /**
+   * The leak calculator.
+   *
+   * Same arithmetic as aestheticbiz.site/second-visit, so the audit and the
+   * landing page tell one story. The argument: what a practice can afford to
+   * pay for a patient is set by how often patients come back, not by how cheap
+   * its advertising is.
+   *
+   *   expected visits = 1 / (1 − return rate)
+   *   margin per visit = first-visit value × gross margin
+   *   lifetime value  = expected visits × margin per visit
+   *   affordable spend = lifetime value ÷ 3   (conventional healthy ratio)
+   *
+   * Every figure is entered by the reader. Nothing is measured, assumed from
+   * their analytics, or sent anywhere.
+   */
+  var TARGET = 0.45;
+  var RATIO = 3;
+
+  var ids = ['patients', 'value', 'returnRate', 'spend', 'margin'];
+  var CUR = (window.AUDIT_CURRENCY || 'US$');
+
+  function num(id) {
+    var el = document.getElementById(id);
+    if (!el) return 0;
+    var v = parseFloat(el.value);
+    return isFinite(v) && v >= 0 ? v : 0;
+  }
+
+  function money(n) {
+    if (!isFinite(n)) return '—';
+    return CUR + Math.round(n).toLocaleString('en-US');
+  }
+
+  function set(id, text) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function recalc() {
+    var patients = num('patients');
+    var value = num('value');
+    var r = Math.min(Math.max(num('returnRate'), 0), 90) / 100;
+    var spend = num('spend');
+    var margin = num('margin') / 100;
+
+    var target = Math.max(TARGET, r);
+    var atTarget = target <= r;
+
+    var marginPerVisit = value * margin;
+    var visitsNow = 1 / (1 - r);
+    var visitsTarget = 1 / (1 - target);
+
+    var cac = patients > 0 ? spend / patients : 0;
+    var ltvNow = visitsNow * marginPerVisit;
+    var ltvTarget = visitsTarget * marginPerVisit;
+
+    var affordNow = ltvNow / RATIO;
+    var affordTarget = ltvTarget / RATIO;
+    var gap = (visitsTarget - visitsNow) * value * (patients * 12);
+
+    set('leakLabel', atTarget
+      ? 'Your patients already return well. Across the relationship, one of them is worth'
+      : 'On a year of new patients, the gap between this return rate and ' +
+        Math.round(target * 100) + '% is worth');
+    set('leakFigure', money(atTarget ? ltvNow : gap));
+    set('leakSub', atTarget
+      ? 'That is the number worth defending.'
+      : 'Same patients. Same marketing spend. Same rooms.');
+
+    set('affordNow', money(affordNow));
+    set('affordTarget', money(affordTarget));
+    set('affordTargetNote', 'at a ' + Math.round(target * 100) + '% return rate');
+
+    var read = document.getElementById('affordRead');
+    if (read) {
+      if (atTarget) {
+        read.style.display = 'none';
+      } else {
+        read.style.display = '';
+        var uplift = affordNow > 0 ? Math.round((affordTarget / affordNow - 1) * 100) : 0;
+        read.textContent =
+          'That is ' + uplift + '% more than can be bid today for exactly the same patient. ' +
+          'Whoever in this market can pay the most wins it — and that capacity is decided by ' +
+          'the second visit, not by the ad account.';
+      }
+    }
+
+    set('mCac', money(cac));
+    set('mLtv', money(ltvNow));
+    set('mRatio', cac > 0 ? (ltvNow / cac).toFixed(1) + ' : 1' : 'no spend entered');
+    set('mPayback', marginPerVisit > 0 ? (cac / marginPerVisit).toFixed(1) : '—');
+    set('mVisitsNow', visitsNow.toFixed(1));
+    set('mVisitsTarget', visitsTarget.toFixed(1));
+  }
+
+  ids.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', recalc);
+    el.addEventListener('change', recalc);
+  });
+
+  recalc();
+})();
+
+</script>
+
+</body>
+</html>

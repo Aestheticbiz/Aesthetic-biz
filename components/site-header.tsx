@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -28,6 +29,12 @@ export function SiteHeader({ variant = "patient" }: SiteHeaderProps) {
   const { cartCount } = useCart();
   const { theme } = useBrand();
   const brandName = theme.clinicName.trim() || SITE.name;
+  /**
+   * Show the AestheticBiz logo only when the visitor has not branded the demo.
+   * If they uploaded a logo or typed their own clinic name in the customizer,
+   * their branding wins — we must never stamp ours over their preview.
+   */
+  const showOwnLogo = !theme.logoDataUrl && !theme.clinicName.trim();
 
   const links =
     variant === "platform"
@@ -50,12 +57,26 @@ export function SiteHeader({ variant = "patient" }: SiteHeaderProps) {
           {theme.logoDataUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={theme.logoDataUrl} alt={brandName} className="logo-image" />
+          ) : showOwnLogo ? (
+            <Image
+              className="logo-image"
+              src="/aestheticbiz-logo.png"
+              alt={SITE.name}
+              width={1410}
+              height={296}
+              priority
+            />
           ) : (
             <span className="logo-main">{brandName}</span>
           )}
-          <span className="logo-sub">
-            {variant === "platform" ? "Platform features" : SITE.tagline}
-          </span>
+          {/* The logo artwork already carries "Aesthetic and Wellness", so the
+              tagline would repeat it — but the platform variant's sub-line says
+              something different and is still worth showing. */}
+          {(!showOwnLogo || variant === "platform") && (
+            <span className="logo-sub">
+              {variant === "platform" ? "Platform features" : SITE.tagline}
+            </span>
+          )}
         </Link>
         <nav
           className={`nav${open ? " open" : ""}`}

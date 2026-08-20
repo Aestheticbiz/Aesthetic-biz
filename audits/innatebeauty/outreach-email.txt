@@ -1,0 +1,38 @@
+TO:      info@innatebeauty.com
+NOTE:    General inbox, not a named contact. Addressed to Dr. Ling because
+         she is named and pictured directly in the homepage hero — which
+         also signals the site was actually read.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: something worth checking on your homepage today
+
+------------------------------------------------------------
+
+Dear Dr. Ling,
+
+I review aesthetic practice websites and I went through innatebeauty.com
+this morning. The notes are yours to use whether or not we ever speak.
+
+Worth checking today: the homepage's underlying text content — the version
+search engines read, not the version a visitor sees — includes lines
+referencing unrelated adult-content domains, sitting directly beneath your
+on-page search field. None of it appears in the visible page on desktop or
+mobile, which means it's present in the page's content but hidden from
+anyone actually looking at it. I'd get a developer to check the page source
+and hosting for injected content — I can't tell you the cause from the
+outside, only that it's there.
+
+Separately: neither your desktop nor your mobile homepage shows a phone
+number, and "Austin" doesn't appear anywhere on the visible page, even
+though your own page title calls you a "Physician-Owned Austin Medspa." A
+patient comparing local practices on their phone has only a "Book an
+Appointment" button to go on.
+
+What's already working: "Dr. Shirat Ling" is named and pictured directly in
+the hero with a real portrait, not a stock photo, and a specific testimonial
+— "Nancy M., Austin TX" — sits right on the homepage rather than hidden on
+a separate page. That's more than a lot of practices I review manage.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/innatebeauty/
+
+Ignatius

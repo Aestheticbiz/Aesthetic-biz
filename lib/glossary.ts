@@ -17,7 +17,7 @@ export type GlossaryEntry = {
   /** One sentence. Used verbatim in the hover popup — keep it under ~140 chars. */
   oneLine: string;
   status: GlossaryStatus;
-  category: "Capture" | "Convert" | "Commerce" | "Retain";
+  category: "Capture" | "Convert" | "Commerce" | "Retain" | "Measure";
   whatItIs: string;
   /** The commercial argument. This is the part owners actually care about. */
   whyItMatters: string[];
@@ -725,7 +725,491 @@ export const GLOSSARY: GlossaryEntry[] = [
       width: 1182,
       height: 1888,
     },
-    related: ["funnel", "online-retail", "online-booking"],
+    related: ["payback-period", "ltv", "funnel", "online-retail", "online-booking"],
+  },
+  {
+    slug: "cac",
+    term: "Customer Acquisition Cost (CAC)",
+    oneLine:
+      "What it actually costs you to put one new patient in the chair, once every rand of marketing is counted.",
+    status: "In the platform package",
+    category: "Measure",
+    whatItIs:
+      "Take everything you spent to get new patients in a period — ads, boosted posts, the agency, the printed cards, the referral incentive — and divide it by the number of new patients that period produced. That is your CAC. Most practices have never calculated it, and almost none calculate it per channel, which is where the useful version lives: Google might be costing you R400 a patient while Instagram costs R1,900.",
+    whyItMatters: [
+      "Until you know CAC you cannot tell a good month from a lucky one. Revenue went up, but did it go up more than what you paid to make it go up?",
+      "CAC only means something next to what a patient is worth to you. R1,200 to acquire is ruinous if they never come back, and a bargain if they stay four years.",
+      "Blended CAC hides the truth. One channel is almost always subsidising another, and you cannot cut the bad one until you can see it separately.",
+    ],
+    howItWorks: [
+      {
+        step: "Count the spend honestly",
+        detail:
+          "Everything aimed at new patients, not just the ad platform invoice. Agency fees, creative, the discount on the introductory offer — all of it is acquisition cost.",
+      },
+      {
+        step: "Attribute the source",
+        detail:
+          "Every enquiry that lands in the CRM carries where it came from. Without that, per-channel CAC is guesswork and you are back to a blended number that tells you nothing.",
+      },
+      {
+        step: "Divide, then compare",
+        detail:
+          "Spend ÷ new patients, per channel, per month. The number on its own is neutral. Set against lifetime value it becomes the most important figure in the practice.",
+      },
+    ],
+    questions: [
+      {
+        q: "Do referrals count as acquisition cost?",
+        a: "If you paid for them — a voucher, a discount, a thank-you gift — yes, and they usually come out as the cheapest channel you have, which is an argument for spending more attention there rather than less.",
+      },
+      {
+        q: "My marketing is just me posting on Instagram. Is my CAC zero?",
+        a: "No. Your time is the most expensive input in the practice. Cost it at what an hour of your clinical time earns and the number stops looking free very quickly.",
+      },
+    ],
+    related: ["ltv", "ltv-cac-ratio", "cost-per-lead", "lead-generation"],
+  },
+
+  {
+    slug: "cost-per-lead",
+    term: "Cost Per Lead (CPL, CPC, CPM)",
+    oneLine:
+      "What one enquiry costs you — and the three abbreviations every advertising platform reports it in.",
+    status: "In the platform package",
+    category: "Measure",
+    whatItIs:
+      "A lead is somebody who has raised a hand: an enquiry, a form, a call, a booking request. Cost per lead is spend divided by leads. The related abbreviations are CPC — cost per click, what you pay for one visit to your site — and CPM — cost per mille, what you pay for a thousand people to see the ad. CPL is the one that matters commercially, because clicks and impressions do not book appointments.",
+    whyItMatters: [
+      "The cost of online advertising rises every year and will keep rising. Every practice competing for the same patients pushes the price up, and no clever setting reverses that.",
+      "Because that cost is largely outside your control, the winnable game is what happens after the lead arrives — how fast you respond, how many times you follow up, and what the patient is worth over time.",
+      "A practice that can afford a higher cost per lead than its competitors can simply buy the market. That capacity comes from the back end, never from the ad account.",
+    ],
+    howItWorks: [
+      {
+        step: "Separate the three",
+        detail:
+          "CPM is what you pay for attention, CPC for a visit, CPL for a hand raised. A cheap CPC with an expensive CPL means the traffic is arriving and leaving — that is a site problem, not an ad problem.",
+      },
+      {
+        step: "Track the lead, not the click",
+        detail:
+          "Enquiries land in one place with their source attached, so you can see which channel produces people who actually book rather than people who merely arrive.",
+      },
+      {
+        step: "Judge it against lead value",
+        detail:
+          "A R300 lead is expensive or cheap only relative to what an average lead earns you. That comparison is the whole decision.",
+      },
+    ],
+    questions: [
+      {
+        q: "My cost per lead went up. Should I turn the ads off?",
+        a: "Not on that fact alone. If lead value went up more, the rising cost is affordable. Turning off a channel because its cost rose, without checking what it returns, is how practices shrink their way to a problem.",
+      },
+      {
+        q: "Why do platforms report so many different numbers?",
+        a: "Because most of them describe activity rather than outcome. Impressions, reach and engagement are inputs. Leads, bookings and revenue are outcomes. Only the outcomes belong in a business decision.",
+      },
+    ],
+    related: ["cac", "lead-value", "lead-generation", "speed-to-lead"],
+  },
+
+  {
+    slug: "lead-value",
+    term: "Average Lead Value",
+    oneLine:
+      "What one enquiry is worth to you on average — the number that tells you what you can afford to pay for the next one.",
+    status: "Next phase",
+    category: "Measure",
+    whatItIs:
+      "Total revenue for a period divided by the total number of leads that period generated. If a quarter produced 400 enquiries and R1.2m of revenue, each enquiry was worth R3,000 — whether or not it booked. It counts the ones who never replied, which is exactly why it is useful: it prices the average, not the best case.",
+    whyItMatters: [
+      "It converts marketing from an anxiety into an arithmetic. Once you know an enquiry is worth R3,000, paying R400 for one stops being a cost you resent and becomes a trade you would take all day.",
+      "It is the number that gives you permission to spend. Practices that do not know it default to spending as little as possible, which quietly caps how large they can become.",
+      "It exposes the real lever. Improving lead value by a third does more for the business than shaving a fifth off cost per lead, and unlike ad costs it is entirely within your control.",
+    ],
+    howItWorks: [
+      {
+        step: "Count every lead",
+        detail:
+          "Including the ones that went nowhere. Excluding them inflates the number and produces confident, wrong decisions.",
+      },
+      {
+        step: "Attach the revenue",
+        detail:
+          "Revenue over the same window, divided by that lead count. Do it per channel once the volume is there — lead value differs enormously by source.",
+      },
+      {
+        step: "Recalculate quarterly",
+        detail:
+          "As retention and retail improve, lead value rises, which raises what you can afford to bid. That is the flywheel: a better back end buys you a bigger front end.",
+      },
+    ],
+    questions: [
+      {
+        q: "Should I use first-visit revenue or lifetime revenue?",
+        a: "Run both. First-visit lead value tells you what you can afford if you need the cash back immediately. Lifetime lead value tells you what you could afford if you were willing to wait — and the gap between the two numbers is the argument for building a back end.",
+      },
+      {
+        q: "Why is this listed as next phase?",
+        a: "Because it needs revenue attributed back to the enquiry that produced it, reported monthly. The data is captured; the reporting layer that puts it in front of you is on the roadmap and is not described here as though it already exists.",
+      },
+    ],
+    related: ["cost-per-lead", "ltv", "cac", "profit-calculator"],
+  },
+
+  {
+    slug: "ltv",
+    term: "Lifetime Value (LTV)",
+    oneLine:
+      "What one patient is worth across the whole relationship, not the first appointment — treatments, retail and referrals included.",
+    status: "Next phase",
+    category: "Measure",
+    whatItIs:
+      "Average transaction value multiplied by how often a patient buys in a year, multiplied by how many years they stay. A patient spending R2,400 a visit, coming three times a year, staying four years is worth R28,800 — before a single product off the shelf. Most owners have the first number in their head and have never multiplied it by the other two.",
+    whyItMatters: [
+      "It reframes the first appointment correctly: as the least valuable transaction in the relationship, and usually the only one the practice markets for.",
+      "It is the ceiling on what you can spend to acquire. Whoever in your market has the highest lifetime value can outbid everyone else for the same patient and still profit. That is a structural advantage no ad tactic overcomes.",
+      "It puts a price on retention work. If lifetime value is R28,800, an extra year of loyalty is worth R7,200 a patient — which makes a recall system look inexpensive rather than optional.",
+    ],
+    howItWorks: [
+      {
+        step: "Average transaction value",
+        detail:
+          "What a patient spends in a typical visit, including anything they take home with them.",
+      },
+      {
+        step: "Visits per year",
+        detail:
+          "Not what your treatment protocol says they should book. What they actually book, which is usually well below the clinical ideal.",
+      },
+      {
+        step: "Years retained",
+        detail:
+          "The inverse of your attrition rate. Lose 40% of patients a year and the average relationship lasts two and a half years, whatever your best patients look like.",
+      },
+    ],
+    questions: [
+      {
+        q: "I have no idea how long patients stay. Where do I start?",
+        a: "Pull the patients you first saw two years ago and count how many have been in during the last twelve months. That single figure is enough to begin, and it is usually a sobering afternoon.",
+      },
+      {
+        q: "Should referrals count towards lifetime value?",
+        a: "Yes, and it changes the picture. A patient who sends two friends is worth three relationships. It is also the cheapest growth available to an aesthetic practice, which is why the loyalty and review components exist.",
+      },
+    ],
+    related: ["ltv-cac-ratio", "repeat-rate", "attrition", "loyalty-points"],
+  },
+
+  {
+    slug: "ltv-cac-ratio",
+    term: "LTV:CAC Ratio",
+    oneLine:
+      "What a patient is worth divided by what they cost to get — the single number that says whether the business can scale.",
+    status: "Next phase",
+    category: "Measure",
+    whatItIs:
+      "Lifetime value divided by acquisition cost. Below 1:1 you are paying more for patients than they will ever bring, and growth accelerates the loss. Around 3:1 is generally considered healthy. Well above 5:1 usually means you are under-investing in marketing rather than running a brilliant business — you could be buying more patients than you are.",
+    whyItMatters: [
+      "It is the difference between growth that funds itself and growth that consumes the practice. Two clinics with identical revenue can sit on opposite sides of that line.",
+      "It settles arguments. Whether to raise prices, whether to spend more on ads, whether the loyalty programme is worth running — all of them resolve to their effect on this ratio.",
+      "It is the mathematical form of the whole argument: you win a market not by paying less for patients, but by being able to afford more for them than anyone else can.",
+    ],
+    howItWorks: [
+      {
+        step: "Establish both halves",
+        detail:
+          "Lifetime value and acquisition cost, calculated over the same period and the same patient cohort. Mixing timeframes produces a flattering number that is not true.",
+      },
+      {
+        step: "Read the ratio",
+        detail:
+          "Under 3:1 the constraint is usually retention or price, not marketing. Over 5:1 the constraint is usually that you are not spending enough.",
+      },
+      {
+        step: "Improve the numerator first",
+        detail:
+          "Acquisition cost is set largely by an auction you do not control. Lifetime value is set by you. Almost every durable improvement to this ratio comes from the top half.",
+      },
+    ],
+    questions: [
+      {
+        q: "What if my ratio is enormous — say 20:1?",
+        a: "That is rarely a triumph. It usually means a practice living on referrals and word of mouth with no acquisition engine at all, which is comfortable until the referrals slow down. A 20:1 ratio is an instruction to invest, not a reason to celebrate.",
+      },
+      {
+        q: "How often should I check it?",
+        a: "Quarterly is enough. It moves too slowly to be a monthly number and too fast to be an annual one.",
+      },
+    ],
+    related: ["ltv", "cac", "payback-period", "front-end-back-end"],
+  },
+
+  {
+    slug: "aov",
+    term: "Average Order Value (AOV)",
+    oneLine:
+      "What a patient spends in a single visit — the number that moves fastest when the offer is structured well.",
+    status: "In the platform package",
+    category: "Measure",
+    whatItIs:
+      "Total revenue divided by number of transactions. In an aesthetic practice it is the treatment plus anything else that leaves with the patient: homecare, a package, a voucher, a pre-booked follow-up. Also called average transaction value or average ticket.",
+    whyItMatters: [
+      "It is the quickest of the three lifetime-value levers to move. Frequency and retention take quarters to shift; average order value can change in a fortnight with a properly sequenced recommendation.",
+      "It falls through the floor when the practice competes on price. Every discounted introductory offer trains the patient to expect the lower number on the next visit too.",
+      "Retail is where most practices lose it. A cupboard of pharmaceutical-grade product that never gets recommended is average order value sitting on a shelf.",
+    ],
+    howItWorks: [
+      {
+        step: "Measure it per treatment",
+        detail:
+          "The blended figure hides everything. Some treatments carry retail naturally and some never do, and only the split tells you where the opportunity is.",
+      },
+      {
+        step: "Structure the recommendation",
+        detail:
+          "Homecare presented as part of the clinical outcome rather than as a sale at the counter. The upsell path exists so this happens by design rather than depending on who is on the desk.",
+      },
+      {
+        step: "Keep selling after the visit",
+        detail:
+          "Online retail means the reorder does not require a phone call or a trip, which is where most repeat product revenue is quietly lost.",
+      },
+    ],
+    questions: [
+      {
+        q: "Is raising prices the same as raising average order value?",
+        a: "It is one way, and usually the fastest, but it is not the only one. Adding a second item to the same visit raises it without asking anyone to accept a higher price for the same thing.",
+      },
+      {
+        q: "My patients are price-sensitive. Won't this push them away?",
+        a: "Some of them, yes — and typically the ones with the lowest lifetime value. The patients who arrive asking for your cheapest treatment are rarely the ones who stay four years.",
+      },
+    ],
+    related: ["ltv", "online-retail", "upsell-funnel", "repeat-rate"],
+  },
+
+  {
+    slug: "repeat-rate",
+    term: "Repeat Rate (Rebook Rate)",
+    oneLine:
+      "The share of patients who come back within a set window — the most under-measured number in aesthetic practice.",
+    status: "In the platform package",
+    category: "Measure",
+    whatItIs:
+      "Of the patients you treated in a given period, how many returned within ninety days, or within a year. Ask most owners and you get an impression rather than a figure. It is the number that decides whether you are building a practice or running a very busy first-visit shop.",
+    whyItMatters: [
+      "The second visit is where the money is. It carries no acquisition cost, tends to be full fee rather than the introductory offer, and is where retail actually sells.",
+      "Every point of repeat rate compounds. Moving 30% to 45% does not add 15% to revenue — it lengthens the average relationship, which multiplies lifetime value.",
+      "A falling repeat rate is the earliest warning a practice gets, and it appears months before the diary looks empty. By the time you are discounting to fill days, this number dropped two quarters ago.",
+    ],
+    howItWorks: [
+      {
+        step: "Pick a window and hold it",
+        detail:
+          "Ninety days for most injectables and facials, twelve months for anything annual. The window matters less than never changing it, so the trend stays readable.",
+      },
+      {
+        step: "Rebook before they leave",
+        detail:
+          "The highest-converting moment for the next appointment is while the patient is still in the room and pleased. Every hour after that, the odds fall.",
+      },
+      {
+        step: "Recall the ones who drift",
+        detail:
+          "Automated recall at the clinically right interval, so returning does not depend on the patient remembering or the front desk having a quiet afternoon.",
+      },
+    ],
+    questions: [
+      {
+        q: "What is a good repeat rate?",
+        a: "For an established aesthetic practice, under 30% within ninety days signals a retention problem rather than a marketing one. Above 50% you have something most of your competitors do not, and it should be defended before it is grown.",
+      },
+      {
+        q: "Isn't this just how loyal my patients are?",
+        a: "Partly, but far less than owners assume. Most non-return is not dissatisfaction — it is that nothing prompted the patient at the moment the treatment wore off. That is a system gap, not a loyalty verdict.",
+      },
+    ],
+    related: ["attrition", "ltv", "marketing-automation", "loyalty-points"],
+  },
+
+  {
+    slug: "attrition",
+    term: "Attrition (Churn)",
+    oneLine:
+      "The share of patients who quietly stop coming — the leak that has to be refilled before any growth counts.",
+    status: "Next phase",
+    category: "Measure",
+    whatItIs:
+      "The percentage of active patients who do not return within the period that defines active for your practice. It is the mirror image of repeat rate and the reason a clinic can market hard all year and finish where it started. Aesthetic attrition is almost never announced — nobody resigns from a clinic, they simply stop appearing.",
+    whyItMatters: [
+      "It sets how hard you have to run to stand still. Lose 40% of your patients a year and the first 40% of everything you acquire is replacement, not growth.",
+      "It determines how long relationships last, which determines lifetime value, which determines what you can afford to spend to acquire. Attrition sits upstream of nearly every other number here.",
+      "It is invisible without measurement. A busy week feels like a healthy practice, and a practice can feel busy right up until the month it does not.",
+    ],
+    howItWorks: [
+      {
+        step: "Define active",
+        detail:
+          "Usually seen within the last twelve months. Whatever you choose, keep it fixed — a moving definition makes the trend meaningless.",
+      },
+      {
+        step: "Count the disappeared",
+        detail:
+          "Patients active a year ago who have not returned since, as a share of that starting group. That percentage is your attrition rate.",
+      },
+      {
+        step: "Reactivate before you replace",
+        detail:
+          "A lapsed patient already knows and trusts you, and costs a fraction of a stranger to bring back. Most practices spend on strangers while a reactivatable list sits untouched in the records.",
+      },
+    ],
+    questions: [
+      {
+        q: "Some attrition is normal, surely?",
+        a: "Yes — people move, budgets change, priorities shift. The question is never whether you have attrition but whether it is 20% or 50%, and no practice can answer that from memory.",
+      },
+      {
+        q: "How do I bring lapsed patients back without sounding desperate?",
+        a: "By having a reason that is about them rather than about your diary — the interval on their treatment has passed, a new option suits what they came for, their points are sitting unused. The system knows who is due and why, which is what makes the message land as care rather than as a promotion.",
+      },
+    ],
+    related: ["repeat-rate", "ltv", "marketing-automation", "crm"],
+  },
+
+  {
+    slug: "payback-period",
+    term: "Payback Period",
+    oneLine:
+      "How long it takes a new patient to repay what you spent acquiring them — the number that governs cash flow.",
+    status: "Live in demo",
+    category: "Measure",
+    whatItIs:
+      "If a patient costs R1,200 to acquire and contributes R800 of margin per visit, they pay you back on the second visit. Payback period is measured in visits or months, not rands, and it answers a different question from lifetime value: not whether the patient is profitable, but when.",
+    whyItMatters: [
+      "A practice can be profitable on paper and still run out of cash, because the profit arrives eleven months after the advertising invoice does.",
+      "It sets your safe growth rate. A short payback period means you can reinvest quickly and scale; a long one means every new patient is a loan you are funding.",
+      "It is the honest test of whether an introductory offer works. Discounted first visits usually push payback past the point where most patients have already disappeared.",
+    ],
+    howItWorks: [
+      {
+        step: "Use margin, not revenue",
+        detail:
+          "What the visit leaves behind after product, consumables and the clinician's time. Revenue-based payback is always flattering and always wrong.",
+      },
+      {
+        step: "Count in visits",
+        detail:
+          "Acquisition cost divided by margin per visit gives you how many visits to break even. Then apply your repeat rate to see what share of patients actually get that far.",
+      },
+      {
+        step: "Test it against fixed costs",
+        detail:
+          "The calculator holds your fixed costs constant and shows what one extra patient a week does to the payback picture. That comparison is the whole argument in one screen.",
+      },
+    ],
+    questions: [
+      {
+        q: "What is an acceptable payback period?",
+        a: "For a practice funding growth from its own cash flow, inside three months is comfortable and inside one visit is exceptional. Beyond six months you are effectively lending money to your own marketing.",
+      },
+      {
+        q: "Where can I see this for my practice?",
+        a: "The profit calculator works it through with your own figures. Nothing you type leaves your browser.",
+      },
+    ],
+    demo: { href: "/financial", label: "Open the calculator" },
+    related: ["cac", "ltv-cac-ratio", "profit-calculator", "repeat-rate"],
+  },
+
+  {
+    slug: "front-end-back-end",
+    term: "Front End & Back End",
+    oneLine:
+      "The first sale versus everything that follows it — and the reason the first sale is the least profitable one you make.",
+    status: "Live in demo",
+    category: "Measure",
+    whatItIs:
+      "The front end is what brings a patient in for the first time: the ad, the introductory treatment, the consultation. The back end is everything after — repeat treatments, homecare, packages, vouchers, referrals. Practices that try to make the whole business profitable on the front end alone are competing with one hand tied, because acquisition costs rise every year and the front end is exactly where those costs land.",
+    whyItMatters: [
+      "The first transaction is the most expensive revenue in the practice: it carries the full acquisition cost and is usually discounted to win the patient in the first place.",
+      "A strong back end is what lets you outspend competitors on the front end. If a patient is worth four times more to you than to the clinic down the road, you can pay four times more to reach them and still profit.",
+      "Most practices have no deliberate back end at all. Not because there is nothing to sell — the retail cupboard is full — but because nothing in the business is designed to sell it after the patient has left.",
+    ],
+    howItWorks: [
+      {
+        step: "Front end: earn the first visit",
+        detail:
+          "Findable pages, a booking flow that finishes at eleven at night, and enquiries that reach a human quickly. Judged on volume and cost, not profit.",
+      },
+      {
+        step: "Back end: earn the relationship",
+        detail:
+          "Homecare that reorders online, packages, gift vouchers bought by people who have never visited, loyalty that gives a reason to return, and reviews that bring the next patient in cheaply.",
+      },
+      {
+        step: "Fund the front end from the back",
+        detail:
+          "As back-end revenue grows, lifetime value grows, which raises what you can afford to pay for a new patient. That is the flywheel — and it only turns in one direction.",
+      },
+    ],
+    questions: [
+      {
+        q: "I have nothing else to sell them. What is my back end?",
+        a: "Almost every practice has more than it thinks: homecare, maintenance intervals, packages, vouchers, and treatments the patient does not know you offer. Where a genuine gap exists, complementary partners — dermatology, wellness, cosmetic dentistry — can fill it through introductions rather than new stock.",
+      },
+      {
+        q: "Isn't this just upselling by another name?",
+        a: "Upselling is a moment at the counter. A back end is a structure: the patient who bought once is given a sensible next step, at the right interval, whether or not anyone remembers to mention it.",
+      },
+    ],
+    related: ["ltv", "upsell-funnel", "online-retail", "gift-vouchers"],
+  },
+
+  {
+    slug: "speed-to-lead",
+    term: "Speed to Lead",
+    oneLine:
+      "How long an enquiry waits before a human responds — the cheapest conversion improvement available to any practice.",
+    status: "In the platform package",
+    category: "Measure",
+    whatItIs:
+      "The elapsed time between an enquiry arriving and somebody actually contacting that person, plus how many attempts are made before you give up. Both are entirely within your control, cost nothing to improve, and are ignored by almost every practice that is busy optimising its advertising instead.",
+    whyItMatters: [
+      "Aesthetic enquiries are comparison-shopping. The patient contacted three clinics on a Sunday evening, and the one that replies first is usually the one that books them.",
+      "Most practices stop after one attempt. The second, third and fourth follow-up convert people the first one missed — those patients were busy, not uninterested.",
+      "You can double bookings from the same advertising spend by changing nothing except response time and follow-up discipline. No channel optimisation available anywhere returns that much.",
+    ],
+    howItWorks: [
+      {
+        step: "Land every enquiry in one place",
+        detail:
+          "Web form, phone, message and booking request all arriving in the same queue with the patient's stated need attached — so nothing sits unread in an inbox nobody owns.",
+      },
+      {
+        step: "Acknowledge immediately, automatically",
+        detail:
+          "An instant confirmation holds the patient's attention while a human gets to them. A missed call that answers itself with a message keeps a lead that would otherwise ring the next clinic.",
+      },
+      {
+        step: "Follow a written sequence",
+        detail:
+          "A defined number of attempts across defined days, visible to whoever is on the desk. Not memory, not goodwill — a procedure with a calendar attached.",
+      },
+    ],
+    questions: [
+      {
+        q: "What is a good response time?",
+        a: "Minutes rather than hours during the day, and something automatic outside it. The steepest drop in conversion happens inside the first hour, which is precisely the window most practices lose.",
+      },
+      {
+        q: "How many follow-up attempts is too many?",
+        a: "Fewer than most owners fear. Five to seven attempts across two weeks is normal commercial practice and reads as attentive rather than pushy when each contact carries something useful.",
+      },
+    ],
+    related: ["crm", "missed-call-text-back", "cost-per-lead", "lead-generation"],
   },
 ];
 
@@ -734,4 +1218,4 @@ export function getEntry(slug: string): GlossaryEntry | undefined {
 }
 
 /** Ordered by the funnel stage each term belongs to, for the index page. */
-export const CATEGORY_ORDER = ["Capture", "Convert", "Commerce", "Retain"] as const;
+export const CATEGORY_ORDER = ["Capture", "Convert", "Commerce", "Retain", "Measure"] as const;

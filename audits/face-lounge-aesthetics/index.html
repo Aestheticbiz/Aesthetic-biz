@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Website Conversion Audit — Face Lounge Aesthetics</title>
+<title>Where Face Lounge Aesthetics loses patients</title>
 <style>
 :root{
     --navy:#0f2647; --navy-mid:#1b3d6e; --gold:#c8a882; --gold-dk:#a8896a;
@@ -37,18 +37,6 @@
   .lead{font-size:17px;color:var(--muted)}
 
   /* Score */
-  .scorewrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);padding:26px;margin-bottom:22px}
-  .bigscore{font-family:var(--serif);font-size:60px;line-height:1;color:var(--navy)}
-  .bigscore small{font-size:20px;color:var(--muted)}
-  table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
-  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{background:var(--navy);color:#f2efe8;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
-  .pill{display:inline-block;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
-  .p-ok{background:rgba(47,122,89,.12);color:var(--ok)}
-  .p-warn{background:rgba(200,168,130,.18);color:var(--warn)}
-  .p-bad{background:rgba(162,69,63,.1);color:var(--bad)}
-  .p-none{background:rgba(92,95,104,.09);color:var(--muted)}
-  .tblwrap{overflow-x:auto}
 
   .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
   .card h3{font-size:20px;margin-bottom:8px}
@@ -65,8 +53,6 @@
   .shots{display:grid;grid-template-columns:1fr;gap:18px}
   @media(min-width:760px){.shots{grid-template-columns:1.6fr 1fr;align-items:start}}
 
-  ul.clean{margin:0 0 16px;padding-left:20px}
-  ul.clean li{margin-bottom:9px}
 
   /* Calculator */
   .calc{background:var(--navy);color:#f2efe8;padding:28px 26px}
@@ -77,13 +63,25 @@
   .field input{width:100%;padding:11px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:16px;font-family:inherit}
   .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
   .field small{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.5)}
-  .scen{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:8px}
-  @media(min-width:700px){.scen{grid-template-columns:repeat(3,1fr)}}
-  .scen>div{background:var(--navy);padding:18px}
-  .scen h4{margin:0 0 4px;font-family:var(--serif);font-size:18px;color:var(--gold)}
-  .scen .rate{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px}
-  .scen .out{font-family:var(--serif);font-size:27px;color:#f7f4ec;line-height:1.2}
-  .scen .cap{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+
+  /* Leak result — the one number the report exists to show */
+  .leak{margin-top:6px;padding:22px 0 18px;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+  .leak-label{margin:0 0 6px;font-size:14px;color:rgba(255,255,255,.72);max-width:46ch}
+  .leak-figure{margin:0 0 4px;font-family:var(--serif);font-size:clamp(36px,7vw,52px);line-height:1.05;color:var(--gold)}
+  .leak-sub{margin:0;font-size:13px;color:rgba(255,255,255,.55)}
+  .afford{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:18px}
+  @media(min-width:600px){.afford{grid-template-columns:repeat(2,1fr)}}
+  .afford>div{background:var(--navy);padding:16px 18px}
+  .afford span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
+  .afford strong{display:block;font-family:var(--serif);font-size:26px;line-height:1.15;color:#f7f4ec}
+  .afford>div:last-child strong{color:var(--gold)}
+  .afford small{display:block;margin-top:4px;font-size:12px;color:rgba(255,255,255,.5)}
+  .leak-read{margin:14px 0 0;max-width:56ch;font-size:14px;color:rgba(255,255,255,.75)}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:18px}
+  .metrics>div{background:var(--navy);padding:13px 15px}
+  .metrics span{display:block;font-size:11.5px;color:rgba(255,255,255,.55);margin-bottom:4px;line-height:1.4}
+  .metrics strong{display:block;font-size:18px;color:#f7f4ec}
+  .leak-cost{color:var(--bad)}
   .workings{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.7)}
   .workings code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--gold)}
   .disclaim{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.06);font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6}
@@ -133,9 +131,9 @@
     body{background:#fff;font-size:11.5pt}
     section{padding:22px 0;background:#fff !important;break-inside:auto}
     .btn-pdf,.btn,.btn-call{display:none !important}
-    .card,figure,.scen>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    .card,figure,.metrics>div,.afford>div,.signoff{break-inside:avoid;page-break-inside:avoid}
     h2,h3{break-after:avoid;page-break-after:avoid}
-    .calc,.top,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .calc,.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .cta-img{min-height:190px}
     a{text-decoration:none}
   }
@@ -146,8 +144,8 @@
 
 <header class="top">
   <div class="wrap">
-    <p class="eyebrow">Private website conversion audit</p>
-    <h1>Face Lounge Aesthetics</h1>
+    <p class="eyebrow">Private website review</p>
+    <h1>Where Face Lounge Aesthetics loses patients</h1>
     <p>An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.</p>
     <div class="meta">
       <div><span>Website</span><strong>faceloungeaz.com</strong></div>
@@ -159,57 +157,55 @@
   </div>
 </header>
 
-<section>
+<section style="border:0">
   <div class="wrap">
-    <h2>Executive summary</h2>
-    <p>There is a well-run practice behind this website, and the evidence for that is easy to find. The treatment menu is unusually well organised — RF and laser, skin health, injectables, peels, hair restoration, each with its own named treatments. There is a membership programme, a working product shop carrying named brands, a $25 offer for new clients, and a page description that names Scottsdale, the telephone number and a free consultation. The words further down the page are good too: “locally owned med spa in Scottsdale, AZ, located in the Edwards Professional Park II” is exactly the kind of specificity that earns trust.</p>
-    <p>None of it appears on the first screen. What a visitor sees instead is a close-up video of a treatment machine's control panel — a temperature readout of 45.0 °C, a timer, and the words “ELAPSED” and “LIVE TEMP”. There is no logo, no practice name, no headline and no location. A dark panel sits across the middle of the hero with nothing visible in it. On a phone the situation is worse: the navigation renders as a single horizontal row that runs past the right edge of the screen, so of eight items only Home, Treatments and Shop can be seen — Book, Memberships, About, Blog and Contact all fall outside it, and no menu button is offered in their place.</p>
-    <p><strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible page source. Individual treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated.</p>
-  </div>
-</section>
+    <div class="calc">
+      <h2>What the leak is worth</h2>
+      <p class="lead">Five figures, entered by you. Nothing below is drawn from your analytics, estimated on your behalf, or sent anywhere — it recalculates in your browser as you type. The arithmetic is printed in full underneath.</p>
+      <div class="fields">
+        <div class="field"><label for="patients">New patients a month</label><input id="patients" type="number" min="0" step="1" value="25" /><small>People seen for the first time</small></div>
+        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="600" /><small>Including anything taken home</small></div>
+        <div class="field"><label for="returnRate">Share who return within 90 days (%)</label><input id="returnRate" type="number" min="0" max="90" step="1" value="30" /><small>Your best estimate is enough</small></div>
+        <div class="field"><label for="spend">Marketing spend a month (US$)</label><input id="spend" type="number" min="0" step="100" value="3000" /><small>Ads, agency, intro discounts</small></div>
+        <div class="field"><label for="margin">Gross margin on a visit (%)</label><input id="margin" type="number" min="1" max="95" step="1" value="65" /><small>After product and clinician time</small></div>
+      </div>
 
-<section>
-  <div class="wrap">
-    <h2>At a glance</h2>
-    <div class="scorewrap">
-      <div class="bigscore">30<small>/100</small></div>
-      <div style="flex:1;min-width:230px"><p style="margin:0"><strong>Normalised across six assessed categories (90 points available).</strong> This score reflects the first screen, not the practice. The material needed to score well is already written and already on the site — almost all of it sits below the point where most visitors decide whether to stay.</p></div>
+      <div class="leak">
+        <p class="leak-label" id="leakLabel">—</p>
+        <p class="leak-figure" id="leakFigure">—</p>
+        <p class="leak-sub" id="leakSub">—</p>
+      </div>
+
+      <div class="afford">
+        <div><span>You can afford to pay, per patient</span><strong id="affordNow">—</strong><small>at your return rate today</small></div>
+        <div><span>You could afford</span><strong id="affordTarget">—</strong><small id="affordTargetNote">—</small></div>
+      </div>
+      <p class="leak-read" id="affordRead"></p>
+
+      <div class="metrics">
+        <div><span>What a patient costs you now</span><strong id="mCac">—</strong></div>
+        <div><span>What a patient is worth to you</span><strong id="mLtv">—</strong></div>
+        <div><span>Value against cost</span><strong id="mRatio">—</strong></div>
+        <div><span>Visits to pay back acquisition</span><strong id="mPayback">—</strong></div>
+        <div><span>Visits an average patient makes</span><strong id="mVisitsNow">—</strong></div>
+        <div><span>At the benchmark they would make</span><strong id="mVisitsTarget">—</strong></div>
+      </div>
+
+      <div class="workings">
+        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
+        <p style="margin:0 0 6px"><code>expected visits = 1 ÷ (1 − return rate)</code></p>
+        <p style="margin:0 0 6px"><code>margin per visit = first-visit value × gross margin</code></p>
+        <p style="margin:0 0 6px"><code>lifetime value = expected visits × margin per visit</code></p>
+        <p style="margin:0"><code>affordable spend per patient = lifetime value ÷ 3</code></p>
+      </div>
+      <p class="disclaim">A model built entirely on figures you supply — not a forecast, a projection or a guarantee, and not a measurement of your practice. Actual results depend on factors no website review can see.</p>
     </div>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Category</th><th>Score</th><th>Status</th><th>One-line finding</th></tr></thead>
-        <tbody>
-          <tr><td>First impression &amp; positioning</td><td>5/20</td><td><span class="pill p-bad">Structural</span></td><td>No logo, name, headline or location — the hero is a machine readout.</td></tr>
-          <tr><td>Trust &amp; authority placement</td><td>4/20</td><td><span class="pill p-bad">Structural</span></td><td>The 5-star claim and the practice's story sit below the first screen.</td></tr>
-          <tr><td>Booking journey &amp; conversion</td><td>10/20</td><td><span class="pill p-warn">Gap</span></td><td>Phone and Book are in the desktop header; neither survives on a phone.</td></tr>
-          <tr><td>Patient decision psychology</td><td>4/15</td><td><span class="pill p-bad">Structural</span></td><td>Nothing on the opening screen tells a visitor what they are looking at.</td></tr>
-          <tr><td>Mobile experience</td><td>2/10</td><td><span class="pill p-bad">Structural</span></td><td>The navigation runs off the screen and no menu button replaces it.</td></tr>
-          <tr><td>Local / public signals</td><td>2/5</td><td><span class="pill p-warn">Gap</span></td><td>A local 480 number on desktop, but Scottsdale is not on the first screen.</td></tr>
-          <tr><td>Treatment content quality</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
-          <tr><td>Technical / performance</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>What the practice is already doing well</h2>
-    <p class="lead">These are real assets, and the recommendations below are almost entirely about moving them to where they can be seen.</p>
-    <ul class="clean">
-      <li><strong>The treatment menu is properly structured.</strong> <em>(Observed)</em> RF and laser, skin health, injectables, peels, hair restoration — each grouped with its own named treatments, from Morpheus8 and NuEra Tight through to PRX-T33, PDO threads and BioRePeel. That is how a patient actually searches, and it is a great deal of work already done.</li>
-      <li><strong>The page description is genuinely well written.</strong> <em>(Observed)</em> “Your top med spa and aesthetics in Scottsdale … Call (480) 597-4603 to book your free consultation!” This is the line that appears beneath the practice in search results, and it names the town, the number and the offer. Most practices leave it as boilerplate.</li>
-      <li><strong>The introduction is specific in the way that earns trust.</strong> <em>(Observed)</em> “A locally owned med spa in Scottsdale, AZ, located in the Edwards Professional Park II … a quiet and intimate setting.” Naming the actual building is the sort of detail an invented business never supplies, and it answers the proximity question outright.</li>
-      <li><strong>Memberships, a product shop and a new-client offer.</strong> <em>(Observed)</em> Recurring revenue, retail income between appointments, and “$25 off your first service” to convert the undecided. Three commercial mechanisms most practices in this review do not have at all.</li>
-      <li><strong>The telephone number is in the desktop header.</strong> <em>(Observed)</em> A local 480 number, visible without scrolling, for the patient who would rather speak to someone than fill anything in.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>The evidence</h2>
+    <h2>What was looked at</h2>
     <div class="shots">
       <figure>
         <img src="images/audited-desktop.jpg" alt="Face Lounge Aesthetics homepage on a 1366-pixel desktop screen" />
@@ -225,107 +221,43 @@
 
 <section>
   <div class="wrap">
-    <h2 id="findings">Priority opportunities</h2>
+    <h2 id="findings">Where the patients leave</h2>
+    <p class="lead">Each of these is a point at which somebody who wanted to book stops. They are listed in the order they cost you most.</p>
 
     <div class="card">
-      <span class="label">1 · Mobile navigation</span>
+      <span class="label">Leak 1 · Mobile navigation</span>
       <h3>Five of the eight menu items are off the screen, including Book.</h3>
-      <p><strong>Evidence:</strong> At 390×844 the navigation renders as one horizontal row. Only Home, Treatments and Shop are visible; Book, Memberships, About, Blog and Contact continue past the right edge. No hamburger or menu button is presented in their place.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> Most aesthetic traffic is on a phone, and the item that has fallen off the edge is the one that earns. A visitor who wants to book has no visible way to do it, no visible telephone number on that screen, and no menu button to look for it in — so the practice's own booking page is effectively unreachable from the homepage.</p>
-      <p><strong>Recommended:</strong> Switch the header to the mobile menu pattern the site builder already provides, so the eight items collapse behind a menu button. This is a setting rather than a rebuild, and it is the single highest-value change on this list.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>Same day</dd></dl>
+      <p><strong>Where it happens:</strong> At 390×844 the navigation renders as one horizontal row. Only Home, Treatments and Shop are visible; Book, Memberships, About, Blog and Contact continue past the right edge. No hamburger or menu button is presented in their place.</p>
+      <p><strong>How the patient is lost:</strong> Most aesthetic traffic is on a phone, and the item that has fallen off the edge is the one that earns. A visitor who wants to book has no visible way to do it, no visible telephone number on that screen, and no menu button to look for it in — so the practice's own booking page is effectively unreachable from the homepage.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
 
     <div class="card">
-      <span class="label">2 · First screen</span>
+      <span class="label">Leak 2 · First screen</span>
       <h3>The opening image is a close-up of a machine's control panel.</h3>
-      <p><strong>Evidence:</strong> The desktop hero plays a video showing a device readout: “TEMP °C 45.0”, “TIME (min)”, “ELAPSED” and “LIVE TEMP 46.1”. On mobile the hero shows an out-of-focus frame of a treatment in progress. Neither carries a logo, practice name, headline or location.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> A first-time visitor cannot tell whose website they are on. Equipment readouts are meaningful to the operator and to nobody else — a patient does not choose a practice on temperature settings, and a blurred clinical close-up asks them to identify with the procedure rather than the result.</p>
-      <p><strong>Recommended:</strong> Put the practice name, “Scottsdale, AZ” and one line naming the main treatments over that hero, with the Book button beneath. The wording already exists further down the page — “Hello Gorgeous. Welcome to Face Lounge Aesthetics” — it simply needs to be first.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+      <p><strong>Where it happens:</strong> The desktop hero plays a video showing a device readout: “TEMP °C 45.0”, “TIME (min)”, “ELAPSED” and “LIVE TEMP 46.1”. On mobile the hero shows an out-of-focus frame of a treatment in progress. Neither carries a logo, practice name, headline or location.</p>
+      <p><strong>How the patient is lost:</strong> A first-time visitor cannot tell whose website they are on. Equipment readouts are meaningful to the operator and to nobody else — a patient does not choose a practice on temperature settings, and a blurred clinical close-up asks them to identify with the procedure rather than the result.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
 
     <div class="card">
-      <span class="label">3 · Display fault</span>
+      <span class="label">Leak 3 · Display fault</span>
       <h3>A dark panel sits across the hero with nothing in it.</h3>
-      <p><strong>Evidence:</strong> At 1366×768 a dark translucent rectangle with a small downward notch spans the centre of the hero video. No text or image is visible within it.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> An empty container reads as something that failed to load, and it is sitting in the most valuable space on the site. If it is meant to hold a headline, that headline is not reaching anybody; if it is left over from an earlier layout, it is obscuring the video it sits on.</p>
-      <p><strong>Recommended:</strong> Worth checking in the editor — either fill it with the practice name and headline, or remove it.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>Same day</dd></dl>
+      <p><strong>Where it happens:</strong> At 1366×768 a dark translucent rectangle with a small downward notch spans the centre of the hero video. No text or image is visible within it.</p>
+      <p><strong>How the patient is lost:</strong> An empty container reads as something that failed to load, and it is sitting in the most valuable space on the site. If it is meant to hold a headline, that headline is not reaching anybody; if it is left over from an earlier layout, it is obscuring the video it sits on.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
 
     <div class="card">
-      <span class="label">4 · Proof</span>
+      <span class="label">Leak 4 · Proof</span>
       <h3>The strongest claims are below the decision point.</h3>
-      <p><strong>Evidence:</strong> “Welcome to Scottsdale's 5-Star Rated Med Spa”, the locally-owned introduction and the “$25 off your first service” offer for new clients all appear below the opening screen. No practitioner is named on it.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> A rating, a local story and a first-visit discount are the three things most likely to convert a hesitant first-time patient, and all three are currently behind a scroll that a large share of visitors will not make. The offer in particular is doing no work where it sits.</p>
-      <p><strong>Recommended:</strong> Move the 5-star claim with its review count and the $25 new-client offer onto the first screen beside the booking button, and name the practitioner with a photograph.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1–2 weeks</dd></dl>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Patient decision psychology</h2>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Principle</th><th>In plain English</th><th>What the site shows</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Familiarity<br>Jacob's Law</strong></td><td>People expect a site to behave like the others they use.</td><td>A homepage that opens without a logo or name, and a phone menu that runs off the screen, are both outside what a visitor expects.</td></tr>
-          <tr><td><strong>Reachability<br>Fitts's Law</strong></td><td>Important actions should be big and easy to thumb.</td><td>On desktop the number and Book are reachable. On a phone the Book item is outside the screen entirely.</td></tr>
-          <tr><td><strong>Proximity of proof</strong></td><td>Reassurance has to sit where the doubt is.</td><td>The 5-star claim and the locally-owned story are real, and both sit below the point where the visitor decides.</td></tr>
-          <tr><td><strong>Authority</strong></td><td>Real expertise, visible near decisions.</td><td>No practitioner is named on the first screen, and the equipment is shown instead of the person operating it.</td></tr>
-          <tr><td><strong>Decision clarity</strong></td><td>One obvious next step.</td><td>The opening screen offers no next step at all — no button, and on mobile no visible way to reach one.</td></tr>
-          <tr><td><strong>Helpful defaults</strong></td><td>Sensible pre-selections that serve the patient.</td><td>Strong once found. The treatment menu is grouped the way patients think, and the shop and memberships are well organised.</td></tr>
-          <tr><td><strong>Believability<br>Pratfall Effect</strong></td><td>Balanced, realistic communication is trusted more than perfection.</td><td>“Located in the Edwards Professional Park II” is precise and highly credible — exactly the detail worth promoting to the top.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section style="border:0;padding-bottom:0">
-  <div class="wrap">
-    <div class="calc">
-      <h2>Illustrative growth scenario</h2>
-      <p class="lead">This is a model, not a measurement. Every figure below starts as an illustrative placeholder — replace them with your own numbers and the scenarios update immediately. Nothing here is drawn from your analytics, and no result is predicted or guaranteed.</p>
-      <div class="fields">
-        <div class="field"><label for="visitors">Monthly website visitors</label><input id="visitors" type="number" min="0" value="2000" /><small>Illustrative — from your analytics</small></div>
-        <div class="field"><label for="curRate">Current visitor → enquiry %</label><input id="curRate" type="number" min="0" max="100" step="0.1" value="1.5" /><small>Illustrative</small></div>
-        <div class="field"><label for="bookRate">Enquiry → booking %</label><input id="bookRate" type="number" min="0" max="100" step="1" value="40" /><small>Illustrative</small></div>
-        <div class="field"><label for="attend">Attendance %</label><input id="attend" type="number" min="0" max="100" step="1" value="80" /><small>Illustrative</small></div>
-        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="600" /><small>Illustrative</small></div>
-      </div>
-      <div class="scen">
-        <div><h4>Conservative</h4><p class="rate">Proposed enquiry rate <strong id="r1">2.0%</strong></p><p class="out" id="o1">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p1"></p></div>
-        <div><h4>Target</h4><p class="rate">Proposed enquiry rate <strong id="r2">2.5%</strong></p><p class="out" id="o2">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p2"></p></div>
-        <div><h4>Strong</h4><p class="rate">Proposed enquiry rate <strong id="r3">3.0%</strong></p><p class="out" id="o3">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p3"></p></div>
-      </div>
-      <div class="workings">
-        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
-        <p style="margin:0 0 6px"><code>current enquiries = visitors × current rate</code> → <span id="w1">—</span></p>
-        <p style="margin:0 0 6px"><code>improved enquiries = visitors × proposed rate</code></p>
-        <p style="margin:0 0 6px"><code>additional attended = (improved − current) × booking % × attendance %</code></p>
-        <p style="margin:0"><code>additional revenue = additional attended × average first-visit value</code></p>
-      </div>
-      <p class="disclaim">Only the proposed enquiry rate changes between the three scenarios; every other input stays as you entered it. This is an illustrative scenario built on stated assumptions — not a forecast, a projection or a guarantee. Actual results depend on factors no website review can measure.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>90-day improvement roadmap</h2>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Window</th><th>Focus</th><th>Actions</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Days 1–14</strong></td><td>Quick wins</td><td>Enable the mobile menu button so Book and Contact are reachable on a phone. Fill or remove the empty panel on the hero. Put the practice name, Scottsdale and a Book button on the first screen.</td></tr>
-          <tr><td><strong>Days 15–45</strong></td><td>Trust &amp; conversion</td><td>Move the 5-star rating with its review count and the $25 new-client offer above the fold. Name the practitioner with a photograph. Replace the equipment video with the treatment room or a result.</td></tr>
-          <tr><td><strong>Days 46–90</strong></td><td>Authority &amp; measurement</td><td>Give the strongest treatments their own pages with candidacy and downtime notes. Build a post-treatment review request into the follow-up. Begin measuring enquiry-to-booking so the calculator figures above become yours.</td></tr>
-        </tbody>
-      </table>
+      <p><strong>Where it happens:</strong> “Welcome to Scottsdale's 5-Star Rated Med Spa”, the locally-owned introduction and the “$25 off your first service” offer for new clients all appear below the opening screen. No practitioner is named on it.</p>
+      <p><strong>How the patient is lost:</strong> A rating, a local story and a first-visit discount are the three things most likely to convert a hesitant first-time patient, and all three are currently behind a scroll that a large share of visitors will not make. The offer in particular is doing no work where it sits.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
   </div>
 </section>
@@ -334,7 +266,7 @@
   <div class="wrap">
     <h2>Limitations &amp; methodology</h2>
     <p class="fine">This review is based on the public homepage of faceloungeaz.com viewed on 13 August 2026 at 1366×768 and 390×844, page source retrieved the same day, and publicly visible business information. This review assessed the homepage at 1366×768 and at 390 pixels wide, together with publicly visible page source. Individual treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). The hero is a video, so the frame described here is the one shown during this review. Navigation items that fall outside the screen were judged on what is visible without horizontal scrolling.</p>
-    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Findings labelled <em>Observed</em> are directly visible; findings labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Figures in the growth scenario are illustrative placeholders supplied by this report, not measurements of your practice.</p>
+    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Leaks labelled <em>Observed</em> are directly visible; leaks labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Every figure in the calculator is one you entered yourself.</p>
   </div>
 </section>
 
@@ -344,10 +276,10 @@
       <div class="cta-grid">
         <div class="cta-copy">
           <h2>A short conversation, if it is useful</h2>
-          <p>Most of what is above can be done by your existing web team, and this report is yours to use whether or not we ever speak.</p>
-          <p>Where the gaps are structural rather than cosmetic — booking that lives on someone else's platform, trust signals with nowhere to sit, no loop that brings a patient back after treatment — those are the problems we build for.</p>
+          <p>This report is yours to use whether or not we ever speak, and your existing web team can act on most of it.</p>
+          <p>Where the leaks are structural rather than cosmetic — booking that lives on someone else's platform, no record that remembers a patient, nothing that brings them back after treatment — those are the problems we build for.</p>
           <ul class="why">
-            <li>The changes above compound: each month they are not made is a month of the same visitors deciding elsewhere.</li>
+            <li>Every month the leaks stay open is another month of the same visitors deciding elsewhere.</li>
             <li>Aesthetic demand is seasonal. Work started now is live before the year-end run.</li>
             <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
           </ul>
@@ -358,7 +290,7 @@
               <strong>Ignatius Ackermann</strong>
               <span>CRM Solutions · building commercial platforms since 2001<br />Reply on WhatsApp — usually within a few hours</span>
             </div>
-            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20audit%20for%20Face%20Lounge%20Aesthetics." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
+            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20review%20for%20Face%20Lounge%20Aesthetics." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
           </div>
         </div>
         <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
@@ -394,54 +326,107 @@
 </footer>
 
 <script>
+window.AUDIT_CURRENCY = "US$";
 (function () {
-  var ids = ['visitors', 'curRate', 'bookRate', 'attend', 'value'];
-  var scenarios = [
-    { rate: 2.0, out: 'o1', label: 'r1', pat: 'p1' },
-    { rate: 2.5, out: 'o2', label: 'r2', pat: 'p2' },
-    { rate: 3.0, out: 'o3', label: 'r3', pat: 'p3' }
-  ];
+  /**
+   * The leak calculator.
+   *
+   * Same arithmetic as aestheticbiz.site/second-visit, so the audit and the
+   * landing page tell one story. The argument: what a practice can afford to
+   * pay for a patient is set by how often patients come back, not by how cheap
+   * its advertising is.
+   *
+   *   expected visits = 1 / (1 − return rate)
+   *   margin per visit = first-visit value × gross margin
+   *   lifetime value  = expected visits × margin per visit
+   *   affordable spend = lifetime value ÷ 3   (conventional healthy ratio)
+   *
+   * Every figure is entered by the reader. Nothing is measured, assumed from
+   * their analytics, or sent anywhere.
+   */
+  var TARGET = 0.45;
+  var RATIO = 3;
+
+  var ids = ['patients', 'value', 'returnRate', 'spend', 'margin'];
+  var CUR = (window.AUDIT_CURRENCY || 'US$');
 
   function num(id) {
-    var v = parseFloat(document.getElementById(id).value);
+    var el = document.getElementById(id);
+    if (!el) return 0;
+    var v = parseFloat(el.value);
     return isFinite(v) && v >= 0 ? v : 0;
   }
 
   function money(n) {
-    return 'US$' + Math.round(n).toLocaleString('en-US');
+    if (!isFinite(n)) return '—';
+    return CUR + Math.round(n).toLocaleString('en-US');
+  }
+
+  function set(id, text) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
   }
 
   function recalc() {
-    var visitors = num('visitors');
-    var cur = num('curRate') / 100;
-    var book = num('bookRate') / 100;
-    var attend = num('attend') / 100;
+    var patients = num('patients');
     var value = num('value');
+    var r = Math.min(Math.max(num('returnRate'), 0), 90) / 100;
+    var spend = num('spend');
+    var margin = num('margin') / 100;
 
-    var currentEnq = visitors * cur;
-    document.getElementById('w1').textContent =
-      visitors.toLocaleString('en-US') + ' × ' + (cur * 100).toFixed(1) + '% = ' +
-      currentEnq.toFixed(1) + ' enquiries / month';
+    var target = Math.max(TARGET, r);
+    var atTarget = target <= r;
 
-    scenarios.forEach(function (s) {
-      // Only the proposed rate varies; a proposal below current shows nothing
-      // rather than a negative, which would be meaningless here.
-      var proposed = Math.max(s.rate / 100, cur);
-      var improvedEnq = visitors * proposed;
-      var addEnq = Math.max(improvedEnq - currentEnq, 0);
-      var addAttended = addEnq * book * attend;
-      var revenue = addAttended * value;
+    var marginPerVisit = value * margin;
+    var visitsNow = 1 / (1 - r);
+    var visitsTarget = 1 / (1 - target);
 
-      document.getElementById(s.label).textContent = (proposed * 100).toFixed(1) + '%';
-      document.getElementById(s.out).textContent = money(revenue);
-      document.getElementById(s.pat).textContent =
-        addAttended.toFixed(1) + ' additional attended patients · ' +
-        money(revenue * 12) + ' over twelve months';
-    });
+    var cac = patients > 0 ? spend / patients : 0;
+    var ltvNow = visitsNow * marginPerVisit;
+    var ltvTarget = visitsTarget * marginPerVisit;
+
+    var affordNow = ltvNow / RATIO;
+    var affordTarget = ltvTarget / RATIO;
+    var gap = (visitsTarget - visitsNow) * value * (patients * 12);
+
+    set('leakLabel', atTarget
+      ? 'Your patients already return well. Across the relationship, one of them is worth'
+      : 'On a year of new patients, the gap between this return rate and ' +
+        Math.round(target * 100) + '% is worth');
+    set('leakFigure', money(atTarget ? ltvNow : gap));
+    set('leakSub', atTarget
+      ? 'That is the number worth defending.'
+      : 'Same patients. Same marketing spend. Same rooms.');
+
+    set('affordNow', money(affordNow));
+    set('affordTarget', money(affordTarget));
+    set('affordTargetNote', 'at a ' + Math.round(target * 100) + '% return rate');
+
+    var read = document.getElementById('affordRead');
+    if (read) {
+      if (atTarget) {
+        read.style.display = 'none';
+      } else {
+        read.style.display = '';
+        var uplift = affordNow > 0 ? Math.round((affordTarget / affordNow - 1) * 100) : 0;
+        read.textContent =
+          'That is ' + uplift + '% more than can be bid today for exactly the same patient. ' +
+          'Whoever in this market can pay the most wins it — and that capacity is decided by ' +
+          'the second visit, not by the ad account.';
+      }
+    }
+
+    set('mCac', money(cac));
+    set('mLtv', money(ltvNow));
+    set('mRatio', cac > 0 ? (ltvNow / cac).toFixed(1) + ' : 1' : 'no spend entered');
+    set('mPayback', marginPerVisit > 0 ? (cac / marginPerVisit).toFixed(1) : '—');
+    set('mVisitsNow', visitsNow.toFixed(1));
+    set('mVisitsTarget', visitsTarget.toFixed(1));
   }
 
   ids.forEach(function (id) {
     var el = document.getElementById(id);
+    if (!el) return;
     el.addEventListener('input', recalc);
     el.addEventListener('change', recalc);
   });

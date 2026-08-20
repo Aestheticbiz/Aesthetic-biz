@@ -1,0 +1,36 @@
+TO:      reception@cherrymedispa.com
+NOTE:    Reception inbox. No practitioner name appears anywhere on the
+         homepage, so there was no individual to address this to.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your mobile call button is only half on the screen
+
+------------------------------------------------------------
+
+Hello,
+
+I review medspa websites and I went through cherrymedispa.com this morning.
+The notes are yours to use whether or not we ever speak.
+
+Worth checking on a phone right now: below your hero, a round red call-icon
+button is cut in half by the left edge of the screen, overlapping the
+heading text beneath it. It's the one button built specifically for someone
+to tap and call — and it's the hardest one on the page to actually hit. Your
+mobile header also drops the phone number that sits beside your logo on
+desktop, so a visitor has to open the menu, or find that clipped button, to
+call at all.
+
+The second thing is less visible but matters more over time. Nowhere on the
+homepage is a physician, medical director or lead injector named. For Botox
+and filler work, that's usually the first question a new patient is holding
+when they land on the page, and right now nothing answers it.
+
+What's genuinely working: "Located in the heart of Denver's LoHi" sits right
+under your headline, so a visitor knows in seconds where you are, and "Book
+a Free Consult" appears three separate ways across the page — in the header,
+the hero, and a tab that stays pinned as the page scrolls. That's a more
+complete booking journey than most sites I review have.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/cherrymedispa/
+
+Ignatius

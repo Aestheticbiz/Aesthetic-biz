@@ -1,0 +1,110 @@
+{
+  "clinic": "Viva Day Spa + Med Spa",
+  "domain": "vivadayspa.com",
+  "location": "Austin, Round Rock & Dallas, TX",
+  "date": "17 August 2026",
+  "avgValue": 600,
+  "score": 43,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "Viva Day Spa + Med Spa presents as a polished, established multi-location business — five locations across Austin, Round Rock and Dallas, a consistent teal-and-brown identity, and a desktop header that keeps the phone number, search, \"Book Appointment\" and \"Gift Certificates\" all visible without a hamburger menu. The \"Spa Treatments\" and \"Med Spa\" navigation items are also kept separate, which helps a patient looking specifically for injectables tell the two sides of the business apart.",
+    "The homepage's single biggest problem only shows up on a phone. The hero currently promotes a seasonal facial (\"Glass Skin Is Glowingly In\" / \"Introducing Korean Glass Skin Facials\"), and at 390 pixels wide the cookie-consent card — \"Your Privacy Matters To Us\" — sits directly beneath the headline and fills the rest of the visible screen. The desktop hero's \"Shop Facials\" button does not appear anywhere in the mobile capture; it is either pushed below the fold or hidden behind the consent card. A mobile visitor's first and only options are Allow all, Customize, or Decline.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus the meta description and navigation labels captured from the homepage text. Treatment-page depth, the booking flow past the \"Book Appointment\" button, and technical performance were not assessed, so the score is normalised across the six categories that were. No traffic, revenue or review-count figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> The score is held up by a clean, consistent desktop header with a genuine booking button always visible. Most of what is lost is mobile-specific — a consent banner that hides the only call to action in the hero.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "13/20", "status": "Competent", "finding": "A seasonal facial promotion leads the hero rather than the practice's differentiation." },
+    { "category": "Trust &amp; authority placement", "score": "8/20", "status": "Gap", "finding": "No practitioner, injector or medical director named in the captured homepage content." },
+    { "category": "Booking journey &amp; conversion", "score": "10/20", "status": "Gap", "finding": "\"Book Appointment\" is clear on desktop; the mobile hero has no visible CTA at all." },
+    { "category": "Patient decision psychology", "score": "6/15", "status": "Structural", "finding": "The one mobile call to action is unreachable behind the cookie-consent card." },
+    { "category": "Mobile experience", "score": "3/10", "status": "Structural", "finding": "The consent banner covers roughly half the mobile screen, hiding the CTA below it." },
+    { "category": "Local / public signals", "score": "3/5", "status": "Gap", "finding": "Five locations are clearly listed in the nav; no rating or review count is visible in the capture." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "The desktop experience is genuinely well put together — several of these are worth keeping exactly as they are.",
+  "strengths": [
+    { "title": "The desktop header hides nothing behind a hamburger.", "confidence": "Observed", "body": "\"Spa Treatments\", \"Med Spa\", \"Specials\", \"Shop\", \"Gift Certificates\", \"Book Appointment\", the phone number 512.300.2256, and a search icon are all visible at once. A desktop visitor never has to guess where to click." },
+    { "title": "\"Med Spa\" and \"Spa Treatments\" are separate navigation items.", "confidence": "Observed", "body": "A patient specifically researching Botox or fillers can go straight to the medical side of the business rather than sorting it out of a single combined services list — a small structural choice that saves the injectables visitor real effort." },
+    { "title": "A single, consistent visual identity carries across the whole page.", "confidence": "Observed", "body": "The teal-and-brown palette, serif logotype and photography style are applied consistently from the header through the hero, which reads as an established, professionally run business rather than a patched-together site." },
+    { "title": "\"Book Appointment\" exists as a genuine, permanent button.", "confidence": "Observed", "body": "It is not a phone number buried in a paragraph — it is a standing, labelled button in the header on every page, which is the right default for a multi-location practice." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768 (captured wider). The hero promotes a seasonal facial with a \"Shop Facials\" CTA; \"Book Appointment\" and \"Gift Certificates\" sit in the header as two identically styled teal buttons.",
+  "captionMobile": "Mobile, 390×844. The cookie-consent card fills roughly half the visible screen directly beneath the headline; the \"Shop Facials\" button visible on desktop does not appear anywhere in this capture, and the header shows only a hamburger icon and a phone icon — no printed number.",
+
+  "findings": [
+    {
+      "area": "Mobile",
+      "heading": "The cookie-consent card hides the only above-the-fold call to action.",
+      "evidence": "At 390×844, \"Your Privacy Matters To Us\" renders directly under the \"Introducing Korean Glass Skin Facials\" subhead and occupies the rest of the visible screen, ending in three buttons: Allow all, Customize, Decline. The \"Shop Facials\" button that appears in the desktop hero is not visible anywhere in the mobile capture, and a line of location text beneath the card (\"Austin, Dallas, and Round Rock, Texas...\") is greyed out and partly obscured.",
+      "why": "A mobile visitor's first decision is forced to be about cookies, not treatments. Until that card is dismissed there is no path to booking, shopping, or even reading the location line — for a business whose visitors are disproportionately on a phone, that is the whole first screen doing nothing but asking for a cookie preference.",
+      "recommended": "Replace the full-card consent design with a slim bottom bar on mobile so the hero content and its CTA stay visible and reachable beneath it.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "First screen",
+      "heading": "The hero promotes a seasonal facial rather than the practice's differentiation.",
+      "evidence": "Both breakpoints show the same headline — \"GLASS SKIN IS GLOWINGLY IN\" / \"Introducing Korean Glass Skin Facials\" — with a single CTA, \"SHOP FACIALS\", on desktop. No location, practitioner name, or reason to choose Viva over another Austin-area med spa appears in the hero itself.",
+      "why": "A first-time visitor arriving specifically for the \"Med Spa\" side of the business — Botox, fillers — lands on a retail promotion for a facial, not a signal that this is a credible injectables provider. The promotional message and the medical-aesthetics message are competing for the same single hero slot.",
+      "recommended": "Rotate hero content, or add a second permanent strip beneath it, that carries the med spa positioning and locations for visitors who did not come for a facial special.",
+      "confidence": "Interpretive",
+      "effort": "Medium",
+      "timeframe": "2–4 weeks"
+    },
+    {
+      "area": "Desktop",
+      "heading": "\"Book Appointment\" and \"Gift Certificates\" are two identical buttons side by side.",
+      "evidence": "In the desktop header, \"GIFT CERTIFICATES\" and \"BOOK APPOINTMENT\" are rendered as the same size, same teal fill, immediately next to each other.",
+      "why": "With no visual distinction, a visitor's eye has no signal for which action is primary. Splitting equal weight between a purchase and a booking costs a fraction of every visitor who arrived ready to book an appointment, not buy a gift card.",
+      "recommended": "Keep both buttons, but give \"Book Appointment\" the filled primary style and make \"Gift Certificates\" an outline or secondary style.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Trust",
+      "heading": "No practitioner or medical director is named on the homepage.",
+      "evidence": "The captured homepage text lists an extensive spa and med spa service menu, five locations, and a \"Med Spa Staff\" navigation link, but no individual clinician, physician or medical director's name appears in the homepage content itself.",
+      "why": "For the injectables side of the business specifically, full-fee patients weigh who is performing the treatment. Without a name and credential visible on the entry page, that reassurance depends on the visitor clicking through to a staff page — which not everyone will do.",
+      "recommended": "Surface the medical director or lead injector's name and credential in or near the \"Med Spa\" section of the homepage, not only on the Staff page.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1–2 weeks"
+    },
+    {
+      "area": "Mobile",
+      "heading": "The mobile header shows a phone icon but no printed number.",
+      "evidence": "The mobile capture's header carries only a hamburger icon and a phone-handset icon. The desktop header prints the number in full — 512.300.2256 — but no digits appear anywhere in the mobile header.",
+      "why": "A tap-to-call icon serves one action — dialling immediately. A visitor who wants to write the number down, text it to someone else, or simply prefers to read a number before trusting it has nothing to read.",
+      "recommended": "Print the number as visible text next to the phone icon in the mobile header, in addition to keeping it tap-to-call.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "The desktop header behaves as expected — visible nav, visible booking button. The mobile consent card taking over the first screen is outside what visitors expect to have to clear first." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "On desktop, \"Book Appointment\" is a good, reachable target. On mobile, the equivalent hero CTA is not reachable at all — it is hidden behind the consent card." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "No practitioner name or credential sits near the \"Med Spa\" navigation item or the hero, where an injectables visitor's doubt would need answering." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "Not present in the captured homepage content — the strongest authority signal, staff credentials, is a click away rather than on the entry page." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Split on desktop between \"Shop Facials\", \"Book Appointment\" and \"Gift Certificates\". Absent on mobile until the consent card is dismissed." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Separating \"Spa Treatments\" from \"Med Spa\" in the navigation is a helpful default — it pre-sorts visitors toward the right service category." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "The hero copy (\"Glass Skin Is Glowingly In\") is playful rather than overclaiming, which reads as realistic; there is little language here that oversells outcomes." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Switch the mobile cookie-consent card to a slim, dismissible bar so the hero CTA stays reachable. Print the phone number as visible text in the mobile header. Give \"Book Appointment\" a distinct primary style from \"Gift Certificates\"." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Add a permanent strip or rotation naming the med spa's practitioner, credentials and locations alongside seasonal promotions. Surface the medical director's name near the \"Med Spa\" navigation entry." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Build out staff credential and awards content referenced in the \"About\" and \"Awards\" navigation items so it is discoverable, not just linked. Add a visible rating and review count. Begin measuring enquiry-to-booking so the calculator figures above become the practice's own." }
+  ],
+
+  "limitations": "This review assessed the homepage at approximately 1366×768 and at 390 pixels wide, together with the homepage's meta title, meta description and navigation text. The booking flow was not traced past the \"Book Appointment\" button, treatment-page depth was not assessed, and no Google Business Profile rating or review count was visible in the material reviewed — all are excluded from the score rather than estimated. The total is normalised across the six categories reviewed (90 points available)."
+}

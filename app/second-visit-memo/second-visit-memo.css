@@ -1,0 +1,436 @@
+/* /second-visit-memo — internal positioning memo (scoped; shares the AestheticBiz palette) */
+
+.svm-page {
+  --svm-ink: #0a1628;
+  --svm-rail: #c8a882;
+  --svm-cream: #f7f4ec;
+  --svm-body: rgba(242, 239, 232, 0.78);
+  --svm-dim: rgba(242, 239, 232, 0.45);
+  --svm-line: rgba(200, 168, 130, 0.22);
+  --svm-card: rgba(255, 255, 255, 0.035);
+  --svm-warn: #d98c72;
+  background: var(--svm-ink);
+  color: var(--svm-cream);
+  min-height: 100vh;
+  overflow-x: clip;
+  padding-bottom: 96px;
+}
+
+.svm-page a {
+  color: var(--svm-rail);
+  word-break: break-word;
+}
+
+.svm-page a:focus-visible {
+  outline: 2px solid var(--svm-rail);
+  outline-offset: 3px;
+}
+
+.svm-shell {
+  width: min(780px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.svm-eyebrow {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--svm-rail);
+}
+
+/* ── Masthead ─────────────────────────────────────────────────────── */
+.svm-mast {
+  padding: 72px 0 38px;
+  border-bottom: 1px solid var(--svm-line);
+}
+
+.svm-mast h1 {
+  margin: 18px 0 0;
+  font-size: clamp(36px, 6.4vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.svm-mast h1 em {
+  font-style: italic;
+  color: var(--svm-rail);
+}
+
+.svm-standfirst {
+  max-width: 58ch;
+  margin: 20px 0 0;
+  font-size: 19px;
+  line-height: 1.62;
+  color: var(--svm-body);
+}
+
+.svm-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 24px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--svm-dim);
+}
+
+/* ── Sections ─────────────────────────────────────────────────────── */
+.svm-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--svm-line);
+}
+
+.svm-section:last-of-type {
+  border-bottom: 0;
+}
+
+.svm-section h2 {
+  margin: 0;
+  font-size: clamp(24px, 3.8vw, 31px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.svm-section p {
+  margin: 0;
+  max-width: 66ch;
+  font-size: 17px;
+  line-height: 1.68;
+  color: var(--svm-body);
+}
+
+.svm-section p.svm-lede {
+  font-size: 18.5px;
+}
+
+.svm-section strong {
+  color: var(--svm-cream);
+  font-weight: 600;
+}
+
+.svm-section em {
+  font-style: italic;
+}
+
+.svm-pull {
+  max-width: 54ch;
+  padding: 4px 0 4px 22px;
+  border-left: 3px solid var(--svm-rail);
+  font-size: 22px;
+  line-height: 1.44;
+  color: var(--svm-cream);
+}
+
+/* ── Belief chain ─────────────────────────────────────────────────── */
+.svm-chain {
+  display: flex;
+  flex-direction: column;
+}
+
+.svm-link {
+  padding: 22px 24px;
+  background: var(--svm-card);
+  border: 1px solid var(--svm-line);
+}
+
+.svm-link .svm-step {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--svm-rail);
+}
+
+.svm-link h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--svm-cream);
+  text-wrap: balance;
+}
+
+.svm-link p {
+  max-width: 62ch;
+  font-size: 16.5px;
+}
+
+.svm-joint {
+  height: 22px;
+  margin-left: 26px;
+  border-left: 2px solid var(--svm-line);
+}
+
+/* ── Numbered reasons ─────────────────────────────────────────────── */
+.svm-numbered {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  counter-reset: svm;
+}
+
+.svm-numbered > li {
+  counter-increment: svm;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.svm-numbered > li::before {
+  content: counter(svm, decimal-leading-zero);
+  padding-top: 4px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--svm-rail);
+}
+
+.svm-numbered > li > div {
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--svm-body);
+}
+
+.svm-numbered > li > div strong {
+  color: var(--svm-cream);
+  font-weight: 600;
+}
+
+/* ── Four actions ─────────────────────────────────────────────────── */
+.svm-grid4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .svm-grid4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.svm-cell {
+  padding: 20px;
+  background: var(--svm-card);
+  border: 1px solid var(--svm-line);
+  border-top: 3px solid var(--svm-rail);
+}
+
+.svm-cell.svm-cut {
+  border-top-color: var(--svm-warn);
+}
+
+.svm-cell h3 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--svm-rail);
+}
+
+.svm-cell.svm-cut h3 {
+  color: var(--svm-warn);
+}
+
+.svm-cell ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.svm-cell li {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--svm-body);
+}
+
+/* ── Table ────────────────────────────────────────────────────────── */
+.svm-tablewrap {
+  overflow-x: auto;
+  border: 1px solid var(--svm-line);
+  background: var(--svm-card);
+}
+
+.svm-tablewrap table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 15.5px;
+}
+
+.svm-tablewrap th,
+.svm-tablewrap td {
+  padding: 13px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--svm-line);
+  color: var(--svm-body);
+  line-height: 1.6;
+}
+
+.svm-tablewrap th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--svm-dim);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.svm-tablewrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.svm-tablewrap td strong {
+  color: var(--svm-cream);
+  font-weight: 600;
+}
+
+.svm-tablewrap td.svm-was {
+  color: var(--svm-dim);
+}
+
+/* ── Email ────────────────────────────────────────────────────────── */
+.svm-email {
+  border: 1px solid var(--svm-line);
+  background: var(--svm-card);
+  overflow: hidden;
+}
+
+.svm-email-hdr {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--svm-line);
+  background: rgba(0, 0, 0, 0.18);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--svm-dim);
+}
+
+.svm-email-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 22px;
+}
+
+.svm-email-body p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--svm-body);
+}
+
+.svm-email-body p.svm-sig {
+  font-size: 15px;
+  color: var(--svm-dim);
+}
+
+.svm-note {
+  margin: 0;
+  max-width: 66ch;
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: var(--svm-dim);
+}
+
+/* ── Callout ──────────────────────────────────────────────────────── */
+.svm-callout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 24px;
+  border: 1px solid var(--svm-line);
+  border-left: 3px solid var(--svm-rail);
+  background: rgba(200, 168, 130, 0.07);
+}
+
+.svm-callout.svm-hard {
+  border-left-color: var(--svm-warn);
+  background: rgba(217, 140, 114, 0.08);
+}
+
+.svm-callout .svm-tag {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--svm-rail);
+}
+
+.svm-callout.svm-hard .svm-tag {
+  color: var(--svm-warn);
+}
+
+.svm-callout p {
+  color: var(--svm-cream);
+}
+
+/* ── Sequence ─────────────────────────────────────────────────────── */
+.svm-week {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--svm-line);
+}
+
+.svm-week > li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 16px 2px;
+  border-bottom: 1px solid var(--svm-line);
+}
+
+@media (max-width: 520px) {
+  .svm-week > li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.svm-week .svm-when {
+  font-size: 11.5px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--svm-rail);
+}
+
+.svm-week .svm-what {
+  font-size: 16.5px;
+  line-height: 1.62;
+  color: var(--svm-body);
+}
+
+.svm-week .svm-what strong {
+  color: var(--svm-cream);
+  font-weight: 600;
+}
+
+/* ── Foot ─────────────────────────────────────────────────────────── */
+.svm-foot {
+  margin: 44px 0 0;
+  max-width: 66ch;
+  font-size: 12.5px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  color: var(--svm-dim);
+}

@@ -1,0 +1,32 @@
+TO:      info@spa7austin.com
+NOTE:    General inbox — no individual name found on the homepage to
+         address this to.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: nobody is named on your booking page
+
+------------------------------------------------------------
+
+Hello,
+
+I review med spa websites and I went through spa7austin.com this morning.
+The notes are yours to use whether or not we ever speak.
+
+Your booking path is more consistent than most sites I look at — "Book Now"
+appears in the header and again in the hero, on both desktop and mobile, and
+your navigation names treatments specifically: Neurotoxins, Injectable
+Fillers, Microneedling, Platelet Rich Plasma, a GLP-1 Weight Loss Program.
+A visitor can tell exactly what you offer without hunting for it.
+
+What's missing sits right next to that button: nobody is named. No
+practitioner, credential, or medical director appears anywhere on the
+homepage, and no rating or review count is shown. For injectable treatments
+that decision is about a person, and right now the page never introduces
+one before asking for a booking.
+
+One more small thing worth a look: the footer still reads "© 2023 by Spa 7
+Austin" — an easy fix, and the kind of detail a careful visitor notices.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/spa7austin/
+
+Ignatius

@@ -1,0 +1,110 @@
+{
+  "clinic": "Inspire Wellness & Aesthetics",
+  "domain": "inspirewellnessaesthetics.com",
+  "location": "Atlanta, GA",
+  "date": "17 August 2026",
+  "avgValue": 650,
+  "score": 51,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "The homepage gets several mechanical things right that many practices in this review set do not: the headline “Welcome To Inspire Wellness &amp; Aesthetics” is live, selectable text over a genuinely appealing spa image, not a picture of words, and the full navigation bar — Wellness, Aesthetics, Sole Lounge, Menu, Memberships, Shop, Payment Plans, About Us, Blog, Contact Us — stays visible on desktop rather than hiding behind a hamburger button. Two large, legible booking buttons sit in the hero itself.",
+    "The gaps are less about mechanics and more about clarity. The header and hero together offer three differently-worded calls to action — “Self Assessment,” “Book Now” and “Schedule Consultation” — with no visual signal of which to choose first. No clinician name or credential appears anywhere in the homepage text or screenshots captured; a team photograph is visible on mobile, immediately below the fold, but carries no name within the frame captured, and a floating call button sits directly over part of it. “Atlanta, GA” appears in the page's title tag but not in any text visible on either screenshot.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus the page's public text and metadata. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> The score is held back mainly by two things: no visible clinician name or credential anywhere in the captured homepage, and three competing calls to action with no clear first choice.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "12/20", "status": "Gap", "finding": "A live-text welcome headline and full nav, but no location and no stated differentiator." },
+    { "category": "Trust &amp; authority placement", "score": "7/20", "status": "Structural", "finding": "A team photo appears on mobile, but no name or credential is visible in the evidence captured." },
+    { "category": "Booking journey &amp; conversion", "score": "12/20", "status": "Gap", "finding": "Three different, similarly-weighted CTAs compete for the same click." },
+    { "category": "Patient decision psychology", "score": "8/15", "status": "Gap", "finding": "Reachability is strong; decision clarity is undercut by the competing CTAs." },
+    { "category": "Mobile experience", "score": "6/10", "status": "Gap", "finding": "A floating call button sits over part of the team photo below the hero." },
+    { "category": "Local / public signals", "score": "1/5", "status": "Structural", "finding": "Atlanta, GA is in the title tag only — absent from visible page text." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "This is a more solid foundation than most sites in this review set — the gaps below are refinements, not a rebuild.",
+  "strengths": [
+    { "title": "The hero headline is real, live text.", "confidence": "Observed", "body": "“Welcome To Inspire Wellness &amp; Aesthetics” sits over the sauna photograph as ordinary text, not an embedded image. It can be read by search engines and screen readers and resized by a visitor who needs it — a problem several comparable homepages get wrong." },
+    { "title": "The full navigation stays visible on desktop.", "confidence": "Observed", "body": "Wellness, Aesthetics, Sole Lounge, Menu, Memberships, Shop, Payment Plans, About Us, Blog and Contact Us are all shown across the header at 1366×768, rather than collapsed behind a hamburger button that costs a click to open." },
+    { "title": "Two large booking buttons sit inside the hero itself.", "confidence": "Observed", "body": "“Schedule Consultation” and “Book Now” are both sized as generous, easy-to-hit targets on the opening screen on both desktop and mobile." },
+    { "title": "Phone number and email are both in the header.", "confidence": "Observed", "body": "404-282-4126 and hello@inspirewellnessaesthetics.com appear together at the top of the page, ahead of any scrolling, on desktop." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. Full navigation bar visible; header carries a phone number, email, Self Assessment and Book Now; hero carries a second pair of CTAs (Schedule Consultation, Book Now). No location is named on this screen.",
+  "captionMobile": "Mobile, 390×844. Hero CTAs stack below the headline; a circular phone-call button floats over the top of the team photograph in the section beginning immediately below the fold.",
+
+  "findings": [
+    {
+      "area": "Booking journey",
+      "heading": "Three different calls to action compete for the same click.",
+      "evidence": "On the desktop first screen the header carries “Self Assessment” and “Book Now,” and the hero directly below carries “Schedule Consultation” and “Book Now” again — four buttons, three distinct offers, all visible without scrolling.",
+      "why": "A first-time visitor deciding whether to book has to work out the difference between a self-assessment, a consultation and “booking now” before they can act. Each additional distinct option is a moment where a decision can be deferred instead of made.",
+      "recommended": "Pick one primary action for a first-time visitor — most likely “Schedule Consultation” — and demote the others to secondary styling so there is one obvious next step.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    },
+    {
+      "area": "Trust & authority",
+      "heading": "No clinician name or credential appears in the homepage evidence captured.",
+      "evidence": "Neither screenshot nor the page's captured text shows a practitioner's name, title or qualification. A photograph of two people, one in a white coat, appears on the mobile homepage immediately below the hero, but no name is visible within the frame captured.",
+      "why": "For injectables and hormone therapy, a first-time full-fee patient is deciding about a person as much as a practice. Without a visible name and credential at or near this photograph, the reassurance the image is meant to provide is only half delivered.",
+      "recommended": "Add the name and credential of the person pictured directly beneath or beside the photograph, and repeat it near the booking buttons.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Local",
+      "heading": "Atlanta, GA is in the title tag but not on the visible page.",
+      "evidence": "The page's title reads “Medical Spa In Atlanta, GA | Inspire Wellness &amp; Aesthetics” and the meta description names Atlanta, but neither desktop nor mobile screenshot shows a town, address or region anywhere on the opening screen.",
+      "why": "Proximity is usually the first filter an aesthetic patient applies. A visitor scanning the actual page — rather than a search snippet — currently cannot tell where the practice is.",
+      "recommended": "Add “Atlanta, GA” to the visible hero or header, not only the page title.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Mobile",
+      "heading": "A floating call button sits over the team photograph.",
+      "evidence": "On the mobile screenshot, a circular phone icon is fixed over the left edge of the photograph in the section immediately below the hero, partially covering it.",
+      "why": "The button is a useful shortcut, but positioned here it obscures part of the first piece of trust-building imagery a mobile visitor scrolls to.",
+      "recommended": "Reposition the floating call button so it does not overlap the photograph, or move it to a fixed corner that clears page imagery.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Positioning",
+      "heading": "The navigation spans medical aesthetics, general wellness and podiatry-type services in one flat menu.",
+      "evidence": "The captured navigation and page text list Botox and dermal fillers alongside cryotherapy, IV therapy, hormone replacement therapy, TMJ treatment, and a “Sole Lounge” section covering toenail restoration, ingrown toenail treatment and medical corn &amp; callus removal — all as top-level, equally-weighted menu items.",
+      "why": "A first-time visitor scanning the nav for “is this the right place for Botox” has no signal for which of these many offerings is the practice's core specialty versus a secondary service.",
+      "recommended": "Group the menu under clearer top-level headings, or lead the homepage with the practice's primary specialty before the full service list.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "2–4 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "The header, full nav on desktop and hamburger on mobile all behave as expected — nothing unusual here." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "Both the header and hero buttons are generously sized on desktop and mobile alike." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "The team photograph is close to the hero on mobile, but with no name attached it does less reassuring work than it could." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "The weakest category here — no name or credential appears anywhere in the homepage evidence captured." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Undercut by three worded CTAs — Self Assessment, Book Now, Schedule Consultation — all present above the fold." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "Not assessed from the homepage alone — none of the CTAs state what happens next or what it costs." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "The hero copy is a simple welcome rather than a claim, so there is nothing overstated to balance." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Choose one primary booking CTA and demote the others. Add a name and credential beneath the mobile team photograph. Reposition the floating call button so it clears the photo. Add “Atlanta, GA” to the visible hero." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Build out a named-practitioner section with credentials, near the booking buttons. Group the navigation under clearer top-level categories so the core specialty is obvious before the full service list." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Add treatment-page depth with candidacy and expectation notes for the highest-value services. Begin measuring enquiry-to-booking so the calculator figures above become the practice's own." }
+  ],
+
+  "limitations": "This review assessed the homepage at 1366×768 and at 390 pixels wide, together with the page's public text and metadata. Treatment-page depth, click-to-call behaviour, technical performance and any content below the captured screenshots were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available)."
+}

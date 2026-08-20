@@ -182,7 +182,7 @@ export function DiscoveryBookingWizard() {
       </div>
 
       <p className="discovery-hours-note">
-        Monday–Friday · 14:00 / 15:00 / 16:00 SAST · 60 minutes · book at least 24 hours ahead
+        Monday–Friday · 14:00 / 15:00 / 16:00 / 18:00 / 19:00 / 20:00 SAST · 60 minutes · book at least 24 hours ahead
       </p>
 
       {step === 1 && (

@@ -1,0 +1,34 @@
+TO:      info@beautyelitemedspa.com
+NOTE:    Reception inbox. Addressed to Laura Qyra because she is named,
+         with her credentials, on the homepage itself — which also signals
+         the site was actually read.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: your financing banner is covering your own bio
+
+------------------------------------------------------------
+
+Dear Laura,
+
+I review med spa websites and went through beautyelitemedspa.com this
+morning. The notes are yours to use whether or not we ever speak.
+
+Worth checking on a phone right now: just below your hero, your bio starts
+straight away, but the "Pay over time" banner and your phone and chat icons
+sit on top of it — covering parts of "Medical University in...(MD, 2013)"
+and "distinguished [Italian plastic surgeons]". A visitor deciding whether to
+trust you with an injectable can't finish reading the one thing most likely
+to convince them.
+
+The second thing: on desktop, the header shows only a hamburger icon, so
+Home, About Us, Treatments, Contact Us and Payment Plans are all hidden even
+though there's a full-width header to hold them.
+
+What's ahead of most practices I review: your credentials are specific
+rather than generic — Teoxane Academy, RHA expertise, MD 2013 — and your
+"0% APR, no hard credit check" line removes the cost objection before anyone
+scrolls.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/beautyelitemedspa/
+
+Ignatius

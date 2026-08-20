@@ -1,0 +1,110 @@
+{
+  "clinic": "Beauty Elite Med Spa",
+  "domain": "beautyelitemedspa.com",
+  "location": "Austin, TX",
+  "date": "15 August 2026",
+  "avgValue": 650,
+  "score": 61,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "The practice's strongest asset is already live: Laura Qyra, the lead cosmetic injector, is named with a detailed, specific credential history directly beneath the hero on both breakpoints — an MD from a European medical university (2013), Teoxane Academy training in London, RHA filler expertise, and an in-progress FNP credential. For a first-time injectables patient that answers who is doing this before the question is asked, with more specificity than most sites in this category offer. A financing line — “Pay over time · No hard credit checks · 0% APR options” — also sits inside the hero itself, addressing the cost objection before a visitor scrolls.",
+    "The biggest opportunity is mechanical rather than a rewrite. On the mobile screenshot, that same credential text is partially covered by three fixed floating elements — the financing banner, and the phone and chat icons — at the exact point a visitor would be reading it. On desktop, the header shows only a hamburger icon with none of the five navigation items visible, and no telephone number appears as readable text anywhere in the captured evidence.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile, using the site's own extracted text and the captured screenshots, plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. No traffic, review-count or revenue figures have been estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across six assessed categories (90 points available).</strong> The trust score is held back not by the content itself — Laura Qyra's credentials are strong and specific — but by where it sits: obscured on mobile, and out of reach on the desktop first screen.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "14/20", "status": "Competent", "finding": "A specific, location-named headline over a lake landscape unrelated to the practice." },
+    { "category": "Trust &amp; authority placement", "score": "12/20", "status": "Gap", "finding": "Laura Qyra named with detailed credentials, but partly obscured on mobile." },
+    { "category": "Booking journey &amp; conversion", "score": "15/20", "status": "Competent", "finding": "A clear hero button plus a sticky Book Now, phone and chat tab on both breakpoints." },
+    { "category": "Patient decision psychology", "score": "11/15", "status": "Competent", "finding": "Strong financing default and authority signal; proof is placed but partly hidden." },
+    { "category": "Mobile experience", "score": "5/10", "status": "Gap", "finding": "Fixed banner and icons overlap the practitioner bio text on scroll." },
+    { "category": "Local / public signals", "score": "4/5", "status": "Competent", "finding": "Austin named in the headline; full suite-level address shown and linked." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." }
+  ],
+
+  "strengthsLead": "Four things here are already working, and one of them is rarer than most practices in this category manage.",
+  "strengths": [
+    { "title": "A named, specifically credentialed lead injector.", "confidence": "Observed", "body": "Laura Qyra's bio names her MD (2013), her Teoxane Academy training in London, her RHA filler expertise, and her in-progress FNP credential. For an injectables decision the question is about a person, and this answers it with real specificity rather than a generic “expert care” line." },
+    { "title": "A financing message inside the hero itself.", "confidence": "Observed", "body": "“Pay over time · No hard credit checks · 0% APR options” appears on the opening screen on both desktop and mobile, addressing the cost objection for a high-ticket treatment before a visitor has to ask." },
+    { "title": "A precise, linked address under the CTA.", "confidence": "Observed", "body": "The full suite-level address — “2901 S Capital of Texas Hwy Spc #U02A Studio 16, Austin, TX 78746” — sits directly under the booking button as a link on both breakpoints, so a visitor can locate the practice without hunting for a contact page." },
+    { "title": "Consistent, reachable booking prompts.", "confidence": "Observed", "body": "A “Book Appointment” button in the hero, plus a sticky “Book Now” tab, phone icon and chat icon, follow the visitor on both desktop and mobile — large, fixed targets that are easy to act on at any scroll position." }
+  ],
+
+  "captionDesktop": "Desktop capture. The hero shows a lake landscape with the Beauty Elite Med Spa logo, headline and “Book Appointment” button. The header shows only a hamburger icon, and no telephone number or practitioner credentials appear on this screen.",
+  "captionMobile": "Mobile capture. Below the hero, Laura Qyra's practitioner bio begins immediately, but the fixed “Pay over time” banner and the phone and chat icons overlap the first lines of her credential text.",
+
+  "findings": [
+    {
+      "area": "Mobile display fault",
+      "heading": "Fixed floating elements cover the start of Laura Qyra's credentials.",
+      "evidence": "In the mobile capture, directly beneath the hero, the bio text reads “...advanced cosmetic treatments, Laura co[mbines] medical precision...Following her [graduation from] Medical University in...(MD, 2013), she collaborated with disting[uished]...” — with the phone icon, the “Pay over time” banner and the chat icon each sitting over part of that text.",
+      "why": "This bio is the practice's strongest trust asset, and it is obscured at precisely the point a hesitant visitor would be reading it for reassurance about who is performing the treatment.",
+      "recommended": "Move the financing banner and floating action icons to a defined-height bottom bar, and give the bio section enough top padding so the text reflows below the bar rather than behind it.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Desktop navigation",
+      "heading": "The desktop header shows no visible menu, only a hamburger icon.",
+      "evidence": "At the wider breakpoint the header contains just the logo and a hamburger icon; the five items named in the page's own text — Home, About Us, Treatments, Contact Us, Payment Plans — are all hidden behind it, even with a full-width header available.",
+      "why": "Hiding the full menu on desktop is a mobile pattern that costs a visitor a click to see what the practice offers, at the moment they are deciding whether to explore further.",
+      "recommended": "Show the five navigation items directly in the desktop header and reserve the hamburger icon for mobile only.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1-2 weeks"
+    },
+    {
+      "area": "First impression",
+      "heading": "The hero image is a lake landscape, not the practice or its treatments.",
+      "evidence": "Both captures show a wide aerial photo of a lake with rowers, with the logo and headline overlaid; no clinic interior, practitioner or treatment imagery appears on the first screen.",
+      "why": "“Where European Artistry Meets Austin Glow” is a specific, well-written headline, but the image behind it does not reinforce it — the first few seconds are spent on generic scenery rather than anything that signals medical aesthetics.",
+      "recommended": "Test a hero image or short clip that includes the clinic space or Laura at work, keeping the current headline and CTA in place.",
+      "confidence": "Interpretive",
+      "effort": "Medium",
+      "timeframe": "2-4 weeks"
+    },
+    {
+      "area": "Trust placement",
+      "heading": "No telephone number appears as readable text.",
+      "evidence": "A phone icon sits in the fixed sidebar on both breakpoints, but no digits appear next to it in either capture, and the homepage text extract contains no phone number.",
+      "why": "A visitor who prefers to call rather than tap has nothing to read, copy or cross-check against a directory listing before dialling.",
+      "recommended": "Add the practice's phone number as visible text near the icon, in the header or footer, in addition to the tap-to-call button.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day"
+    },
+    {
+      "area": "Trust & authority",
+      "heading": "No rating or review count appears near the booking button.",
+      "evidence": "Neither capture nor the extracted homepage text shows a star rating, review count, or testimonial anywhere on the first screen.",
+      "why": "For a high-ticket injectable decision, third-party proof reduces perceived risk alongside the practitioner's own bio — currently the page offers only self-reported credentials.",
+      "recommended": "Add a Google rating badge with review count near the “Book Appointment” button, once one is publicly available to reference.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "1 week"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "A desktop header with no visible menu — only a hamburger icon — is outside what visitors expect from a full-width desktop layout." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to reach.", "site": "The hero's “Book Appointment” button plus the sticky Book Now, phone and chat icons are large, fixed targets on both breakpoints — a genuine strength." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "Laura Qyra's credentials sit directly below the hero, but on mobile they are partly hidden behind the financing banner and icon buttons at the point a visitor would read them." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "The strongest category here — a named injector with a specific, checkable training history (Teoxane Academy, RHA expertise, MD 2013) is unusually detailed for this category of site." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "“Book Appointment” is a clear, repeated call to action; no competing offers appear in the captured evidence." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "The “0% APR · no hard credit checks” financing message removes the cost objection before a visitor scrolls past the hero." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "The credential list is specific rather than vague — “MD, 2013”, “Teoxane Academy, London”, “FNP candidate” — which reads as more believable than a general claim of expertise." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1-14", "focus": "Quick wins", "actions": "Reposition the financing banner and phone/chat icons so they no longer overlap Laura Qyra's bio text on mobile. Add the practice's phone number as visible text near the phone icon." },
+    { "window": "Days 15-45", "focus": "Trust &amp; conversion", "actions": "Show the five navigation items in the desktop header instead of hiding them behind the hamburger icon. Add a Google rating with review count near the booking button." },
+    { "window": "Days 46-90", "focus": "Authority &amp; measurement", "actions": "Build treatment-specific content under Laura Qyra's name so her credentials support each individual treatment page, not just the homepage. Begin tracking enquiry-to-booking so the calculator figures above become the practice's own." }
+  ],
+
+  "limitations": "This review assessed the homepage at desktop and mobile breakpoints, using the site's own extracted text and the captured screenshots, together with publicly visible information. Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). No phone number, review count or rating could be confirmed from the evidence gathered."
+}

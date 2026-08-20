@@ -9,6 +9,13 @@
  *
  * This exists because hand-writing each report as HTML does not survive past
  * about five clinics, and the plan is fifty a day.
+ *
+ * SCOPE (deliberately narrow): this report answers one question — where and how
+ * the website loses patients, and what that costs. The executive summary, the
+ * /100 score and scorecard, the strengths list, the psychology table and the
+ * 90-day roadmap were removed on purpose. A report that grades a site puts its
+ * owner on the defensive; a report that shows them a number does not. Those
+ * keys may still be present in audit.json and are simply ignored.
  */
 
 import { readFile, writeFile } from "node:fs/promises";
@@ -35,42 +42,26 @@ const e = (s) =>
 /** Allows deliberate inline markup (<strong>, <em>) in JSON copy. */
 const rich = (s) => String(s ?? "");
 
-const statusPill = (status) => {
-  const map = { Solid: "p-ok", Gap: "p-warn", Structural: "p-bad", "Not assessed": "p-none" };
-  return `<span class="pill ${map[status] ?? "p-none"}">${e(status)}</span>`;
-};
+const currency = d.currency ?? "US$";
 
-const scoreRows = d.scorecard
-  .map(
-    (r) => `<tr><td>${e(r.category)}</td><td>${e(r.score)}</td><td>${statusPill(r.status)}</td><td>${rich(r.finding)}</td></tr>`,
-  )
-  .join("\n          ");
-
-const strengths = d.strengths
-  .map((s) => `<li><strong>${rich(s.title)}</strong> <em>(${e(s.confidence)})</em> ${rich(s.body)}</li>`)
-  .join("\n      ");
-
-const findings = d.findings
+/**
+ * Each leak states where the patient leaves, how, and — only when the JSON
+ * supplies it — what it costs. A per-leak figure is never invented here: made-up
+ * precision is worse than no figure at all.
+ */
+const leaks = d.findings
   .map(
     (f, i) => `
     <div class="card">
-      <span class="label">${i + 1} · ${e(f.area)}</span>
+      <span class="label">Leak ${i + 1} · ${e(f.area)}</span>
       <h3>${rich(f.heading)}</h3>
-      <p><strong>Evidence:</strong> ${rich(f.evidence)}</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> ${rich(f.why)}</p>
-      <p><strong>Recommended:</strong> ${rich(f.recommended)}</p>
-      <dl class="row"><dt>Confidence</dt><dd>${e(f.confidence)}</dd><dt>Effort</dt><dd>${e(f.effort)}</dd><dt>Timeframe</dt><dd>${e(f.timeframe)}</dd></dl>
+      <p><strong>Where it happens:</strong> ${rich(f.evidence)}</p>
+      <p><strong>How the patient is lost:</strong> ${rich(f.why)}</p>
+      ${f.cost ? `<p class="leak-cost"><strong>What it costs:</strong> ${rich(f.cost)}</p>` : ""}
+      <dl class="row"><dt>Basis</dt><dd>${e(f.confidence)}</dd></dl>
     </div>`,
   )
   .join("\n");
-
-const psychRows = d.psychology
-  .map((p) => `<tr><td><strong>${rich(p.principle)}</strong></td><td>${rich(p.plain)}</td><td>${rich(p.site)}</td></tr>`)
-  .join("\n          ");
-
-const roadmapRows = d.roadmap
-  .map((r) => `<tr><td><strong>${e(r.window)}</strong></td><td>${e(r.focus)}</td><td>${rich(r.actions)}</td></tr>`)
-  .join("\n          ");
 
 const html = `<!doctype html>
 <html lang="en">
@@ -78,7 +69,7 @@ const html = `<!doctype html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Website Conversion Audit — ${e(d.clinic)}</title>
+<title>Where ${e(d.clinic)} loses patients</title>
 <style>
 ${css}
 </style>
@@ -87,8 +78,8 @@ ${css}
 
 <header class="top">
   <div class="wrap">
-    <p class="eyebrow">Private website conversion audit</p>
-    <h1>${e(d.clinic)}</h1>
+    <p class="eyebrow">Private website review</p>
+    <h1>Where ${e(d.clinic)} loses patients</h1>
     <p>${rich(d.subtitle)}</p>
     <div class="meta">
       <div><span>Website</span><strong>${e(d.domain)}</strong></div>
@@ -100,44 +91,55 @@ ${css}
   </div>
 </header>
 
-<section>
+<section style="border:0">
   <div class="wrap">
-    <h2>Executive summary</h2>
-    ${d.summary.map((p) => `<p>${rich(p)}</p>`).join("\n    ")}
-  </div>
-</section>
+    <div class="calc">
+      <h2>What the leak is worth</h2>
+      <p class="lead">Five figures, entered by you. Nothing below is drawn from your analytics, estimated on your behalf, or sent anywhere — it recalculates in your browser as you type. The arithmetic is printed in full underneath.</p>
+      <div class="fields">
+        <div class="field"><label for="patients">New patients a month</label><input id="patients" type="number" min="0" step="1" value="25" /><small>People seen for the first time</small></div>
+        <div class="field"><label for="value">Average first-visit value (${e(currency)})</label><input id="value" type="number" min="0" step="10" value="${e(d.avgValue ?? 600)}" /><small>Including anything taken home</small></div>
+        <div class="field"><label for="returnRate">Share who return within 90 days (%)</label><input id="returnRate" type="number" min="0" max="90" step="1" value="30" /><small>Your best estimate is enough</small></div>
+        <div class="field"><label for="spend">Marketing spend a month (${e(currency)})</label><input id="spend" type="number" min="0" step="100" value="3000" /><small>Ads, agency, intro discounts</small></div>
+        <div class="field"><label for="margin">Gross margin on a visit (%)</label><input id="margin" type="number" min="1" max="95" step="1" value="65" /><small>After product and clinician time</small></div>
+      </div>
 
-<section>
-  <div class="wrap">
-    <h2>At a glance</h2>
-    <div class="scorewrap">
-      <div class="bigscore">${e(d.score)}<small>/100</small></div>
-      <div style="flex:1;min-width:230px"><p style="margin:0">${rich(d.scoreNote)}</p></div>
+      <div class="leak">
+        <p class="leak-label" id="leakLabel">—</p>
+        <p class="leak-figure" id="leakFigure">—</p>
+        <p class="leak-sub" id="leakSub">—</p>
+      </div>
+
+      <div class="afford">
+        <div><span>You can afford to pay, per patient</span><strong id="affordNow">—</strong><small>at your return rate today</small></div>
+        <div><span>You could afford</span><strong id="affordTarget">—</strong><small id="affordTargetNote">—</small></div>
+      </div>
+      <p class="leak-read" id="affordRead"></p>
+
+      <div class="metrics">
+        <div><span>What a patient costs you now</span><strong id="mCac">—</strong></div>
+        <div><span>What a patient is worth to you</span><strong id="mLtv">—</strong></div>
+        <div><span>Value against cost</span><strong id="mRatio">—</strong></div>
+        <div><span>Visits to pay back acquisition</span><strong id="mPayback">—</strong></div>
+        <div><span>Visits an average patient makes</span><strong id="mVisitsNow">—</strong></div>
+        <div><span>At the benchmark they would make</span><strong id="mVisitsTarget">—</strong></div>
+      </div>
+
+      <div class="workings">
+        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
+        <p style="margin:0 0 6px"><code>expected visits = 1 ÷ (1 − return rate)</code></p>
+        <p style="margin:0 0 6px"><code>margin per visit = first-visit value × gross margin</code></p>
+        <p style="margin:0 0 6px"><code>lifetime value = expected visits × margin per visit</code></p>
+        <p style="margin:0"><code>affordable spend per patient = lifetime value ÷ 3</code></p>
+      </div>
+      <p class="disclaim">A model built entirely on figures you supply — not a forecast, a projection or a guarantee, and not a measurement of your practice. Actual results depend on factors no website review can see.</p>
     </div>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Category</th><th>Score</th><th>Status</th><th>One-line finding</th></tr></thead>
-        <tbody>
-          ${scoreRows}
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>What the practice is already doing well</h2>
-    <p class="lead">${rich(d.strengthsLead)}</p>
-    <ul class="clean">
-      ${strengths}
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>The evidence</h2>
+    <h2>What was looked at</h2>
     <div class="shots">
       <figure>
         <img src="images/audited-desktop.jpg" alt="${e(d.clinic)} homepage on a 1366-pixel desktop screen" />
@@ -153,65 +155,9 @@ ${css}
 
 <section>
   <div class="wrap">
-    <h2 id="findings">Priority opportunities</h2>
-${findings}
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Patient decision psychology</h2>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Principle</th><th>In plain English</th><th>What the site shows</th></tr></thead>
-        <tbody>
-          ${psychRows}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section style="border:0;padding-bottom:0">
-  <div class="wrap">
-    <div class="calc">
-      <h2>Illustrative growth scenario</h2>
-      <p class="lead">This is a model, not a measurement. Every figure below starts as an illustrative placeholder — replace them with your own numbers and the scenarios update immediately. Nothing here is drawn from your analytics, and no result is predicted or guaranteed.</p>
-      <div class="fields">
-        <div class="field"><label for="visitors">Monthly website visitors</label><input id="visitors" type="number" min="0" value="2000" /><small>Illustrative — from your analytics</small></div>
-        <div class="field"><label for="curRate">Current visitor → enquiry %</label><input id="curRate" type="number" min="0" max="100" step="0.1" value="1.5" /><small>Illustrative</small></div>
-        <div class="field"><label for="bookRate">Enquiry → booking %</label><input id="bookRate" type="number" min="0" max="100" step="1" value="40" /><small>Illustrative</small></div>
-        <div class="field"><label for="attend">Attendance %</label><input id="attend" type="number" min="0" max="100" step="1" value="80" /><small>Illustrative</small></div>
-        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="${e(d.avgValue ?? 600)}" /><small>Illustrative</small></div>
-      </div>
-      <div class="scen">
-        <div><h4>Conservative</h4><p class="rate">Proposed enquiry rate <strong id="r1">2.0%</strong></p><p class="out" id="o1">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p1"></p></div>
-        <div><h4>Target</h4><p class="rate">Proposed enquiry rate <strong id="r2">2.5%</strong></p><p class="out" id="o2">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p2"></p></div>
-        <div><h4>Strong</h4><p class="rate">Proposed enquiry rate <strong id="r3">3.0%</strong></p><p class="out" id="o3">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p3"></p></div>
-      </div>
-      <div class="workings">
-        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
-        <p style="margin:0 0 6px"><code>current enquiries = visitors × current rate</code> → <span id="w1">—</span></p>
-        <p style="margin:0 0 6px"><code>improved enquiries = visitors × proposed rate</code></p>
-        <p style="margin:0 0 6px"><code>additional attended = (improved − current) × booking % × attendance %</code></p>
-        <p style="margin:0"><code>additional revenue = additional attended × average first-visit value</code></p>
-      </div>
-      <p class="disclaim">Only the proposed enquiry rate changes between the three scenarios; every other input stays as you entered it. This is an illustrative scenario built on stated assumptions — not a forecast, a projection or a guarantee. Actual results depend on factors no website review can measure.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>90-day improvement roadmap</h2>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Window</th><th>Focus</th><th>Actions</th></tr></thead>
-        <tbody>
-          ${roadmapRows}
-        </tbody>
-      </table>
-    </div>
+    <h2 id="findings">Where the patients leave</h2>
+    <p class="lead">Each of these is a point at which somebody who wanted to book stops. They are listed in the order they cost you most.</p>
+${leaks}
   </div>
 </section>
 
@@ -219,7 +165,7 @@ ${findings}
   <div class="wrap">
     <h2>Limitations &amp; methodology</h2>
     <p class="fine">This review is based on the public homepage of ${e(d.domain)} viewed on ${e(d.date)} at 1366×768 and 390×844, page source retrieved the same day, and publicly visible business information. ${rich(d.limitations)}</p>
-    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Findings labelled <em>Observed</em> are directly visible; findings labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Figures in the growth scenario are illustrative placeholders supplied by this report, not measurements of your practice.</p>
+    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Leaks labelled <em>Observed</em> are directly visible; leaks labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Every figure in the calculator is one you entered yourself.</p>
   </div>
 </section>
 
@@ -229,10 +175,10 @@ ${findings}
       <div class="cta-grid">
         <div class="cta-copy">
           <h2>A short conversation, if it is useful</h2>
-          <p>Most of what is above can be done by your existing web team, and this report is yours to use whether or not we ever speak.</p>
-          <p>Where the gaps are structural rather than cosmetic — booking that lives on someone else's platform, trust signals with nowhere to sit, no loop that brings a patient back after treatment — those are the problems we build for.</p>
+          <p>This report is yours to use whether or not we ever speak, and your existing web team can act on most of it.</p>
+          <p>Where the leaks are structural rather than cosmetic — booking that lives on someone else's platform, no record that remembers a patient, nothing that brings them back after treatment — those are the problems we build for.</p>
           <ul class="why">
-            <li>The changes above compound: each month they are not made is a month of the same visitors deciding elsewhere.</li>
+            <li>Every month the leaks stay open is another month of the same visitors deciding elsewhere.</li>
             <li>Aesthetic demand is seasonal. Work started now is live before the year-end run.</li>
             <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
           </ul>
@@ -243,7 +189,7 @@ ${findings}
               <strong>Ignatius Ackermann</strong>
               <span>CRM Solutions · building commercial platforms since 2001<br />Reply on WhatsApp — usually within a few hours</span>
             </div>
-            <a class="btn-call" href="https://wa.me/27761809799?text=${encodeURIComponent(`Hi Ignatius — I've read the audit for ${d.clinic}.`)}" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
+            <a class="btn-call" href="https://wa.me/27761809799?text=${encodeURIComponent(`Hi Ignatius — I've read the review for ${d.clinic}.`)}" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
           </div>
         </div>
         <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
@@ -279,6 +225,7 @@ ${findings}
 </footer>
 
 <script>
+window.AUDIT_CURRENCY = ${JSON.stringify(currency)};
 ${js}
 </script>
 

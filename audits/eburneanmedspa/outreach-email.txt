@@ -1,0 +1,31 @@
+TO:      eburneanmedspa@gmail.com
+NOTE:    General inbox — no individual name found on the site.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: two counters on your homepage read as zero
+
+------------------------------------------------------------
+
+Hello,
+
+I review medical aesthetics websites and went through eburneanmedspa.com
+this morning. The notes are yours to use whether or not we ever speak.
+
+Worth a quick check: beneath your "Happy customer" and "Year experience"
+figures, the page's own text reads "0 +" for both — whatever the real
+numbers are, they aren't reaching the page. Just above that, the stat row
+under your buttons says "+500 New collections" and "+350 Facial
+specialist", which reads like leftover template copy rather than your
+own numbers.
+
+The bigger one: no practitioner is named anywhere on the homepage, and no
+review or rating appears near either button. For Botox and filler, that's
+usually the detail that turns a first-time visitor into a booking.
+
+You're already doing the fundamentals well — the headline names Austin
+directly, and "Book an Appointment" and "Call" both sit above the fold on
+phone and desktop alike.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/eburneanmedspa/
+
+Ignatius

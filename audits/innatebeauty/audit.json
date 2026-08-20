@@ -1,0 +1,110 @@
+{
+  "clinic": "Innate Beauty Medspa",
+  "domain": "innatebeauty.com",
+  "location": "Austin, TX",
+  "date": "17 August 2026",
+  "avgValue": 600,
+  "score": 45,
+  "subtitle": "An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.",
+
+  "summary": [
+    "Innate Beauty has real assets many of the practices in this review set are missing: a named, pictured physician — “Dr. Shirat Ling” appears directly in the hero with a professional portrait rather than a stock image — and a genuinely broad treatment range spanning injectables, lasers, body contouring and hair restoration. A specific testimonial, “Nancy M., Austin TX,” sits directly on the homepage rather than hidden on a separate page, and “Book an Appointment” is repeated consistently, in the same wording, on both desktop and mobile.",
+    "Two things need attention before those assets can do their job. Neither the desktop nor the mobile opening screen shows a telephone number or the word “Austin” — a visitor has the “Book an Appointment” button and a search icon to go on, despite the page's own title tag reading “Physician-Owned Austin Medspa.” More seriously, the homepage's extracted text content includes lines referencing unrelated adult-content domains, positioned directly beneath the on-page search field — content that does not appear in either screenshot, meaning it is present in the page's underlying content but not visible to a person looking at the page.",
+    "<strong>Evidence limitation:</strong> this review covers the homepage's extracted text content plus a desktop and a mobile screenshot of the opening screen, together with the publicly listed phone number. No treatment page, page-speed data or Google Business Profile was directly examined for this review, so treatment content quality and speed-specific technical findings are excluded from the score rather than estimated."
+  ],
+
+  "scoreNote": "<strong>Normalised across seven assessed categories (95 points available).</strong> Treatment content quality could not be assessed from the evidence gathered for this review and is excluded rather than estimated. The largest deduction is technical: the page's extracted text contains content unrelated to the practice, described below.",
+
+  "scorecard": [
+    { "category": "First impression &amp; positioning", "score": "9/20", "status": "Structural", "finding": "A generic, location-free headline competes with a second hero button." },
+    { "category": "Trust &amp; authority placement", "score": "10/20", "status": "Gap", "finding": "Dr. Ling is named and pictured; her only stated credential is “national instructor.”" },
+    { "category": "Booking journey &amp; conversion", "score": "10/20", "status": "Gap", "finding": "“Book an Appointment” repeats on both devices; no phone number appears on either." },
+    { "category": "Patient decision psychology", "score": "6/15", "status": "Structural", "finding": "Two hero CTAs and a very long, uncategorised treatment list." },
+    { "category": "Mobile experience", "score": "6/10", "status": "Gap", "finding": "A well-sized CTA button; carousel dots are the only visible way to browse testimonials." },
+    { "category": "Local / public signals", "score": "1/5", "status": "Structural", "finding": "“Austin” appears in the page title only, not on the visible homepage." },
+    { "category": "Treatment content quality", "score": "—", "status": "Not assessed", "finding": "Excluded from the score." },
+    { "category": "Technical / performance", "score": "1/5", "status": "Structural", "finding": "The page's extracted text includes content unrelated to the practice." }
+  ],
+
+  "strengthsLead": "The practice has real material to work with here, and some of it is already doing genuine work.",
+  "strengths": [
+    { "title": "Dr. Ling is named and photographed directly in the hero.", "confidence": "Observed", "body": "“Dr. Shirat Ling” sits in its own labelled box in the hero, next to a real professional portrait rather than a stock clinician image. For an injectables decision this answers who a patient would be trusting before they read another word." },
+    { "title": "A specific, named testimonial appears on the homepage itself.", "confidence": "Observed", "body": "“Nancy M., Austin TX” with a real quote about her results sits in its own section on the homepage, not tucked away on a separate reviews page a visitor has to go looking for." },
+    { "title": "“Book an Appointment” is repeated consistently across both devices.", "confidence": "Observed", "body": "The same wording appears as a header button on desktop and as a bordered button beneath the testimonial carousel on mobile — a visitor is never asked to guess what a differently-worded button might mean." },
+    { "title": "The treatment range is genuinely broad.", "confidence": "Observed", "body": "Injectables, resurfacing lasers, body contouring, PRP hair restoration and vaginal health treatments are all listed under one practice — a real differentiator against single-service competitors, once a first-time visitor can find their way into it." }
+  ],
+
+  "captionDesktop": "Desktop, 1366×768. The header shows a logo, social icons, search and a “Book an Appointment” button. No telephone number or the word “Austin” appears anywhere on the opening screen.",
+  "captionMobile": "Mobile, 390×844. The hero repeats on a smaller scale; a bordered “Book an Appointment” button sits below the testimonial carousel. No telephone number is visible.",
+
+  "findings": [
+    {
+      "area": "Technical / content integrity",
+      "heading": "The page's extracted text includes links to unrelated adult-content domains.",
+      "evidence": "Directly beneath the on-page search field, the automatically extracted homepage text reads: “check my source citadelofporn.com … check my source my girlfriend has an large asian booty … http://bestporn4you.com … www.sexshmex.com,” sitting between the search box and Dr. Ling's introduction. None of this text appears in the desktop or mobile screenshots — it is present in the page's underlying content but not visibly rendered to a person looking at the page.",
+      "why": "Search engines and any other tool that reads the page's text rather than its visual rendering will encounter this content attached to the practice's domain. For a medical practice, third-party content of this kind on the same page as a physician's name and credentials is a reputational risk regardless of cause, and text that is present in the markup but hidden from visual visitors is a pattern commonly associated with a compromised site.",
+      "recommended": "Have a developer inspect the page source, CMS and hosting for injected or hidden content and confirm software (theme, plugins, CMS core) is current. This is a request for a technical review, not a diagnosis of cause.",
+      "confidence": "Observed",
+      "effort": "Medium",
+      "timeframe": "Immediate"
+    },
+    {
+      "area": "Booking journey",
+      "heading": "No telephone number or city name appears on the opening screen of either device.",
+      "evidence": "At both 1366×768 and 390×844, the visible header carries only a logo, social icons, a search icon and the “Book an Appointment” button. No phone number, address or the word “Austin” is visible in the captured hero on desktop or mobile, despite the page's own title tag reading “Physician-Owned Austin Medspa.”",
+      "why": "A first-time visitor comparing local practices uses a phone number and location as an early filter, especially on mobile where tap-to-call is the fastest path to a real answer. Without either, the only offered option is starting an online booking flow, which asks for more commitment than glancing at a number does.",
+      "recommended": "Add a click-to-call phone number and “Austin, TX” to the header, visible without scrolling on both breakpoints.",
+      "confidence": "Observed",
+      "effort": "Small",
+      "timeframe": "Same day / 1 week"
+    },
+    {
+      "area": "First impression & positioning",
+      "heading": "“Welcome to Innate Beauty” names no treatment, no location and no reason to choose this practice.",
+      "evidence": "The hero headline reads only “Welcome to Innate Beauty.” Beside it, a dark box adds “Trust your skin to a Qualified Physician. Dr. Ling is a national instructor in aesthetic procedures, recognized for ‘natural’ non surgical results,” followed by a “Learn More” button in the hero and a separately styled “Book an Appointment” button in the header.",
+      "why": "A first-time full-fee patient forms an impression in the first few seconds. A welcome message and a general trust statement do not say what the practice specialises in, where it is, or which of two differently weighted buttons to press next.",
+      "recommended": "Rewrite the headline to name the practice's strongest specialty and Austin directly, and reduce the hero to one clear call to action.",
+      "confidence": "Interpretive",
+      "effort": "Small",
+      "timeframe": "1-2 weeks"
+    },
+    {
+      "area": "Patient decision psychology",
+      "heading": "The services menu lists dozens of individual treatments with no entry point or priority.",
+      "evidence": "The site's navigation expands into Injectables (Neuromodulators/Botox, Dermal Fillers, Mesotherapy/Kybella, PRP Hair Restoration, Sclerotherapy), Procedures (Chemical Peels, Microneedling, Microdermabrasion, Dermaplaning, Secret RF, Agnes RF, Pelleve, Thread Lift), Laser Treatments (CO2 Fractional Resurfacing, Enlighten Tattoo Removal, IPL, Hair Removal, Juliet, Laser Genesis, PICO Genesis), Body Treatments (Trusculpt iD, Trusculpt Flex, Cellulite, Contour Light) and further “Other Services,” alongside a separate “Self Diagnosis” category system.",
+      "why": "This range is a real strength once a patient is established, but as a first-visit decision aid it works against a new visitor: someone with a specific concern has to search a long, technically-named list rather than being offered a small number of clear starting points.",
+      "recommended": "Add three to five “most requested” or “start here” treatment cards on the homepage — for example Botox, Fillers and one resurfacing option — so a first-time visitor has an obvious entry point before meeting the full catalogue.",
+      "confidence": "Interpretive",
+      "effort": "Medium",
+      "timeframe": "2-4 weeks"
+    },
+    {
+      "area": "Trust & authority",
+      "heading": "The only stated credential for Dr. Ling is “a national instructor” — no license, board certification or degree is named in the hero.",
+      "evidence": "The homepage introduction reads: “Trust your skin to a Qualified Physician. Dr. Ling is a national instructor in aesthetic procedures, recognized for ‘natural’ non surgical results.” No MD/DO designation, board certification or specific qualifying body is named in this text, and the visible testimonial (“Nancy M., Austin TX”) carries no star rating, photo or link to an external review platform.",
+      "why": "“Qualified Physician” and “national instructor” are claims a patient is asked to trust without being able to verify them from the page itself. A specific, checkable credential carries more weight than a general description, and a linked or sourced review carries more weight than an unlinked quote.",
+      "recommended": "State Dr. Ling's specific medical qualification and any board certification directly beside her name, and link the testimonial section to a live review platform with a visible rating and count.",
+      "confidence": "Interpretive",
+      "effort": "Small",
+      "timeframe": "1-2 weeks"
+    }
+  ],
+
+  "psychology": [
+    { "principle": "Familiarity<br>Jacob's Law", "plain": "People expect a site to behave like the others they use.", "site": "The header pattern (logo, utility bar, nav) is conventional; the very long mega-menu of treatment names departs from what a visitor expects to parse quickly." },
+    { "principle": "Reachability<br>Fitts's Law", "plain": "Important actions should be big and easy to thumb.", "site": "“Book an Appointment” is a reasonably sized target on both devices, but no phone number is offered as a lower-effort alternative." },
+    { "principle": "Proximity of proof", "plain": "Reassurance has to sit where the doubt is.", "site": "The testimonial sits in its own section below the hero, separated from the “Book an Appointment” button rather than beside it." },
+    { "principle": "Authority", "plain": "Real expertise, visible near decisions.", "site": "A named, photographed physician is present in the hero, though the only credential given is “national instructor” rather than a specific, checkable qualification." },
+    { "principle": "Decision clarity", "plain": "One obvious next step.", "site": "Undermined by two hero buttons of different weight (“Learn More” and “Book an Appointment”) and a very long, uncategorised service list." },
+    { "principle": "Helpful defaults", "plain": "Sensible pre-selections that serve the patient.", "site": "No treatment is presented as a recommended starting point for a first-time visitor; the full catalogue is offered before any single option." },
+    { "principle": "Believability<br>Pratfall Effect", "plain": "Balanced, realistic communication is trusted more than perfection.", "site": "“Recognized for ‘natural’ non surgical results” and “Become the sculpture you were meant to be” lean toward aspirational language rather than specific, balanced description." }
+  ],
+
+  "roadmap": [
+    { "window": "Days 1–14", "focus": "Quick wins", "actions": "Add a click-to-call phone number and “Austin, TX” to the header on both devices. Reduce the hero to one call to action. Have a developer investigate and remove the unrelated content found in the page's extracted text." },
+    { "window": "Days 15–45", "focus": "Trust &amp; conversion", "actions": "Name Dr. Ling's specific medical qualification and any board certification beside her name. Link the testimonial section to a live review platform with a visible rating and count. Add three to five “start here” treatment cards to the homepage." },
+    { "window": "Days 46–90", "focus": "Authority &amp; measurement", "actions": "Build out individual treatment pages with candidacy and downtime information once assessed. Confirm the phone number and address are consistent across the site and any public listings. Begin measuring enquiry-to-booking so the calculator figures above become the practice's own." }
+  ],
+
+  "limitations": "This review assessed the homepage's extracted text content and a desktop (1366×768) and mobile (390×844) screenshot of the opening screen, together with the publicly listed phone number. No treatment page, page-speed/Lighthouse data or Google Business Profile was directly examined, so treatment content quality is excluded from the score rather than estimated, and the total is normalised across the seven categories reviewed (95 points available). The unrelated text described above was read from the page's extracted text output as captured for this review and was not independently re-verified by revisiting the live site."
+}

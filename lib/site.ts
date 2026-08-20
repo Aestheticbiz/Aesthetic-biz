@@ -10,7 +10,7 @@ export const SITE = {
     "https://maps.google.com/maps?q=485%20Madison%20Avenue%20Suite%20709%20New%20York%20NY%2010022&z=15&output=embed",
   discoveryBase: "/book-discovery?source=aestheticbiz",
   domain: "https://www.aestheticbiz.site",
-  /** Live CRM Solutions calendar (same Mon–Fri 14:00/15:00/16:00 SAST hours) */
+  /** Live CRM Solutions calendar (same Mon–Fri 14:00–16:00 / 18:00–20:00 SAST hours) */
   discoveryLiveUrl: "https://www.crmsolutions.app/book-discovery-call",
 } as const;
 

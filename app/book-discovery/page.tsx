@@ -7,14 +7,14 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Book a Discovery Call",
   description:
-    "Book a 60-minute Discovery Call with Ignatius Ackermann — Monday to Friday, 14:00 / 15:00 / 16:00 SAST.",
+    "Book a 60-minute Discovery Call with Ignatius Ackermann — Monday to Friday, 14:00–16:00 and 18:00–20:00 SAST.",
 };
 
 export default function BookDiscoveryPage() {
   return (
     <>
       <PreviewBar>
-        <strong>Discovery Call</strong> · Mon–Fri 14:00 / 15:00 / 16:00 SAST · 60 minutes
+        <strong>Discovery Call</strong> · Mon–Fri 14:00 / 15:00 / 16:00 / 18:00 / 19:00 / 20:00 SAST · 60 minutes
       </PreviewBar>
       <SiteHeader variant="platform" />
 

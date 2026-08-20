@@ -1,6 +1,12 @@
 /** Same Discovery Call hours as CRM Solutions (crmsolutions.app/book-discovery-call) */
 
-export const DISCOVERY_SLOT_HOURS = [14, 15, 16] as const; // SAST
+/**
+ * SAST. The morning block (14–16) lands at 8–10am Eastern but only 5–7am
+ * Pacific, which is why the later block was added: 18–20 SAST is midday
+ * Eastern and 9–11am Pacific, so the whole US is reachable in working hours.
+ * 17:00 is deliberately skipped.
+ */
+export const DISCOVERY_SLOT_HOURS = [14, 15, 16, 18, 19, 20] as const; // SAST
 export const DISCOVERY_SA_OFFSET = "+02:00";
 export const DISCOVERY_DURATION_MINUTES = 60;
 export const DISCOVERY_BASE_TIMEZONE = "Africa/Johannesburg";

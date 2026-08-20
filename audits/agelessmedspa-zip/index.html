@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Website Conversion Audit — Ageless MedSpa by Dr. Sypien</title>
+<style>
+:root{
+    --navy:#0f2647; --navy-mid:#1b3d6e; --gold:#c8a882; --gold-dk:#a8896a;
+    --ink:#1c1f26; --muted:#5c5f68; --line:#e2e2e6; --canvas:#f7f7f8;
+    --ok:#2f7a59; --warn:#8a6c4c; --bad:#a2453f;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+  .wrap{width:min(880px,calc(100% - 40px));margin-inline:auto}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--navy);margin:0}
+  p{margin:0 0 16px}
+  a{color:var(--gold-dk)}
+
+  /* Header */
+  .top{background:var(--navy);color:#f2efe8;padding:44px 0 40px}
+  .top .wrap>p{color:rgba(255,255,255,.75)}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+  .top h1{color:#f7f4ec;font-size:clamp(30px,5vw,44px);margin-bottom:14px}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
+  .meta div span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .meta div strong{font-weight:600;font-size:15px;color:#f7f4ec}
+
+  /* Generous, even rhythm, with a faint tint alternating so each section reads
+     as its own block rather than one continuous scroll. */
+  section{padding:clamp(56px,7vw,88px) 0;border-bottom:1px solid var(--line);background:var(--canvas)}
+  section:nth-of-type(even){background:#fff}
+  section h2{font-size:clamp(22px,3.4vw,30px);margin-bottom:18px}
+  .lead{font-size:17px;color:var(--muted)}
+
+  /* Score */
+  .scorewrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);padding:26px;margin-bottom:22px}
+  .bigscore{font-family:var(--serif);font-size:60px;line-height:1;color:var(--navy)}
+  .bigscore small{font-size:20px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--navy);color:#f2efe8;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .pill{display:inline-block;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+  .p-ok{background:rgba(47,122,89,.12);color:var(--ok)}
+  .p-warn{background:rgba(200,168,130,.18);color:var(--warn)}
+  .p-bad{background:rgba(162,69,63,.1);color:var(--bad)}
+  .p-none{background:rgba(92,95,104,.09);color:var(--muted)}
+  .tblwrap{overflow-x:auto}
+
+  .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  /* One fixed width for every card label — ragged widths read as careless. */
+  .label{display:block;width:100%;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;background:var(--navy);color:var(--gold);margin-bottom:14px}
+  @media(min-width:760px){.label{width:24%;min-width:210px}}
+  .row{display:grid;grid-template-columns:120px 1fr;gap:6px 16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
+  .row dt{font-weight:700;color:var(--navy)}
+  .row dd{margin:0;color:var(--muted)}
+
+  figure{margin:0 0 20px}
+  figure img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff}
+  figcaption{margin-top:8px;font-size:13px;color:var(--muted);font-style:italic}
+  .shots{display:grid;grid-template-columns:1fr;gap:18px}
+  @media(min-width:760px){.shots{grid-template-columns:1.6fr 1fr;align-items:start}}
+
+  ul.clean{margin:0 0 16px;padding-left:20px}
+  ul.clean li{margin-bottom:9px}
+
+  /* Calculator */
+  .calc{background:var(--navy);color:#f2efe8;padding:28px 26px}
+  .calc h2{color:#f7f4ec}
+  .calc .lead{color:rgba(255,255,255,.75)}
+  .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+  .field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .field input{width:100%;padding:11px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:16px;font-family:inherit}
+  .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .field small{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.5)}
+  .scen{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:8px}
+  @media(min-width:700px){.scen{grid-template-columns:repeat(3,1fr)}}
+  .scen>div{background:var(--navy);padding:18px}
+  .scen h4{margin:0 0 4px;font-family:var(--serif);font-size:18px;color:var(--gold)}
+  .scen .rate{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px}
+  .scen .out{font-family:var(--serif);font-size:27px;color:#f7f4ec;line-height:1.2}
+  .scen .cap{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+  .workings{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.7)}
+  .workings code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--gold)}
+  .disclaim{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.06);font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6}
+
+  /* CTA */
+  .cta{background:#fff;border:1px solid var(--gold);padding:0;overflow:hidden}
+  .cta-grid{display:grid;grid-template-columns:1fr}
+  @media(min-width:820px){.cta-grid{grid-template-columns:1.05fr .95fr}}
+  .cta-copy{padding:32px 30px}
+  .cta-copy h2{margin-bottom:12px}
+  .cta-img{background:var(--canvas) center/cover no-repeat;min-height:250px}
+  .btn{display:block;width:100%;padding:18px 30px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;font-size:16px;text-align:center}
+  .btn:hover{background:#dcbe9c}
+
+  /* A lone button has nothing behind it. A face, a name and a second, lower-
+     commitment action give the reader something to say yes to. */
+  .signoff{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .signoff img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;background:#fff;border:1px solid var(--line)}
+  .signoff .who{flex:1;min-width:150px}
+  .signoff .who strong{display:block;font-size:15px;color:var(--navy)}
+  .signoff .who span{font-size:13px;color:var(--muted)}
+  .btn-call{display:inline-block;padding:11px 22px;background:var(--navy);color:#f7f4ec;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .btn-call:hover{background:var(--navy-mid)}
+
+  .work figure a{display:block;text-decoration:none}
+  .work figure a img{transition:border-color .2s ease}
+  .work figure a:hover img{border-color:var(--gold)}
+  .visit{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--gold-dk);text-decoration:none}
+  .visit:hover{text-decoration:underline}
+  .why{margin:18px 0;padding-left:0;list-style:none}
+  .why li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15px}
+  .why li:before{content:"→";position:absolute;left:0;color:var(--gold-dk);font-weight:700}
+
+  .work{display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px}
+  @media(min-width:760px){.work{grid-template-columns:1fr 1fr}}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.62);padding:30px 0;font-size:13px}
+  footer a{color:var(--gold)}
+  .fine{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+  .btn-pdf{display:inline-block;padding:11px 20px;border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:700;text-decoration:none}
+  .btn-pdf:hover{background:var(--gold);color:var(--navy)}
+
+  /* Print / PDF: keep evidence and findings whole across page breaks, and drop
+     the things that only make sense on screen. */
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    section{padding:22px 0;background:#fff !important;break-inside:auto}
+    .btn-pdf,.btn,.btn-call{display:none !important}
+    .card,figure,.scen>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    .calc,.top,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cta-img{min-height:190px}
+    a{text-decoration:none}
+  }
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Private website conversion audit</p>
+    <h1>Ageless MedSpa by Dr. Sypien</h1>
+    <p>An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before a booking is made.</p>
+    <div class="meta">
+      <div><span>Website</span><strong>agelessmedspa.com</strong></div>
+      <div><span>Location</span><strong>Chicago, IL</strong></div>
+      <div><span>Review date</span><strong>17 August 2026</strong></div>
+      <div><span>Devices tested</span><strong>Desktop 1366 · Mobile 390</strong></div>
+    </div>
+    <p style="margin:22px 0 0"><a class="btn-pdf" href="agelessmedspa-audit.pdf" download>Download this report as a PDF ↓</a></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Executive summary</h2>
+    <p>The physician is named on the homepage itself — “ageless medspa by Dr. Sypien M.D.” sits inside the logo on every page, and the opening line beneath it, “Discover the difference in physician-led care,” makes the same point in words. For a medical aesthetics practice this is the trust signal that matters most, and it is present without needing to be searched for.</p>
+    <p>The opening screen is crowded rather than broken. On desktop, above the fold, a visitor sees a header row (social icons, phone number, address, email, a shopping cart reading “$0.00 Cart,” and a dark “Book Now” button), then a full navigation bar of eleven menu items plus a highlighted “SPECIALS” link, then the hero headline — with no visible call-to-action inside the hero itself in that first screen. On mobile the same pattern repeats, and the header's phone and address are represented only by icons with no adjoining text, unlike the desktop header where both appear as readable text.</p>
+    <p><strong>Evidence limitation:</strong> this review covers the homepage on desktop (1366×768) and mobile (390×844) plus the publicly captured page text. Treatment pages, the booking flow itself and technical performance were not assessed, so the score is normalised across the six categories that were. No traffic, ranking or revenue figures have been estimated.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>At a glance</h2>
+    <div class="scorewrap">
+      <div class="bigscore">62<small>/100</small></div>
+      <div style="flex:1;min-width:230px"><p style="margin:0"><strong>Normalised across six assessed categories (90 points available).</strong> The score is held up by a named, credentialed physician and a Chicago-specific trust line in the hero. Most of what is lost is about competing elements above the fold — a long navigation bar, a cart icon, and a specials link all placed ahead of a clear single next step, plus a mobile header that shows icons without the phone number or address as readable text.</p></div>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Category</th><th>Score</th><th>Status</th><th>One-line finding</th></tr></thead>
+        <tbody>
+          <tr><td>First impression &amp; positioning</td><td>13/20</td><td><span class="pill p-warn">Gap</span></td><td>Clear “physician-led care” and Chicago framing, but no single CTA stands out above the fold.</td></tr>
+          <tr><td>Trust &amp; authority placement</td><td>14/20</td><td><span class="pill p-warn">Gap</span></td><td>Dr. Sypien named in the logo and opening line; “Chicago's most trusted med spas” is stated without a source.</td></tr>
+          <tr><td>Booking journey &amp; conversion</td><td>12/20</td><td><span class="pill p-warn">Gap</span></td><td>A “Book Now” button exists in the header on both devices, but competes with a cart icon and an 11-item nav bar.</td></tr>
+          <tr><td>Patient decision psychology</td><td>9/15</td><td><span class="pill p-warn">Gap</span></td><td>No single obvious next step in the first screen — “Book Now,” the cart and “SPECIALS” all compete for attention.</td></tr>
+          <tr><td>Mobile experience</td><td>6/10</td><td><span class="pill p-warn">Gap</span></td><td>Phone and address show as icons only on the mobile header, with no readable text alongside them.</td></tr>
+          <tr><td>Local / public signals</td><td>3/5</td><td><span class="pill p-warn">Gap</span></td><td>Chicago is named in the hero copy; a public rating or review count was not visible in the captured page.</td></tr>
+          <tr><td>Treatment content quality</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
+          <tr><td>Technical / performance</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What the practice is already doing well</h2>
+    <p class="lead">The core trust asset most practices in this review set are missing is already in place here.</p>
+    <ul class="clean">
+      <li><strong>The physician is named in the logo and the opening line.</strong> <em>(Observed)</em> “ageless medspa by Dr. Sypien M.D.” appears in the header logo, and the first heading on the page reads “Discover the difference in physician-led care.” The two together answer, before it is asked, who is behind the treatments — the question that decides an injectables booking.</li>
+      <li><strong>A full, readable phone number and address on the desktop header.</strong> <em>(Observed)</em> (773) 205-8800 and 5008 W. Lawrence Ave, Chicago, IL 60630-3822 both appear as plain text in the desktop header, not hidden behind an icon or a separate contact page.</li>
+      <li><strong>Chicago is named directly in the hero copy.</strong> <em>(Observed)</em> “Recognized among Chicago's most trusted med spas” sits in the first paragraph a visitor reads, answering the proximity question that a first-time aesthetic patient applies before anything else.</li>
+      <li><strong>A distinct treatment menu, organised by category.</strong> <em>(Observed)</em> Injectables, Laser Treatments, Microneedling, Facials, Peels, Body Treatments, Permanent Makeup and Ageless Wellness are each their own navigation heading rather than buried in one long list — a visitor who already knows what they want can find it quickly.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The evidence</h2>
+    <div class="shots">
+      <figure>
+        <img src="images/audited-desktop.jpg" alt="Ageless MedSpa by Dr. Sypien homepage on a 1366-pixel desktop screen" />
+        <figcaption>Desktop, 1366×768 (captured at 1.5x). The header shows social icons, phone, address, email, a shopping cart and a “Book Now” button, followed by an 11-item navigation bar and a highlighted “SPECIALS” link, before the hero headline appears.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/audited-mobile.jpg" alt="Ageless MedSpa by Dr. Sypien homepage on a 390-pixel mobile screen" />
+        <figcaption>Mobile, 390×844. The header shows icons only for phone and location, with no adjoining text. The hero headline and subtext are visible above the fold; no call-to-action button appears within that first screen.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 id="findings">Priority opportunities</h2>
+
+    <div class="card">
+      <span class="label">1 · Mobile header</span>
+      <h3>The phone number and address are icons only on mobile — no text alongside them.</h3>
+      <p><strong>Evidence:</strong> At 390×844, the mobile header shows a phone icon and a map-pin icon with no visible digits or street address next to either. The desktop header at 1366×768 shows both as full readable text: (773) 205-8800 and 5008 W. Lawrence Ave, Chicago, IL 60630-3822.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> A mobile visitor scanning for reassurance that this is a real, local, reachable practice sees only symbols, not the number or the neighbourhood — the exact information a first-time patient checks before trusting a booking button. It is present on desktop, so this is a mobile-specific gap rather than a missing asset.</p>
+      <p><strong>Recommended:</strong> Show the phone number as visible tap-to-call text in the mobile header, even if the address stays icon-only to save space.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>Same day</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">2 · First screen</span>
+      <h3>No call-to-action sits inside the hero itself — only a header button competing with a cart icon and a long nav bar.</h3>
+      <p><strong>Evidence:</strong> On both devices, the first screen without scrolling shows the header (with its “Book Now” button), a full navigation bar, and the hero headline and subheading — but no button or link inside the hero section itself. On desktop the header also carries a shopping cart reading “$0.00 Cart,” positioned directly beside “Book Now.”</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> The single dark “Book Now” button in the top-right corner has to compete visually with a cart icon, social icons, contact details and a highlighted “SPECIALS” link in the same row, plus an 11-item menu directly below it. A first-time visitor's eye has several places to land before it reaches the one action that leads to booking.</p>
+      <p><strong>Recommended:</strong> Add a second, clearly-styled booking button inside the hero section itself, near the headline, so the call-to-action is not competing with header clutter for attention.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1–2 weeks</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">3 · Trust &amp; authority</span>
+      <h3>“Recognized among Chicago's most trusted med spas” is stated without a named source.</h3>
+      <p><strong>Evidence:</strong> The hero subheading reads: “Recognized among Chicago's most trusted med spas, we offer advanced anti-aging and aesthetic treatments rooted in science, guided by experience, and tailored to you.” No publication, award or ranking body is named beside it in the captured page.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> An unattributed claim of recognition reads as marketing language rather than evidence to a sceptical patient comparing practices, even when the underlying reputation is real. Naming the specific source turns the same sentence into verifiable proof.</p>
+      <p><strong>Recommended:</strong> If this refers to a specific award, publication or directory ranking, name it directly next to the claim (or link to it). If it is a general reputation statement, consider softening the wording so it reads as authentic rather than templated.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Interpretive</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+    </div>
+
+    <div class="card">
+      <span class="label">4 · Navigation</span>
+      <h3>Eleven top-level menu items plus a highlighted “SPECIALS” link sit between the headline and any decision.</h3>
+      <p><strong>Evidence:</strong> The desktop navigation bar lists: Injectables, Laser Treatments, Microneedling, Facials, Peels, Body Treatments, Permanent Makeup, Ageless Wellness, Shop, About, and Contact, with a separate green-boxed “SPECIALS” link beside it — twelve destinations in one row, most with their own dropdown of further sub-treatments.</p>
+      <p><strong>Why it matters to a full-fee patient:</strong> A first-time visitor who has not yet decided what they want faces a wide menu before any single differentiator or offer is presented. Breadth signals a full-service practice, which is a genuine strength, but it also means the page asks the visitor to choose a category before it makes the case for choosing this practice at all.</p>
+      <p><strong>Recommended:</strong> Keep the full menu, but let the hero headline itself point toward the one or two treatments the practice most wants a first-time visitor to consider, so there is a suggested starting point rather than only an open menu.</p>
+      <dl class="row"><dt>Confidence</dt><dd>Interpretive</dd><dt>Effort</dt><dd>Medium</dd><dt>Timeframe</dt><dd>2–4 weeks</dd></dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Patient decision psychology</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Principle</th><th>In plain English</th><th>What the site shows</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Familiarity<br>Jacob's Law</strong></td><td>People expect a site to behave like the others they use.</td><td>A conventional header-plus-nav-plus-hero layout, and a hamburger menu on mobile — this matches what visitors expect from a med spa site.</td></tr>
+          <tr><td><strong>Reachability<br>Fitts's Law</strong></td><td>Important actions should be big and easy to thumb.</td><td>The “Book Now” button exists on both devices, but it sits in a dense header row rather than a large, isolated target.</td></tr>
+          <tr><td><strong>Proximity of proof</strong></td><td>Reassurance has to sit where the doubt is.</td><td>“Physician-led care” and the Chicago recognition line sit directly beside the hero headline, close to the point of first hesitation.</td></tr>
+          <tr><td><strong>Authority</strong></td><td>Real expertise, visible near decisions.</td><td>Dr. Sypien is named in the logo and the opening heading, appearing on every page rather than only on an About page.</td></tr>
+          <tr><td><strong>Decision clarity</strong></td><td>One obvious next step.</td><td>Weakest area here — “Book Now,” the cart icon and “SPECIALS” all sit in the same visual band, with no single action emphasised above the rest.</td></tr>
+          <tr><td><strong>Helpful defaults</strong></td><td>Sensible pre-selections that serve the patient.</td><td>The navigation groups treatments by category (Injectables, Facials, Peels, etc.), which helps an undecided visitor narrow down rather than scroll a flat list.</td></tr>
+          <tr><td><strong>Believability<br>Pratfall Effect</strong></td><td>Balanced, realistic communication is trusted more than perfection.</td><td>“Recognized among Chicago's most trusted med spas” reads as a stronger claim than the page currently backs up with a named source.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="border:0;padding-bottom:0">
+  <div class="wrap">
+    <div class="calc">
+      <h2>Illustrative growth scenario</h2>
+      <p class="lead">This is a model, not a measurement. Every figure below starts as an illustrative placeholder — replace them with your own numbers and the scenarios update immediately. Nothing here is drawn from your analytics, and no result is predicted or guaranteed.</p>
+      <div class="fields">
+        <div class="field"><label for="visitors">Monthly website visitors</label><input id="visitors" type="number" min="0" value="2000" /><small>Illustrative — from your analytics</small></div>
+        <div class="field"><label for="curRate">Current visitor → enquiry %</label><input id="curRate" type="number" min="0" max="100" step="0.1" value="1.5" /><small>Illustrative</small></div>
+        <div class="field"><label for="bookRate">Enquiry → booking %</label><input id="bookRate" type="number" min="0" max="100" step="1" value="40" /><small>Illustrative</small></div>
+        <div class="field"><label for="attend">Attendance %</label><input id="attend" type="number" min="0" max="100" step="1" value="80" /><small>Illustrative</small></div>
+        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="600" /><small>Illustrative</small></div>
+      </div>
+      <div class="scen">
+        <div><h4>Conservative</h4><p class="rate">Proposed enquiry rate <strong id="r1">2.0%</strong></p><p class="out" id="o1">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p1"></p></div>
+        <div><h4>Target</h4><p class="rate">Proposed enquiry rate <strong id="r2">2.5%</strong></p><p class="out" id="o2">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p2"></p></div>
+        <div><h4>Strong</h4><p class="rate">Proposed enquiry rate <strong id="r3">3.0%</strong></p><p class="out" id="o3">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p3"></p></div>
+      </div>
+      <div class="workings">
+        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
+        <p style="margin:0 0 6px"><code>current enquiries = visitors × current rate</code> → <span id="w1">—</span></p>
+        <p style="margin:0 0 6px"><code>improved enquiries = visitors × proposed rate</code></p>
+        <p style="margin:0 0 6px"><code>additional attended = (improved − current) × booking % × attendance %</code></p>
+        <p style="margin:0"><code>additional revenue = additional attended × average first-visit value</code></p>
+      </div>
+      <p class="disclaim">Only the proposed enquiry rate changes between the three scenarios; every other input stays as you entered it. This is an illustrative scenario built on stated assumptions — not a forecast, a projection or a guarantee. Actual results depend on factors no website review can measure.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>90-day improvement roadmap</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Window</th><th>Focus</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Days 1–14</strong></td><td>Quick wins</td><td>Add the phone number as visible tap-to-call text in the mobile header. Add a second booking button inside the hero section itself, near the headline. Name the source behind “Chicago's most trusted med spas,” or soften the line.</td></tr>
+          <tr><td><strong>Days 15–45</strong></td><td>Trust &amp; conversion</td><td>Reduce the visual competition in the header row (cart, socials, contact icons, Book Now) so the booking button is the clearest element in it. Add a visible rating and review count if one is publicly available.</td></tr>
+          <tr><td><strong>Days 46–90</strong></td><td>Authority &amp; measurement</td><td>Build out Dr. Sypien's credentials and background on a page linked from the homepage, not only the logo. Consider a hero-level prompt toward the one or two treatments the practice most wants new patients to start with. Begin measuring enquiry-to-booking so the calculator figures below become the practice's own.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Limitations &amp; methodology</h2>
+    <p class="fine">This review is based on the public homepage of agelessmedspa.com viewed on 17 August 2026 at 1366×768 and 390×844, page source retrieved the same day, and publicly visible business information. This review assessed the homepage at 1366×768 and at 390 pixels wide, together with the publicly captured page text. Treatment-page depth, the live booking flow, and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available). No public review count or rating was visible in the captured material, so the local/public-signals score reflects the Chicago mention in the hero copy only.</p>
+    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Findings labelled <em>Observed</em> are directly visible; findings labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Figures in the growth scenario are illustrative placeholders supplied by this report, not measurements of your practice.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta" id="talk">
+      <div class="cta-grid">
+        <div class="cta-copy">
+          <h2>A short conversation, if it is useful</h2>
+          <p>Most of what is above can be done by your existing web team, and this report is yours to use whether or not we ever speak.</p>
+          <p>Where the gaps are structural rather than cosmetic — booking that lives on someone else's platform, trust signals with nowhere to sit, no loop that brings a patient back after treatment — those are the problems we build for.</p>
+          <ul class="why">
+            <li>The changes above compound: each month they are not made is a month of the same visitors deciding elsewhere.</li>
+            <li>Aesthetic demand is seasonal. Work started now is live before the year-end run.</li>
+            <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
+          </ul>
+          <p style="margin-bottom:0"><a class="btn" href="https://www.aestheticbiz.site/book-discovery?source=audit-agelessmedspa">Book a 20-minute conversation →</a></p>
+          <div class="signoff">
+            <img src="images/ignatius-ackermann.webp" alt="Ignatius Ackermann, CRM Solutions" />
+            <div class="who">
+              <strong>Ignatius Ackermann</strong>
+              <span>CRM Solutions · building commercial platforms since 2001<br />Reply on WhatsApp — usually within a few hours</span>
+            </div>
+            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20audit%20for%20Ageless%20MedSpa%20by%20Dr.%20Sypien." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
+          </div>
+        </div>
+        <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What this looks like built</h2>
+    <p class="lead">Two working examples — not mockups. Both are live and clickable.</p>
+    <div class="work">
+      <figure>
+        <a href="https://www.aestheticbiz.site/" target="_blank" rel="noopener"><img src="images/aestheticbiz-demo.jpg" alt="AestheticBiz demonstration practice homepage" /></a>
+        <figcaption><strong>aestheticbiz.site</strong> — a complete demonstration practice: booking, retail, gift vouchers, rewards and reviews. Book a test appointment on it yourself.
+          <a class="visit" href="https://www.aestheticbiz.site/" target="_blank" rel="noopener">Open the demo practice →</a></figcaption>
+      </figure>
+      <figure>
+        <a href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener"><img src="images/star-aesthetic-portfolio.jpg" alt="Star Aesthetic Centre homepage" /></a>
+        <figcaption><strong>staraesthetic.co.za</strong> — a doctor-led practice with twenty years of reputation, rebuilt and running: booking, skincare commerce, rewards and vouchers.
+          <a class="visit" href="https://www.staraesthetic.co.za/" target="_blank" rel="noopener">Open staraesthetic.co.za →</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 6px">Prepared for Ageless MedSpa by Dr. Sypien · 17 August 2026 · This report is confidential to the recipient.</p>
+    <p style="margin:0">Powered by CRM Solutions — <a href="https://www.crmsolutions.app">www.crmsolutions.app</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var ids = ['visitors', 'curRate', 'bookRate', 'attend', 'value'];
+  var scenarios = [
+    { rate: 2.0, out: 'o1', label: 'r1', pat: 'p1' },
+    { rate: 2.5, out: 'o2', label: 'r2', pat: 'p2' },
+    { rate: 3.0, out: 'o3', label: 'r3', pat: 'p3' }
+  ];
+
+  function num(id) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isFinite(v) && v >= 0 ? v : 0;
+  }
+
+  function money(n) {
+    return 'US$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function recalc() {
+    var visitors = num('visitors');
+    var cur = num('curRate') / 100;
+    var book = num('bookRate') / 100;
+    var attend = num('attend') / 100;
+    var value = num('value');
+
+    var currentEnq = visitors * cur;
+    document.getElementById('w1').textContent =
+      visitors.toLocaleString('en-US') + ' × ' + (cur * 100).toFixed(1) + '% = ' +
+      currentEnq.toFixed(1) + ' enquiries / month';
+
+    scenarios.forEach(function (s) {
+      // Only the proposed rate varies; a proposal below current shows nothing
+      // rather than a negative, which would be meaningless here.
+      var proposed = Math.max(s.rate / 100, cur);
+      var improvedEnq = visitors * proposed;
+      var addEnq = Math.max(improvedEnq - currentEnq, 0);
+      var addAttended = addEnq * book * attend;
+      var revenue = addAttended * value;
+
+      document.getElementById(s.label).textContent = (proposed * 100).toFixed(1) + '%';
+      document.getElementById(s.out).textContent = money(revenue);
+      document.getElementById(s.pat).textContent =
+        addAttended.toFixed(1) + ' additional attended patients · ' +
+        money(revenue * 12) + ' over twelve months';
+    });
+  }
+
+  ids.forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener('input', recalc);
+    el.addEventListener('change', recalc);
+  });
+
+  recalc();
+})();
+
+</script>
+
+</body>
+</html>

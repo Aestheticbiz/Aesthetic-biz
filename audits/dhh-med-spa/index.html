@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Website Conversion Audit — DHH Med Spa</title>
+<title>Where DHH Med Spa loses patients</title>
 <style>
 :root{
     --navy:#0f2647; --navy-mid:#1b3d6e; --gold:#c8a882; --gold-dk:#a8896a;
@@ -37,18 +37,6 @@
   .lead{font-size:17px;color:var(--muted)}
 
   /* Score */
-  .scorewrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);padding:26px;margin-bottom:22px}
-  .bigscore{font-family:var(--serif);font-size:60px;line-height:1;color:var(--navy)}
-  .bigscore small{font-size:20px;color:var(--muted)}
-  table{width:100%;border-collapse:collapse;background:#fff;font-size:15px}
-  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{background:var(--navy);color:#f2efe8;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
-  .pill{display:inline-block;padding:3px 9px;font-size:11px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
-  .p-ok{background:rgba(47,122,89,.12);color:var(--ok)}
-  .p-warn{background:rgba(200,168,130,.18);color:var(--warn)}
-  .p-bad{background:rgba(162,69,63,.1);color:var(--bad)}
-  .p-none{background:rgba(92,95,104,.09);color:var(--muted)}
-  .tblwrap{overflow-x:auto}
 
   .card{background:#fff;border:1px solid var(--line);padding:22px 24px;margin-bottom:14px}
   .card h3{font-size:20px;margin-bottom:8px}
@@ -65,8 +53,6 @@
   .shots{display:grid;grid-template-columns:1fr;gap:18px}
   @media(min-width:760px){.shots{grid-template-columns:1.6fr 1fr;align-items:start}}
 
-  ul.clean{margin:0 0 16px;padding-left:20px}
-  ul.clean li{margin-bottom:9px}
 
   /* Calculator */
   .calc{background:var(--navy);color:#f2efe8;padding:28px 26px}
@@ -77,13 +63,25 @@
   .field input{width:100%;padding:11px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:16px;font-family:inherit}
   .field input:focus{outline:2px solid var(--gold);outline-offset:1px}
   .field small{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.5)}
-  .scen{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:8px}
-  @media(min-width:700px){.scen{grid-template-columns:repeat(3,1fr)}}
-  .scen>div{background:var(--navy);padding:18px}
-  .scen h4{margin:0 0 4px;font-family:var(--serif);font-size:18px;color:var(--gold)}
-  .scen .rate{font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px}
-  .scen .out{font-family:var(--serif);font-size:27px;color:#f7f4ec;line-height:1.2}
-  .scen .cap{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+
+  /* Leak result — the one number the report exists to show */
+  .leak{margin-top:6px;padding:22px 0 18px;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+  .leak-label{margin:0 0 6px;font-size:14px;color:rgba(255,255,255,.72);max-width:46ch}
+  .leak-figure{margin:0 0 4px;font-family:var(--serif);font-size:clamp(36px,7vw,52px);line-height:1.05;color:var(--gold)}
+  .leak-sub{margin:0;font-size:13px;color:rgba(255,255,255,.55)}
+  .afford{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:18px}
+  @media(min-width:600px){.afford{grid-template-columns:repeat(2,1fr)}}
+  .afford>div{background:var(--navy);padding:16px 18px}
+  .afford span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
+  .afford strong{display:block;font-family:var(--serif);font-size:26px;line-height:1.15;color:#f7f4ec}
+  .afford>div:last-child strong{color:var(--gold)}
+  .afford small{display:block;margin-top:4px;font-size:12px;color:rgba(255,255,255,.5)}
+  .leak-read{margin:14px 0 0;max-width:56ch;font-size:14px;color:rgba(255,255,255,.75)}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);margin-top:18px}
+  .metrics>div{background:var(--navy);padding:13px 15px}
+  .metrics span{display:block;font-size:11.5px;color:rgba(255,255,255,.55);margin-bottom:4px;line-height:1.4}
+  .metrics strong{display:block;font-size:18px;color:#f7f4ec}
+  .leak-cost{color:var(--bad)}
   .workings{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;color:rgba(255,255,255,.7)}
   .workings code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--gold)}
   .disclaim{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.06);font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.6}
@@ -133,9 +131,9 @@
     body{background:#fff;font-size:11.5pt}
     section{padding:22px 0;background:#fff !important;break-inside:auto}
     .btn-pdf,.btn,.btn-call{display:none !important}
-    .card,figure,.scen>div,.signoff{break-inside:avoid;page-break-inside:avoid}
+    .card,figure,.metrics>div,.afford>div,.signoff{break-inside:avoid;page-break-inside:avoid}
     h2,h3{break-after:avoid;page-break-after:avoid}
-    .calc,.top,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .calc,.top{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .cta-img{min-height:190px}
     a{text-decoration:none}
   }
@@ -146,8 +144,8 @@
 
 <header class="top">
   <div class="wrap">
-    <p class="eyebrow">Private website conversion audit</p>
-    <h1>DHH Med Spa</h1>
+    <p class="eyebrow">Private website review</p>
+    <h1>Where DHH Med Spa loses patients</h1>
     <p>An independent review of how the website performs for a first-time, full-fee patient — what it does well, and where attention is lost before contact is made.</p>
     <div class="meta">
       <div><span>Website</span><strong>dhhmedspa.com</strong></div>
@@ -159,56 +157,55 @@
   </div>
 </header>
 
-<section>
+<section style="border:0">
   <div class="wrap">
-    <h2>Executive summary</h2>
-    <p>This is the strongest site in our current batch. “Call or Text 480-336-4195” sits in the header — giving the patient who wants to speak and the one who would rather not the same easy route. A “★★★★★ Over 450+ Five-Star Reviews” badge sits directly on the hero image, and the photograph is a real practitioner in gloves rather than a stock model. Those three things together put DHH ahead of almost every practice we review.</p>
-    <p>The gaps are small and specific. The person in that photograph is never named, so the site shows a practitioner without introducing one. “Award-Winning” appears in the headline without saying which award. And a chat widget sits over the opening paragraph on mobile, covering the sentence that lists what the practice actually does.</p>
-    <p><strong>Evidence limitation:</strong> this review covers the homepage on desktop and mobile plus publicly visible information. Treatment-page depth and technical performance were not assessed, so the score is normalised across the six categories that were. Nothing here uses private analytics, and no traffic or revenue figures have been estimated.</p>
-  </div>
-</section>
+    <div class="calc">
+      <h2>What the leak is worth</h2>
+      <p class="lead">Five figures, entered by you. Nothing below is drawn from your analytics, estimated on your behalf, or sent anywhere — it recalculates in your browser as you type. The arithmetic is printed in full underneath.</p>
+      <div class="fields">
+        <div class="field"><label for="patients">New patients a month</label><input id="patients" type="number" min="0" step="1" value="25" /><small>People seen for the first time</small></div>
+        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="650" /><small>Including anything taken home</small></div>
+        <div class="field"><label for="returnRate">Share who return within 90 days (%)</label><input id="returnRate" type="number" min="0" max="90" step="1" value="30" /><small>Your best estimate is enough</small></div>
+        <div class="field"><label for="spend">Marketing spend a month (US$)</label><input id="spend" type="number" min="0" step="100" value="3000" /><small>Ads, agency, intro discounts</small></div>
+        <div class="field"><label for="margin">Gross margin on a visit (%)</label><input id="margin" type="number" min="1" max="95" step="1" value="65" /><small>After product and clinician time</small></div>
+      </div>
 
-<section>
-  <div class="wrap">
-    <h2>At a glance</h2>
-    <div class="scorewrap">
-      <div class="bigscore">64<small>/100</small></div>
-      <div style="flex:1;min-width:230px"><p style="margin:0"><strong>Normalised across six assessed categories (90 points available).</strong> Treatment content and technical performance were not reviewed and are excluded rather than guessed. This is a well-built site — the recommendations below are refinements to work already done, not repairs.</p></div>
+      <div class="leak">
+        <p class="leak-label" id="leakLabel">—</p>
+        <p class="leak-figure" id="leakFigure">—</p>
+        <p class="leak-sub" id="leakSub">—</p>
+      </div>
+
+      <div class="afford">
+        <div><span>You can afford to pay, per patient</span><strong id="affordNow">—</strong><small>at your return rate today</small></div>
+        <div><span>You could afford</span><strong id="affordTarget">—</strong><small id="affordTargetNote">—</small></div>
+      </div>
+      <p class="leak-read" id="affordRead"></p>
+
+      <div class="metrics">
+        <div><span>What a patient costs you now</span><strong id="mCac">—</strong></div>
+        <div><span>What a patient is worth to you</span><strong id="mLtv">—</strong></div>
+        <div><span>Value against cost</span><strong id="mRatio">—</strong></div>
+        <div><span>Visits to pay back acquisition</span><strong id="mPayback">—</strong></div>
+        <div><span>Visits an average patient makes</span><strong id="mVisitsNow">—</strong></div>
+        <div><span>At the benchmark they would make</span><strong id="mVisitsTarget">—</strong></div>
+      </div>
+
+      <div class="workings">
+        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
+        <p style="margin:0 0 6px"><code>expected visits = 1 ÷ (1 − return rate)</code></p>
+        <p style="margin:0 0 6px"><code>margin per visit = first-visit value × gross margin</code></p>
+        <p style="margin:0 0 6px"><code>lifetime value = expected visits × margin per visit</code></p>
+        <p style="margin:0"><code>affordable spend per patient = lifetime value ÷ 3</code></p>
+      </div>
+      <p class="disclaim">A model built entirely on figures you supply — not a forecast, a projection or a guarantee, and not a measurement of your practice. Actual results depend on factors no website review can see.</p>
     </div>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Category</th><th>Score</th><th>Status</th><th>One-line finding</th></tr></thead>
-        <tbody>
-          <tr><td>First impression &amp; positioning</td><td>13/20</td><td><span class="pill p-ok">Solid</span></td><td>Location is clear; “Award-Winning” never says which award.</td></tr>
-          <tr><td>Trust &amp; authority placement</td><td>14/20</td><td><span class="pill p-ok">Solid</span></td><td>450+ five-star reviews on the hero — but the practitioner is unnamed.</td></tr>
-          <tr><td>Booking journey &amp; conversion</td><td>15/20</td><td><span class="pill p-ok">Solid</span></td><td>Call or text in the header; no booking button on the first screen.</td></tr>
-          <tr><td>Patient decision psychology</td><td>10/15</td><td><span class="pill p-ok">Solid</span></td><td>Proof sits high, where it does the most good.</td></tr>
-          <tr><td>Mobile experience</td><td>7/10</td><td><span class="pill p-warn">Gap</span></td><td>A chat widget covers the paragraph listing the treatments.</td></tr>
-          <tr><td>Local / public signals</td><td>5/5</td><td><span class="pill p-ok">Solid</span></td><td>Scottsdale named in the headline; number visible immediately.</td></tr>
-          <tr><td>Treatment content quality</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
-          <tr><td>Technical / performance</td><td>—</td><td><span class="pill p-none">Not assessed</span></td><td>Excluded from the score.</td></tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>What the practice is already doing well</h2>
-    <p class="lead">Several of these are things we recommend to other practices. They are already in place here.</p>
-    <ul class="clean">
-      <li><strong>“Call or Text” in the header.</strong> <em>(Observed)</em> Offering both, in the header, on the first screen. Texting suits the patient who wants to ask about suitability or price without committing to a conversation — and a large share of aesthetic enquiries begin exactly there.</li>
-      <li><strong>450+ five-star reviews, on the hero image.</strong> <em>(Observed)</em> A star badge reading “Over 450+ Five-Star Reviews” placed directly over the hero. Both the volume and the placement are excellent — proof of that scale, positioned where the decision happens, is the single most persuasive thing an aesthetic site can show.</li>
-      <li><strong>The hero photograph is real.</strong> <em>(Observed)</em> A practitioner in gloves holding a syringe, in what appears to be the practice's own room. Not a stock model. Patients recognise the difference more than most practices assume.</li>
-      <li><strong>The location is in the headline.</strong> <em>(Observed)</em> “Med Spa in Scottsdale, AZ” — exactly what a patient searching locally needs, in the largest text on the page.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>The evidence</h2>
+    <h2>What was looked at</h2>
     <div class="shots">
       <figure>
         <img src="images/audited-desktop.jpg" alt="DHH Med Spa homepage on a 1366-pixel desktop screen" />
@@ -224,107 +221,43 @@
 
 <section>
   <div class="wrap">
-    <h2 id="findings">Priority opportunities</h2>
+    <h2 id="findings">Where the patients leave</h2>
+    <p class="lead">Each of these is a point at which somebody who wanted to book stops. They are listed in the order they cost you most.</p>
 
     <div class="card">
-      <span class="label">1 · Trust</span>
+      <span class="label">Leak 1 · Trust</span>
       <h3>The practitioner in the photograph is never named.</h3>
-      <p><strong>Evidence:</strong> The hero shows a practitioner in gloves holding a syringe. No name, qualification or role appears with the image on the first screen.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> The site is one line away from the strongest trust signal available. A patient looking at that photograph is already asking who she is — and being shown a clinician without being introduced to one leaves the question open at exactly the wrong moment.</p>
-      <p><strong>Recommended:</strong> Add her name and qualification beneath or beside the photograph. Given the 450+ reviews already displayed, naming the person responsible for them compounds both signals rather than adding a separate one.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>Same day</dd></dl>
+      <p><strong>Where it happens:</strong> The hero shows a practitioner in gloves holding a syringe. No name, qualification or role appears with the image on the first screen.</p>
+      <p><strong>How the patient is lost:</strong> The site is one line away from the strongest trust signal available. A patient looking at that photograph is already asking who she is — and being shown a clinician without being introduced to one leaves the question open at exactly the wrong moment.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
 
     <div class="card">
-      <span class="label">2 · Mobile</span>
+      <span class="label">Leak 2 · Mobile</span>
       <h3>The chat widget covers the sentence listing the treatments.</h3>
-      <p><strong>Evidence:</strong> At 390×844 a “Click to send us a message” bubble is fixed over the paragraph beneath the headline, obscuring part of the line reading “Injectables, dermal fillers, … loss, and so much more”.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> That paragraph is where a visitor learns what the practice actually offers, and it is the one thing on the screen the widget is covering. The tool intended to start conversations is hiding the reason to have one.</p>
-      <p><strong>Recommended:</strong> Collapse the widget to a small closed bubble in the corner, and let it expand only on tap or after the visitor has scrolled.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+      <p><strong>Where it happens:</strong> At 390×844 a “Click to send us a message” bubble is fixed over the paragraph beneath the headline, obscuring part of the line reading “Injectables, dermal fillers, … loss, and so much more”.</p>
+      <p><strong>How the patient is lost:</strong> That paragraph is where a visitor learns what the practice actually offers, and it is the one thing on the screen the widget is covering. The tool intended to start conversations is hiding the reason to have one.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
 
     <div class="card">
-      <span class="label">3 · Message</span>
+      <span class="label">Leak 3 · Message</span>
       <h3>“Award-Winning” does not say which award.</h3>
-      <p><strong>Evidence:</strong> The headline reads “Award-Winning Med Spa in Scottsdale, AZ”. No award, body or year is named on the first screen.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> An unnamed award is read as a figure of speech rather than a fact, so it works no harder than any other adjective — while a named one is checkable and therefore persuasive. The practice appears to have the substance; it is the specificity that is missing.</p>
-      <p><strong>Recommended:</strong> Name it: the award, who gave it and when. If there is more than one, the most recognisable belongs in the headline and the rest on the About page.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Small</dd><dt>Timeframe</dt><dd>1 week</dd></dl>
+      <p><strong>Where it happens:</strong> The headline reads “Award-Winning Med Spa in Scottsdale, AZ”. No award, body or year is named on the first screen.</p>
+      <p><strong>How the patient is lost:</strong> An unnamed award is read as a figure of speech rather than a fact, so it works no harder than any other adjective — while a named one is checkable and therefore persuasive. The practice appears to have the substance; it is the specificity that is missing.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
 
     <div class="card">
-      <span class="label">4 · Conversion</span>
+      <span class="label">Leak 4 · Conversion</span>
       <h3>There is no booking button on the first screen.</h3>
-      <p><strong>Evidence:</strong> The first screen offers “Call or Text” in the header. No online booking or enquiry button appears above the fold on either desktop or mobile.</p>
-      <p><strong>Why it matters to a full-fee patient:</strong> Call and text are strong and cover most people. The remaining group is the patient who will not phone a stranger and does not want to start a conversation yet — they want to pick a time and be done. With 450+ reviews doing the persuading, that patient is arriving ready and finding no way to finish.</p>
-      <p><strong>Recommended:</strong> Add a booking button beside the call-or-text option. It serves a different patient rather than replacing the one already served well.</p>
-      <dl class="row"><dt>Confidence</dt><dd>Observed</dd><dt>Effort</dt><dd>Medium</dd><dt>Timeframe</dt><dd>2–4 weeks</dd></dl>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Patient decision psychology</h2>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Principle</th><th>In plain English</th><th>What the site shows</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Familiarity<br>Jacob's Law</strong></td><td>People expect a site to behave like the others they use.</td><td>Conventions followed cleanly. Logo, contact in the header, menu right — nothing surprises.</td></tr>
-          <tr><td><strong>Reachability<br>Fitts's Law</strong></td><td>Important actions should be big and easy to thumb.</td><td>The call-or-text control is large and sits in the header where a thumb reaches it immediately.</td></tr>
-          <tr><td><strong>Proximity of proof</strong></td><td>Reassurance has to sit where the doubt is.</td><td>Excellent — the review badge is placed on the hero itself, so proof arrives before the doubt does.</td></tr>
-          <tr><td><strong>Authority</strong></td><td>Real expertise, visible near decisions.</td><td>A real practitioner is pictured but not named, so the authority is visual rather than verifiable.</td></tr>
-          <tr><td><strong>Decision clarity</strong></td><td>One obvious next step.</td><td>Clear — call or text. The gap is that there is no third option for the patient who wants neither.</td></tr>
-          <tr><td><strong>Helpful defaults</strong></td><td>Sensible pre-selections that serve the patient.</td><td>Offering text alongside call is a genuinely helpful default for a nervous first-time enquirer.</td></tr>
-          <tr><td><strong>Believability<br>Pratfall Effect</strong></td><td>Balanced, realistic communication is trusted more than perfection.</td><td>A real photograph and a specific review count read as credible. “Award-Winning” without the award is the one line that does not.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section style="border:0;padding-bottom:0">
-  <div class="wrap">
-    <div class="calc">
-      <h2>Illustrative growth scenario</h2>
-      <p class="lead">This is a model, not a measurement. Every figure below starts as an illustrative placeholder — replace them with your own numbers and the scenarios update immediately. Nothing here is drawn from your analytics, and no result is predicted or guaranteed.</p>
-      <div class="fields">
-        <div class="field"><label for="visitors">Monthly website visitors</label><input id="visitors" type="number" min="0" value="2000" /><small>Illustrative — from your analytics</small></div>
-        <div class="field"><label for="curRate">Current visitor → enquiry %</label><input id="curRate" type="number" min="0" max="100" step="0.1" value="1.5" /><small>Illustrative</small></div>
-        <div class="field"><label for="bookRate">Enquiry → booking %</label><input id="bookRate" type="number" min="0" max="100" step="1" value="40" /><small>Illustrative</small></div>
-        <div class="field"><label for="attend">Attendance %</label><input id="attend" type="number" min="0" max="100" step="1" value="80" /><small>Illustrative</small></div>
-        <div class="field"><label for="value">Average first-visit value (US$)</label><input id="value" type="number" min="0" step="10" value="650" /><small>Illustrative</small></div>
-      </div>
-      <div class="scen">
-        <div><h4>Conservative</h4><p class="rate">Proposed enquiry rate <strong id="r1">2.0%</strong></p><p class="out" id="o1">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p1"></p></div>
-        <div><h4>Target</h4><p class="rate">Proposed enquiry rate <strong id="r2">2.5%</strong></p><p class="out" id="o2">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p2"></p></div>
-        <div><h4>Strong</h4><p class="rate">Proposed enquiry rate <strong id="r3">3.0%</strong></p><p class="out" id="o3">—</p><p class="cap">additional first-visit revenue / month</p><p class="cap" id="p3"></p></div>
-      </div>
-      <div class="workings">
-        <p style="margin-bottom:8px"><strong style="color:#f7f4ec">Every step, shown in full:</strong></p>
-        <p style="margin:0 0 6px"><code>current enquiries = visitors × current rate</code> → <span id="w1">—</span></p>
-        <p style="margin:0 0 6px"><code>improved enquiries = visitors × proposed rate</code></p>
-        <p style="margin:0 0 6px"><code>additional attended = (improved − current) × booking % × attendance %</code></p>
-        <p style="margin:0"><code>additional revenue = additional attended × average first-visit value</code></p>
-      </div>
-      <p class="disclaim">Only the proposed enquiry rate changes between the three scenarios; every other input stays as you entered it. This is an illustrative scenario built on stated assumptions — not a forecast, a projection or a guarantee. Actual results depend on factors no website review can measure.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>90-day improvement roadmap</h2>
-    <div class="tblwrap">
-      <table>
-        <thead><tr><th>Window</th><th>Focus</th><th>Actions</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Days 1–14</strong></td><td>Quick wins</td><td>Name the practitioner in the hero photograph with her qualification. Name the award. Collapse the chat widget so it stops covering the treatment list.</td></tr>
-          <tr><td><strong>Days 15–45</strong></td><td>Trust &amp; conversion</td><td>Add an online booking button beside call-or-text. Carry the review count onto the highest-value treatment pages. Add treatment-specific reassurance.</td></tr>
-          <tr><td><strong>Days 46–90</strong></td><td>Authority &amp; measurement</td><td>Build authority content around the named practitioner and the award. Keep the review engine running — 450+ is an asset worth compounding. Begin measuring enquiry-to-booking so the calculator figures above become yours.</td></tr>
-        </tbody>
-      </table>
+      <p><strong>Where it happens:</strong> The first screen offers “Call or Text” in the header. No online booking or enquiry button appears above the fold on either desktop or mobile.</p>
+      <p><strong>How the patient is lost:</strong> Call and text are strong and cover most people. The remaining group is the patient who will not phone a stranger and does not want to start a conversation yet — they want to pick a time and be done. With 450+ reviews doing the persuading, that patient is arriving ready and finding no way to finish.</p>
+      
+      <dl class="row"><dt>Basis</dt><dd>Observed</dd></dl>
     </div>
   </div>
 </section>
@@ -333,7 +266,7 @@
   <div class="wrap">
     <h2>Limitations &amp; methodology</h2>
     <p class="fine">This review is based on the public homepage of dhhmedspa.com viewed on 13 August 2026 at 1366×768 and 390×844, page source retrieved the same day, and publicly visible business information. Treatment-page depth and technical performance were not assessed and are excluded from the score rather than estimated; the total is normalised across the six categories reviewed (90 points available).</p>
-    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Findings labelled <em>Observed</em> are directly visible; findings labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Figures in the growth scenario are illustrative placeholders supplied by this report, not measurements of your practice.</p>
+    <p class="fine">No private analytics, Google Business Profile insights, booking data or revenue figures were accessed, and none have been estimated. Leaks labelled <em>Observed</em> are directly visible; leaks labelled <em>Interpretive</em> are professional assessment and are identified as such. No legal, HIPAA, medical board or clinical compliance judgement is offered or implied — those require professional review. Every figure in the calculator is one you entered yourself.</p>
   </div>
 </section>
 
@@ -343,10 +276,10 @@
       <div class="cta-grid">
         <div class="cta-copy">
           <h2>A short conversation, if it is useful</h2>
-          <p>Most of what is above can be done by your existing web team, and this report is yours to use whether or not we ever speak.</p>
-          <p>Where the gaps are structural rather than cosmetic — booking that lives on someone else's platform, trust signals with nowhere to sit, no loop that brings a patient back after treatment — those are the problems we build for.</p>
+          <p>This report is yours to use whether or not we ever speak, and your existing web team can act on most of it.</p>
+          <p>Where the leaks are structural rather than cosmetic — booking that lives on someone else's platform, no record that remembers a patient, nothing that brings them back after treatment — those are the problems we build for.</p>
           <ul class="why">
-            <li>The changes above compound: each month they are not made is a month of the same visitors deciding elsewhere.</li>
+            <li>Every month the leaks stay open is another month of the same visitors deciding elsewhere.</li>
             <li>Aesthetic demand is seasonal. Work started now is live before the year-end run.</li>
             <li>Twenty minutes, no slides. If it is not a fit, you will be told in the first five.</li>
           </ul>
@@ -357,7 +290,7 @@
               <strong>Ignatius Ackermann</strong>
               <span>CRM Solutions · building commercial platforms since 2001<br />Reply on WhatsApp — usually within a few hours</span>
             </div>
-            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20audit%20for%20DHH%20Med%20Spa." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
+            <a class="btn-call" href="https://wa.me/27761809799?text=Hi%20Ignatius%20%E2%80%94%20I've%20read%20the%20review%20for%20DHH%20Med%20Spa." target="_blank" rel="noopener"><span aria-hidden="true">💬</span> WhatsApp me</a>
           </div>
         </div>
         <div class="cta-img" style="background-image:url('images/booking-online.webp')" role="img" aria-label="A patient booking an appointment online from home"></div>
@@ -393,54 +326,107 @@
 </footer>
 
 <script>
+window.AUDIT_CURRENCY = "US$";
 (function () {
-  var ids = ['visitors', 'curRate', 'bookRate', 'attend', 'value'];
-  var scenarios = [
-    { rate: 2.0, out: 'o1', label: 'r1', pat: 'p1' },
-    { rate: 2.5, out: 'o2', label: 'r2', pat: 'p2' },
-    { rate: 3.0, out: 'o3', label: 'r3', pat: 'p3' }
-  ];
+  /**
+   * The leak calculator.
+   *
+   * Same arithmetic as aestheticbiz.site/second-visit, so the audit and the
+   * landing page tell one story. The argument: what a practice can afford to
+   * pay for a patient is set by how often patients come back, not by how cheap
+   * its advertising is.
+   *
+   *   expected visits = 1 / (1 − return rate)
+   *   margin per visit = first-visit value × gross margin
+   *   lifetime value  = expected visits × margin per visit
+   *   affordable spend = lifetime value ÷ 3   (conventional healthy ratio)
+   *
+   * Every figure is entered by the reader. Nothing is measured, assumed from
+   * their analytics, or sent anywhere.
+   */
+  var TARGET = 0.45;
+  var RATIO = 3;
+
+  var ids = ['patients', 'value', 'returnRate', 'spend', 'margin'];
+  var CUR = (window.AUDIT_CURRENCY || 'US$');
 
   function num(id) {
-    var v = parseFloat(document.getElementById(id).value);
+    var el = document.getElementById(id);
+    if (!el) return 0;
+    var v = parseFloat(el.value);
     return isFinite(v) && v >= 0 ? v : 0;
   }
 
   function money(n) {
-    return 'US$' + Math.round(n).toLocaleString('en-US');
+    if (!isFinite(n)) return '—';
+    return CUR + Math.round(n).toLocaleString('en-US');
+  }
+
+  function set(id, text) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
   }
 
   function recalc() {
-    var visitors = num('visitors');
-    var cur = num('curRate') / 100;
-    var book = num('bookRate') / 100;
-    var attend = num('attend') / 100;
+    var patients = num('patients');
     var value = num('value');
+    var r = Math.min(Math.max(num('returnRate'), 0), 90) / 100;
+    var spend = num('spend');
+    var margin = num('margin') / 100;
 
-    var currentEnq = visitors * cur;
-    document.getElementById('w1').textContent =
-      visitors.toLocaleString('en-US') + ' × ' + (cur * 100).toFixed(1) + '% = ' +
-      currentEnq.toFixed(1) + ' enquiries / month';
+    var target = Math.max(TARGET, r);
+    var atTarget = target <= r;
 
-    scenarios.forEach(function (s) {
-      // Only the proposed rate varies; a proposal below current shows nothing
-      // rather than a negative, which would be meaningless here.
-      var proposed = Math.max(s.rate / 100, cur);
-      var improvedEnq = visitors * proposed;
-      var addEnq = Math.max(improvedEnq - currentEnq, 0);
-      var addAttended = addEnq * book * attend;
-      var revenue = addAttended * value;
+    var marginPerVisit = value * margin;
+    var visitsNow = 1 / (1 - r);
+    var visitsTarget = 1 / (1 - target);
 
-      document.getElementById(s.label).textContent = (proposed * 100).toFixed(1) + '%';
-      document.getElementById(s.out).textContent = money(revenue);
-      document.getElementById(s.pat).textContent =
-        addAttended.toFixed(1) + ' additional attended patients · ' +
-        money(revenue * 12) + ' over twelve months';
-    });
+    var cac = patients > 0 ? spend / patients : 0;
+    var ltvNow = visitsNow * marginPerVisit;
+    var ltvTarget = visitsTarget * marginPerVisit;
+
+    var affordNow = ltvNow / RATIO;
+    var affordTarget = ltvTarget / RATIO;
+    var gap = (visitsTarget - visitsNow) * value * (patients * 12);
+
+    set('leakLabel', atTarget
+      ? 'Your patients already return well. Across the relationship, one of them is worth'
+      : 'On a year of new patients, the gap between this return rate and ' +
+        Math.round(target * 100) + '% is worth');
+    set('leakFigure', money(atTarget ? ltvNow : gap));
+    set('leakSub', atTarget
+      ? 'That is the number worth defending.'
+      : 'Same patients. Same marketing spend. Same rooms.');
+
+    set('affordNow', money(affordNow));
+    set('affordTarget', money(affordTarget));
+    set('affordTargetNote', 'at a ' + Math.round(target * 100) + '% return rate');
+
+    var read = document.getElementById('affordRead');
+    if (read) {
+      if (atTarget) {
+        read.style.display = 'none';
+      } else {
+        read.style.display = '';
+        var uplift = affordNow > 0 ? Math.round((affordTarget / affordNow - 1) * 100) : 0;
+        read.textContent =
+          'That is ' + uplift + '% more than can be bid today for exactly the same patient. ' +
+          'Whoever in this market can pay the most wins it — and that capacity is decided by ' +
+          'the second visit, not by the ad account.';
+      }
+    }
+
+    set('mCac', money(cac));
+    set('mLtv', money(ltvNow));
+    set('mRatio', cac > 0 ? (ltvNow / cac).toFixed(1) + ' : 1' : 'no spend entered');
+    set('mPayback', marginPerVisit > 0 ? (cac / marginPerVisit).toFixed(1) : '—');
+    set('mVisitsNow', visitsNow.toFixed(1));
+    set('mVisitsTarget', visitsTarget.toFixed(1));
   }
 
   ids.forEach(function (id) {
     var el = document.getElementById(id);
+    if (!el) return;
     el.addEventListener('input', recalc);
     el.addEventListener('change', recalc);
   });

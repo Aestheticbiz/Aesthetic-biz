@@ -1,0 +1,37 @@
+TO:      hello@inspirewellnessaesthetics.com
+NOTE:    Reception inbox. No practitioner name appeared anywhere in the
+         homepage text or screenshots captured, so this is addressed to
+         the practice rather than a person.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: three buttons are asking for the same click
+
+------------------------------------------------------------
+
+Hello,
+
+I review aesthetic practice websites and I went through
+inspirewellnessaesthetics.com this morning. The notes are yours to use
+whether or not we ever speak.
+
+Your homepage does several things right that most sites in my review set
+don't: the "Welcome To Inspire Wellness & Aesthetics" headline is real,
+selectable text over a genuinely nice spa image, not a picture of words, and
+your full navigation stays visible on desktop instead of hiding behind a
+hamburger button.
+
+Worth a look: between the header and the hero, a first-time visitor sees
+four buttons offering three different things — "Self Assessment," "Book
+Now" and "Schedule Consultation" — before they've scrolled at all. There's
+no signal for which to choose first. I'd also flag that no practitioner
+name or credential appears anywhere on the homepage I captured. A photo of
+two people, one in a white coat, shows up on mobile just below the hero,
+but nothing names them in the frame I could see — and on mobile a floating
+call button sits partly over that same photo.
+
+One more: "Atlanta, GA" is in your page title but doesn't appear anywhere
+visible on the page itself.
+
+Full report, with a scorecard and a 90-day order of work:
+https://audit.aestheticbiz.site/inspirewellnessaesthetics/
+
+Ignatius

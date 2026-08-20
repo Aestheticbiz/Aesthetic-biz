@@ -1,0 +1,32 @@
+TO:      info@folawns.com
+NOTE:    General inbox — no named practitioner appears anywhere on the
+         site's homepage, so this is addressed to the practice rather
+         than a person. That absence is itself one of the notes below.
+FROM:    ignatius@aestheticbiz.site
+SUBJECT: a quick note on folawns.com
+
+------------------------------------------------------------
+
+Hello,
+
+I review medical spa websites and spent some time on folawns.com this
+morning. The notes are yours to use whether or not we ever speak.
+
+Something you're already doing well: the homepage offers two separate
+buttons — "Book Salon Appointment" and "Book Med Spa Appointment" — so a
+visitor never ends up on the wrong calendar. Combined with "A Legacy of
+Exceptional Care Since 1994" stated right on the page, that's a stronger
+opening than most two-business sites manage.
+
+Two things are missing from that same opening screen, on both desktop and
+mobile: there's no phone number or address visible, and no practitioner is
+named anywhere in the homepage text — even though it describes the medical
+treatments as "backed by science." For injectables and laser work, a
+first-time patient usually wants to know whose hands those are before
+anything else.
+
+Full report, with a scorecard and a 90-day order of work:
+
+https://audit.aestheticbiz.site/folawns/
+
+Ignatius

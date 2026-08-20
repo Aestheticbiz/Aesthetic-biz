@@ -1,0 +1,267 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { GlossaryTerm } from "@/components/glossary-term";
+import { SecondVisitCalculator } from "@/components/second-visit-calculator";
+import { discoveryUrl } from "@/lib/site";
+import "./second-visit.css";
+
+export const metadata: Metadata = {
+  title: "The Second Visit",
+  description:
+    "Your practice earns its living on the second visit — and almost everything the industry sells you buys the first one. Work out what the gap is worth in your practice, in four minutes, with no sign-up.",
+  robots: { index: true, follow: true },
+};
+
+const WHY = [
+  {
+    title: "The first visit is the most expensive money you make",
+    body: "It carries the whole acquisition cost, and it is usually the discounted one — the introductory price you offered to win them. On its own it is the thinnest transaction in the practice.",
+  },
+  {
+    title: "The second visit costs nothing to acquire",
+    body: "Full fee. No advertising behind it. It is the visit where homecare actually sells, and the one that decides whether there is a third. Almost nothing in a normal practice is designed to produce it.",
+  },
+  {
+    title: "So the diary empties from the back",
+    body: "Not because the marketing stopped working — because the patients it bought never came back. By the time a promotion is needed to fill a week, the return rate dropped two quarters ago.",
+  },
+] as const;
+
+const LOOP = [
+  {
+    name: "A front door that books at eleven at night",
+    body: "Roughly half of aesthetic decisions are made outside your working hours. A phone number is not an answer to somebody deciding on a Sunday evening — by Monday they have booked with whoever made it easy.",
+    slug: "online-booking",
+  },
+  {
+    name: "A patient record that is yours",
+    body: "Every enquiry, treatment and preference in one place that you own, not rented from a marketplace that shows your patients your competitors on the same screen. This is what makes a returning patient feel remembered rather than processed.",
+    slug: "crm",
+  },
+  {
+    name: "A shelf that sells while the clinic is dark",
+    body: "The homecare you already stock, available the night a patient runs out, without a phone call or a trip. Most practices are carrying the stock and none of the revenue.",
+    slug: "online-retail",
+  },
+  {
+    name: "A recall and rewards engine",
+    body: "The patient is contacted when their treatment interval is genuinely due, with a reason that is about them rather than about your diary. Returning stops depending on somebody remembering.",
+    slug: "marketing-automation",
+  },
+  {
+    name: "A reputation flywheel",
+    body: "Reviews collected as part of the visit instead of begged for afterwards — which lowers what the next patient costs you, because trust does the work advertising was paying for.",
+    slug: "video-reviews",
+  },
+] as const;
+
+const FAQ = [
+  {
+    q: "My patients are loyal. Is this really my problem?",
+    a: "Possibly not — the calculator will tell you rather than us. But most non-return is not dissatisfaction. It is that nothing reached the patient at the moment their treatment wore off, and they were not unhappy, merely unprompted. That is a system gap, not a verdict on the clinical work.",
+  },
+  {
+    q: "Isn't this just a website with extra features?",
+    a: "A website ends at the enquiry and has no memory of anyone. What is described here is the part that runs after the first visit — the record, the recall, the shelf, the reviews. The site is one component of it, and on its own it would not change the number you just calculated.",
+  },
+  {
+    q: "How long before it is working?",
+    a: "Ninety days from start to live, fixed. The first fifteen are spent going through your practice the way a patient does; you get those findings whether or not anything is built afterwards.",
+  },
+  {
+    q: "Why should I trust this with one clinic to show me?",
+    a: "That is the fair question, and the honest answer is that Star Aesthetic Centre is the working reference — a doctor-led practice running booking, pharmaceutical-grade retail, rewards and vouchers live. If you would rather wait for a longer list, that is a reasonable position and we will not argue you out of it.",
+  },
+] as const;
+
+export default function SecondVisitPage() {
+  const discovery = discoveryUrl("second-visit");
+
+  return (
+    <main className="sv-page">
+      {/* ── Hero ──────────────────────────────────────────────────────── */}
+      <section className="sv-hero">
+        <div className="sv-shell">
+          <p className="sv-eyebrow">For established aesthetic practices</p>
+          <h1>
+            Your practice earns its living on the <em>second visit.</em>
+          </h1>
+          <p className="sv-hero-lead">
+            Almost everything the industry sells you — ads, search, social, booking apps — buys the
+            first one. That is the cheapest, most price-shopped patient there is. Work out what the
+            difference is worth in your own practice.
+          </p>
+          <p className="sv-hero-cue">Four minutes. No sign-up. Nothing leaves your browser.</p>
+        </div>
+      </section>
+
+      {/* ── Calculator ────────────────────────────────────────────────── */}
+      <section className="sv-calc-section" id="calculator">
+        <div className="sv-shell">
+          <div className="sv-section-head">
+            <p className="sv-eyebrow">The second-visit calculator</p>
+            <h2>Move the sliders to your practice.</h2>
+            <p className="sv-lead">
+              Five figures you already know, or can estimate closely enough. The arithmetic underneath
+              is stated at the bottom — nothing here is hidden from you.
+            </p>
+          </div>
+          <SecondVisitCalculator />
+        </div>
+      </section>
+
+      {/* ── Why the number is that big ────────────────────────────────── */}
+      <section className="sv-section">
+        <div className="sv-shell">
+          <div className="sv-section-head">
+            <p className="sv-eyebrow">Why the number is that large</p>
+            <h2>Nothing in that calculation assumed a single extra patient.</h2>
+            <p className="sv-lead">
+              Same marketing spend, same rooms, same team. The only thing that changed was how many
+              times the people you already treat come back.
+            </p>
+          </div>
+          <div className="sv-three">
+            {WHY.map((item) => (
+              <article key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── The affordability argument ────────────────────────────────── */}
+      <section className="sv-section">
+        <div className="sv-shell-narrow">
+          <div className="sv-section-head">
+            <p className="sv-eyebrow">The part that decides the market</p>
+            <h2>Whoever can pay the most for a patient wins.</h2>
+          </div>
+          <div className="sv-flow">
+            <p>
+              The cost of reaching a new patient rises every year, and no setting in an ad account
+              reverses that. Every practice in your area is bidding for the same people, and the price
+              only goes one way.
+            </p>
+            <p>
+              Which means the winnable game is not paying less. It is being able to{" "}
+              <strong>afford more</strong>. A practice whose patients return three times can pay
+              double for the same enquiry as the practice down the road whose patients never come
+              back — and still make money on it. That practice does not need cheaper advertising. It
+              can simply buy the market.
+            </p>
+            <p>
+              That capacity has a name — your{" "}
+              <GlossaryTerm slug="ltv-cac-ratio">value-to-cost ratio</GlossaryTerm> — and it is set
+              almost entirely by the second visit, not by the ad account. Every number in the
+              calculator above is explained in plain language in the{" "}
+              <Link href="/glossary">glossary</Link>:{" "}
+              <GlossaryTerm slug="cac">what a patient costs</GlossaryTerm>,{" "}
+              <GlossaryTerm slug="ltv">what a patient is worth</GlossaryTerm>,{" "}
+              <GlossaryTerm slug="repeat-rate">how often they return</GlossaryTerm>,{" "}
+              <GlossaryTerm slug="attrition">how many quietly stop</GlossaryTerm>, and{" "}
+              <GlossaryTerm slug="payback-period">how long you wait to break even</GlossaryTerm>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── The loop ──────────────────────────────────────────────────── */}
+      <section className="sv-section">
+        <div className="sv-shell">
+          <div className="sv-section-head">
+            <p className="sv-eyebrow">The mechanism</p>
+            <h2>Five things a practice has to own to earn the second visit.</h2>
+            <p className="sv-lead">
+              Not five features. Five assets that belong to you, working as one loop — which is why
+              nobody builds it: web designers sell pages, and booking apps rent you your own patients.
+            </p>
+          </div>
+          <ol className="sv-loop">
+            {LOOP.map((item, i) => (
+              <li key={item.name}>
+                <span className="sv-loop-num">{String(i + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.name}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ── Proof ─────────────────────────────────────────────────────── */}
+      <section className="sv-section">
+        <div className="sv-shell-narrow">
+          <div className="sv-section-head">
+            <p className="sv-eyebrow">Where it is running</p>
+            <h2>One clinic, not a portfolio of mockups.</h2>
+          </div>
+          <div className="sv-proof">
+            <span className="sv-proof-place">Doctor-led aesthetic clinic · Durban North</span>
+            <h3>Star Aesthetic Centre</h3>
+            <p>
+              Twenty years of clinical reputation, finally matched online: booking that finishes on
+              their own brand, pharmaceutical-grade skincare selling after hours, rewards and gift
+              vouchers, reviews collected as part of the visit. Live and running, not a concept.
+            </p>
+            <p>
+              <a href="https://www.staraesthetic.co.za" target="_blank" rel="noopener noreferrer">
+                Open staraesthetic.co.za →
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Questions ─────────────────────────────────────────────────── */}
+      <section className="sv-section">
+        <div className="sv-shell-narrow">
+          <div className="sv-section-head">
+            <p className="sv-eyebrow">Before you ask</p>
+            <h2>The questions owners actually ask.</h2>
+          </div>
+          <dl className="sv-faq">
+            {FAQ.map((item) => (
+              <div key={item.q}>
+                <dt>{item.q}</dt>
+                <dd>{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ── Close ─────────────────────────────────────────────────────── */}
+      <section className="sv-close">
+        <div className="sv-shell-narrow">
+          <h2>You have already treated the patients this is about.</h2>
+          <p>
+            They came, the work was good, and most of them have not been back. Nothing in the number
+            you just calculated requires a single new patient — only that the ones you have already
+            earned are given a reason and a way to return.
+          </p>
+          <a className="sv-btn" href={discovery}>
+            Book a 20-Minute Discovery Call
+          </a>
+          <p className="sv-close-risk">If it is not a fit, you will be told in the first five minutes.</p>
+        </div>
+      </section>
+
+      <div className="sv-shell-narrow">
+        <p className="sv-foot">
+          AestheticBiz is a working demonstration practice by{" "}
+          <a href="https://www.crmsolutions.app" target="_blank" rel="noopener noreferrer">
+            CRM Solutions
+          </a>
+          . The calculator is an estimate built from figures you supply, not a forecast or a
+          guarantee. <Link href="/financial">The one-extra-patient calculator →</Link>{" "}
+          <Link href="/glossary">Platform glossary →</Link>
+        </p>
+      </div>
+    </main>
+  );
+}
