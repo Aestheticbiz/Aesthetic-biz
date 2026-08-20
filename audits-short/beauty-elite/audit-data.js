@@ -2,66 +2,65 @@ window.AUDIT_DATA = {
   outreach: {
     // Everything the email needs. The email reveals ONE leak only — leaks[0] —
     // so the report still has something to show. See RUN-AUDIT.md.
-    firstName: "Dr. Sypien",
-    toEmail: "info@agelessmedspa.net",
-    auditUrl: "https://audit.aestheticbiz.site/ageless-medspa/",
+    firstName: "Irma",
+    toEmail: "hello@bellamedspadfw.com",
+    auditUrl: "https://bella-med-spa.itools247.co.za/",
     // Pattern: "<First name> - I reviewed <practice>'s patient journey"
-    subject: "Dr. Sypien - I reviewed Ageless MedSpa's patient journey",
+    subject: "Irma - I reviewed Bella Med Spa's patient journey",
     fromName: "Ignatius Ackermann",
     fromEmail: "ignatius@aestheticbiz.site",
     // One specific thing they already do well, in a short phrase that completes
     // "...particularly ___". Evidence that you actually looked. Keep it factual.
-    credit: "leading with physician-led care rather than the practice name, and putting your phone number, address and email above the fold"
+    credit: "the prominent booking option and the patient reviews you have published"
   },
   practice: {
-    name: "Ageless MedSpa by Dr. Sypien",
+    name: "Bella Med Spa & Aesthetics",
     // How the practice is referred to in prose. The full legal name reads badly
     // in a possessive ("Bella Med Spa & Aesthetics’s"), so keep this short.
-    shortName: "Ageless MedSpa",
-    websiteLabel: "agelessmedspa.com",
-    websiteUrl: "https://agelessmedspa.com/",
-    location: "Chicago, IL",
-    reviewDate: "20 August 2026",
-    devices: "Desktop 1366 x 768 / mobile handset"
+    shortName: "Bella Med Spa",
+    websiteLabel: "bellamedspadfw.com",
+    websiteUrl: "https://bellamedspadfw.com/",
+    location: "Dallas & McKinney, TX",
+    reviewDate: "12 August 2026",
+    devices: "Desktop 1366 x 768 / Mobile 390 x 844"
   },
   report: {
-    title: "Three places where a first-time patient may hesitate",
-    summary: "Ageless MedSpa opens well. The first screen leads with physician-led care rather than the practice name, and the phone number, address and email are visible before a visitor scrolls. This is not a case for rebuilding anything. The clearest opportunity is what happens next - the path from that promise to a confirmed appointment asks more of a first-time patient than it needs to.",
-    pdfFile: "ageless-medspa-audit.pdf",
-    alsoNoticed: "Chicago is not named beside the first booking action, though the street address does appear in the bar above it."
+    title: "Three places where premium patients may hesitate",
+    summary: "Bella Med Spa has a calm, professional website with a prominent booking action and genuine patient proof. This is not a case for rebuilding everything. The clearest opportunity is to remove three moments of uncertainty between a first visit and a confident booking.",
+    pdfFile: "bella-med-spa-audit.pdf",
+    alsoNoticed: "The booking journey moves to a third-party platform. Where possible, preserve Bella's branding and location context throughout that handoff."
   },
   strength: {
-    title: "The promise on the first screen is the right one",
-    body: "The headline sells the difference - physician-led care - rather than repeating the practice name. Phone, address and email sit above the fold, and a booking action is present on every screen. The work now is protecting that promise all the way through to a booked appointment."
+    title: "A strong foundation is already in place",
+    body: "The homepage is polished, mobile-friendly and asks visitors to book rather than merely browse. Eight named patient reviews provide genuine proof. The opportunity is to move the best existing information closer to the booking decision."
   },
   screenshots: {
-    desktop: { src: "images/audited-desktop.png", alt: "Ageless MedSpa homepage on desktop", caption: "Desktop first screen, reviewed 20 August 2026 at 1366 x 768." },
-    mobile: { src: "images/audited-mobile.png", alt: "Ageless MedSpa homepage on a phone", caption: "Mobile first screen, captured on a handset on 20 August 2026." }
+    desktop: { src: "images/audited-desktop.jpg", alt: "Bella Med Spa homepage on desktop", caption: "Desktop first screen reviewed at 1366 x 768." },
+    mobile: { src: "images/audited-mobile.jpg", alt: "Bella Med Spa homepage on mobile", caption: "Mobile first screen reviewed at 390 x 844." }
   },
   leaks: [
     {
-      category: "Booking journey",
-      title: "The booking action leaves your website",
-      observed: "Every BOOK NOW button leaves the site for agelessmedspa.zenoti.com, where the patient chooses a service and completes the appointment on a different domain.",
-      why: "A first-time patient who has just decided to trust a physician-led practice is handed to an unfamiliar address. The page carries the Ageless name, but the domain, the layout and the navigation all change at the moment confidence matters most.",
-      opportunity: "Keep the choosing and booking steps on agelessmedspa.com, or carry the practice header, address and reassurance through the handoff so the patient never appears to leave."
-    },
-    {
-      category: "Decision load",
-      title: "Seventy menu links stand between interest and a choice",
-      observed: "The main navigation offers eleven top-level categories - Injectables, Laser Treatments, Microneedling, Facials, Peels, Body Treatments, Permanent Makeup, Ageless Wellness, Shop, About and Contact - opening to roughly seventy individual treatment links, among them Gold Microinfusion, EZgel PRF, Bright & Tight and Pico Laser.",
-      why: "A returning patient knows which one she wants. A first-time patient does not, and a menu organised by technology rather than by concern asks her to self-diagnose before she can book.",
-      opportunity: "Offer a short path by concern - lines and wrinkles, pigmentation, skin laxity, hair - ahead of the full treatment index, so a new patient can reach a consultation without naming a device."
+      category: "Positioning",
+      title: "The strongest selling message is visually hidden",
+      observed: "The largest headline reads \"Bella Med Spa & Aesthetics\". The more persuasive line - \"advanced cosmetic treatments delivered with medical precision in a welcoming, boutique environment\" - appears beneath it in smaller type.",
+      why: "A visitor who clicked the practice name already knows who they reached. The first screen delays the answer to the more important question: why choose Bella?",
+      opportunity: "Promote the patient-focused positioning line to the headline and let the logo carry the practice name."
     },
     {
       category: "Authority",
-      title: "The physician-led promise has no face on the first screen",
-      observed: "The headline reads “Discover the difference in physician-led care” and the logo carries “by Dr. Sypien M.D.”, but the first screen shows no photograph of the physician, no stated qualification and no patient rating beside the booking action.",
-      why: "Physician-led is the strongest claim on the page and the reason a patient would pay more here than at a salon. On the first screen it is an assertion rather than something the visitor can see.",
-      opportunity: "Place Dr. Sypien - photograph, qualification and one short patient rating - inside the first screen, next to the booking action the claim is meant to support."
+      title: "Medical precision needs visible human proof",
+      observed: "The homepage promises treatments delivered with \"medical precision\", but the first booking screen does not identify the treating practitioner or show a relevant qualification beside that promise.",
+      why: "For higher-value treatments, patients often want to know who will treat them before they are ready to commit.",
+      opportunity: "Introduce the practitioner, appropriate credentials and a real photograph close to the primary booking action."
+    },
+    {
+      category: "Trust and location",
+      title: "Reassurance appears after the decision point",
+      observed: "Eight patient reviews are published lower on the homepage, while neither Dallas nor McKinney is identified beside the first booking action.",
+      why: "The visitor must move beyond the booking decision to find reassurance and must hunt to confirm whether the practice is near them.",
+      opportunity: "Place one short review, the review count and both locations directly beneath the hero booking action."
     }
   ],
-
   future: {
     title: "What the repaired journey feels like",
     body: "A premium patient arrives and immediately understands why the practice is different. She sees who will treat her, confirms the right location, finds reassurance from another patient and moves into booking without losing confidence or context. The website feels as considered as the care she expects to receive."

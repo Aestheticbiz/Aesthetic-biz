@@ -121,7 +121,7 @@
           <h2>${esc(d.cta.heading)}</h2>
           <p>${esc(d.cta.body)}</p>
           <div class="cta-actions">
-            <a class="button button-gold" href="${link(d.cta.callUrl)}">${esc(d.cta.callLabel)}</a>
+            <a class="button button-gold" href="${link(d.cta.callUrl)}" target="_blank" rel="noopener">${esc(d.cta.callLabel)}</a>
           </div>
           ${d.cta.capacity ? `<p class="cta-capacity">${esc(d.cta.capacity)}</p>` : ""}
         </div>

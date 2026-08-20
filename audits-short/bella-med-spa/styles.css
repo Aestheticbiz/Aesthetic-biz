@@ -6,9 +6,155 @@ section{padding:clamp(64px,9vw,105px) 0;border-bottom:1px solid var(--line)}.int
 .leaks{background:#fff}.leaks h2{max-width:760px;margin-bottom:42px}.leak{display:grid;grid-template-columns:90px 1fr;gap:28px;padding:38px 0;border-top:1px solid var(--line)}.leak:last-child{border-bottom:1px solid var(--line)}.leak-no{color:var(--gold);font:44px/1 var(--serif)}.leak h3{margin-bottom:22px}.leak dl{margin:0}.leak dl div{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:13px 0;border-top:1px solid #ececef}.leak dt{color:var(--navy);font-size:12px;font-weight:700;text-transform:uppercase}.leak dd{margin:0;color:var(--muted)}.also{margin:28px 0 0;padding:20px 24px;background:var(--canvas);color:var(--muted)}.also strong{color:var(--navy)}
 .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.future h2{margin-bottom:22px}.cta{background:var(--navy);color:rgba(255,255,255,.78)}.cta h2{color:#fff;max-width:650px;margin-bottom:18px}.cta-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.cta-actions{display:grid;gap:12px}footer{padding:30px 0;background:#091a31;color:rgba(255,255,255,.65);font-size:13px}.footer-grid,.author{display:flex;align-items:center;justify-content:space-between;gap:14px}.author{justify-content:flex-start}.author img{width:54px;height:54px;border-radius:50%;object-fit:cover}.author strong,.author span{display:block}.author strong{color:#fff}
 @media(max-width:700px){.meta{grid-template-columns:1fr}.section-head{display:block}.section-head>p{text-align:left;margin-top:12px}.screens,.future-grid,.cta-grid{grid-template-columns:1fr}.leak{grid-template-columns:1fr;gap:12px}.leak dl div{grid-template-columns:1fr;gap:5px}.footer-grid{align-items:flex-start;flex-direction:column}.hero{padding-top:42px}}
+
+/* ── Showcase: demo + portfolio, side by side on desktop ───────────────── */
+.showcase{background:#fff}
+.show-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:34px}
+.show-card{display:flex;flex-direction:column;border:1px solid var(--line);background:#fff}
+.show-shot{display:block;overflow:hidden;background:#f4f4f2}
+.show-shot img{display:block;width:100%;height:auto}
+.show-copy{display:flex;flex-direction:column;gap:12px;padding:24px;flex:1}
+.show-kicker{margin:0;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dk)}
+.show-card h3{margin:0;font-size:22px}
+.show-copy p{margin:0;color:var(--muted);font-size:15px;line-height:1.65}
+.show-copy .button{align-self:flex-start;margin-top:auto}
+.show-portfolio{border-top:3px solid var(--navy)}
+.show-demo{border-top:3px solid var(--gold)}
+
+/* ── CTA with the booking photograph ───────────────────────────────────── */
+.cta-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.cta-img img{display:block;width:100%;height:auto}
+.cta-actions{margin-top:22px}
+
+/* ── Calculators ───────────────────────────────────────────────────────── */
+.calc-section{border-top:1px solid var(--line)}
+.calc-one{background:var(--canvas)}
+.calc-two{background:#fff}
+.calc-head{max-width:640px;margin-bottom:30px}
+.calc-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;align-items:start}
+.calc-inputs{display:flex;flex-direction:column;gap:18px;padding:26px;background:#fff;border:1px solid var(--line)}
+.calc-two .calc-inputs{background:var(--canvas)}
+.calc-field{display:flex;flex-direction:column;gap:7px}
+.calc-label{font-size:14px;color:var(--ink)}
+.calc-input{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;padding:0 12px}
+.calc-two .calc-input{background:#fff}
+.calc-input em{font-style:normal;font-size:14px;color:var(--muted)}
+.calc-input input{flex:1;min-width:0;border:0;padding:12px 0;font-size:16px;font-family:inherit;color:var(--ink);background:transparent}
+.calc-input input:focus{outline:none}
+.calc-input:focus-within{border-color:var(--gold)}
+.calc-note{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.calc-result{padding:30px 28px;background:var(--navy);color:#f2efe8;border:1px solid var(--navy)}
+.calc-kicker{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.calc-figure{margin:0;font-family:var(--serif);font-size:clamp(38px,6vw,54px);line-height:1.05;color:#f7f4ec}
+.calc-sub{margin:6px 0 0;font-size:14px;color:rgba(255,255,255,.62)}
+.calc-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin:22px 0 0;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+.calc-metrics>div{background:var(--navy);padding:13px 15px}
+.calc-metrics dt{font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.4}
+.calc-metrics dd{margin:4px 0 0;font-size:18px;color:#f7f4ec}
+.calc-explain{margin:20px 0 0;font-size:13.5px;line-height:1.7;color:rgba(255,255,255,.72)}
+
+@media(max-width:860px){
+  .show-grid{grid-template-columns:1fr}
+  .cta-grid{grid-template-columns:1fr;gap:26px}
+  .calc-grid{grid-template-columns:1fr}
+  .calc-metrics{grid-template-columns:1fr}
+}
+
 @media print{@page{size:A4;margin:13mm}body{background:#fff;font-size:10.5pt;line-height:1.48}.wrap{width:100%;max-width:none}.hero{padding:14mm 0 10mm}.hero h1{font-size:30pt}.hero-title{font-size:15pt}.meta{margin-top:8mm;padding-top:5mm}.report-actions{display:none}section{padding:10mm 0;background:#fff!important}h2{font-size:22pt}.intro .lead,.future .lead{font-size:12pt}.strength{margin-top:6mm;padding:5mm}.screens{grid-template-columns:1.6fr .65fr;gap:5mm}.leaks{break-before:page}.leaks h2{margin-bottom:5mm}.leak{grid-template-columns:16mm 1fr;gap:5mm;padding:6mm 0;break-inside:avoid}.leak-no{font-size:24pt}.leak h3{font-size:16pt;margin-bottom:3mm}.leak dl div{grid-template-columns:32mm 1fr;gap:4mm;padding:2mm 0}.future-grid{grid-template-columns:1fr 1fr;gap:8mm}.cta{padding:9mm 0}.cta-grid{grid-template-columns:1fr}.cta-actions{display:none}footer{padding:6mm 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}.hero,.cta{break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}.evidence figure,.strength,.future-grid{break-inside:avoid}}
 
-/* The supplied print rules force a page break before the leaks section, which
-   pushes the closing sections onto a fifth page. The brief specifies four A4
-   pages or fewer. Measured with Edge headless: removing this break yields 4. */
-@media print { .leaks { break-before: auto; } }
+
+/* The calculators are interactive; a frozen set of numbers on paper only
+   invites argument. They are omitted from the PDF entirely. */
+@media print{
+  .calc-section{display:none!important}
+  .leaks{break-before:auto}
+  .show-grid{grid-template-columns:1fr 1fr;gap:6mm}
+  .show-card{break-inside:avoid}
+  .cta-grid{grid-template-columns:1fr}
+  .cta-img{display:none}
+}
+
+/* The mechanism section: the only place the report explains what AestheticBiz
+   is. Deliberately plain - it must read as diagnosis, not as a sales page. */
+.mechanism{background:#fff;border-top:1px solid var(--line)}
+.mechanism h2{max-width:800px}
+.mechanism p{color:var(--muted);font-size:16px;line-height:1.75;margin:0 0 18px;max-width:70ch}
+.mechanism .lead{color:var(--ink);font-size:19px;line-height:1.7;margin-bottom:26px}
+.mechanism .distinction{margin:26px 0 0;padding:20px 24px;background:var(--canvas);border-left:3px solid var(--gold);color:var(--ink);font-size:16.5px}
+.cta-capacity{margin:16px 0 0;font-size:13.5px;color:rgba(255,255,255,.7)}
+.calc-delay{margin:10px 0 0;font-size:14px;color:var(--gold)}
+@media print{ .mechanism{break-inside:avoid} }
+
+/* The mechanism section is worth keeping on paper - it is the only place the
+   report says what AestheticBiz is - but it must not cost a fifth page. */
+@media print{
+  .mechanism{padding-block:7mm}
+  .mechanism h2{font-size:19pt;margin-bottom:4mm}
+  .mechanism .lead{font-size:11.5pt;line-height:1.5;margin-bottom:4mm}
+  .mechanism p{font-size:10pt;line-height:1.5;margin-bottom:3mm}
+  .mechanism .distinction{margin-top:4mm;padding:4mm}
+  .showcase{padding-block:8mm}
+  .show-copy{padding:5mm}
+  .cta{padding-block:8mm}
+}
+
+/* Both showcase links are dead on paper, and the cards cost roughly half a
+   page. The PDF keeps the diagnosis and the explanation; the live report keeps
+   the demo and portfolio, where they can actually be clicked. */
+@media print{ .showcase{display:none!important} }
+
+/* On a phone, a phone screenshot shown at full width reads as the page itself
+   rather than as evidence. Narrow and centre it so it is obviously a device. */
+@media(max-width:700px){
+  .screens figure:last-child{width:52%;margin-inline:auto}
+}
+
+/* The CTA portrait is square; keep it from dominating the navy block. */
+.cta-img img{max-height:420px;object-fit:cover;object-position:center top}
+@media(max-width:860px){ .cta-img img{max-height:300px} }
+/* Desktop-only evidence: one figure should not sit in a two-column grid. */
+.screens-solo{grid-template-columns:1fr}
+
+/* Footer attribution. "Connected Revenue Platforms" is the CRM Solutions
+   slogan from crmsolutions.app - keep the two in step if the site changes. */
+.powered{display:flex;flex-direction:column;gap:2px;text-align:right;line-height:1.45;
+  text-decoration:none;font-size:13px;color:rgba(255,255,255,.6)}
+.powered strong{color:#f2efe8;font-weight:700;font-size:15px;letter-spacing:.01em}
+.powered span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.powered:hover strong{color:#fff}
+@media(max-width:700px){.powered{text-align:left}}
+
+/* Secondary route out of the mechanism section, for a reader who is interested
+   but not yet ready to book. Sits below the Discovery Call CTA on purpose. */
+.mechanism-action{margin:26px 0 0}
+.mechanism-action .button{text-decoration:none}
+/* On screen: the button. On paper: one line with the address, because a button
+   costs a fifth page and a printed reader needs the URL, not a shape. */
+.mechanism-url{display:none}
+@media print{
+  .mechanism-action .button{display:none}
+  .mechanism-url{display:block;font-size:9.5pt;color:#5c5f68}
+  .mechanism-action{margin-top:3mm}
+}
+/* Reclaiming the line: the distinction callout and mechanism body can tighten
+   slightly on paper without losing readability. Measured back to 4 pages. */
+@media print{
+  .mechanism .distinction{margin-top:3mm;padding:3mm 4mm;font-size:10pt}
+  .mechanism p{margin-bottom:2.5mm}
+  .mechanism .lead{margin-bottom:3mm}
+  .mechanism{padding-block:6mm}
+}
+/* The article route is a screen affordance. On paper the Discovery Call is the
+   action, and this section is not worth a fifth page to keep a link nobody can
+   click. Screen keeps the button; print drops the whole block. */
+@media print{ .mechanism-action{display:none!important} }
+/* .button-line is white-on-transparent for the dark hero. On the white
+   mechanism section it needs the navy treatment, still clearly secondary to
+   the gold Discovery Call button. */
+.mechanism-action .button-line{
+  border-color:var(--navy);
+  color:var(--navy);
+  background:transparent;
+  transition:background .18s ease,color .18s ease;
+}
+.mechanism-action .button-line:hover{background:var(--navy);color:#fff}

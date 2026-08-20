@@ -324,14 +324,6 @@ export default function SecondVisitPage() {
               <span>Evidence before claims</span>
               <span>Patient journey before page decoration</span>
             </div>
-            <a
-              className="text-link"
-              href="https://www.crmsolutions.app/about"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Meet Ignatius <span aria-hidden="true">↗</span>
-            </a>
           </div>
         </div>
       </section>

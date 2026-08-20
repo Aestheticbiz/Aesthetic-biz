@@ -70,7 +70,7 @@ window.AUDIT_DATA = {
   author: {
     name: "Ignatius Ackermann",
     role: "Building digital platforms since 2001",
-    image: "images/ignatius-ackermann.webp",
+    image: "images/ignatius-ackermann-crm-solutions-app.webp",
     website: "https://www.crmsolutions.app/"
   }
 };
