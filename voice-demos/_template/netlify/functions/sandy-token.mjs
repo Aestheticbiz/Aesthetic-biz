@@ -16,6 +16,18 @@ import AGENT from './agent-config.json' with { type: 'json' };
 
 const SANDY_MODEL = 'gemini-2.5-flash-native-audio-preview-12-2025';
 
+/* Turn-taking, from demo-data.js. Fallbacks match the shipped defaults. */
+const T = {
+  startSensitivity: 'START_SENSITIVITY_LOW',
+  endSensitivity: 'END_SENSITIVITY_HIGH',
+  prefixPaddingMs: 60,
+  silenceMs: 500,
+  proactiveAudio: false,
+  affectiveDialog: true,
+  temperature: 0.65,
+  ...(AGENT.tuning || {}),
+};
+
 /* Crude in-memory throttle. Netlify may run several instances, so this is a
    speed bump against a scraper minting tokens in bulk, not a security control.
    The real protections are single-use tokens and the model pin above. */
@@ -70,18 +82,20 @@ export default async (req, context) => {
             inputAudioTranscription: {},
             systemInstruction: AGENT.systemInstruction,
             speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: AGENT.voice } } },
-            temperature: 0.65,
+            temperature: T.temperature,
             /* Thinking off — it adds seconds of dead air before every reply. */
             thinkingConfig: { thinkingBudget: 0 },
-            enableAffectiveDialog: true,
-            proactivity: { proactiveAudio: true },
+            enableAffectiveDialog: T.affectiveDialog,
+            /* proactiveAudio makes her weigh whether you were talking to her
+               at all. That costs a round trip and lets answers arrive a
+               question late. Off unless you deliberately want it. */
+            proactivity: { proactiveAudio: T.proactiveAudio },
             realtimeInputConfig: {
               automaticActivityDetection: {
-                startOfSpeechSensitivity: 'START_SENSITIVITY_LOW',
-                endOfSpeechSensitivity: 'END_SENSITIVITY_LOW',
-                prefixPaddingMs: 60,
-                /* People pause mid-thought. 400ms proved far too twitchy. */
-                silenceDurationMs: 800,
+                startOfSpeechSensitivity: T.startSensitivity,
+                endOfSpeechSensitivity: T.endSensitivity,
+                prefixPaddingMs: T.prefixPaddingMs,
+                silenceDurationMs: T.silenceMs,
               },
             },
           },

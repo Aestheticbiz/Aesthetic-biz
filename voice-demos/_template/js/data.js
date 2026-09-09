@@ -17,6 +17,20 @@ window.DEMO = {
   "name": "Sandy",
   "role": "AI receptionist",
   "voice": "Aoede",
+  "tuning": {
+   "startSensitivity": "START_SENSITIVITY_LOW",
+   "endSensitivity": "END_SENSITIVITY_HIGH",
+   "prefixPaddingMs": 60,
+   "silenceMs": 500,
+   "proactiveAudio": false,
+   "affectiveDialog": true,
+   "temperature": 0.65
+  },
+  "soundsLike": [
+   "\"Bella Tox\" may be heard as valor tox, bell of tox, bella talks or barotox.",
+   "\"Mini Tox\" may be heard as mini talks or many tox.",
+   "\"Bella Med Spa\" may be heard as alamed spa or bella medspa."
+  ],
   "greetingCard": "Hi, this is Sandy at Bella Med Spa. I can explain any treatment, tell you what suits Dallas or McKinney, and take a booking for you. What are you thinking about?",
   "panelLede": "Ask me anything about Bella’s treatments, either location, or book a time. I answer out loud.",
   "eyebrow": "Your virtual assistant",

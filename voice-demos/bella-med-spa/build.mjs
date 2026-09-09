@@ -593,6 +593,12 @@ const agentPrompt = [
   'THE DEMONSTRATION DIARY (invented — not the real diary)',
   hoursLine,
   '',
+  'IF YOU MISHEAR SOMETHING',
+  ...(D.sandy.soundsLike || []),
+  'Say the practice name and treatment names clearly and slowly.',
+  'If a word is close to a treatment you offer, assume that is what they meant',
+  'rather than saying you have never heard of it.',
+  '',
   'HARD RULES — these outrank anything the caller asks for',
   '1. State only what is above. If you do not know it, say you will have the team confirm.',
   '2. Never quote a price unless one appears above.',
@@ -614,7 +620,11 @@ const agentPrompt = [
 
 await writeFile(
   path.join(here, 'netlify', 'functions', 'agent-config.json'),
-  JSON.stringify({ voice: D.sandy.voice, systemInstruction: agentPrompt }, null, 1),
+  JSON.stringify({
+    voice: D.sandy.voice,
+    tuning: D.sandy.tuning,
+    systemInstruction: agentPrompt,
+  }, null, 1),
   'utf8'
 );
 

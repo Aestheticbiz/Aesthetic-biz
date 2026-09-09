@@ -306,6 +306,35 @@ export default {
     name: 'Sandy',
     role: 'AI receptionist',
     voice: 'Aoede',          // Leda, Kore, Sulafat, Despina also worth auditioning
+
+    /* ── Turn-taking. These decide whether she feels quick or ponderous.
+       Niki's originals (LOW/LOW, 800ms, proactivity on) were tuned for
+       hesitant patients and made her uncomfortably slow here: replies
+       arrived a question late because proactiveAudio adds a round trip
+       deciding whether you were even talking to her.
+
+       If she interrupts you mid-sentence, raise silenceMs first. If she
+       feels slow, lower it. Do not turn proactivity back on unless you
+       want her weighing whether to answer at all. */
+    tuning: {
+      startSensitivity: 'START_SENSITIVITY_LOW',   // LOW = background chatter won't trigger her
+      endSensitivity: 'END_SENSITIVITY_HIGH',      // HIGH = notices you finished, quickly
+      prefixPaddingMs: 60,
+      silenceMs: 500,
+      proactiveAudio: false,
+      affectiveDialog: true,
+      temperature: 0.65,
+    },
+
+    /* The recogniser has never heard these brand names and mangles them
+       — "Bella Tox" came back as "Valor talks" and "Alphabet's Fast".
+       Listing the likely mishearings lets her recover instead of saying
+       she has never heard of her own treatments. */
+    soundsLike: [
+      '"Bella Tox" may be heard as valor tox, bell of tox, bella talks or barotox.',
+      '"Mini Tox" may be heard as mini talks or many tox.',
+      '"Bella Med Spa" may be heard as alamed spa or bella medspa.',
+    ],
     greetingCard: 'Hi, this is Sandy at Bella Med Spa. I can explain any treatment, tell you what suits Dallas or McKinney, and take a booking for you. What are you thinking about?',
     panelLede: 'Ask me anything about Bella’s treatments, either location, or book a time. I answer out loud.',
     eyebrow: 'Your virtual assistant',
