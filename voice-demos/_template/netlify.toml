@@ -1,0 +1,25 @@
+# Static page, no build step. The only server-side code is the token
+# function, which Netlify installs dependencies for and bundles.
+#
+# In the Netlify UI set Base directory to voice-demos/bella-med-spa so
+# this file, package.json and the function are all found.
+[build]
+  publish = "."
+  command = ""
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# A private sales asset. Never let it be indexed.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0"
