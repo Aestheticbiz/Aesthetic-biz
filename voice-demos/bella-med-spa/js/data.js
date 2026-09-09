@@ -25,6 +25,28 @@ window.DEMO = {
    "proactiveAudio": false,
    "affectiveDialog": false
   },
+  "talkingPoints": {
+   "Bella Tox": "Our signature wrinkle-relaxing treatment. The injector maps where your face actually moves, then treats those muscles specifically, so expression is softened rather than switched off. It suits someone treating the full upper face — forehead, frown lines and crow's feet together.",
+   "Mini Tox": "A lighter treatment for one small area, or for someone starting preventatively before lines have settled in. Often chosen by people in their late twenties and thirties, or by anyone wanting to try a single area first.",
+   "Mature Tox": "Planned for skin where lines have become established and sit deeper. The approach accounts for skin that has lost some elasticity, and usually pairs with a conversation about skin quality rather than muscle alone.",
+   "Filler": "Adds volume and structure where the face has lost it — cheeks, temples, jawline, lips. It restores shape rather than relaxing movement, which is what makes it different from the tox treatments.",
+   "Lip flip": "A small amount of product relaxes the muscle above the lip so it rolls slightly outward, showing a little more of the lip you already have. It changes shape, not volume, so it is quite different from lip filler.",
+   "Brow lift": "Relaxes the muscles that pull the brow downward, letting the brow sit a little higher and opening up the eye area. Often chosen by people who feel they look tired rather than lined.",
+   "Jawline slimming": "Treats the strong chewing muscle at the jaw angle. Chosen both for facial balance and by people who clench or grind, since the same muscle is involved.",
+   "Axilla — underarm sweating": "A treatment for excessive underarm sweating. It works on the sweat glands in the treated area and is a common request before summer, weddings and travel.",
+   "VirtueRF microneedling": "Radiofrequency microneedling. Very fine needles create controlled micro-channels while delivering heat below the surface, which prompts the skin to rebuild collagen over the following weeks. Usually done as a short course rather than once.",
+   "Facials": "Cleansing, exfoliation and treatment tailored after a skin assessment, rather than a fixed menu. Suits regular maintenance between clinical treatments.",
+   "Peels": "A controlled chemical exfoliation that lifts away surface build-up so newer skin comes through. Strength is chosen to match your skin and how much downtime you can take.",
+   "PDO threads": "Dissolvable threads placed under the skin to lift and support tissue, and to stimulate collagen along the thread line as they dissolve. A middle option between injectables and surgery.",
+   "Semaglutide GLP-1 consultation": "A medically supervised weight programme. It begins with a consultation covering your history, whether it is appropriate for you, and how the programme is monitored. Bella run it over six, nine or twelve weeks with ongoing support rather than as a one-off injection.",
+   "B12 lipotropic shot": "A vitamin injection used alongside a wellness or weight programme. Quick, and usually done as part of a wider plan rather than on its own.",
+   "CO2 Cool Peel": "A fractional CO2 laser tuned for shorter downtime — it treats tone and texture while leaving much of the surrounding skin untouched, so recovery is measured in days rather than weeks.",
+   "Deep CO2 resurfacing": "The more intensive resurfacing option, for deeper texture concerns and more established sun damage. It needs real downtime and proper planning, so the consultation covers aftercare and timing carefully.",
+   "PlaDuo plasma": "A plasma treatment used for skin texture and firmness. Often discussed alongside microneedling when deciding what suits your skin.",
+   "Laser hair removal": "A course of treatments targeting hair in its active growth phase — which is why it is spaced over several sessions rather than done once.",
+   "Membership": "Member pricing on treatments, seasonal savings, priority booking at both locations, and a plan reviewed across the year instead of restarted each visit. There is a separate laser membership for hair removal and resurfacing courses.",
+   "Consultation": "Where everything starts. A provider assesses your skin and your goals, explains the options and what each involves, and you decide from there. Available in person or virtually."
+  },
   "soundsLike": [
    "\"Bella Tox\" may be heard as valor tox, bell of tox, bella talks or barotox.",
    "\"Mini Tox\" may be heard as mini talks or many tox.",
