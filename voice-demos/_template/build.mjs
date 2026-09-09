@@ -600,6 +600,10 @@ const agentPrompt = [
   'THE DEMONSTRATION DIARY (invented — not the real diary)',
   hoursLine,
   '',
+  ...((D.faq.items || []).length
+    ? ['FREQUENTLY ASKED — use these answers, in your own words, out loud',
+       ...D.faq.items.map((f) => `Q: ${f.q}\nA: ${f.a}`), '']
+    : []),
   'IF YOU MISHEAR SOMETHING',
   ...(D.sandy.soundsLike || []),
   'Say the practice name and treatment names clearly and slowly.',

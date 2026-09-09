@@ -49,7 +49,7 @@ export default {
     loyalty: false,       // Allē / Aspire / Evolus Rewards
     offer: false,         // new-patient offer
     proof: true,
-    faq: false,
+    faq: true,
     instagram: true,
     locations: true,
     sandy: true,
@@ -234,10 +234,64 @@ export default {
   offer: { eyebrow: '', headline: '', body: '', cta: '', terms: '' },
 
   /* ── 17. FAQ — also feeds Sandy's answers ──────────────────────── */
+  /* Answers the front desk gives twenty times a week. They also feed the
+     agent's prompt, so writing one here fixes both the page and the voice.
+     Nothing states a result, a price, or that anything is safe — every
+     clinical question routes to the consultation, which is both correct
+     and the conversion we actually want. */
   faq: {
     eyebrow: 'Questions',
-    heading: '',
-    items: [],       // { q, a }
+    heading: 'The things people ask before they book.',
+    items: [
+      {
+        q: 'I have never had anything done. Where do I start?',
+        a: 'With a consultation. A provider assesses your skin, listens to what is bothering you and explains the options and what each involves. Plenty of people book one and decide to do nothing that day — that is a perfectly normal outcome.',
+      },
+      {
+        q: 'Will I look like I have had something done?',
+        a: 'That is the most common concern we hear, and it is the reason treatments are mapped to how your own face moves rather than applied to a standard set of points. Tell your injector what you want to keep, not only what you want changed.',
+      },
+      {
+        q: 'How long does a treatment last?',
+        a: 'It differs by treatment and by person — metabolism, how expressive you are and the area treated all affect it. Your provider will give you a realistic range for your specific plan at consultation rather than a number off a chart.',
+      },
+      {
+        q: 'Does it hurt?',
+        a: 'Most people describe injectables as brief and manageable, and numbing is available for treatments that need it. Laser and resurfacing feel different again. Ask at consultation what to expect for the specific treatment you are considering.',
+      },
+      {
+        q: 'How much downtime should I plan for?',
+        a: 'Anything from none to a genuine recovery period. A CO2 Cool Peel is designed around shorter downtime; Deep CO2 resurfacing needs real planning. Tell us about any event you have coming up and we will time it properly.',
+      },
+      {
+        q: 'I have an event coming up. How far ahead should I book?',
+        a: 'Earlier than most people think. Injectables need time to settle, and skin treatments are often a course rather than a single visit. Two to four weeks ahead is a common starting point, and more for resurfacing — bring the date to your consultation.',
+      },
+      {
+        q: 'Who will be treating me?',
+        a: 'Injectables are delivered by our own nursing staff rather than a rotating list of visiting practitioners. You can ask to see the same provider each visit, and most guests do.',
+      },
+      {
+        q: 'Can I do a consultation without coming in?',
+        a: 'Yes. Consultations and skin analysis are both available virtually as well as in person, which is useful if you are deciding between treatments or travelling in from further out.',
+      },
+      {
+        q: 'Which location should I choose?',
+        a: 'Whichever you would actually drive to. Dallas is in Bishop Arts with street parking; McKinney is off Eldorado Parkway with on-site parking. Both run the same standard of care and the same team.',
+      },
+      {
+        q: 'Do I need to buy the skincare?',
+        a: 'No. ZO® Skin Health is dispensed in clinic and matched to your plan when it makes sense, but it is a recommendation, not a condition of treatment.',
+      },
+      {
+        q: 'How does the membership work?',
+        a: 'Member pricing on treatments, seasonal savings, priority booking at both locations, and a plan reviewed across the year rather than restarted each visit. There is a separate laser membership for hair removal and resurfacing courses.',
+      },
+      {
+        q: 'What if I change my mind?',
+        a: 'A consultation carries no obligation to book anything. If you decide a treatment is not for you, or not yet, that is a legitimate answer and nobody will push you.',
+      },
+    ],
   },
 
   /* ── 18. INSTAGRAM ─────────────────────────────────────────────── */
