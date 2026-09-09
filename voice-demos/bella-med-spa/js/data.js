@@ -17,14 +17,13 @@ window.DEMO = {
   "name": "Sandy",
   "role": "AI receptionist",
   "voice": "Aoede",
+  "model": "gemini-3.1-flash-live-preview",
   "tuning": {
-   "startSensitivity": "START_SENSITIVITY_LOW",
-   "endSensitivity": "END_SENSITIVITY_HIGH",
-   "prefixPaddingMs": 60,
-   "silenceMs": 500,
+   "endSensitivity": "END_SENSITIVITY_LOW",
+   "silenceMs": 1200,
+   "thinkingLevel": "LOW",
    "proactiveAudio": false,
-   "affectiveDialog": true,
-   "temperature": 0.65
+   "affectiveDialog": false
   },
   "soundsLike": [
    "\"Bella Tox\" may be heard as valor tox, bell of tox, bella talks or barotox.",

@@ -622,6 +622,7 @@ await writeFile(
   path.join(here, 'netlify', 'functions', 'agent-config.json'),
   JSON.stringify({
     voice: D.sandy.voice,
+    model: D.sandy.model,
     tuning: D.sandy.tuning,
     systemInstruction: agentPrompt,
   }, null, 1),

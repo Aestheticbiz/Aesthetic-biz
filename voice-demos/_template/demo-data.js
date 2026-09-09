@@ -307,23 +307,24 @@ export default {
     role: 'AI receptionist',
     voice: 'Aoede',          // Leda, Kore, Sulafat, Despina also worth auditioning
 
-    /* ── Turn-taking. These decide whether she feels quick or ponderous.
-       Niki's originals (LOW/LOW, 800ms, proactivity on) were tuned for
-       hesitant patients and made her uncomfortably slow here: replies
-       arrived a question late because proactiveAudio adds a round trip
-       deciding whether you were even talking to her.
+    /* ── Turn-taking: copied from Adel on aestheticbiz, which is the one
+       that actually sounds good in production. Do not re-derive these.
 
-       If she interrupts you mid-sentence, raise silenceMs first. If she
-       feels slow, lower it. Do not turn proactivity back on unless you
-       want her weighing whether to answer at all. */
+       The counter-intuitive part: Adel WAITS LONGER than Niki (1200ms vs
+       800ms) and still feels quick. The lag was never the silence window
+       — it was proactivity and affectiveDialog, both of which add a round
+       trip before she will answer, and which Adel simply does not set.
+
+       Leave proactiveAudio and affectiveDialog off. If she interrupts,
+       raise silenceMs. If she is slow, the cause is almost certainly
+       something else. */
+    model: 'gemini-3.1-flash-live-preview',
     tuning: {
-      startSensitivity: 'START_SENSITIVITY_LOW',   // LOW = background chatter won't trigger her
-      endSensitivity: 'END_SENSITIVITY_HIGH',      // HIGH = notices you finished, quickly
-      prefixPaddingMs: 60,
-      silenceMs: 500,
+      endSensitivity: 'END_SENSITIVITY_LOW',
+      silenceMs: 1200,
+      thinkingLevel: 'LOW',
       proactiveAudio: false,
-      affectiveDialog: true,
-      temperature: 0.65,
+      affectiveDialog: false,
     },
 
     /* The recogniser has never heard these brand names and mangles them

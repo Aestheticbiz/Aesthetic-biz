@@ -14,17 +14,16 @@ import { GoogleGenAI } from '@google/genai';
    page, the booking diary and the agent's instructions. */
 import AGENT from './agent-config.json' with { type: 'json' };
 
-const SANDY_MODEL = 'gemini-2.5-flash-native-audio-preview-12-2025';
+/* Adel's model, not Niki's. Adel is the one that sounds good. */
+const SANDY_MODEL = AGENT.model || 'gemini-3.1-flash-live-preview';
 
-/* Turn-taking, from demo-data.js. Fallbacks match the shipped defaults. */
+/* Turn-taking, from demo-data.js. Defaults mirror Adel exactly. */
 const T = {
-  startSensitivity: 'START_SENSITIVITY_LOW',
-  endSensitivity: 'END_SENSITIVITY_HIGH',
-  prefixPaddingMs: 60,
-  silenceMs: 500,
+  endSensitivity: 'END_SENSITIVITY_LOW',
+  silenceMs: 1200,
+  thinkingLevel: 'LOW',
   proactiveAudio: false,
-  affectiveDialog: true,
-  temperature: 0.65,
+  affectiveDialog: false,
   ...(AGENT.tuning || {}),
 };
 
@@ -82,19 +81,16 @@ export default async (req, context) => {
             inputAudioTranscription: {},
             systemInstruction: AGENT.systemInstruction,
             speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: AGENT.voice } } },
-            temperature: T.temperature,
-            /* Thinking off — it adds seconds of dead air before every reply. */
-            thinkingConfig: { thinkingBudget: 0 },
-            enableAffectiveDialog: T.affectiveDialog,
-            /* proactiveAudio makes her weigh whether you were talking to her
-               at all. That costs a round trip and lets answers arrive a
-               question late. Off unless you deliberately want it. */
-            proactivity: { proactiveAudio: T.proactiveAudio },
+            /* Adel's exact shape. Anything Adel does not set is deliberately
+               left unset here — proactivity and affectiveDialog were what
+               made her ponderous, not the silence window. */
+            thinkingConfig: { thinkingLevel: T.thinkingLevel },
+            ...(T.affectiveDialog ? { enableAffectiveDialog: true } : {}),
+            ...(T.proactiveAudio ? { proactivity: { proactiveAudio: true } } : {}),
             realtimeInputConfig: {
               automaticActivityDetection: {
-                startOfSpeechSensitivity: T.startSensitivity,
+                disabled: false,
                 endOfSpeechSensitivity: T.endSensitivity,
-                prefixPaddingMs: T.prefixPaddingMs,
                 silenceDurationMs: T.silenceMs,
               },
             },
