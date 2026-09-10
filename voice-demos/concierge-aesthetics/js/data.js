@@ -527,14 +527,7 @@ window.DEMO = {
   "reviewSource": "Google and Yelp, as published by the practice",
   "award": "Allergan Top 500 Practice — top 1% nationwide",
   "awardNote": "Their own homepage badge",
-  "reviewers": [
-   "Karane Z.",
-   "Suzanne K.",
-   "Kate S.",
-   "Alyssa G.",
-   "Julie F.",
-   "Vanessa B."
-  ],
+  "reviewers": [],
   "stats": [
    {
     "n": "5.0",

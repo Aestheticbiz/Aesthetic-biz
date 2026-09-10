@@ -120,7 +120,7 @@ export default {
     reviewSource: 'Google and Yelp, as published by the practice',
     award: 'Allergan Top 500 Practice — top 1% nationwide',
     awardNote: 'Their own homepage badge',
-    reviewers: ['Karane Z.', 'Suzanne K.', 'Kate S.', 'Alyssa G.', 'Julie F.', 'Vanessa B.'],
+    reviewers: []   /* Names removed: FTC endorsement rules want recorded permission, and a public review is not the same as consent to be quoted in advertising. Add them back only with compliance.reviews.permissionObtained = true. */,
     stats: [
       { n: '5.0', label: 'Stars across Google and Yelp' },
       { n: '533', label: 'Reviews, their own published count' },

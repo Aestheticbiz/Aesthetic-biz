@@ -103,7 +103,7 @@ export default {
     reviewSource: 'Google',
     award: 'RCA Best Botox, Spring TX 2026',
     awardNote: 'Reviewers Choice Award, from verified Google reviews',
-    reviewers: ['Karen B.', 'Darla O.'],
+    reviewers: []   /* Names removed: FTC endorsement rules want recorded permission, and a public review is not the same as consent to be quoted in advertising. Add them back only with compliance.reviews.permissionObtained = true. */,
     stats: [
       { n: '4.8', label: 'Average Google rating' },
       { n: '389', label: 'Google reviews' },

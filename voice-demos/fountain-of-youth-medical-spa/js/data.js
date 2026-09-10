@@ -446,11 +446,7 @@ window.DEMO = {
   "reviewSource": "",
   "award": "Victoria’s first medical spa",
   "awardNote": "Opened 2007",
-  "reviewers": [
-   "Malinda Sparks",
-   "Becky Robertson",
-   "David Davis"
-  ],
+  "reviewers": [],
   "stats": [
    {
     "n": "2007",

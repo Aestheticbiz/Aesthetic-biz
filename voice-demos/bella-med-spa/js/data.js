@@ -374,13 +374,7 @@ window.DEMO = {
   "reviewSource": "Google",
   "award": "Best of Advocate 2025",
   "awardNote": "Voted by Dallas readers",
-  "reviewers": [
-   "Nicole Nichols",
-   "Felipa Gonzalez",
-   "Jarline Deleon",
-   "Ivonne Diaz",
-   "Jorge Vi"
-  ],
+  "reviewers": [],
   "stats": [
    {
     "n": "4.8",

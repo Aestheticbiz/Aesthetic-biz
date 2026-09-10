@@ -424,10 +424,7 @@ window.DEMO = {
   "reviewSource": "Google",
   "award": "RCA Best Botox, Spring TX 2026",
   "awardNote": "Reviewers Choice Award, from verified Google reviews",
-  "reviewers": [
-   "Karen B.",
-   "Darla O."
-  ],
+  "reviewers": [],
   "stats": [
    {
     "n": "4.8",

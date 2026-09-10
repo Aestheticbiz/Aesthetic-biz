@@ -89,7 +89,7 @@ export default {
     reviewSource: 'Google',
     award: 'Best of Advocate 2025',
     awardNote: 'Voted by Dallas readers',
-    reviewers: ['Nicole Nichols', 'Felipa Gonzalez', 'Jarline Deleon', 'Ivonne Diaz', 'Jorge Vi'],
+    reviewers: []   /* Names removed: FTC endorsement rules want recorded permission, and a public review is not the same as consent to be quoted in advertising. Add them back only with compliance.reviews.permissionObtained = true. */,
     stats: [
       { n: '4.8', label: 'Average Google rating' },
       { n: '523+', label: 'Reviews from real guests' },

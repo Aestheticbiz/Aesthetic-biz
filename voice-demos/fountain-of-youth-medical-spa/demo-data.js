@@ -111,7 +111,7 @@ export default {
     reviewSource: '',
     award: 'Victoria’s first medical spa',
     awardNote: 'Opened 2007',
-    reviewers: ['Malinda Sparks', 'Becky Robertson', 'David Davis'],
+    reviewers: []   /* Names removed: FTC endorsement rules want recorded permission, and a public review is not the same as consent to be quoted in advertising. Add them back only with compliance.reviews.permissionObtained = true. */,
     stats: [
       { n: '2007', label: 'Victoria’s first medical spa' },
       { n: '16+', label: 'Years Dr. Le has practised internal medicine' },
