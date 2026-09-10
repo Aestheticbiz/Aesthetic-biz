@@ -47,6 +47,20 @@ data = data
   .replace("shortName: 'Bella',", `shortName: ${JSON.stringify(short)},`);
 await writeFile(dataPath, data, 'utf8');
 
+/* package.json and netlify.toml both carry the template's name. Left alone
+   they follow every new demo around, and the Base directory line in the
+   toml is the one somebody reads while setting the Netlify project up. */
+const pkgPath = path.join(dest, 'package.json');
+const pkg = JSON.parse(await readFile(pkgPath, 'utf8'));
+pkg.name = `${slug}-demo`;
+pkg.description = `Talking demo page for ${name}. Static HTML; the only server-side piece is the Gemini ephemeral-token function.`;
+await writeFile(pkgPath, `${JSON.stringify(pkg, null, 2)}
+`, 'utf8');
+
+const tomlPath = path.join(dest, 'netlify.toml');
+const toml = await readFile(tomlPath, 'utf8');
+await writeFile(tomlPath, toml.replace(new RegExp('voice-demos[/][a-z0-9-]+', 'g'), `voice-demos/${slug}`), 'utf8');
+
 console.log(`✓ ${slug}/ created for "${name}"`);
 console.log('');
 console.log('Next, in order:');

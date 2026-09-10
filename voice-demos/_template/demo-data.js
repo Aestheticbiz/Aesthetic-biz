@@ -375,7 +375,7 @@ export default {
     model: 'gemini-3.1-flash-live-preview',
     tuning: {
       endSensitivity: 'END_SENSITIVITY_LOW',
-      silenceMs: 1200,
+      silenceMs: 1400,
       thinkingLevel: 'LOW',
       proactiveAudio: false,
       affectiveDialog: false,

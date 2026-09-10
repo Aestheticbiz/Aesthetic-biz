@@ -1,0 +1,199 @@
+/* ═══════════════════════════════════════════════════════════════════
+   THE COLOUR ENGINE — portable, no build step
+   ───────────────────────────────────────────────────────────────────
+   Extracted from lava-sa/nextjs/src/app/globals.css (Kevin Geary method)
+   and stripped of its Tailwind v4 / shadcn dependencies so it works in
+   a single static HTML file on any static host.
+
+   TO RETHEME AN ENTIRE PAGE FOR A NEW PRACTICE:
+   change --brand-h and --brand-s. Nothing else.
+
+   NEVER hard-code a hex colour anywhere else in the page.
+   Components reference ONLY the semantic aliases in block 5.
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── 1. MASTER BRAND VARIABLES  ← only edit here to retheme ──────── */
+  --brand-h: 192;          /* hue        — pull from their logo         */
+  --brand-s: 84%;          /* saturation — 60-90% typical               */
+
+  /* Accent — intentionally separate from primary, one only */
+  --accent-h: 44;
+  --accent-s: 37%;
+  --accent-l: 54%;
+
+  /* ── 2. SHADE SCALE (lightness, light → dark) ────────────────────── */
+  --l-50:   97%;   /* near-white wash      — tinted section background  */
+  --l-100:  91%;   /* very light           — subtle borders             */
+  --l-200:  80%;   /* light                — muted text on dark         */
+  --l-300:  65%;   /* medium-light         — faint text on dark         */
+  --l-400:  45%;   /* medium               — mid accent                 */
+  --l-500:  30%;   /* medium-dark          — lighter CTA / mid-tone     */
+  --l-600:  22%;   /* dark                 — hover states               */
+  --l-700:  15%;   /* ★ PRIMARY  ←  main brand colour                   */
+  --l-800:  10%;   /* very dark            — pressed states             */
+  --l-900:   6%;   /* near-black           — deepest shade              */
+
+  /* ── 3. COMPUTED BRAND SCALE ─────────────────────────────────────── */
+  --brand-50:  hsl(var(--brand-h), var(--brand-s), var(--l-50));
+  --brand-100: hsl(var(--brand-h), var(--brand-s), var(--l-100));
+  --brand-200: hsl(var(--brand-h), var(--brand-s), var(--l-200));
+  --brand-300: hsl(var(--brand-h), var(--brand-s), var(--l-300));
+  --brand-400: hsl(var(--brand-h), var(--brand-s), var(--l-400));
+  --brand-500: hsl(var(--brand-h), var(--brand-s), var(--l-500));
+  --brand-600: hsl(var(--brand-h), var(--brand-s), var(--l-600));
+  --brand-700: hsl(var(--brand-h), var(--brand-s), var(--l-700));  /* primary */
+  --brand-800: hsl(var(--brand-h), var(--brand-s), var(--l-800));
+  --brand-900: hsl(var(--brand-h), var(--brand-s), var(--l-900));
+
+  /* ── 4. ACCENT SCALE ─────────────────────────────────────────────── */
+  --accent-light: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 15%));
+  --accent:       hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --accent-dark:  hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 10%));
+
+  /* ── 5. SEMANTIC ALIASES  ← use ONLY these in markup ─────────────── */
+  --color-primary:        var(--brand-700);
+  --color-primary-dark:   var(--brand-800);
+  --color-primary-mid:    var(--brand-500);
+  --color-primary-light:  var(--brand-300);
+  --color-primary-wash:   var(--brand-50);
+  --color-secondary:      var(--accent);
+  --color-secondary-dark: var(--accent-dark);
+  --color-dark:           hsl(var(--brand-h), 10%, 8%);
+
+  /* Backgrounds — note: off-white, never pure #FFF. RULES.md section 5. */
+  --color-background:     hsl(var(--brand-h),  8%, 99%);
+  --color-surface:        hsl(var(--brand-h),  8%, 97%);
+  --color-surface-raised: hsl(var(--brand-h),  8%, 93%);
+  --color-border:         hsl(var(--brand-h), 12%, 88%);
+
+  /* Body text — slate, never dead black. RULES.md section 5. */
+  --color-copy:           hsl(var(--brand-h),  6%, 28%);
+  --color-copy-muted:     hsl(var(--brand-h),  6%, 46%);
+
+  /* On-dark helpers (text and borders inside dark brand sections) */
+  --color-on-dark:        #FFFFFF;
+  --color-on-dark-muted:  var(--brand-200);
+  --color-on-dark-faint:  var(--brand-300);
+  --color-on-dark-border: var(--brand-500);
+  --color-on-dark-subtle: hsl(var(--brand-h), var(--brand-s), 18%);
+  --color-on-dark-hover:  hsl(var(--brand-h), var(--brand-s), 22%);
+
+  /* ── 6. TYPOGRAPHY — two families maximum. RULES.md section 1. ───── */
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Fluid type scale — no media queries needed */
+  --text-xs:   clamp(0.75rem, 0.72rem + 0.15vw, 0.82rem);
+  --text-sm:   clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  --text-lg:   clamp(1.13rem, 1.06rem + 0.33vw, 1.31rem);
+  --text-xl:   clamp(1.35rem, 1.22rem + 0.6vw, 1.69rem);
+  --text-2xl:  clamp(1.65rem, 1.42rem + 1.1vw, 2.25rem);
+  --text-3xl:  clamp(2rem, 1.6rem + 1.9vw, 3rem);
+  --text-4xl:  clamp(2.5rem, 1.85rem + 3.1vw, 4.25rem);   /* H1 / hero */
+
+  /* ── 7. SPACING — one scale. Inconsistent gaps are the loudest
+         AI tell (RULES.md section 6). Never invent a one-off value. ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --section-y: clamp(3.5rem, 7vw, 7.5rem);   /* vertical section rhythm */
+  --shell:     min(100% - 2.5rem, 1180px);   /* content container width */
+
+  /* ── 8. RADIUS — pick once per brand, never per component ────────── */
+  --radius: 0rem;          /* 0 = architectural · 0.5rem = clinical      */
+
+  /* ── 9. MOTION — the "thunk". RULES.md section 7. ─────────────────
+         Nothing here is noticeable. That is the entire point.        */
+  --ease:        cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast:    120ms;    /* hover / press feedback                    */
+  --dur-base:    260ms;    /* content easing in                         */
+}
+
+/* ── 10. BASE ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-copy);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-4);
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-xl); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.shell   { width: var(--shell); margin-inline: auto; }
+.section { padding-block: var(--section-y); }
+
+/* ── 11. THE THUNK — button feedback on cursor arrival ────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease),
+              transform  var(--dur-fast) var(--ease);
+}
+.btn:hover  { background: var(--color-primary-dark); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+/* Secondary CTA — deliberately quieter. One ask wins. RULES.md H4. */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+.btn-ghost:hover { background: var(--color-primary-wash); }
+
+/* ── 12. REVEAL ON SCROLL — content eases in, nothing flies ───────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--dur-base) var(--ease),
+              transform var(--dur-base) var(--ease);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

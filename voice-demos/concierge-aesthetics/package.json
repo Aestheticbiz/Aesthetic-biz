@@ -1,0 +1,9 @@
+{
+  "name": "concierge-aesthetics-demo",
+  "private": true,
+  "type": "module",
+  "description": "Talking demo page for Concierge Aesthetics. Static HTML; the only server-side piece is the Gemini ephemeral-token function.",
+  "dependencies": {
+    "@google/genai": "^1.45.0"
+  }
+}
