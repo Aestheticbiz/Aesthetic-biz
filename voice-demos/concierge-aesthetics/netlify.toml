@@ -23,3 +23,47 @@
   for = "/api/*"
   [headers.values]
     Cache-Control = "no-store, max-age=0"
+
+# ── Keep the build inputs off the public site ─────────────────────────
+# The publish directory IS this folder, so everything in it is served.
+# `.netlifyignore` does NOT reliably exclude them: verified live on
+# concierge-aesthetics on 10 Sep 2026, where demo-data.js returned 200
+# with the ignore file sitting right beside it, under three different
+# spellings of the publish path.
+#
+# None of these are secrets — the API key lives in a Netlify environment
+# variable and never reaches the deploy. But demo-data.js carries our
+# working notes ON the prospect, and agent-config.json is the agent's
+# entire prompt. Neither belongs on a page we send to the practice.
+#
+# force = true is required: without it a real file at that path wins.
+[[redirects]]
+  from = "/demo-data.js"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/build.mjs"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Covers agent-config.json and the token function's own source.
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
