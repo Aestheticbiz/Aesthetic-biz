@@ -195,6 +195,12 @@ a { color: inherit; }
 @media (min-width: 48rem) { .trust__in { grid-template-columns: repeat(4, 1fr); gap: var(--space-6); } }
 .trust__item { display: flex; gap: var(--space-4); align-items: flex-start; }
 .trust__item svg { width: 1.5rem; height: 1.5rem; flex: none; color: var(--color-secondary); margin-top: 0.15rem; }
+/* Real award artwork, where the practice has it. RULES.md H8: a logo strip
+   rendered as typed-out names is a hard fail, so the badge wins over the icon
+   whenever the file exists. */
+.trust__item--badge { flex-direction: column; align-items: center; text-align: center; gap: var(--space-3); }
+.trust__badge { width: 6.5rem; height: 6.5rem; flex: none; object-fit: contain; }
+@media (min-width: 48rem) { .trust__badge { width: 7.5rem; height: 7.5rem; } }
 .trust__item strong { display: block; font-size: var(--text-sm); }
 .trust__item span { font-size: var(--text-sm); color: var(--color-copy-muted); }
 
@@ -202,6 +208,15 @@ a { color: inherit; }
 .panels { display: grid; gap: var(--space-4); }
 @media (min-width: 48rem) { .panels { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 72rem) { .panels { grid-template-columns: repeat(4, 1fr); gap: var(--space-3); } }
+
+/* A treatment set that is not a multiple of four used to leave a lone panel
+   stranded on its own row. The tail spans instead, so five reads as four plus
+   a banner and six as four plus two, rather than as an unfinished grid. */
+@media (min-width: 72rem) {
+  .panels > :last-child:nth-child(4n + 1) { grid-column: span 4; min-height: 18rem; }
+  .panels > :nth-last-child(2):nth-child(4n + 1),
+  .panels > :last-child:nth-child(4n + 2) { grid-column: span 2; }
+}
 
 .panel {
   position: relative; isolation: isolate; overflow: hidden;
@@ -899,8 +914,11 @@ a { color: inherit; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: var(--color-background);
-  padding: var(--space-5) var(--space-6);
+  /* Roomy. A question crowding its own border reads as cramped, and these
+     rows are wide, so they need horizontal air to match. */
+  padding: var(--space-6) var(--space-8);
 }
+@media (max-width: 40rem) { .faq__item { padding: var(--space-5) var(--space-6); } }
 .faq__item summary {
   cursor: pointer; list-style: none;
   font-family: var(--font-heading); font-size: var(--text-lg);
