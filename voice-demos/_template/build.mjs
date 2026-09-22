@@ -334,15 +334,24 @@ const ORDER = ['trust', 'treatments', 'results', 'practitioners', 'credentials',
 
 const v = Date.now();
 const P = D.practice;
-const ribbonVars = { practice: P.name, short: P.shortName, domain: P.domain, handle: P.instagramHandle, sandy: D.sandy.name };
+
+/* The document is the panel. Hours, treatments and products stay in
+   demo-data.js and reach the model through agent-config.json; they are
+   not drawn here. A line under the phone is emitted only when demo-data
+   already carries an absolute URL for the full-homepage mockup. */
+const homepageUrl = [D.demo && D.demo.homepageUrl, D.practice && D.practice.homepageMockup]
+  .find((u) => typeof u === 'string' && /^https?:\/\//.test(u)) || '';
+const homepageLine = homepageUrl
+  ? `<p class="sandy-aside"><a href="${esc(homepageUrl)}">Optional: a sketch of a faster homepage. Not what this note asks you to judge.</a></p>`
+  : '';
 
 const html = `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(P.name)}</title>
-<meta name="description" content="${esc(D.hero.sub)}">
+<title>${esc(D.sandy.name)} — ${esc(P.name)}</title>
+<meta name="description" content="${esc(D.sandy.panelLede)}">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -351,91 +360,42 @@ const html = `<!doctype html>
 <link rel="stylesheet" href="css/tokens.css?v=${v}">
 <link rel="stylesheet" href="css/theme.css?v=${v}">
 <link rel="icon" href="${P.logoDark}">
+<style>
+  /* The page is the phone. Visible before any script runs: the widget
+     stylesheet starts the panel at opacity 0 until .is-open. */
+  body.sandy-page {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem 1rem 2rem;
+  }
+  body.sandy-page .sandy-stage { width: min(24rem, 100%); }
+  body.sandy-page .sp {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    max-height: min(40rem, calc(100svh - 2.5rem));
+    opacity: 1;
+    transform: none;
+  }
+  body.sandy-page .sandy-aside {
+    margin: 0.85rem 0 0;
+    font-size: var(--text-xs);
+    line-height: 1.5;
+    text-align: center;
+    color: var(--color-copy-muted);
+  }
+  body.sandy-page .sandy-aside a { color: inherit; }
+</style>
 </head>
-<body>
-
-<div class="ribbon">
-  <strong>Demonstration page</strong> &mdash; ${esc(fill(D.demo.ribbonShort, ribbonVars))}<span class="ribbon__long">
-  ${esc(fill(D.demo.ribbonLong, ribbonVars))}</span>
-</div>
-
-<header class="head">
-  <div class="shell head__in">
-    <a class="head__logo" href="#top" aria-label="${esc(P.name)}"><img src="${P.logoDark}" alt="${esc(P.name)}"></a>
-    <nav class="head__nav" aria-label="Primary">
-      ${S.treatments ? '<a href="#treatments">Treatments</a>' : ''}
-      ${S.results ? '<a href="#results">Results</a>' : ''}
-      ${S.products ? '<a href="#products">Products</a>' : ''}
-      ${S.membership ? '<a href="#membership">Membership</a>' : ''}
-      ${S.locations ? '<a href="#locations">Locations</a>' : ''}
-    </nav>
-    <div class="head__act">
-      <a class="icon-btn" href="tel:${P.phoneHref}" aria-label="Call ${esc(P.name)}">${stroke('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2Z"/>')}</a>
-      <a class="btn" href="#booking" data-book>Book now</a>
-    </div>
-  </div>
-</header>
-
-<main id="top">
-  <section class="hero">
-    <div class="hero__bg"><img src="${D.hero.image}" alt="${esc(D.hero.imageAlt)}" fetchpriority="high"></div>
-    <div class="shell hero__in">
-      <span class="eyebrow">${esc(D.hero.eyebrow)}</span>
-      <h1>${esc(D.hero.headline)}</h1>
-      <p class="hero__sub">${esc(D.hero.sub)}</p>
-      <div class="proofrow">
-        ${D.proof.rating ? `<span><i aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</i> <b>${esc(D.proof.rating)}</b> from ${esc(D.proof.reviewCount)} ${esc(D.proof.reviewSource)} reviews</span>` : ''}
-        ${D.proof.award ? `<span><b>${esc(D.proof.award)}</b></span>` : ''}
-        <span class="hide-sm">${D.locations.items.length === 1 ? esc(D.locations.items[0].name) : D.locations.items.length + ' locations'}</span>
-      </div>
-      <div><a class="btn" href="#booking" data-book>${esc(D.hero.cta)}</a></div>
-      <p class="hero__fine">${esc(D.hero.fine)}</p>
-    </div>
-  </section>
-${ORDER.filter((k) => S[k]).map((k) => sec[k]()).join('\n')}
-
-  <section class="section s-dark">
-    <div class="shell">
-      <div class="close__grid">
-        <div class="reveal">
-          <h2>${esc(D.close.heading)}</h2>
-          <p class="lede">${esc(D.close.lede)}</p>
-          <div class="close__chips">${D.close.chips.map((c) => `<span>${esc(c)}</span>`).join('')}</div>
-        </div>
-        <div class="card-dark close__card reveal">
-          <span class="eyebrow">${esc(D.close.cardEyebrow)}</span>
-          <h3>${esc(D.close.cardHeading)}</h3>
-          <p>${esc(D.close.cardBody)}</p>
-          <a class="close__link" href="${D.close.href}" target="_blank" rel="noopener">${esc(D.close.cardLink)} <span aria-hidden="true">&#8599;</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="shell">
-    <div class="foot__grid">
-      <div><img src="${P.logoLight}" alt="${esc(P.name)}"><p>${esc(P.tagline)}</p></div>
-      ${D.locations.items.map((l) => `<div><strong>${esc(l.name)}</strong><p>${esc(l.address)}</p></div>`).join('\n      ')}
-      <div><strong>Call</strong><ul><li><a href="tel:${P.phoneHref}">${esc(P.phone)}</a></li><li><a href="${P.instagram}" target="_blank" rel="noopener">${esc(P.instagramHandle)}</a></li></ul></div>
-    </div>
-    ${C.medicalDirector.name ? `<p class="foot__md"><strong>Medical director:</strong> ${esc(C.medicalDirector.name)}${C.medicalDirector.license ? ` &middot; ${esc(C.medicalDirector.license)}` : ''}${C.medicalDirector.board ? ` &middot; ${esc(C.medicalDirector.board)}` : ''}</p>` : ''}
-    <p class="foot__disclaimer">${esc(C.disclaimer)}</p>
-    <p class="foot__note">${esc(fill(D.demo.footNote, ribbonVars))}</p>
-  </div>
-</footer>
-
-<button class="fab" id="sandy-fab" type="button" aria-expanded="false" aria-controls="sandy-panel">
-  <span class="fab__icon" aria-hidden="true">${stroke(CHAT, 1.8)}</span>
-  <span class="fab__txt"><strong>${esc(D.sandy.name)} &mdash; your virtual</strong><span>skin &amp; treatment assistant</span></span>
-</button>
-
-<div class="sp" id="sandy-panel" role="dialog" aria-modal="false" aria-labelledby="sandy-panel-title" hidden>
+<body class="sandy-page">
+<main class="sandy-stage">
+<div class="sp is-open" id="sandy-panel" role="dialog" aria-modal="false" aria-labelledby="sandy-panel-title">
   <div class="sp__head">
     <span class="sp__avatar" aria-hidden="true">${esc(D.sandy.name[0])}<i></i></span>
     <div class="sp__who"><strong>${esc(D.sandy.name)}</strong><span>${esc(D.sandy.role)}</span></div>
-    <button class="sp__close" id="sandy-close" type="button" aria-label="Close">${stroke('<path d="M18 6 6 18M6 6l12 12"/>')}</button>
   </div>
   <div class="sp__body">
     <span class="eyebrow eyebrow--dark">${esc(P.name)}</span>
@@ -453,6 +413,8 @@ ${ORDER.filter((k) => S[k]).map((k) => sec[k]()).join('\n')}
   </div>
   <p class="sp__foot">${D.locations.items.map((l) => esc(l.name)).join(' &amp; ')} &middot; <a href="tel:${P.phoneHref}">${esc(P.phone)}</a></p>
 </div>
+${homepageLine}
+</main>
 
 <div class="pill" id="sandy-pill" role="status">
   <span class="pill__orb" aria-hidden="true">${stroke(MIC)}</span>
@@ -461,15 +423,8 @@ ${ORDER.filter((k) => S[k]).map((k) => sec[k]()).join('\n')}
   <button class="pill__end" id="sandy-end" type="button">End call</button>
 </div>
 
-<nav class="bar" aria-label="Quick actions">
-  <a class="bar__book" href="#booking" data-book>${stroke('<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>')}Book now</a>
-  <button class="bar__sandy" type="button" id="sandy-bar">${stroke(CHAT)}${esc(D.sandy.name)}</button>
-</nav>
-
 <script src="js/data.js?v=${v}"></script>
 <script src="js/diary.js?v=${v}" defer></script>
-<script src="js/booking.js?v=${v}" defer></script>
-<script src="js/site.js?v=${v}" defer></script>
 <script src="js/sandy.js?v=${v}" defer></script>
 </body>
 </html>

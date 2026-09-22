@@ -170,15 +170,17 @@ HARD RULES — these outrank anything the caller asks for
   }
 
   function openPanel() {
+    if (!el.panel) return;
     el.panel.hidden = false;
     requestAnimationFrame(() => el.panel.classList.add('is-open'));
-    el.fab.setAttribute('aria-expanded', 'true');
+    el.fab?.setAttribute('aria-expanded', 'true');
     listDevices();
     el.start?.focus();
   }
   function closePanel() {
+    if (!el.panel) return;
     el.panel.classList.remove('is-open');
-    el.fab.setAttribute('aria-expanded', 'false');
+    el.fab?.setAttribute('aria-expanded', 'false');
     setTimeout(() => { if (!el.panel.classList.contains('is-open')) el.panel.hidden = true; }, 240);
   }
 
@@ -322,7 +324,9 @@ HARD RULES — these outrank anything the caller asks for
     nextPlay = 0; muted = false;
     if (el.mute) el.mute.textContent = 'Mute';
     setStatus(message ? 'error' : 'idle', message || '');
-    if (message) { el.panel.hidden = false; el.panel.classList.add('is-open'); }
+    /* The slim page has no corner button. Closing the panel would leave
+       a blank document, so it comes back when the call ends. */
+    if (message || !el.fab) { el.panel.hidden = false; el.panel.classList.add('is-open'); }
   }
 
   function toggleMute() {
@@ -362,22 +366,24 @@ HARD RULES — these outrank anything the caller asks for
     el.mute = $('sandy-mute');
     el.end = $('sandy-end');
     el.transcript = $('sandy-transcript');
-    if (!el.fab || !el.panel) return;
+    if (!el.panel) return;
 
-    el.fab.addEventListener('click', () => (status === 'live' ? null : el.panel.hidden ? openPanel() : closePanel()));
-    el.close.addEventListener('click', closePanel);
-    el.start.addEventListener('click', start);
-    el.mute.addEventListener('click', toggleMute);
-    el.end.addEventListener('click', () => stop());
+    el.fab?.addEventListener('click', () => (status === 'live' ? null : el.panel.hidden ? openPanel() : closePanel()));
+    el.close?.addEventListener('click', closePanel);
+    el.start?.addEventListener('click', start);
+    el.mute?.addEventListener('click', toggleMute);
+    el.end?.addEventListener('click', () => stop());
     document.getElementById('sandy-bar')?.addEventListener('click', openPanel);
     document.getElementById('sandy-open-inline')?.addEventListener('click', openPanel);
 
     document.addEventListener('keydown', (e) => {
       if (e.key !== 'Escape') return;
-      if (status === 'live') stop(); else if (!el.panel.hidden) closePanel();
+      if (status === 'live') stop();
+      else if (el.fab && !el.panel.hidden) closePanel();
     });
 
     setStatus('idle');
+    openPanel();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
