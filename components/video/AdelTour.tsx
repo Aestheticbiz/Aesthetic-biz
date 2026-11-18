@@ -36,7 +36,8 @@ import { TOUR, TOUR_INSTRUCTION, type TourCut } from "@/lib/tour";
 const ADEL_VOICE = "Aoede"; // the same voice as components/adel-voice-guide.tsx
 const RATE = 24000;
 const LEAD_IN = 0.8; // seconds of opening scene before her first word
-const CLOSING_HOLD = 7; // seconds after her last word before `done`: the closing card (address, name, number) must be fully up for 4 s or more
+const CLOSING_HOLD = 2.5; // seconds after her last word before `done`; the closing card is up for the whole goodbye line
+const CLOSING_GAP = 2.2; // seconds of breath before the goodbye: the closing card eases in during it (see nextLine)
 const SCROLL_LEAD = 0.6; // seconds the page starts easing to a scene before her first word on it
 const LINE_GAP = 0.35; // seconds of breath between lines
 const SCROLL_MS = 1400;
@@ -156,6 +157,9 @@ export function AdelTour({ cut }: { cut: TourCut }) {
       lineStarted = false;
       lineDone = false;
       retried = false;
+      // Her goodbye audio arrives just in time, so the closing card can't wait for it:
+      // it eases in the moment her previous line ends, and is up before her first word.
+      if (started && script[step].section === "closing") later(() => easeTo("closing"), playHead - now());
       say();
       arm();
     };
@@ -168,10 +172,12 @@ export function AdelTour({ cut }: { cut: TourCut }) {
       let at = Math.max(now() + 0.05, playHead);
       if (!lineStarted) {
         lineStarted = true;
-        at = step === 0 ? now() + LEAD_IN : Math.max(now() + 0.05, playHead + LINE_GAP);
         const section = script[step].section;
+        // The goodbye gets a longer breath; its scene was already started in nextLine.
+        const closing = section === "closing";
+        at = step === 0 ? now() + LEAD_IN : Math.max(now() + 0.05, playHead + (closing ? CLOSING_GAP : LINE_GAP));
         lineOf[step] = tap.lines.push({ section, startedAt: at, said: said[step] ?? "" }) - 1;
-        later(() => { mark(); easeTo(section); }, at - now() - SCROLL_LEAD);
+        later(() => { mark(); if (!closing) easeTo(section); }, at - now() - (closing ? 0 : SCROLL_LEAD));
       }
       tap.chunks.push({ at, b64 });
       if (audible && ctx) {

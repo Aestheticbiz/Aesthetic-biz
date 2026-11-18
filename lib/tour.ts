@@ -11,15 +11,17 @@
 export type TourCut = "short" | "long";
 export type TourLine = { section: string; words: string };
 
-/** ≈ 50 s, portrait (Reels, TikTok, WhatsApp). */
+/** The goodbye, the same in both cuts: calm and warm, never sudden. Spelled
+    so she says "C R M solutions dot app slash call" and the number in groups. */
+const CLOSING =
+  "Picture what that does to your month. To book a Discovery Call, go to C R M solutions dot app slash call, or message Ignatius on WhatsApp, plus two seven, seven six, one eight zero, nine seven nine nine, for a chat and more information. We're looking forward to talking with you, and to seeing how we can help your practice grow. Thank you for watching. Bye for now.";
+
+/** Under 59 s in all, portrait (Reels, TikTok, WhatsApp). The goodbye takes about 25 s, so the body is three lines. */
 const SHORT: TourLine[] = [
   { section: "opening", words: "Hi, I'm Adel. Picture a med spa that never stops booking." },
-  { section: "night", words: "It's eleven-forty at night. A woman who has been thinking about lip filler for months finally decides. Your front desk went home hours ago." },
-  { section: "answers", words: "I'm the voice on your website. I answer her questions out loud, and book her free consultation before she talks herself out of it." },
-  { section: "shop", words: "While she's there, she orders the skincare your team recommends, and earns points toward her next visit." },
-  { section: "calls", words: "I can also be added to answer the calls your front desk misses, and call patients back." },
-  { section: "next", words: "A spa that books and sells around the clock, without another hire at the front desk." },
-  { section: "closing", words: "Picture what that does to your month." },
+  { section: "answers", words: "A patient is ready for lip filler at eleven-forty at night. I answer her questions out loud, and book her free consultation." },
+  { section: "calls", words: "I can also be added to answer your missed calls, and call patients back." },
+  { section: "closing", words: CLOSING },
 ];
 
 /** ≈ 2:10, landscape (YouTube, LinkedIn). */
@@ -33,7 +35,7 @@ const LONG: TourLine[] = [
   { section: "reviews", words: "Afterwards she's invited to leave a review, written or on video, and you approve each one before it goes live." },
   { section: "calls", words: "That's what I do on your website. I can also be extended. I can be added to answer the calls your front desk misses, and to call patients back, so no inquiry ends in voicemail." },
   { section: "next", words: "A med spa that books and sells around the clock, seven days a week, without adding anyone to your front desk. Under your name, your brand and your colors." },
-  { section: "closing", words: "Picture what that does to your month." },
+  { section: "closing", words: CLOSING },
 ];
 
 export const TOUR: Record<TourCut, TourLine[]> = { short: SHORT, long: LONG };
@@ -43,4 +45,5 @@ export const tourCut = (v: unknown): TourCut => (v === "long" ? "long" : "short"
 export const TOUR_INSTRUCTION = `You are Adel, the voice built into AestheticBiz, a ready-to-launch website and booking platform for US medical spas and aesthetic clinics.
 You are narrating a short video for the OWNER of a medical spa. You are not speaking to a patient.
 You will be sent one line at a time. Say each line exactly as written, word for word, as warm, confident, natural speech in American English, and nothing else: no "okay", no "sure", no comment before or after it, no question at the end.
+The last line is a goodbye: say it calmly and warmly, like you mean it, at your normal pace.
 Never add a price, a number of bookings, a medical claim or any promise of results.`;

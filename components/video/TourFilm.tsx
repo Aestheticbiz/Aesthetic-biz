@@ -240,12 +240,13 @@ function Closing() {
   return (
     <section id="tour-closing" data-scene className="film-scene">
       {/* A video link can't be clicked: the address is the hero. All traffic goes to
-          CRM Solutions; no aestheticbiz address here. International number: viewers are in the US. */}
+          CRM Solutions; no aestheticbiz address here. International number: viewers are in the US.
+          No entrance animation: the card arrives complete, before her goodbye starts. */}
       <div className="film-close">
         <h2 className="film-close-lead">Picture what that does to your month.</h2>
-        <p className="film-close-url pop" style={{ ["--d" as string]: "0.2s" }}>crmsolutions.app/call</p>
-        <p className="film-close-cta pop" style={{ ["--d" as string]: "0.5s" }}>Book a Discovery Call</p>
-        <div className="film-close-person pop" style={{ ["--d" as string]: "0.8s" }}>
+        <p className="film-close-url">crmsolutions.app/call</p>
+        <p className="film-close-cta">Book a Discovery Call</p>
+        <div className="film-close-person">
           <p className="film-close-name">Ignatius Ackermann</p>
           <p className="film-close-phone">
             <IconWhatsApp />
@@ -253,7 +254,7 @@ function Closing() {
           </p>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/crm-solutions-logo-reversed.svg" alt="CRM Solutions" width={350} height={96} className="film-close-logo pop" style={{ ["--d" as string]: "1.1s" }} />
+        <img src="/brand/crm-solutions-logo-reversed.svg" alt="CRM Solutions" width={350} height={96} className="film-close-logo" />
       </div>
     </section>
   );
