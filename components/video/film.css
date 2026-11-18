@@ -244,3 +244,14 @@ body:has(.film) nextjs-portal { display: none !important; }
 
 /* Desktop screens get the wider column. */
 @media (min-width: 768px) { .film-grid:has(.film-browser) { grid-template-columns: .8fr 1.2fr; } }
+
+/* A slow breathing glow on every scene. Besides the mood it keeps the page
+   repainting: the recorder's screencast only sends frames when the screen
+   changes, so a perfectly still closing card would add no video time. */
+.film-scene::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(60% 45% at 50% 40%, var(--color-glow) 0%, transparent 70%);
+  animation: film-glow 5s ease-in-out infinite alternate;
+}
+@keyframes film-glow { from { opacity: .35; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .film-scene::before { animation: none; } }
