@@ -7,6 +7,7 @@ export const CONVERSION_ROUTES = [
   "/full-fee-patients",
   "/financial",
   "/book-discovery",
+  "/site-info",
 ] as const;
 
 export function isConversionRoute(pathname: string): boolean {
