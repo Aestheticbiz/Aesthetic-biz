@@ -55,7 +55,7 @@ export default async function HomePage() {
           <div className="hero-stats">
             <div className="hero-stat">
               <strong>5.0★</strong>
-              <span>Google · 49 reviews</span>
+              <span>Google · 49 reviews · sample data</span>
             </div>
             <div className="hero-stat">
               <strong>485</strong>
@@ -73,11 +73,11 @@ export default async function HomePage() {
         <div className="shell">
           <div className="trust-item">
             <strong>Dr. Hale</strong>
-            <span>Medical Director</span>
+            <span>Medical Director · sample name</span>
           </div>
           <div className="trust-item">
             <strong>Elise Hart, RN</strong>
-            <span>Lead Aesthetic Nurse</span>
+            <span>Lead Aesthetic Nurse · sample name</span>
           </div>
           <div className="trust-item">
             <strong>Tue–Sat</strong>
@@ -85,7 +85,7 @@ export default async function HomePage() {
           </div>
           <div className="trust-item">
             <strong>{SITE.phone}</strong>
-            <span>Call the studio</span>
+            <span>Call the studio · demo line</span>
           </div>
         </div>
       </div>
